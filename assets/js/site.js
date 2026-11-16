@@ -1183,3 +1183,22 @@
   setInterval(verFundo, 400);                                       /* vídeos e diapositivos mudam por baixo */
   requestAnimationFrame(desenha);
 })();
+
+/* ---------- Histórias: filtro por tema ----------
+   "Todas" mostra a composição editorial; um tema mostra só esses artigos numa grelha simples. */
+(function () {
+  var comp = document.querySelector("[data-revista]");
+  var res = document.querySelector("[data-revista-resultado]");
+  var filtro = document.querySelector(".historias-filtro");
+  if (!comp || !res || !filtro) return;
+  filtro.addEventListener("click", function (ev) {
+    var b = ev.target.closest("button[data-filtro]");
+    if (!b) return;
+    var tema = b.getAttribute("data-filtro");
+    filtro.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+    res.innerHTML = "";
+    if (tema === "todas") { res.hidden = true; comp.hidden = false; return; }
+    comp.querySelectorAll('.rv[data-tema="' + tema + '"]').forEach(function (a) { res.appendChild(a.cloneNode(true)); });
+    comp.hidden = true; res.hidden = false;
+  });
+})();

@@ -10,16 +10,16 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&family=Marcellus&family=Pinyon+Script&display=swap">
 <link rel="stylesheet" href="https://use.typekit.net/oav4umc.css"><!-- Adobe Fonts: Optima nova + Richmond Display (projeto "Vilalara site prototipo") -->
 <link rel="stylesheet" href="https://use.typekit.net/ozg0foo.css"><!-- Adobe Fonts: Fact VF (projeto "Vilalara site prototipo Fact") -->
-<link rel="stylesheet" href="assets/css/tokens.css?v=20261120u">
-<link rel="stylesheet" href="assets/css/base.css?v=20261120u">
-<link rel="stylesheet" href="assets/css/blocos.css?v=20261120u">
+<link rel="stylesheet" href="assets/css/tokens.css?v=20261121g">
+<link rel="stylesheet" href="assets/css/base.css?v=20261121g">
+<link rel="stylesheet" href="assets/css/blocos.css?v=20261121g">
 </head>
 <body>
 
 <!-- =================================================================
      EXPERIÊNCIAS (landing page da categoria)
      Blocos, por ordem: cabecalho-interior (sobre foto), hero-landing,
-     intro-categoria, cartoes-experiencias (8, os mesmos cartões dos
+     intro-categoria, cartoes-experiencias (11, os mesmos cartões dos
      Tratamentos), pedido (formulário "Planeje a sua ocasião"),
      perguntas, rodape, painel-menu.
      Para acrescentar uma experiência: copiar um <article class="tratamento">.
@@ -126,12 +126,12 @@
         <a class="botao-contorno sobre-foto" href="experiencia-behind-the-wine.html">Ver&nbsp;experiência</a>
       </div>
     </article>
-    <!-- EXPERIÊNCIA: Paint Your Own Traditional Ceramics -->
+    <!-- EXPERIÊNCIA: Pintura Olaria -->
     <article class="tratamento" id="ceramica" style="--veu: 0.7">
       <img src="assets/img/experiencias/ceramica.jpg" alt="Mesa de oficina com peças de cerâmica por pintar" loading="lazy">
       <a class="tratamento__ligacao" href="experiencia-ceramica.html" tabindex="-1" aria-hidden="true"></a>
       <div class="tratamento__texto">
-        <h2>Paint Your Own Traditional Ceramics</h2>
+        <h2>Pintura Olaria</h2>
         <a class="botao-contorno sobre-foto" href="experiencia-ceramica.html">Ver&nbsp;experiência</a>
       </div>
     </article>
@@ -144,13 +144,40 @@
         <a class="botao-contorno sobre-foto" href="experiencia-velas.html">Ver&nbsp;experiência</a>
       </div>
     </article>
-    <!-- EXPERIÊNCIA: Biólogo e Astronomia -->
-    <article class="tratamento" id="biologo-astronomia">
-      <img src="assets/img/experiencias/biologo-astronomia.jpg" alt="Fotógrafo de natureza com a câmara entre a folhagem" loading="lazy">
-      <a class="tratamento__ligacao" href="experiencia-biologo-astronomia.html" tabindex="-1" aria-hidden="true"></a>
+    <!-- EXPERIÊNCIA: Observação do Céu Noturno -->
+    <article class="tratamento" id="ceu-noturno">
+      <img src="assets/img/experiencias/ceu-noturno.jpg" alt="Pessoa a observar as estrelas com um telescópio" loading="lazy">
+      <a class="tratamento__ligacao" href="experiencia-ceu-noturno.html" tabindex="-1" aria-hidden="true"></a>
       <div class="tratamento__texto">
-        <h2>Biólogo e&nbsp;Astronomia</h2>
-        <a class="botao-contorno sobre-foto" href="experiencia-biologo-astronomia.html">Ver&nbsp;experiência</a>
+        <h2>Observação do&nbsp;Céu Noturno</h2>
+        <a class="botao-contorno sobre-foto" href="experiencia-ceu-noturno.html">Ver&nbsp;experiência</a>
+      </div>
+    </article>
+    <!-- EXPERIÊNCIA: Natureza do Vilalara -->
+    <article class="tratamento" id="natureza" style="--veu: 0.7">
+      <img src="assets/img/experiencias/natureza.jpg" alt="Lago com nenúfares e uma tartaruga, nos jardins do resort" loading="lazy">
+      <a class="tratamento__ligacao" href="experiencia-natureza.html" tabindex="-1" aria-hidden="true"></a>
+      <div class="tratamento__texto">
+        <h2>Natureza do&nbsp;Vilalara</h2>
+        <a class="botao-contorno sobre-foto" href="experiencia-natureza.html">Ver&nbsp;experiência</a>
+      </div>
+    </article>
+    <!-- EXPERIÊNCIA: Observação Noturna de Insetos -->
+    <article class="tratamento" id="insetos">
+      <img src="assets/img/experiencias/insetos.jpg" alt="Percevejo verde sobre fundo escuro" loading="lazy">
+      <a class="tratamento__ligacao" href="experiencia-insetos.html" tabindex="-1" aria-hidden="true"></a>
+      <div class="tratamento__texto">
+        <h2>Observação Noturna de&nbsp;Insetos</h2>
+        <a class="botao-contorno sobre-foto" href="experiencia-insetos.html">Ver&nbsp;experiência</a>
+      </div>
+    </article>
+    <!-- EXPERIÊNCIA: Sétima Onda Kayak Tours -->
+    <article class="tratamento" id="kayak">
+      <img src="assets/img/experiencias/kayak/hero.jpg?v=k2" alt="Kayaks no mar azul-turquesa junto às falésias douradas do Algarve" loading="lazy">
+      <a class="tratamento__ligacao" href="experiencia-kayak.html" tabindex="-1" aria-hidden="true"></a>
+      <div class="tratamento__texto">
+        <h2>Sétima Onda Kayak Tours</h2>
+        <a class="botao-contorno sobre-foto" href="experiencia-kayak.html">Ver&nbsp;experiência</a>
       </div>
     </article>
   </section>
@@ -177,9 +204,12 @@
           <option>Bottle Blending</option>
           <option>Market Walk</option>
           <option>Behind the&nbsp;Wine</option>
-          <option>Traditional Ceramics</option>
+          <option>Pintura Olaria</option>
           <option>Craft Candle Workshop</option>
-          <option>Biólogo e&nbsp;Astronomia</option>
+          <option>Observação do&nbsp;Céu Noturno</option>
+          <option>Natureza do&nbsp;Vilalara</option>
+          <option>Observação Noturna de&nbsp;Insetos</option>
+          <option>Sétima Onda Kayak Tours</option>
         </select></label>
       <label class="pedido__campo"><span>Data</span><input type="date" name="data"></label>
       <label class="pedido__campo pedido__campo--largo"><span>Comentários</span><textarea name="comentarios" rows="2"></textarea></label>
@@ -376,19 +406,23 @@
     <li class="painel__item"><a href="experiencia-bottle-blending.html">Bottle Blending</a></li>
     <li class="painel__item"><a href="experiencia-market-walk.html">Market Walk</a></li>
     <li class="painel__item"><a href="experiencia-behind-the-wine.html">Behind the&nbsp;Wine</a></li>
-    <li class="painel__item"><a href="experiencia-ceramica.html">Traditional Ceramics</a></li>
+    <li class="painel__item"><a href="experiencia-ceramica.html">Pintura Olaria</a></li>
     <li class="painel__item"><a href="experiencia-velas.html">Craft Candle Workshop</a></li>
-    <li class="painel__item"><a href="experiencia-biologo-astronomia.html">Biólogo e&nbsp;Astronomia</a></li>
+    <li class="painel__item"><a href="experiencia-ceu-noturno.html">Céu Noturno</a></li>
+    <li class="painel__item"><a href="experiencia-natureza.html">Natureza do&nbsp;Vilalara</a></li>
+    <li class="painel__item"><a href="experiencia-insetos.html">Insetos Noturnos</a></li>
+    <li class="painel__item"><a href="experiencia-kayak.html">Kayak Tours</a></li>
     </ul>
   </li>
   <li class="painel__item"><a href="occasions.html" data-categoria="occasions">Occasions</a></li>
   <li class="painel__item"><a href="60-aniversario.html" data-categoria="60-aniversario">60.º Aniversário</a></li>
+  <li class="painel__item"><a href="historias.html" data-categoria="historias">Histórias</a></li>
   </ul>
   </div>
   <p class="painel__morada"><img src="assets/img/marca/morada.png" alt="Praia das Gaivotas, Alporchinhos, Porches 8400-450, Portugal" width="839" height="300" loading="lazy"></p>
 </nav>
 <!-- /BLOCO: painel-menu -->
 
-<script src="assets/js/site.js?v=20261120u"></script>
+<script src="assets/js/site.js?v=20261121g"></script>
 </body>
 </html>

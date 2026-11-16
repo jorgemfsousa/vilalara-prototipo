@@ -82,7 +82,7 @@
   --cor-texto-suave: #8f8b85;          /* itens inativos: "a cinzento e mais pequenos" */
   --cor-linha: #bdb9b2;                /* linhas finas (barra do menu, painel) */
   --cor-sobre-foto: #ffffff;           /* texto por cima de fotografias */
-  --cor-rodape-fundo: #1e160d;              /* castanho escuro (pedido do utilizador, 2026-11-12) */
+  --cor-rodape-fundo: var(--cor-castanho-marca);   /* castanho Vilalara #42321a (pedido do utilizador, 2026-11-16) */
   --cor-rodape-texto: #f3f1ec;
   --cor-rodape-linha: rgba(243, 241, 236, 0.35);
 
