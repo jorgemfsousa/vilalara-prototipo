@@ -154,5 +154,7 @@ html.cursor-gaivota textarea, html.cursor-gaivota [contenteditable] { cursor: te
 .gaivota-cursor svg { display: block; width: 100%; height: 100%; overflow: visible; }
 .gaivota-cursor path { fill: #2a2928; transition: fill 300ms ease; }
 .gaivota-cursor.clara path { fill: #fff; }   /* sobre fundos escuros fica branca */
+.gaivota-cursor .gaivota-patas { fill: none; stroke: #2a2928; stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; transition: stroke 300ms ease; }   /* patas da gaivota em pé */
+.gaivota-cursor.clara .gaivota-patas { fill: none; stroke: #fff; }
 .gaivota-cursor.visivel { opacity: 1; }
 .gaivota-cursor.em-texto { opacity: 0; }

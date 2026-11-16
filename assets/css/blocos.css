@@ -381,6 +381,8 @@ html:has(.home-slides) { scroll-snap-type: y mandatory; }
   text-decoration-thickness: 1px;
   transition: text-decoration-color var(--duracao) var(--curva);
 }
+.painel__menu > ul > li > a,
+.painel__menu > ul > li > .painel__linha > a { font-size: 0.75rem; }   /* 1.º nível maior que os submenus (12px > 11px; 3.º nível 12px em minúsculas) */
 .painel a:hover,
 .painel a[aria-current="page"] { text-decoration-color: currentColor; }
 
@@ -417,9 +419,9 @@ html:has(.home-slides) { scroll-snap-type: y mandatory; }
 .painel__abre[aria-expanded="true"]::after { transform: translate(-50%, -50%) rotate(0deg); }
 .painel ul.painel__sub { gap: 0.45rem; margin: 0.75rem 0 0.35rem 2px; padding-left: 16px; }
 .painel__sub > li { position: relative; }
-.painel__sub a { font-size: 0.75rem; letter-spacing: 0.08em; color: var(--cor-texto-suave); white-space: nowrap; }
+.painel__sub a { font-size: 0.6875rem; letter-spacing: 0.08em; color: var(--cor-texto-suave); white-space: nowrap; }
 .painel ul.painel__sub--n3 { gap: 0.3rem; }
-.painel__sub--n3 a { font-size: 0.8125rem; letter-spacing: 0.02em; text-transform: none; white-space: normal; }
+.painel__sub--n3 a { font-size: 0.75rem; letter-spacing: 0.02em; text-transform: none; white-space: normal; }
 .painel__sub a:hover, .painel__sub a[aria-current] { color: var(--cor-texto); }
 .painel__sub a[aria-current="location"] { text-decoration-color: transparent; }
 
@@ -1006,7 +1008,7 @@ html:has(.home-slides) { scroll-snap-type: y mandatory; }
 .tipologias {
   --n: 4;
   --margem-baixo: clamp(32px, 5.5svh, 64px);   /* espaço branco por baixo da foto e dos botões */
-  --altura-foto: min(41.7vw, calc(100svh - var(--altura-barra) - 150px - var(--margem-baixo)));
+  --altura-foto: calc(100svh - var(--altura-barra) - 150px - var(--margem-baixo));   /* foto ocupa a altura toda até à margem de baixo, também em janelas mais estreitas */
   position: relative;
   height: calc(var(--n) * 85vh);
   height: calc(var(--n) * 85svh);
@@ -1077,7 +1079,7 @@ html:has(.home-slides) { scroll-snap-type: y mandatory; }
    e a foto um pouco mais baixa para tudo caber no ecrã. */
 .tipologias--com-titulo {
   --altura-titulo: calc(var(--tam-titulo-seccao) + var(--tam-script-pequeno) * 1.05);
-  --altura-foto: min(41.7vw, calc(100svh - var(--altura-barra) - 118px - var(--margem-baixo) - var(--altura-titulo) - clamp(14px, 2.4svh, 30px)));
+  --altura-foto: calc(100svh - var(--altura-barra) - 118px - var(--margem-baixo) - var(--altura-titulo) - clamp(14px, 2.4svh, 30px));   /* foto ocupa a altura toda até à margem de baixo, também em janelas mais estreitas */
 }
 .tipologias--com-titulo .tipologias__palco { gap: clamp(14px, 2.4svh, 30px); }
 .tipologias__palco > .titulo-seccao { padding: 0 var(--margem-lateral); }
@@ -1092,7 +1094,7 @@ html:has(.home-slides) { scroll-snap-type: y mandatory; }
     --tam-s: clamp(1.25rem, 0.75rem + 1.3vw, 1.75rem);   /* 28 px: frase manuscrita por baixo ("Indivíduos & casais"), um pouco mais pequena */
     --folga-titulo: calc(clamp(26px, 4.6svh, 56px) - var(--desce-titulo));
     --altura-titulo: calc(var(--tam-t) + var(--tam-s) * 1.3);
-    --altura-foto: min(41.7vw, calc(100svh - var(--topo-titulo) - var(--altura-titulo) - var(--folga-titulo) - 46px - clamp(14px, 2.4svh, 30px) * 2 - var(--margem-baixo)));
+    --altura-foto: calc(100svh - var(--topo-titulo) - var(--altura-titulo) - var(--folga-titulo) - 46px - clamp(14px, 2.4svh, 30px) * 2 - var(--margem-baixo));   /* foto ocupa a altura toda até à margem de baixo, também em janelas mais estreitas */
   }
   .tipologias--com-titulo .tipologias__palco { justify-content: flex-start; padding-top: var(--topo-titulo); }
   .tipologias--com-titulo .tipologias__palco > .titulo-seccao { font-size: var(--tam-t); margin-bottom: var(--folga-titulo); }

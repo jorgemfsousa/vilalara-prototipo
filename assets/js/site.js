@@ -1019,6 +1019,8 @@
    – a descer depressa: recolhe as asas e mergulha;
    – nas curvas e ao virar, inclina as asas (uma sobe, a outra desce);
    – ao mudar de lado, a cabeça e a cauda rodam para o outro lado (a meio vê-se de frente).
+   – quando o rato para: pousa numa transformação contínua (o corpo muda de forma, as asas
+     dobram-se e as patas descem) até ficar uma gaivota em pé; ao mexer o rato levanta voo.
    Desenho com o bico à esquerda; "lado" passa de 1 (esquerda) a -1 (direita).
    --------------------------------------------------------------------- */
 (function () {
@@ -1030,7 +1032,26 @@
   var asaDir = document.createElementNS(NS, "path"), corpo = document.createElementNS(NS, "path"), asaEsq = document.createElementNS(NS, "path");
   /* corpo visto de baixo: bico fino, cabeça redonda com pescoço, peito, cauda em cunha */
   corpo.setAttribute("d", "M34.2 29.9 Q36.4 28.6 38.6 28.2 Q38.8 25.3 41.7 24.8 Q44.3 24.5 45.6 25.9 Q52.4 25.3 59.2 26.5 L64.4 26.7 L68.6 26.1 L67.9 27.9 L68.9 29.6 L64.2 29.6 Q56.4 32.6 48.6 32 Q43.4 31.6 40.9 30.4 Q38.8 30 36.8 30.2 Z");
-  svg.appendChild(asaDir); svg.appendChild(corpo); svg.appendChild(asaEsq);
+  /* Transformação voo → em pé (como num vídeo): o corpo muda de forma ponto a ponto (os dois desenhos
+     têm os mesmos pontos: bico, cabeça, nuca, costas, cauda, barriga, peito), as asas dobram-se para
+     dentro do corpo e as patas saem da barriga até ao chão. */
+  var asasG = document.createElementNS(NS, "g"), asasG2 = document.createElementNS(NS, "g");
+  asasG.appendChild(asaDir); asasG2.appendChild(asaEsq);
+  var patas = document.createElementNS(NS, "path"); patas.setAttribute("class", "gaivota-patas");
+  svg.appendChild(asasG); svg.appendChild(corpo); svg.appendChild(asasG2); svg.appendChild(patas);
+  var MOLDE = ["M", 2, "Q", 4, "Q", 4, "Q", 4, "Q", 4, "L", 2, "L", 2, "L", 2, "L", 2, "L", 2, "Q", 4, "Q", 4, "Q", 4];
+  function numeros(d) { return d.match(/-?[0-9.]+/g).map(Number); }
+  /* em voo: o desenho original, já com o "corpo mais cheio" (×1,3 na largura, ×1,55 na altura) */
+  var NV = numeros(corpo.getAttribute("d")).map(function (n, k) { return k % 2 ? 28.6 + (n - 28.6) * 1.55 : 50 + (n - 50.5) * 1.3; });
+  /* em pé (silhueta de perfil): cabeça redonda e alta, bico curvo, peito cheio, cauda em ponta */
+  var NP = numeros("M30.9 10.1 Q33.5 8.4 36.4 7.8 Q37.6 4.2 42.6 4.1 Q47 4.2 47.4 8.2 Q48.2 15.5 56 22.5 L63.5 29 L71.3 34 L66.5 35 L69.8 37.2 L60.5 35.4 Q53.5 36.4 47 34.6 Q37.4 31.6 37.2 15.5 Q36.6 11.6 33.2 10.8 Z");
+  /* patas (em pé): anca, calcanhar no chão, dedos para a frente */
+  var PATAS = [[47.2, 33.8, 46.9, 45.6, 41.6, 46], [53.2, 33.8, 52.9, 46.4, 47.9, 47]];
+  /* tamanho da gaivota em pé: ~74 %, centrada no ponto do rato, para ter o mesmo peso visual da gaivota em voo */
+  var ESC = 0.74;
+  function reduz(n, k) { return k % 2 ? 26 + (n - 26) * ESC : 50 + (n - 50) * ESC; }
+  NP = NP.map(reduz);
+  PATAS = PATAS.map(function (P) { return P.map(reduz); });
   el.appendChild(svg); document.body.appendChild(el);
   document.documentElement.classList.add("cursor-gaivota");
 
@@ -1051,13 +1072,16 @@
   }
 
   var x = -100, y = -100, vx = 0, vy = 0, inclina = 0, ultimo = 0, antes = 0;
-  var alvoLado = 1, lado = 1, empurra = 0, balanco = 0, curva = 0, rumo = 0, rodar = 0;
+  var alvoLado = 1, lado = 1, vLado = 0, empurra = 0, balanco = 0, curva = 0, rumo = 0, rodar = 0;
+  var pousa = 0;                               /* 0 a voar, 1 pousada (em pé) */
   var fase = 0, amp = 0.07, base = 0.5, pBase = -0.12, abre = 1, batidas = 0, planaAte = 0;
   function aproxima(v, alvo, k, dt) { return v + (alvo - v) * Math.min(1, dt * k); }
 
   function desenha(t) {
     var dt = Math.min(0.05, (t - (antes || t)) / 1000); antes = t;
     var parada = t - ultimo > 200;
+    /* pousar demora ~0,8 s, levantar voo ~0,45 s, sempre ao mesmo ritmo (a suavidade vem da curva abaixo) */
+    pousa = t - ultimo > 300 ? Math.min(1, pousa + dt / 0.8) : Math.max(0, pousa - dt / 0.45);
     vx *= 0.9; vy *= 0.9;
     var vel = Math.sqrt(vx * vx + vy * vy);
     var mergulho = !parada && vy > 5 && vy > Math.abs(vx) * 1.2;
@@ -1087,15 +1111,42 @@
       curva = aproxima(curva, Math.max(-0.35, Math.min(0.35, d / Math.max(dt, 0.008) * 0.04)), 5, dt);
       rumo = r;
     } else curva = aproxima(curva, 0, 3, dt);
-    lado = aproxima(lado, alvoLado, 4, dt);
-    var banco = (lado - alvoLado) * 0.22 + curva;                   /* >0: asa esquerda sobe, direita desce */
+    /* viragem como uma mola amortecida: arranca devagar, roda e trava sem saltos (~0,6 s) */
+    vLado += ((alvoLado - lado) * 36 - vLado * 12) * dt;
+    lado += vLado * dt;
+    var banco = -vLado * 0.075 + curva;                              /* ao virar, inclina as asas aos poucos; >0: asa esquerda sobe */
     /* perspetiva 3/4: a asa do lado da cabeça fica mais curta e um pouco mais alta (está mais longe),
        a do lado da cauda fica inteira — assim a silhueta não é simétrica (não parece um bigode) */
     var longe = 0.16 * lado;                                         /* >0: a asa esquerda é a de longe */
-    asaEsq.setAttribute("d", asa(-1, sobe + banco + longe * 0.6, ponta + banco * 1.3 + longe * 0.4, abre, 0.84 - longe));
-    asaDir.setAttribute("d", asa(1, sobe - banco - longe * 0.6, ponta - banco * 1.3 - longe * 0.4, abre, 0.84 + longe));
-    var sx = Math.abs(lado) < 0.14 ? (lado < 0 ? -0.14 : 0.14) : lado;   /* a meio da viragem: de frente, mais estreita */
-    corpo.setAttribute("transform", "translate(50 28.6) scale(" + f(sx * 1.3) + " 1.55) translate(-50.5 -28.6)");   /* corpo mais cheio */
+    var e = pousa * pousa * pousa * (pousa * (pousa * 6 - 15) + 10);   /* curva suave: arranca e chega devagar */
+    var abreV = abre * (1 - e);                                      /* ao pousar, as asas dobram-se */
+    asaEsq.setAttribute("d", asa(-1, sobe + banco + longe * 0.6, ponta + banco * 1.3 + longe * 0.4, abreV, 0.84 - longe));
+    asaDir.setAttribute("d", asa(1, sobe - banco - longe * 0.6, ponta - banco * 1.3 - longe * 0.4, abreV, 0.84 + longe));
+    var sx = lado;                                                   /* a meio da viragem vê-se de frente (corpo estreito), sem saltos */
+    /* asas: encolhem e recolhem para o dorso da gaivota em pé */
+    var asT = "translate(" + f(50 + 2 * e * sx) + " " + f(26.4 - 1.8 * e) + ") scale(" + f(1 - 0.88 * e) + " " + f(1 - 0.75 * e) + ") translate(-50 -26.4)";
+    asasG.setAttribute("transform", asT); asasG2.setAttribute("transform", asT);
+    /* corpo: cada ponto passa do desenho em voo para o desenho em pé */
+    var d = "", k = 0;
+    for (var m = 0; m < MOLDE.length; m += 2) {
+      d += MOLDE[m];
+      for (var q = 0; q < MOLDE[m + 1]; q += 2, k += 2) {
+        d += f(50 + (NV[k] + (NP[k] - NV[k]) * e - 50) * sx) + " " + f(NV[k + 1] + (NP[k + 1] - NV[k + 1]) * e) + " ";
+      }
+    }
+    corpo.setAttribute("d", d + "Z");
+    /* patas: só na segunda metade, crescem da barriga até ao chão */
+    var pp = Math.max(0, Math.min(1, (e - 0.5) / 0.5));
+    if (pp < 0.02) patas.setAttribute("d", "");
+    else {
+      var dp = "";
+      PATAS.forEach(function (P) {
+        var bx = P[0] + (P[2] - P[0]) * pp, by = P[1] + (P[3] - P[1]) * pp;
+        var tx = bx + (P[4] - P[2]) * pp, ty = by + (P[5] - P[3]) * pp;
+        dp += "M" + f(50 + (P[0] - 50) * sx) + " " + f(P[1]) + " L" + f(50 + (bx - 50) * sx) + " " + f(by) + " L" + f(50 + (tx - 50) * sx) + " " + f(ty) + " ";
+      });
+      patas.setAttribute("d", dp);
+    }
 
     /* inclinação do corpo: a subir/descer, para o lado da cabeça; balanço nas viragens e curvas */
     var alvoInc = voa || mergulho ? Math.max(-32, Math.min(32, Math.atan2(vy, Math.abs(vx) + 0.001) * 180 / Math.PI * 0.55)) : Math.sin(t / 900) * 3;
@@ -1103,7 +1154,7 @@
     balanco = aproxima(balanco, banco * 14, 6, dt);
     var bob = aPlanar ? Math.sin(t / 700) * 1.2 : -Math.sin(w) * 1.1;   /* o corpo sobe ligeiramente a cada batida */
     rodar = aproxima(rodar, -inclina * lado + balanco, 5, dt);       /* o ângulo final também é suavizado: sem saltos ao virar */
-    el.style.transform = "translate(" + f(x - 30) + "px," + f(y - 16.5 + bob) + "px) rotate(" + f(rodar) + "deg)";
+    el.style.transform = "translate(" + f(x - 30) + "px," + f(y - 16.5 + bob * (1 - e)) + "px) rotate(" + f(rodar * (1 - e)) + "deg)";   /* pousada: quieta e direita */
     requestAnimationFrame(desenha);
   }
   window.addEventListener("mousemove", function (e) {
