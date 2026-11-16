@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="pt" class="tema-escuro">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thalassoterapia · Wellness · Vilalara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&family=Marcellus&family=Pinyon+Script&display=swap">
+<link rel="stylesheet" href="https://use.typekit.net/oav4umc.css"><!-- Adobe Fonts: Optima nova + Richmond Display (projeto "Vilalara site prototipo") -->
+<link rel="stylesheet" href="https://use.typekit.net/ozg0foo.css"><!-- Adobe Fonts: Fact VF (projeto "Vilalara site prototipo Fact") -->
+<link rel="stylesheet" href="assets/css/tokens.css?v=20261120u">
+<link rel="stylesheet" href="assets/css/base.css?v=20261120u">
+<link rel="stylesheet" href="assets/css/blocos.css?v=20261120u">
+</head>
+<body>
+
+<!-- =================================================================
+     THALASSOTERAPIA (tratamentos)
+     Abre a partir do cartão em thalasso.html. Cada fila: foto + painel com a
+     mesma foto desfocada (classe area--granulado).
+     ================================================================= -->
+
+
+<!-- BLOCO: cabecalho-interior (variante sobre foto) -->
+<header class="cab-interior cab-interior--sobre-foto" data-sobre-foto>
+  <button class="botao-menu" type="button" data-abre-painel aria-expanded="false" aria-controls="painel-menu">
+    <span class="tracos"></span><span class="sr-only">Abrir menu</span>
+  </button>
+  <a class="cab-interior__monograma" href="index.html" aria-label="Vilalara Grand Hotel Algarve, página inicial">
+    <img src="assets/img/marca/monograma-escuro.png" alt="Vilalara" width="277" height="274">
+  </a>
+  <div class="cab-acoes">
+    <div class="idioma">
+      <button class="idioma__botao" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="lista-idiomas">
+        <span class="idioma__atual">PT</span><span class="sr-only">, escolher idioma</span>
+      </button>
+      <ul class="idioma__lista" id="lista-idiomas" hidden>
+        <li><button type="button" data-lingua="pt" aria-current="true">PT</button></li>
+        <li><button type="button" data-lingua="en">EN</button></li>
+        <li><button type="button" data-lingua="es">ES</button></li>
+        <li><button type="button" data-lingua="fr">FR</button></li>
+        <li><button type="button" data-lingua="de">DE</button></li>
+      </ul>
+    </div>
+    <a class="botao-link" href="reservas.html">Reservar</a>
+  </div>
+</header>
+<!-- /BLOCO: cabecalho-interior -->
+
+
+<main>
+
+  <!-- BLOCO: hero-detalhe -->
+  <section class="slide landing landing--fixo hero-detalhe" aria-label="Thalassoterapia">
+    <figure class="slide__media" style="--foco: 50% 50%">
+      <img src="assets/img/wellness/thalasso/thalassoterapia.jpg" alt="Homem de roupão junto à piscina interior" fetchpriority="high">
+    </figure>
+    <div class="hero-detalhe__texto">
+      <h1>Thalassoterapia</h1>
+      <p>Rejuvenesça com&nbsp;o&nbsp;toque restaurador do&nbsp;oceano</p>
+    </div>
+    <a class="seta-scroll" href="#sobre" aria-label="Descer para a descrição">
+      <svg viewBox="0 0 14 32" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M7 0v31M1 25l6 6 6-6"/></svg>
+    </a>
+  </section>
+  <!-- /BLOCO: hero-detalhe -->
+
+  <div class="landing--fixo__conteudo"><!-- tudo o que sobe por cima do banner fixo (fundo contínuo, sem frestas) -->
+
+
+  <!-- BLOCO: intro-detalhe -->
+  <section class="detalhe-intro" id="sobre">
+    <p>Descubra o&nbsp;poder restaurador da&nbsp;talassoterapia, onde o&nbsp;mar se&nbsp;torna o&nbsp;seu&nbsp;santuário de&nbsp;bem-estar. Os&nbsp;nossos tratamentos combinam os&nbsp;benefícios das&nbsp;piscinas de&nbsp;jatos, banhos minerais e&nbsp;envolvimentos nutritivos para&nbsp;revitalizar corpo e&nbsp;mente.</p>
+  </section>
+  <!-- /BLOCO: intro-detalhe -->
+
+
+  <!-- BLOCO: texto-fotos (texto curto + 2 fotos) -->
+  <section class="texto-fotos" aria-label="Fotografias">
+    <figure class="tf-grande"><img src="assets/img/wellness/thalasso/intro-2.jpg" alt="Mulher a descansar numa espreguiçadeira de pedra aquecida" loading="lazy"></figure>
+    <p>A&nbsp;experiência começa com&nbsp;piscinas de&nbsp;jatos que&nbsp;estimulam a&nbsp;circulação, seguidas de&nbsp;banhos minerais desintoxicantes e&nbsp;envolvimentos ricos em&nbsp;flora marinha, conhecidos pelo&nbsp;poder antioxidante e&nbsp;rejuvenescedor.</p>
+    <figure class="tf-pequena"><img src="assets/img/wellness/thalasso/intro-1.jpg" alt="Pernas dentro de água numa piscina interior" loading="lazy"></figure>
+  </section>
+  <!-- /BLOCO: texto-fotos -->
+
+
+  <!-- BLOCO: filas-tratamentos (foto + painel) -->
+  <section class="linhas" aria-label="Tratamentos de talassoterapia">
+    <!-- FILA: BANHO MARINHO -->
+    <article class="area area--granulado area--painel-esq" style="--base: #9a8a7c; --tinta: #b5a698; --brilho: 0.85">
+      <figure class="area__foto"><img src="assets/img/wellness/clube/banho-marinho.jpg" alt="Hóspede num banho de água do mar com bolhas" loading="lazy"></figure>
+      <div class="area__painel">
+        <img class="area__textura" src="assets/img/wellness/clube/banho-marinho.jpg" alt="" aria-hidden="true" loading="lazy">
+        <div class="detalhe-painel">
+          <h3>BANHO MARINHO <span>Detox</span></h3>
+          <p>Mergulho em&nbsp;água de&nbsp;mar aquecida, enriquecida com&nbsp;algas hidrossolúveis e&nbsp;óleos essenciais. Os&nbsp;jatos de&nbsp;ar geram uma&nbsp;turbulência intensa que&nbsp;ativa e&nbsp;tonifica o&nbsp;sistema veno-linfático.<br>Este tratamento oferece uma&nbsp;revigorante sensação de&nbsp;bem-estar, promovendo equilíbrio e&nbsp;renovação ao&nbsp;corpo e&nbsp;à&nbsp;mente.</p>
+          <a class="botao-contorno sobre-foto" href="reservas.html?tratamento=thalassoterapia--banho-marinho-detox#marcar-tratamento">Marcar tratamento</a>
+          <div class="detalhe-painel__rodape"><span>15 min</span><span>50 €</span></div>
+        </div>
+      </div>
+    </article>
+    <!-- FILA: DUCHE -->
+    <article class="area area--granulado area--painel-dir" style="--base: #9a8a7c; --tinta: #b5a698; --brilho: 0.85">
+      <figure class="area__foto"><img src="assets/img/wellness/thalasso/duche-tonificante.jpg" alt="Duche" loading="lazy"></figure>
+      <div class="area__painel">
+        <img class="area__textura" src="assets/img/wellness/thalasso/duche-tonificante.jpg" alt="" aria-hidden="true" loading="lazy">
+        <div class="detalhe-painel">
+          <h3>DUCHE <span>Tonificante</span></h3>
+          <p>Terapia em&nbsp;que&nbsp;a&nbsp;água do&nbsp;mar aquecida é&nbsp;aplicada num percurso direcionado ao&nbsp;longo do&nbsp;corpo, utilizando uma&nbsp;pressão variável. Proporciona estímulo muscular, alívio de&nbsp;tensões e&nbsp;melhora a&nbsp;circulação, promovendo relaxamento profundo e&nbsp;revitalização.</p>
+          <a class="botao-contorno sobre-foto" href="reservas.html?tratamento=thalassoterapia--duche-tonificante#marcar-tratamento">Marcar tratamento</a>
+          <div class="detalhe-painel__rodape"><span>12 min</span><span>50 €</span></div>
+        </div>
+      </div>
+    </article>
+    <!-- FILA: DUCHE -->
+    <article class="area area--granulado area--painel-esq" style="--base: #9a8a7c; --tinta: #b5a698; --brilho: 0.85">
+      <figure class="area__foto"><img src="assets/img/wellness/thalasso/duche-affusion.jpg" alt="Duche" loading="lazy"></figure>
+      <div class="area__painel">
+        <img class="area__textura" src="assets/img/wellness/thalasso/duche-affusion.jpg" alt="" aria-hidden="true" loading="lazy">
+        <div class="detalhe-painel">
+          <h3>DUCHE <span>Affusion</span></h3>
+          <p>Um&nbsp;ritual de&nbsp;água revitalizante inspirado no&nbsp;poder curativo do&nbsp;mar. Água morna, enriquecida com&nbsp;minerais, flui ritmicamente sobre o&nbsp;corpo, massajando suavemente a&nbsp;pele e&nbsp;estimulando a&nbsp;circulação. Este tratamento, profundamente relaxante, promove a&nbsp;desintoxicação, alivia a&nbsp;tensão muscular e&nbsp;prepara o&nbsp;corpo para&nbsp;absorver completamente os&nbsp;benefícios das&nbsp;experiências de&nbsp;talassoterapia subsequentes. Um&nbsp;momento de&nbsp;pura renovação, guiado pela&nbsp;água, pelo&nbsp;calor e&nbsp;pelo&nbsp;cuidado&nbsp;especializado.</p>
+          <a class="botao-contorno sobre-foto" href="reservas.html?tratamento=thalassoterapia--duche-affusion#marcar-tratamento">Marcar tratamento</a>
+          <div class="detalhe-painel__rodape"><span>25 min</span><span>55 €</span></div>
+        </div>
+      </div>
+    </article>
+    <!-- FILA: TAÇAS TIBETANAS -->
+    <article class="area area--granulado area--painel-dir" style="--base: #9a8a7c; --tinta: #b5a698; --brilho: 0.85">
+      <figure class="area__foto"><img src="assets/img/wellness/clube/tacas-tibetanas.jpg" alt="Taças tibetanas a flutuar na água, junto ao rosto de uma hóspede" loading="lazy"></figure>
+      <div class="area__painel">
+        <img class="area__textura" src="assets/img/wellness/clube/tacas-tibetanas.jpg" alt="" aria-hidden="true" loading="lazy">
+        <div class="detalhe-painel">
+          <h3>TAÇAS TIBETANAS <span>do&nbsp;oceano</span></h3>
+          <p>Experiência sensorial única que&nbsp;combina a&nbsp;vibração terapêutica das&nbsp;taças tibetanas com&nbsp;a&nbsp;leveza da&nbsp;água. As&nbsp;frequências sonoras ecoam no&nbsp;corpo, promovendo relaxamento profundo, equilíbrio energético e&nbsp;bem-estar. A&nbsp;água potencializa os&nbsp;efeitos da&nbsp;terapia, proporcionando uma&nbsp;sensação envolvente de&nbsp;harmonia e&nbsp;tranquilidade.</p>
+          <a class="botao-contorno sobre-foto" href="reservas.html?tratamento=thalassoterapia--tacas-tibetanas-do-oceano#marcar-tratamento">Marcar tratamento</a>
+          <div class="detalhe-painel__rodape"><span>25 min</span><span>70 €</span></div>
+        </div>
+      </div>
+    </article>
+    <!-- FILA: PISCINAS DE JATOS -->
+    <article class="area area--granulado area--painel-esq" style="--base: #9a8a7c; --tinta: #b5a698; --brilho: 0.85">
+      <figure class="area__foto"><img src="assets/img/wellness/clube/piscinas-jatos.jpg" alt="Hóspede a relaxar na piscina de jatos" loading="lazy"></figure>
+      <div class="area__painel">
+        <img class="area__textura" src="assets/img/wellness/clube/piscinas-jatos.jpg" alt="" aria-hidden="true" loading="lazy">
+        <div class="detalhe-painel">
+          <h3>PISCINAS DE&nbsp;JATOS <span>Imersivos</span></h3>
+          <p>Aula coletiva de&nbsp;hidroginástica realizada em&nbsp;frente a&nbsp;jatos de&nbsp;água, combinando resistência aquática com&nbsp;hidromassagem. Estimula e&nbsp;relaxa os&nbsp;músculos, promovendo a&nbsp;circulação sanguínea. Uma&nbsp;atividade dinâmica e&nbsp;revigorante, ideal para&nbsp;tonificação corporal e&nbsp;bem-estar.</p>
+          <a class="botao-contorno sobre-foto" href="reservas.html?tratamento=thalassoterapia--piscinas-de-jatos-imersivos#marcar-tratamento">Marcar tratamento</a>
+          <div class="detalhe-painel__rodape"><span>25 min</span><span>55 €</span></div>
+        </div>
+      </div>
+    </article>
+    <!-- FILA: PISCINA CARDIO -->
+    <article class="area area--granulado area--painel-dir" style="--base: #9a8a7c; --tinta: #b5a698; --brilho: 0.85">
+      <figure class="area__foto"><img src="assets/img/wellness/thalasso/piscina-cardio.jpg" alt="Piscina Cardio" loading="lazy"></figure>
+      <div class="area__painel">
+        <img class="area__textura" src="assets/img/wellness/thalasso/piscina-cardio.jpg" alt="" aria-hidden="true" loading="lazy">
+        <div class="detalhe-painel">
+          <h3>PISCINA CARDIO <span>Dinâmica</span></h3>
+          <p>Aula coletiva, realizada em&nbsp;piscina de&nbsp;água do&nbsp;mar aquecida, orientada por&nbsp;um&nbsp;fisioterapeuta que&nbsp;combina exercícios aeróbicos e&nbsp;de&nbsp;resistência com&nbsp;o&nbsp;suporte da&nbsp;água. A&nbsp;atividade melhora a&nbsp;capacidade cardiovascular, fortalece os&nbsp;músculos, aumenta a&nbsp;flexibilidade e&nbsp;alivia o&nbsp;impacto nas&nbsp;articulações. Ideal para&nbsp;todas as&nbsp;idades, proporcionando bem-estar, tonificação corporal e&nbsp;relaxamento.</p>
+          <a class="botao-contorno sobre-foto" href="reservas.html?tratamento=thalassoterapia--piscina-cardio-dinamica#marcar-tratamento">Marcar tratamento</a>
+          <div class="detalhe-painel__rodape"><span>25 min</span><span>55 €</span></div>
+        </div>
+      </div>
+    </article>
+    <!-- FILA: MANTO DE ALGAS -->
+    <article class="area area--granulado area--painel-esq" style="--base: #9a8a7c; --tinta: #b5a698; --brilho: 0.85">
+      <figure class="area__foto"><img src="assets/img/wellness/clube/manto-algas.jpg" alt="Envolvimento corporal de algas sobre o abdómen" loading="lazy"></figure>
+      <div class="area__painel">
+        <img class="area__textura" src="assets/img/wellness/clube/manto-algas.jpg" alt="" aria-hidden="true" loading="lazy">
+        <div class="detalhe-painel">
+          <h3>MANTO DE&nbsp;ALGAS <span>Desintoxicante</span></h3>
+          <p class="reservado-texto">Texto por&nbsp;definir.</p>
+          <a class="botao-contorno sobre-foto" href="reservas.html?tratamento=thalassoterapia--manto-de-algas-desintoxicante#marcar-tratamento">Marcar tratamento</a>
+          <div class="detalhe-painel__rodape"><span>40 min</span><span>80 €</span></div>
+        </div>
+      </div>
+    </article>
+    <!-- FILA: MANTO DE LODO -->
+    <article class="area area--granulado area--painel-dir" style="--base: #9a8a7c; --tinta: #b5a698; --brilho: 0.85">
+      <figure class="area__foto"><img src="assets/img/wellness/clube/manto-lodo.jpg" alt="Envolvimento de lodo marinho com uma flor branca" loading="lazy"></figure>
+      <div class="area__painel">
+        <img class="area__textura" src="assets/img/wellness/clube/manto-lodo.jpg" alt="" aria-hidden="true" loading="lazy">
+        <div class="detalhe-painel">
+          <h3>MANTO DE&nbsp;LODO <span>Anti -Inflamatório</span></h3>
+          <p>Um&nbsp;tratamento purificante de&nbsp;lamas naturais, com&nbsp;minerais e&nbsp;propriedades terapêuticas que&nbsp;envolvem o&nbsp;corpo num manto quente de&nbsp;bem-estar, numa sensação sublime de&nbsp;serenidade e&nbsp;renovação. Um&nbsp;verdadeiro abraço da&nbsp;natureza para&nbsp;restaurar o&nbsp;equilíbrio e&nbsp;a&nbsp;vitalidade. Com&nbsp;uma&nbsp;ação anti inflamatória, ideal para&nbsp;aliviar dores articulares, reumatismo, artrites e&nbsp;artroses.</p>
+          <a class="botao-contorno sobre-foto" href="reservas.html?tratamento=thalassoterapia--manto-de-lodo-anti-inflamatorio#marcar-tratamento">Marcar tratamento</a>
+          <div class="detalhe-painel__rodape"><span>40 min</span><span>80 €</span></div>
+        </div>
+      </div>
+    </article>
+    <!-- FILA: MANTO DE MAGNÉSIO -->
+    <article class="area area--granulado area--painel-esq" style="--base: #9a8a7c; --tinta: #b5a698; --brilho: 0.85">
+      <figure class="area__foto"><img src="assets/img/wellness/thalasso/manto-magnesio.jpg" alt="Manto De Magnésio" loading="lazy"></figure>
+      <div class="area__painel">
+        <img class="area__textura" src="assets/img/wellness/thalasso/manto-magnesio.jpg" alt="" aria-hidden="true" loading="lazy">
+        <div class="detalhe-painel">
+          <h3>MANTO DE&nbsp;MAGNÉSIO <span>Anti -Stress</span></h3>
+          <p>Aplicação de&nbsp;uma&nbsp;delicada camada de&nbsp;magnésio aquecido, potencializada pelo&nbsp;calor suave de&nbsp;uma&nbsp;manta térmica de&nbsp;sudação. Este tratamento promove a&nbsp;remineralização, alivia o&nbsp;stress, ansiedade, fadiga, irritabilidade, tensões musculares e&nbsp;insónia, proporcionando uma&nbsp;sensação profunda de&nbsp;equilíbrio e&nbsp;relaxamento.</p>
+          <a class="botao-contorno sobre-foto" href="reservas.html?tratamento=thalassoterapia--manto-de-magnesio-anti-stress#marcar-tratamento">Marcar tratamento</a>
+          <div class="detalhe-painel__rodape"><span>40 min</span><span>80 €</span></div>
+        </div>
+      </div>
+    </article>
+    <!-- FILA: MANTO DE CÁLCIO -->
+    <article class="area area--granulado area--painel-dir" style="--base: #9a8a7c; --tinta: #b5a698; --brilho: 0.85">
+      <figure class="area__foto"><img src="assets/img/wellness/thalasso/manto-calcio.jpg?v=fm2" alt="Manto De Cálcio" loading="lazy"></figure>
+      <div class="area__painel">
+        <img class="area__textura" src="assets/img/wellness/thalasso/manto-calcio.jpg?v=fm2" alt="" aria-hidden="true" loading="lazy">
+        <div class="detalhe-painel">
+          <h3>MANTO DE&nbsp;CÁLCIO <span>Remineralizante</span></h3>
+          <p>A&nbsp;máscara corporal rica em&nbsp;cálcio penetra profundamente pela&nbsp;sudação de&nbsp;uma&nbsp;manta quente, restaurando a&nbsp;elasticidade e&nbsp;promovendo uma&nbsp;hidratação intensa, enquanto suaviza e&nbsp;tonifica a&nbsp;pele. Este envolvimento ajuda a&nbsp;combater os&nbsp;sinais do&nbsp;envelhecimento, proporcionando uma&nbsp;pele visivelmente mais firme, radiante e&nbsp;rejuvenescida. Uma&nbsp;verdadeira cura para&nbsp;a&nbsp;pele, que&nbsp;revela uma&nbsp;suavidade e&nbsp;vitalidade&nbsp;renovadas.</p>
+          <a class="botao-contorno sobre-foto" href="reservas.html?tratamento=thalassoterapia--manto-de-calcio-remineralizante#marcar-tratamento">Marcar tratamento</a>
+          <div class="detalhe-painel__rodape"><span>40 min</span><span>80 €</span></div>
+        </div>
+      </div>
+    </article>
+  </section>
+  <!-- /BLOCO: filas-tratamentos -->
+
+  <div class="espaco-final" aria-hidden="true"></div><!-- espaço antes do rodapé (no lugar do antigo bloco "perguntas") -->
+  </div>
+</main>
+
+
+<!-- BLOCO: rodape -->
+<footer class="rodape">
+  <div class="rodape__dentro">
+
+    <div class="rodape__marca">
+      <a class="rodape__logo" href="index.html" aria-label="Vilalara Grand Hotel Algarve, página inicial">
+        <img src="assets/img/marca/logo-branco.png" alt="Vilalara Grand Hotel Algarve" width="1669" height="395" loading="lazy">
+      </a>
+      <p class="rodape__morada">
+        <img src="assets/img/marca/morada.png" alt="Praia das Gaivotas, Alporchinhos, Porches 8400-450, Portugal" width="839" height="300" loading="lazy">
+      </p>
+      <div class="rodape__selos">
+        <span class="rodape__selos-faixa">
+          <img src="assets/img/marca/selos-parceiros.png" alt="Visit Algarve, Forbes Travel Guide, XO Private, guia Michelin, Takumians, Mr &amp; Mrs Smith, Ensemble" width="2397" height="143" loading="lazy">
+          <a class="rodape__selo" href="https://visitalgarve.pt/en/" target="_blank" rel="noopener" aria-label="Visit Algarve (abre numa nova janela)" style="left:0.00%;width:15.56%"></a>
+          <a class="rodape__selo" href="https://forbestravelguide.com/" target="_blank" rel="noopener" aria-label="Forbes Travel Guide (abre numa nova janela)" style="left:21.23%;width:9.05%"></a>
+          <a class="rodape__selo" href="https://www.xoprivate.com/" target="_blank" rel="noopener" aria-label="XO Private (abre numa nova janela)" style="left:35.71%;width:6.05%"></a>
+          <a class="rodape__selo" href="https://guide.michelin.com/pt/pt_PT" target="_blank" rel="noopener" aria-label="Guia Michelin (abre numa nova janela)" style="left:47.23%;width:6.01%"></a>
+          <a class="rodape__selo" href="https://www.mrandmrssmith.com/" target="_blank" rel="noopener" aria-label="Mr &amp; Mrs Smith (abre numa nova janela)" style="left:75.18%;width:8.34%"></a>
+          <a class="rodape__selo" href="https://www.ensembletravel.com/" target="_blank" rel="noopener" aria-label="Ensemble Travel (abre numa nova janela)" style="left:89.19%;width:10.81%"></a>
+        </span>
+      </div>
+    </div>
+
+    <div class="rodape__info">
+      <div class="rodape__linha">
+        <div>
+          <h2>Contactos</h2>
+          <p><a href="tel:+351282320000">(+351) 282 320 000</a></p>
+          <p class="rodape__nota">Custo de&nbsp;uma&nbsp;chamada para&nbsp;a&nbsp;rede fixa nacional (ou&nbsp;internacional, se&nbsp;a&nbsp;chamada for feita fora da&nbsp;UE).</p>
+          <p><a href="mailto:reservas@vilalara.com">reservas@vilalara.com</a></p>
+        </div>
+        <div>
+          <h2 class="sr-only">Sobre</h2>
+          <ul>
+            <li><a href="newsletter.html">Registo na&nbsp;Newsletter</a></li>
+            <li><a href="sustentabilidade.html">Sustentabilidade</a></li>
+            <li><a href="carreiras.html">Carreiras</a></li>
+            <li><a href="https://lost.faundit.com/vilalara-grand-hotel-algarve" target="_blank" rel="noopener">Lost &amp;&nbsp;Found</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="sr-only">Informação legal</h2>
+          <ul>
+            <li><a href="termos-condicoes.html">Termos &amp;&nbsp;Condições</a></li>
+            <li><a href="politica-privacidade.html">Política de&nbsp;Privacidade</a></li>
+            <li><a href="politica-cookies.html">Política de&nbsp;Cookies</a></li>
+            <li><a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noopener">Livro de&nbsp;Reclamações</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Redes sociais</h2>
+          <ul>
+            <li><a href="https://www.instagram.com/vilalaragrandhotel" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="#">Linkedin</a></li>
+            <li><a href="https://www.facebook.com/VilalaraThalassaResort" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.tripadvisor.com/Hotel_Review-g652080-d231460-Reviews-Vilalara_Thalassa_Resort-Porches_Faro_District_Algarve.html" target="_blank" rel="noopener">Tripadvisor</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rodape__linha rodape__linha--legal">
+        <div>
+          <h2>Aviso ao&nbsp;consumidor</h2>
+          <p class="rodape__legal">Ao&nbsp;abrigo do&nbsp;artigo 18.º da&nbsp;Lei n.º 144/2015, de&nbsp;8 de&nbsp;setembro, em&nbsp;caso de&nbsp;litígio de&nbsp;consumo, o&nbsp;consumidor pode recorrer à&nbsp;Plataforma Europeia de&nbsp;Resolução de&nbsp;Litígios em&nbsp;Linha: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr</a>. Pode igualmente recorrer a&nbsp;uma&nbsp;entidade de&nbsp;resolução alternativa de&nbsp;litígios de&nbsp;consumo disponível em&nbsp;Portugal em&nbsp;<a href="https://www.consumidor.gov.pt/" target="_blank" rel="noopener">https://www.consumidor.gov.pt</a>. O&nbsp;recurso a&nbsp;estas entidades não prejudica o&nbsp;direito de&nbsp;o&nbsp;consumidor recorrer aos&nbsp;tribunais judiciais, nos&nbsp;termos da&nbsp;lei.</p>
+          <p class="rodape__copyright">2026 © Vilalara Grand Hotel Algarve. All rights reserved.</p>
+        </div>
+        <div>
+          <h2>Entidade exploradora</h2>
+          <p class="rodape__nota">Goldtur – Hotéis e&nbsp;Turismo, S. A.<br>NIPC 500 201 072<br>Praia das&nbsp;Gaivotas – Alporchinhos<br>8400-450 Porches, Portugal</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+<!-- /BLOCO: rodape -->
+
+
+<!-- BLOCO: painel-menu -->
+<div class="veu-painel" aria-hidden="true"></div>
+<nav class="painel" id="painel-menu" aria-label="Menu principal">
+  <div class="painel__topo">
+    <a class="painel__logo" href="index.html"><img src="assets/img/marca/logo-escuro.png" alt="Vilalara Grand Hotel Algarve" width="1669" height="395"></a>
+    <button class="painel__fechar" type="button"><span class="sr-only">Fechar menu</span></button>
+  </div>
+  <p class="painel__caminho" aria-label="Está aqui"><a href="wellness.html">Wellness</a><span class="painel__sep" aria-hidden="true">/</span><a href="thalasso.html">Thalasso</a><span class="painel__sep" aria-hidden="true">/</span><span aria-current="page">Thalassoterapia</span></p>
+  <div class="painel__menu">
+  <ul>
+  <li class="painel__item"><a href="index.html" data-categoria="home">Home</a></li>
+  <li class="painel__item"><a href="our-heritage.html" data-categoria="our-heritage">Our Heritage</a></li>
+  <li class="painel__item tem-sub">
+    <div class="painel__linha"><a href="suites-residencias.html" data-categoria="suites-residencias">Suítes &amp;&nbsp;Residências</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-suites-residencias"><span class="sr-only">Submenu Suítes &amp;&nbsp;Residências</span></button></div>
+    <ul id="sub-suites-residencias" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item"><a href="elegant-suite.html">Elegant Suite</a></li>
+    <li class="painel__item"><a href="master-suite.html">Master Suite</a></li>
+    <li class="painel__item"><a href="ocean-suite.html">Ocean Suite</a></li>
+    <li class="painel__item"><a href="grand-suite.html">Grand Suite</a></li>
+    <li class="painel__item"><a href="george-ansley-suite.html">George Ansley Suite</a></li>
+    <li class="painel__item"><a href="jose-de-harry-suite.html">José de&nbsp;Harry Suite</a></li>
+    <li class="painel__item"><a href="private-residences.html">Private Residences</a></li>
+    <li class="painel__item"><a href="casa-laranjo.html">Casa Laranjo</a></li>
+    <li class="painel__item"><a href="casa-levy.html">Casa Levy</a></li>
+    <li class="painel__item"><a href="casa-lara.html">Casa Lara</a></li>
+    </ul>
+  </li>
+  <li class="painel__item tem-sub">
+    <div class="painel__linha"><a href="gastronomia.html" data-categoria="gastronomia">Gastronomia</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-gastronomia"><span class="sr-only">Submenu Gastronomia</span></button></div>
+    <ul id="sub-gastronomia" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item"><a href="coral.html">Coral</a></li>
+    <li class="painel__item"><a href="raizes.html">Raízes</a></li>
+    <li class="painel__item"><a href="trattoria.html">Trattoria</a></li>
+    <li class="painel__item"><a href="a-costa.html">A-costa</a></li>
+    <li class="painel__item"><a href="vento.html">Vento</a></li>
+    <li class="painel__item"><a href="gaivotas.html">Gaivotas</a></li>
+    </ul>
+  </li>
+  <li class="painel__item no-caminho tem-sub">
+    <div class="painel__linha"><a href="wellness.html" data-categoria="wellness" aria-current="location">Wellness</a><button class="painel__abre" type="button" aria-expanded="true" aria-controls="sub-wellness"><span class="sr-only">Submenu Wellness</span></button></div>
+    <ul id="sub-wellness" class="painel__sub painel__sub--n2">
+    <li class="painel__item tem-sub">
+      <div class="painel__linha"><a href="tratamentos.html">Tratamentos</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-tratamentos"><span class="sr-only">Submenu Tratamentos</span></button></div>
+      <ul id="sub-tratamentos" hidden class="painel__sub painel__sub--n3">
+      <li class="painel__item"><a href="tratamento-rituais.html">Rituals</a></li>
+      <li class="painel__item"><a href="tratamento-faciais.html">Faciais</a></li>
+      <li class="painel__item"><a href="tratamento-body.html">Body</a></li>
+      <li class="painel__item"><a href="tratamento-body-therapy.html">Body Therapy</a></li>
+      <li class="painel__item"><a href="tratamento-body-shaping.html">Body Shaping</a></li>
+      <li class="painel__item"><a href="tratamento-shared-care.html">Shared Care</a></li>
+      <li class="painel__item"><a href="tratamento-flows.html">Flows</a></li>
+      <li class="painel__item"><a href="tratamento-self-discovery.html">Self Discovery</a></li>
+      </ul>
+    </li>
+    <li class="painel__item tem-sub">
+      <div class="painel__linha"><a href="programas.html">Programas</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-programas"><span class="sr-only">Submenu Programas</span></button></div>
+      <ul id="sub-programas" hidden class="painel__sub painel__sub--n3">
+      <li class="painel__item"><a href="programa-thalassotherapy-healing.html">Thalassotherapy Healing</a></li>
+      <li class="painel__item"><a href="programa-fitness-essence.html">Fitness Essence</a></li>
+      <li class="painel__item"><a href="programa-bespoke-anti-ageing-retreat.html">Bespoke Anti-ageing Retreat</a></li>
+      <li class="painel__item"><a href="programa-stress-relief-recover.html">Stress Relief &amp;&nbsp;Recover</a></li>
+      <li class="painel__item"><a href="programa-detox-weight-management.html">Detox &amp;&nbsp;Weight Management</a></li>
+      </ul>
+    </li>
+    <li class="painel__item no-caminho tem-sub">
+      <div class="painel__linha"><a href="thalasso.html" aria-current="location">Thalasso</a><button class="painel__abre" type="button" aria-expanded="true" aria-controls="sub-thalasso"><span class="sr-only">Submenu Thalasso</span></button></div>
+      <ul id="sub-thalasso" class="painel__sub painel__sub--n3">
+      <li class="painel__item no-caminho"><a href="thalassoterapia.html" aria-current="page">Thalassoterapia</a></li>
+      <li class="painel__item"><a href="thalasso-flows.html">Thalasso Flows</a></li>
+      </ul>
+    </li>
+    <li class="painel__item tem-sub">
+      <div class="painel__linha"><a href="bem-estar.html">Práticas Wellness</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-bem-estar"><span class="sr-only">Submenu Práticas Wellness</span></button></div>
+      <ul id="sub-bem-estar" hidden class="painel__sub painel__sub--n3">
+      <li class="painel__item"><a href="pratica-mindful-motion.html">Mindful &amp;&nbsp;Motion</a></li>
+      <li class="painel__item"><a href="pratica-ancient-techniques.html">Ancient Techniques</a></li>
+      <li class="painel__item"><a href="pratica-hybrid-training.html">Hybrid Training</a></li>
+      <li class="painel__item"><a href="pratica-premium-balance.html">Premium Balance</a></li>
+      <li class="painel__item"><a href="pratica-rituals-of-connection.html">Rituals of&nbsp;Connection</a></li>
+      </ul>
+    </li>
+    <li class="painel__item"><a href="plano-alimentar-anti-inflamatorio.html">Nutrição</a></li>
+    <li class="painel__item"><a href="centro-fitness.html">Fitness</a></li>
+    </ul>
+  </li>
+  <li class="painel__item tem-sub">
+    <div class="painel__linha"><a href="clubs.html" data-categoria="clubs">Clubs</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-clubs"><span class="sr-only">Submenu Clubs</span></button></div>
+    <ul id="sub-clubs" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item"><a href="racket-club.html">Racket Club</a></li>
+    <li class="painel__item"><a href="kids-club.html">Kids Club</a></li>
+    <li class="painel__item"><a href="beach-club.html">Beach Club</a></li>
+    </ul>
+  </li>
+  <li class="painel__item tem-sub">
+    <div class="painel__linha"><a href="experiencias.html" data-categoria="experiencias">Experiências</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-experiencias"><span class="sr-only">Submenu Experiências</span></button></div>
+    <ul id="sub-experiencias" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item"><a href="experiencia-george-ansley-tour.html">The&nbsp;George Ansley Tour</a></li>
+    <li class="painel__item"><a href="experiencia-from-market-to-table.html">From Market to&nbsp;Table</a></li>
+    <li class="painel__item"><a href="experiencia-bottle-blending.html">Bottle Blending</a></li>
+    <li class="painel__item"><a href="experiencia-market-walk.html">Market Walk</a></li>
+    <li class="painel__item"><a href="experiencia-behind-the-wine.html">Behind the&nbsp;Wine</a></li>
+    <li class="painel__item"><a href="experiencia-ceramica.html">Traditional Ceramics</a></li>
+    <li class="painel__item"><a href="experiencia-velas.html">Craft Candle Workshop</a></li>
+    <li class="painel__item"><a href="experiencia-biologo-astronomia.html">Biólogo e&nbsp;Astronomia</a></li>
+    </ul>
+  </li>
+  <li class="painel__item"><a href="occasions.html" data-categoria="occasions">Occasions</a></li>
+  <li class="painel__item"><a href="60-aniversario.html" data-categoria="60-aniversario">60.º Aniversário</a></li>
+  </ul>
+  </div>
+  <p class="painel__morada"><img src="assets/img/marca/morada.png" alt="Praia das Gaivotas, Alporchinhos, Porches 8400-450, Portugal" width="839" height="300" loading="lazy"></p>
+</nav>
+<!-- /BLOCO: painel-menu -->
+
+<script src="assets/js/site.js?v=20261120u"></script>
+</body>
+</html>

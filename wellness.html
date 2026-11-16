@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="pt" class="tema-escuro">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wellness · Vilalara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&family=Marcellus&family=Pinyon+Script&display=swap">
+<link rel="stylesheet" href="https://use.typekit.net/oav4umc.css"><!-- Adobe Fonts: Optima nova + Richmond Display (projeto "Vilalara site prototipo") -->
+<link rel="stylesheet" href="https://use.typekit.net/ozg0foo.css"><!-- Adobe Fonts: Fact VF (projeto "Vilalara site prototipo Fact") -->
+<link rel="stylesheet" href="assets/css/tokens.css?v=20261120u">
+<link rel="stylesheet" href="assets/css/base.css?v=20261120u">
+<link rel="stylesheet" href="assets/css/blocos.css?v=20261120u">
+</head>
+<body>
+
+<!-- =================================================================
+     WELLNESS (landing page da categoria)
+     Esta página usa o tema escuro (classe "tema-escuro" no <html>):
+     fundo castanho-escuro, textos claros e rodapé escuro.
+     Blocos, por ordem: cabecalho-interior (sobre foto), hero-landing,
+     intro-categoria, colagem-wellness (horário + 4 fotos),
+     mosaico-wellness (6 fotos), titulo-seccao, areas-wellness
+     (Tratamentos, Programas, Thalasso, Wellness, Nutrição, Fitness),
+     equipa, perguntas, rodape, painel-menu.
+     ================================================================= -->
+
+
+<!-- BLOCO: cabecalho-interior (variante sobre foto) -->
+<header class="cab-interior cab-interior--sobre-foto" data-sobre-foto>
+  <button class="botao-menu" type="button" data-abre-painel aria-expanded="false" aria-controls="painel-menu">
+    <span class="tracos"></span><span class="sr-only">Abrir menu</span>
+  </button>
+  <a class="cab-interior__monograma" href="index.html" aria-label="Vilalara Grand Hotel Algarve, página inicial">
+    <img src="assets/img/marca/monograma-escuro.png" alt="Vilalara" width="277" height="274">
+  </a>
+  <div class="cab-acoes">
+    <div class="idioma">
+      <button class="idioma__botao" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="lista-idiomas">
+        <span class="idioma__atual">PT</span><span class="sr-only">, escolher idioma</span>
+      </button>
+      <ul class="idioma__lista" id="lista-idiomas" hidden>
+        <li><button type="button" data-lingua="pt" aria-current="true">PT</button></li>
+        <li><button type="button" data-lingua="en">EN</button></li>
+        <li><button type="button" data-lingua="es">ES</button></li>
+        <li><button type="button" data-lingua="fr">FR</button></li>
+        <li><button type="button" data-lingua="de">DE</button></li>
+      </ul>
+    </div>
+    <a class="botao-link" href="reservas.html">Reservar</a>
+  </div>
+</header>
+<!-- /BLOCO: cabecalho-interior -->
+
+
+<main>
+
+  <!-- BLOCO: hero-landing -->
+  <section class="slide landing landing--fixo" aria-label="Wellness">
+    <figure class="slide__media">
+      <img src="assets/img/home/05-wellness.jpg" alt="Sala de estar do Wellness Club, com cadeirões e coluna de azulejo" fetchpriority="high">
+    </figure>
+    <h1 class="landing__titulo">Wellness</h1>
+    <a class="seta-scroll" href="#apresentacao" aria-label="Descer para a apresentação">
+      <svg viewBox="0 0 14 32" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M7 0v31M1 25l6 6 6-6"/></svg>
+    </a>
+  </section>
+  <!-- /BLOCO: hero-landing -->
+
+  <div class="landing--fixo__conteudo"><!-- tudo o que sobe por cima do banner fixo (fundo contínuo, sem frestas) -->
+
+
+  <!-- BLOCO: intro-categoria -->
+  <section class="intro intro--wellness" id="apresentacao">
+    <h2 class="intro__titulo">Como nunca antes <span class="intro__script">Escolha Relaxar</span></h2>
+    <p class="intro__texto">Transforme a&nbsp;sua&nbsp;mente corpo e&nbsp;alma. Uma&nbsp;combinação única de&nbsp;Thalassa, SPA, wellness e&nbsp;soluções anti-envelhecimento. Numa localização privilegiada no&nbsp;coração do&nbsp;Algarve, entregue-se a&nbsp;uma&nbsp;equipa de&nbsp;profissionais experientes e&nbsp;dedicados e&nbsp;embarque numa viagem entre o&nbsp;Mar e&nbsp;os&nbsp;jardins do&nbsp;Vilalara.</p>
+  </section>
+  <!-- /BLOCO: intro-categoria -->
+
+
+  <!-- BLOCO: colagem-wellness (horário + 4 fotos) -->
+  <section class="galeria galeria--wellness" aria-label="O Wellness Club">
+    <div class="horario horario--contactos">
+      <p class="horario__bloco"><span>Horário</span> 9:00–19:00</p>
+      <p class="horario__bloco"><span>Contactos</span> <span class="horario__linha"><a href="tel:+351282320196">+351&nbsp;282&nbsp;320&nbsp;196</a> <a href="mailto:spa@vilalara.com">spa@vilalara.com</a></span></p>
+      <a class="horario__link" href="#etiqueta">Etiqueta do&nbsp;spa</a>
+    </div>
+    <figure class="w1"><div class="foto"><img src="assets/img/wellness/colagem-1-sala.jpg" alt="Sala de estar com sofá, candeeiro e passagem em arco" loading="lazy"></div></figure>
+    <figure class="w2"><div class="foto"><img src="assets/img/wellness/colagem-2-nichos.jpg" alt="Nichos em arco com almofadas e luz quente" loading="lazy"></div></figure>
+    <figure class="w3"><div class="foto"><img src="assets/img/wellness/colagem-3-lavatorios.jpg" alt="Lavatórios de pedra com espelho" loading="lazy"></div></figure>
+    <figure class="w4"><div class="foto"><img src="assets/img/wellness/colagem-4-piscina.jpg" alt="Piscina interior com claraboia redonda" loading="lazy"></div></figure>
+  </section>
+  <!-- /BLOCO: colagem-wellness -->
+
+
+  <!-- BLOCO: titulo-seccao -->
+  <h2 class="titulo-seccao titulo-seccao--grande" id="areas">Wellness <span class="intro__script">A&nbsp;Essência do&nbsp;Vilalara</span></h2>
+
+  <!-- BLOCO: areas-wellness (cada área: foto + painel + opções em baixo) -->
+  <section class="areas" aria-label="Áreas do Wellness">
+    <!-- ÁREA: Tratamentos -->
+    <article class="area area--painel-dir area--granulado" id="tratamentos" style="--base: #8f7a72; --tinta: #b9a59c; --foco-painel: 30% 35%" aria-label="Tratamentos">
+      <figure class="area__foto"><img src="assets/img/wellness/tratamentos.jpg" alt="Pedras quentes a deslizar sobre as costas durante uma massagem" loading="lazy"></figure>
+      <div class="area__painel">
+        <img class="area__textura" src="assets/img/wellness/tratamentos.jpg" alt="" aria-hidden="true" loading="lazy">
+        <div class="area__texto">
+          <h3>Tratamentos</h3>
+          <p>Rituais, faciais e&nbsp;terapias de&nbsp;corpo pensados para&nbsp;cada momento. Técnicas ancestrais e&nbsp;produtos naturais, nas&nbsp;mãos de&nbsp;terapeutas experientes, para&nbsp;devolver o&nbsp;equilíbrio ao&nbsp;corpo e&nbsp;a&nbsp;serenidade à&nbsp;mente.</p>
+        </div>
+        <a class="botao-contorno sobre-foto area__botao" href="tratamentos.html">Ver&nbsp;tratamentos</a>
+      </div>
+      <ul class="area__lista area__lista--painel area__lista--colunas" aria-label="Tratamentos: opções">
+        <li><a href="tratamento-rituais.html" data-foto="assets/img/wellness/tratamentos/rituais.jpg">Rituais</a></li>
+        <li><a href="tratamento-faciais.html" data-foto="assets/img/wellness/tratamentos/faciais.jpg">Faciais</a></li>
+        <li><a href="tratamento-body.html" data-foto="assets/img/wellness/tratamentos/body.jpg">Body</a></li>
+        <li><a href="tratamento-body-therapy.html" data-foto="assets/img/wellness/tratamentos/body-therapy.jpg">Body Therapy</a></li>
+        <li><a href="tratamento-body-shaping.html" data-foto="assets/img/wellness/tratamentos/body-shaping.jpg">Body Shaping</a></li>
+        <li><a href="tratamento-shared-care.html" data-foto="assets/img/wellness/tratamentos/shared-care.jpg">Shared Care</a></li>
+        <li><a href="tratamento-flows.html" data-foto="assets/img/wellness/tratamentos/flows.jpg">Flows</a></li>
+        <li><a href="tratamento-self-discovery.html" data-foto="assets/img/wellness/tratamentos/self-discovery.jpg">Self Discovery</a></li>
+      </ul>
+    </article>
+    <!-- ÁREA: Programas -->
+    <article class="area area--granulado area--painel-esq" id="programas" style="--base: #726c60; --tinta: #908b82" aria-label="Programas">
+      <figure class="area__foto"><img src="assets/img/wellness/programas.jpg" alt="Água a escorrer de uma taça de metal sobre a cabeça, num banho" loading="lazy"></figure>
+      <div class="area__painel">
+        <img class="area__textura" src="assets/img/wellness/programas.jpg" alt="" aria-hidden="true" loading="lazy">
+        <div class="area__texto">
+          <h3>Programas</h3>
+          <p>Programas de&nbsp;vários dias que&nbsp;juntam tratamentos, movimento e&nbsp;alimentação. Da&nbsp;thalassoterapia ao&nbsp;anti-envelhecimento, cada percurso é&nbsp;ajustado aos&nbsp;seus objetivos e&nbsp;ao&nbsp;seu&nbsp;ritmo.</p>
+        </div>
+        <a class="botao-contorno sobre-foto area__botao" href="programas.html">Ver&nbsp;programas</a>
+      </div>
+      <ul class="area__lista area__lista--painel area__lista--colunas area__lista--2colunas" aria-label="Programas: opções">
+        <li><a href="programa-thalassotherapy-healing.html" data-foto="assets/img/wellness/programas/thalassotherapy-healing.jpg">Thalassotherapy Healing</a></li>
+        <li><a href="programa-fitness-essence.html" data-foto="assets/img/wellness/programas/fitness-essence.jpg">Fitness Essence</a></li>
+        <li><a href="programa-bespoke-anti-ageing-retreat.html" data-foto="assets/img/wellness/programas/bespoke-anti-ageing-retreat.jpg">Bespoke Anti-ageing Retreat</a></li>
+        <li><a href="programa-stress-relief-recover.html" data-foto="assets/img/wellness/programas/stress-relief-recover.jpg">Stress Relief &amp;&nbsp;Recover</a></li>
+        <li><a href="programa-detox-weight-management.html" data-foto="assets/img/wellness/programas/detox-weight-management.jpg">Detox &amp;&nbsp;Weight Management</a></li>
+      </ul>
+    </article>
+    <!-- ÁREA: Thalasso -->
+    <article class="area area--granulado area--painel-dir" id="thalasso" style="--base: #9e8e7e; --tinta: #b2a69a; --brilho: 0.8" aria-label="Thalasso">
+      <figure class="area__foto"><img src="assets/img/wellness/thalasso.jpg" alt="Sala de tratamento com marquesa, toalhas e uma planta" loading="lazy"></figure>
+      <div class="area__painel">
+        <img class="area__textura" src="assets/img/wellness/thalasso.jpg" alt="" aria-hidden="true" loading="lazy">
+        <div class="area__texto">
+          <h3>Thalasso</h3>
+          <p>A&nbsp;força terapêutica do&nbsp;Atlântico ao&nbsp;serviço do&nbsp;bem-estar. Água do&nbsp;mar, algas e&nbsp;minerais marinhos em&nbsp;circuitos e&nbsp;tratamentos que&nbsp;relaxam, tonificam e&nbsp;renovam.</p>
+        </div>
+        <a class="botao-contorno sobre-foto area__botao" href="thalasso.html">Ver&nbsp;thalasso</a>
+      </div>
+      <ul class="area__lista area__lista--painel area__lista--colunas" aria-label="Thalasso: opções">
+        <li><a href="thalassoterapia.html" data-foto="assets/img/wellness/thalasso/thalassoterapia.jpg">Thalassoterapia</a></li>
+        <li><a href="thalasso-flows.html" data-foto="assets/img/wellness/thalasso/thalasso-flows.jpg">Thalasso Flows</a></li>
+      </ul>
+    </article>
+    <!-- ÁREA: Wellness -->
+    <article class="area area--granulado area--painel-esq" id="bem-estar" style="--base: #a58d7a; --tinta: #b8a596; --brilho: 0.8" aria-label="Wellness">
+      <figure class="area__foto"><img src="assets/img/wellness/wellness.jpg" alt="Tratamento facial com toalha quente" loading="lazy"></figure>
+      <div class="area__painel">
+        <img class="area__textura" src="assets/img/wellness/wellness.jpg" alt="" aria-hidden="true" loading="lazy">
+        <div class="area__texto">
+          <h3>Wellness</h3>
+          <p>Práticas de&nbsp;corpo e&nbsp;mente para&nbsp;encontrar o&nbsp;seu&nbsp;equilíbrio. Movimento consciente, técnicas ancestrais e&nbsp;rituais de&nbsp;ligação, entre o&nbsp;mar e&nbsp;os&nbsp;jardins do&nbsp;Vilalara.</p>
+        </div>
+        <a class="botao-contorno sobre-foto area__botao" href="bem-estar.html">Ver&nbsp;wellness</a>
+      </div>
+      <ul class="area__lista area__lista--painel area__lista--colunas" aria-label="Wellness: opções">
+        <li><a href="pratica-mindful-motion.html" data-foto="assets/img/wellness/bem-estar/mindful-motion.jpg">Mindful &amp;&nbsp;Motion</a></li>
+        <li><a href="pratica-ancient-techniques.html" data-foto="assets/img/wellness/bem-estar/ancient-techniques.jpg">Ancient Techniques</a></li>
+        <li><a href="pratica-hybrid-training.html" data-foto="assets/img/wellness/bem-estar/hybrid-training.jpg">Hybrid Training</a></li>
+        <li><a href="pratica-premium-balance.html" data-foto="assets/img/wellness/bem-estar/premium-balance.jpg">Premium Balance</a></li>
+        <li><a href="pratica-rituals-of-connection.html" data-foto="assets/img/wellness/bem-estar/rituals-of-connection.jpg">Rituals of&nbsp;Connection</a></li>
+      </ul>
+    </article>
+    <!-- ÁREA: Nutrição -->
+    <article class="area area--granulado area--painel-dir" id="nutricao" style="--base: #a5907d; --tinta: #b8a898; --brilho: 0.8" aria-label="Nutrição">
+      <figure class="area__foto"><img src="assets/img/wellness/nutricao.jpg" alt="Mãos a segurar uma taça de leite dourado, com gengibre e pimenta" loading="lazy"></figure>
+      <div class="area__painel">
+        <img class="area__textura" src="assets/img/wellness/nutricao.jpg" alt="" aria-hidden="true" loading="lazy">
+        <div class="area__texto">
+          <h3>Nutrição</h3>
+          <p>Uma&nbsp;alimentação que&nbsp;cuida de&nbsp;dentro para&nbsp;fora. Planos anti-inflamatórios criados com&nbsp;ingredientes frescos e&nbsp;locais, para&nbsp;acompanhar os&nbsp;tratamentos e&nbsp;prolongar os&nbsp;seus&nbsp;benefícios.</p>
+        </div>
+        <a class="botao-contorno sobre-foto area__botao" href="plano-alimentar-anti-inflamatorio.html">Ver&nbsp;plano</a>
+      </div>
+      <ul class="area__lista area__lista--painel area__lista--colunas" aria-label="Nutrição: opções">
+        <li><a href="plano-alimentar-anti-inflamatorio.html" data-foto="assets/img/wellness/extra/plano-sopa.jpg">Plano Alimentar Anti-inflamatório</a></li>
+      </ul>
+    </article>
+    <!-- ÁREA: Fitness -->
+    <article class="area area--granulado area--painel-esq" id="fitness" style="--base: #7e7167; --tinta: #998f87" aria-label="Fitness">
+      <figure class="area__foto"><img src="assets/img/wellness/fitness.jpg" alt="Pernas a correr numa passadeira" loading="lazy"></figure>
+      <div class="area__painel">
+        <img class="area__textura" src="assets/img/wellness/fitness.jpg" alt="" aria-hidden="true" loading="lazy">
+        <div class="area__texto">
+          <h3>Fitness</h3>
+          <p>Treino com&nbsp;acompanhamento, ao&nbsp;seu&nbsp;ritmo. Máquinas de&nbsp;cárdio, treino funcional, boxe e&nbsp;força, num espaço pensado para&nbsp;ganhar energia e&nbsp;resistência.</p>
+        </div>
+        <a class="botao-contorno sobre-foto area__botao" href="centro-fitness.html">Ver&nbsp;fitness</a>
+      </div>
+      <ul class="area__lista area__lista--painel area__lista--colunas" aria-label="Fitness: opções">
+        <li><a href="centro-fitness.html#cardio">Máquinas de&nbsp;Cárdio</a></li>
+        <li><a href="centro-fitness.html#funcional">Treino Funcional</a></li>
+        <li><a href="centro-fitness.html#boxe">Treino de&nbsp;Boxing</a></li>
+        <li><a href="centro-fitness.html#forca">Força e&nbsp;Resistência</a></li>
+      </ul>
+    </article>
+  </section>
+  <!-- /BLOCO: areas-wellness -->
+
+
+  <!-- BLOCO: equipa -->
+  <section class="equipa" aria-labelledby="equipa-titulo">
+    <h2 class="titulo-seccao titulo-seccao--grande" id="equipa-titulo">Os&nbsp;nossos <span class="intro__script">profissionais</span></h2>
+    <ul class="equipa__lista">
+      <li>
+        <figure class="equipa__foto"><img src="assets/img/wellness/pinterest/equipa-1.jpg" alt="Consultório com secretária e cadeirões" loading="lazy"></figure>
+        <h3>Dr.&nbsp;João Pestana</h3>
+        <p>Conduz a&nbsp;avaliação de&nbsp;stress e&nbsp;estilo de&nbsp;vida e&nbsp;as&nbsp;consultas de&nbsp;acompanhamento do&nbsp;programa Stress Relief &amp;&nbsp;Recover.</p>
+      </li>
+      <li>
+        <figure class="equipa__foto"><img src="assets/img/wellness/pinterest/equipa-2.jpg" alt="Sala de tratamento com marquesa" loading="lazy"></figure>
+        <h3>Terapeutas de&nbsp;spa</h3>
+        <p>Profissionais acreditados, com&nbsp;formação contínua, responsáveis pelas massagens, pelos faciais e&nbsp;pelos rituais do&nbsp;Wellness Club.</p>
+      </li>
+      <li>
+        <figure class="equipa__foto"><img src="assets/img/wellness/pinterest/equipa-3.jpg" alt="Sala de espera com sofás claros" loading="lazy"></figure>
+        <h3>Movimento e&nbsp;nutrição</h3>
+        <p>Fisioterapeutas nas&nbsp;aulas em&nbsp;água do&nbsp;mar, treino personalizado e&nbsp;consultas de&nbsp;nutrição funcional nos&nbsp;programas.</p>
+      </li>
+    </ul>
+  </section>
+  <!-- /BLOCO: equipa -->
+
+
+  <!-- BLOCO: mosaico-wellness (6 fotos) -->
+  <section class="galeria galeria--mosaico" aria-label="Espaços do Wellness Club">
+    <figure class="m1"><div class="foto"><img src="assets/img/wellness/mosaico-1-corredor.jpg" alt="Sala de tratamento com marquesa e luz baixa" loading="lazy"></div></figure>
+    <figure class="m2"><div class="foto"><img src="assets/img/wellness/mosaico-2-massagem.jpg" alt="Sala de massagem entre painéis de madeira" loading="lazy"></div></figure>
+    <figure class="m3"><div class="foto"><img src="assets/img/wellness/mosaico-3-sala.jpg" alt="Sala de estar com sofá e oliveira" loading="lazy"></div></figure>
+    <figure class="m4"><div class="foto"><img src="assets/img/wellness/mosaico-4-rotunda.jpg" alt="Átrio redondo com oliveira ao centro" loading="lazy"></div></figure>
+    <figure class="m5"><div class="foto"><img src="assets/img/wellness/mosaico-5-maos.jpg" alt="Mãos sobre as costas durante uma massagem" loading="lazy"></div></figure>
+    <figure class="m6"><div class="foto"><img src="assets/img/wellness/mosaico-6-relax.jpg" alt="Sala de relaxamento com espreguiçadeiras" loading="lazy"></div></figure>
+  </section>
+  <!-- /BLOCO: mosaico-wellness -->
+
+
+  <!-- BLOCO: indicado-vidro (variante etiqueta) — foto de fundo com painel de vidro fosco:
+       título + frase à esquerda; as regras do spa em duas colunas (No spa / Informação adicional). -->
+  <section class="indicado-vidro indicado-vidro--equipamento indicado-vidro--etiqueta" id="etiqueta" aria-labelledby="etiqueta-titulo">
+    <img class="indicado-vidro__foto" src="assets/img/wellness/clube/etiqueta-sala-tratamento.jpg" alt="" loading="lazy">
+    <div class="indicado-vidro__painel">
+      <div class="indicado-vidro__intro">
+        <h2 id="etiqueta-titulo">Etiqueta <span class="intro__script">do&nbsp;spa</span></h2>
+        <p>Para&nbsp;que&nbsp;a&nbsp;sua&nbsp;visita seja tranquila do&nbsp;princípio ao&nbsp;fim, reunimos aqui as&nbsp;regras e&nbsp;recomendações do&nbsp;nosso&nbsp;spa.</p>
+      </div>
+      <div class="indicado-vidro__lista">
+        <div class="indicado-vidro__grupo">
+          <h3 class="indicado-vidro__tipo">No&nbsp;spa</h3>
+          <ul>
+            <li><span class="indicado-vidro__nome">Horário</span><span class="indicado-vidro__desc">O&nbsp;Vilalara Wellness Club está aberto todos os&nbsp;dias, das&nbsp;9h00 às&nbsp;19h00.</span></li>
+            <li><span class="indicado-vidro__nome">Chegada ao&nbsp;spa</span><span class="indicado-vidro__desc">Recomendamos que&nbsp;chegue 15 minutos antes do&nbsp;tratamento, para&nbsp;um&nbsp;check-in tranquilo e&nbsp;um&nbsp;momento para&nbsp;relaxar. Os&nbsp;atrasos implicam a&nbsp;redução do&nbsp;tempo de&nbsp;tratamento.</span></li>
+            <li><span class="indicado-vidro__nome">Vestuário e&nbsp;objetos de&nbsp;valor</span><span class="indicado-vidro__desc">Para&nbsp;seu&nbsp;conforto, convidamo-lo a&nbsp;usar o&nbsp;roupão e&nbsp;os&nbsp;chinelos do&nbsp;quarto. Na&nbsp;sauna, no&nbsp;banho turco e&nbsp;nos&nbsp;tratamentos de&nbsp;talassoterapia é&nbsp;obrigatório usar fato de&nbsp;banho.</span></li>
+            <li><span class="indicado-vidro__nome">Recomendações</span><span class="indicado-vidro__desc">Aconselhamos que&nbsp;deixe os&nbsp;objetos de&nbsp;valor no&nbsp;quarto: os&nbsp;cacifos são limitados e&nbsp;não podemos garantir disponibilidade para&nbsp;todos. Beba bastante água para&nbsp;potenciar os&nbsp;benefícios dos&nbsp;tratamentos.</span></li>
+            <li><span class="indicado-vidro__nome">Regras</span><span class="indicado-vidro__desc">Respeite todos os&nbsp;membros da&nbsp;equipa; não é&nbsp;permitido qualquer contacto físico indesejado. Use as&nbsp;instalações, o&nbsp;mobiliário e&nbsp;o&nbsp;equipamento com&nbsp;responsabilidade. Não é&nbsp;permitido fumar nem&nbsp;consumir álcool no&nbsp;centro. Mantenha o&nbsp;telemóvel em&nbsp;silêncio.</span></li>
+          </ul>
+        </div>
+        <div class="indicado-vidro__grupo">
+          <h3 class="indicado-vidro__tipo">Informação adicional</h3>
+          <ul>
+            <li><span class="indicado-vidro__nome">Cuidados médicos</span><span class="indicado-vidro__desc">Se&nbsp;tiver algum problema de&nbsp;saúde, confirme primeiro com&nbsp;o&nbsp;seu&nbsp;médico se&nbsp;o&nbsp;tratamento é&nbsp;recomendado. Se&nbsp;estiver grávida ou&nbsp;tiver alguma doença ou&nbsp;alergia, informe a&nbsp;nossa&nbsp;equipa.</span></li>
+            <li><span class="indicado-vidro__nome">Profissionais de&nbsp;spa</span><span class="indicado-vidro__desc">O&nbsp;Vilalara Wellness Club conta com&nbsp;os&nbsp;melhores profissionais de&nbsp;spa acreditados. Todos os&nbsp;tratamentos e&nbsp;a&nbsp;gestão dos&nbsp;produtos são apoiados por&nbsp;um&nbsp;programa de&nbsp;formação&nbsp;contínua.</span></li>
+            <li><span class="indicado-vidro__nome">Os&nbsp;produtos</span><span class="indicado-vidro__desc">Trabalhamos com&nbsp;marcas reconhecidas internacionalmente. O&nbsp;seu&nbsp;terapeuta sugere a&nbsp;gama que&nbsp;melhor responde às&nbsp;suas necessidades. Os&nbsp;produtos comprados não são&nbsp;reembolsáveis.</span></li>
+            <li><span class="indicado-vidro__nome">Vales-oferta</span><span class="indicado-vidro__desc">Escolha um&nbsp;dos&nbsp;nossos pacotes de&nbsp;tratamentos ou&nbsp;crie uma&nbsp;opção à&nbsp;medida. Os&nbsp;vales-oferta compram-se na&nbsp;receção do&nbsp;spa e&nbsp;devem ser apresentados na&nbsp;marcação; não são reembolsáveis nem&nbsp;trocáveis por&nbsp;dinheiro.</span></li>
+            <li><span class="indicado-vidro__nome">Crianças</span><span class="indicado-vidro__desc">A&nbsp;entrada no&nbsp;Wellness Club é&nbsp;permitida apenas a&nbsp;partir dos&nbsp;18&nbsp;anos.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /BLOCO: indicado-vidro -->
+
+  </div>
+</main>
+
+
+<!-- BLOCO: rodape -->
+<footer class="rodape">
+  <div class="rodape__dentro">
+
+    <div class="rodape__marca">
+      <a class="rodape__logo" href="index.html" aria-label="Vilalara Grand Hotel Algarve, página inicial">
+        <img src="assets/img/marca/logo-branco.png" alt="Vilalara Grand Hotel Algarve" width="1669" height="395" loading="lazy">
+      </a>
+      <p class="rodape__morada">
+        <img src="assets/img/marca/morada.png" alt="Praia das Gaivotas, Alporchinhos, Porches 8400-450, Portugal" width="839" height="300" loading="lazy">
+      </p>
+      <div class="rodape__selos">
+        <span class="rodape__selos-faixa">
+          <img src="assets/img/marca/selos-parceiros.png" alt="Visit Algarve, Forbes Travel Guide, XO Private, guia Michelin, Takumians, Mr &amp; Mrs Smith, Ensemble" width="2397" height="143" loading="lazy">
+          <a class="rodape__selo" href="https://visitalgarve.pt/en/" target="_blank" rel="noopener" aria-label="Visit Algarve (abre numa nova janela)" style="left:0.00%;width:15.56%"></a>
+          <a class="rodape__selo" href="https://forbestravelguide.com/" target="_blank" rel="noopener" aria-label="Forbes Travel Guide (abre numa nova janela)" style="left:21.23%;width:9.05%"></a>
+          <a class="rodape__selo" href="https://www.xoprivate.com/" target="_blank" rel="noopener" aria-label="XO Private (abre numa nova janela)" style="left:35.71%;width:6.05%"></a>
+          <a class="rodape__selo" href="https://guide.michelin.com/pt/pt_PT" target="_blank" rel="noopener" aria-label="Guia Michelin (abre numa nova janela)" style="left:47.23%;width:6.01%"></a>
+          <a class="rodape__selo" href="https://www.mrandmrssmith.com/" target="_blank" rel="noopener" aria-label="Mr &amp; Mrs Smith (abre numa nova janela)" style="left:75.18%;width:8.34%"></a>
+          <a class="rodape__selo" href="https://www.ensembletravel.com/" target="_blank" rel="noopener" aria-label="Ensemble Travel (abre numa nova janela)" style="left:89.19%;width:10.81%"></a>
+        </span>
+      </div>
+    </div>
+
+    <div class="rodape__info">
+      <div class="rodape__linha">
+        <div>
+          <h2>Contactos</h2>
+          <p><a href="tel:+351282320000">(+351) 282 320 000</a></p>
+          <p class="rodape__nota">Custo de&nbsp;uma&nbsp;chamada para&nbsp;a&nbsp;rede fixa nacional (ou&nbsp;internacional, se&nbsp;a&nbsp;chamada for feita fora da&nbsp;UE).</p>
+          <p><a href="mailto:reservas@vilalara.com">reservas@vilalara.com</a></p>
+        </div>
+        <div>
+          <h2 class="sr-only">Sobre</h2>
+          <ul>
+            <li><a href="newsletter.html">Registo na&nbsp;Newsletter</a></li>
+            <li><a href="sustentabilidade.html">Sustentabilidade</a></li>
+            <li><a href="carreiras.html">Carreiras</a></li>
+            <li><a href="https://lost.faundit.com/vilalara-grand-hotel-algarve" target="_blank" rel="noopener">Lost &amp;&nbsp;Found</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="sr-only">Informação legal</h2>
+          <ul>
+            <li><a href="termos-condicoes.html">Termos &amp;&nbsp;Condições</a></li>
+            <li><a href="politica-privacidade.html">Política de&nbsp;Privacidade</a></li>
+            <li><a href="politica-cookies.html">Política de&nbsp;Cookies</a></li>
+            <li><a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noopener">Livro de&nbsp;Reclamações</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Redes sociais</h2>
+          <ul>
+            <li><a href="https://www.instagram.com/vilalaragrandhotel" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="#">Linkedin</a></li>
+            <li><a href="https://www.facebook.com/VilalaraThalassaResort" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.tripadvisor.com/Hotel_Review-g652080-d231460-Reviews-Vilalara_Thalassa_Resort-Porches_Faro_District_Algarve.html" target="_blank" rel="noopener">Tripadvisor</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rodape__linha rodape__linha--legal">
+        <div>
+          <h2>Aviso ao&nbsp;consumidor</h2>
+          <p class="rodape__legal">Ao&nbsp;abrigo do&nbsp;artigo 18.º da&nbsp;Lei n.º 144/2015, de&nbsp;8 de&nbsp;setembro, em&nbsp;caso de&nbsp;litígio de&nbsp;consumo, o&nbsp;consumidor pode recorrer à&nbsp;Plataforma Europeia de&nbsp;Resolução de&nbsp;Litígios em&nbsp;Linha: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr</a>. Pode igualmente recorrer a&nbsp;uma&nbsp;entidade de&nbsp;resolução alternativa de&nbsp;litígios de&nbsp;consumo disponível em&nbsp;Portugal em&nbsp;<a href="https://www.consumidor.gov.pt/" target="_blank" rel="noopener">https://www.consumidor.gov.pt</a>. O&nbsp;recurso a&nbsp;estas entidades não prejudica o&nbsp;direito de&nbsp;o&nbsp;consumidor recorrer aos&nbsp;tribunais judiciais, nos&nbsp;termos da&nbsp;lei.</p>
+          <p class="rodape__copyright">2026 © Vilalara Grand Hotel Algarve. All rights reserved.</p>
+        </div>
+        <div>
+          <h2>Entidade exploradora</h2>
+          <p class="rodape__nota">Goldtur – Hotéis e&nbsp;Turismo, S. A.<br>NIPC 500 201 072<br>Praia das&nbsp;Gaivotas – Alporchinhos<br>8400-450 Porches, Portugal</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+<!-- /BLOCO: rodape -->
+
+
+<!-- BLOCO: painel-menu -->
+<div class="veu-painel" aria-hidden="true"></div>
+<nav class="painel" id="painel-menu" aria-label="Menu principal">
+  <div class="painel__topo">
+    <a class="painel__logo" href="index.html"><img src="assets/img/marca/logo-escuro.png" alt="Vilalara Grand Hotel Algarve" width="1669" height="395"></a>
+    <button class="painel__fechar" type="button"><span class="sr-only">Fechar menu</span></button>
+  </div>
+  <div class="painel__menu">
+  <ul>
+  <li class="painel__item"><a href="index.html" data-categoria="home">Home</a></li>
+  <li class="painel__item"><a href="our-heritage.html" data-categoria="our-heritage">Our Heritage</a></li>
+  <li class="painel__item tem-sub">
+    <div class="painel__linha"><a href="suites-residencias.html" data-categoria="suites-residencias">Suítes &amp;&nbsp;Residências</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-suites-residencias"><span class="sr-only">Submenu Suítes &amp;&nbsp;Residências</span></button></div>
+    <ul id="sub-suites-residencias" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item"><a href="elegant-suite.html">Elegant Suite</a></li>
+    <li class="painel__item"><a href="master-suite.html">Master Suite</a></li>
+    <li class="painel__item"><a href="ocean-suite.html">Ocean Suite</a></li>
+    <li class="painel__item"><a href="grand-suite.html">Grand Suite</a></li>
+    <li class="painel__item"><a href="george-ansley-suite.html">George Ansley Suite</a></li>
+    <li class="painel__item"><a href="jose-de-harry-suite.html">José de&nbsp;Harry Suite</a></li>
+    <li class="painel__item"><a href="private-residences.html">Private Residences</a></li>
+    <li class="painel__item"><a href="casa-laranjo.html">Casa Laranjo</a></li>
+    <li class="painel__item"><a href="casa-levy.html">Casa Levy</a></li>
+    <li class="painel__item"><a href="casa-lara.html">Casa Lara</a></li>
+    </ul>
+  </li>
+  <li class="painel__item tem-sub">
+    <div class="painel__linha"><a href="gastronomia.html" data-categoria="gastronomia">Gastronomia</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-gastronomia"><span class="sr-only">Submenu Gastronomia</span></button></div>
+    <ul id="sub-gastronomia" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item"><a href="coral.html">Coral</a></li>
+    <li class="painel__item"><a href="raizes.html">Raízes</a></li>
+    <li class="painel__item"><a href="trattoria.html">Trattoria</a></li>
+    <li class="painel__item"><a href="a-costa.html">A-costa</a></li>
+    <li class="painel__item"><a href="vento.html">Vento</a></li>
+    <li class="painel__item"><a href="gaivotas.html">Gaivotas</a></li>
+    </ul>
+  </li>
+  <li class="painel__item no-caminho tem-sub">
+    <div class="painel__linha"><a href="wellness.html" data-categoria="wellness" aria-current="page">Wellness</a><button class="painel__abre" type="button" aria-expanded="true" aria-controls="sub-wellness"><span class="sr-only">Submenu Wellness</span></button></div>
+    <ul id="sub-wellness" class="painel__sub painel__sub--n2">
+    <li class="painel__item tem-sub">
+      <div class="painel__linha"><a href="tratamentos.html">Tratamentos</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-tratamentos"><span class="sr-only">Submenu Tratamentos</span></button></div>
+      <ul id="sub-tratamentos" hidden class="painel__sub painel__sub--n3">
+      <li class="painel__item"><a href="tratamento-rituais.html">Rituals</a></li>
+      <li class="painel__item"><a href="tratamento-faciais.html">Faciais</a></li>
+      <li class="painel__item"><a href="tratamento-body.html">Body</a></li>
+      <li class="painel__item"><a href="tratamento-body-therapy.html">Body Therapy</a></li>
+      <li class="painel__item"><a href="tratamento-body-shaping.html">Body Shaping</a></li>
+      <li class="painel__item"><a href="tratamento-shared-care.html">Shared Care</a></li>
+      <li class="painel__item"><a href="tratamento-flows.html">Flows</a></li>
+      <li class="painel__item"><a href="tratamento-self-discovery.html">Self Discovery</a></li>
+      </ul>
+    </li>
+    <li class="painel__item tem-sub">
+      <div class="painel__linha"><a href="programas.html">Programas</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-programas"><span class="sr-only">Submenu Programas</span></button></div>
+      <ul id="sub-programas" hidden class="painel__sub painel__sub--n3">
+      <li class="painel__item"><a href="programa-thalassotherapy-healing.html">Thalassotherapy Healing</a></li>
+      <li class="painel__item"><a href="programa-fitness-essence.html">Fitness Essence</a></li>
+      <li class="painel__item"><a href="programa-bespoke-anti-ageing-retreat.html">Bespoke Anti-ageing Retreat</a></li>
+      <li class="painel__item"><a href="programa-stress-relief-recover.html">Stress Relief &amp;&nbsp;Recover</a></li>
+      <li class="painel__item"><a href="programa-detox-weight-management.html">Detox &amp;&nbsp;Weight Management</a></li>
+      </ul>
+    </li>
+    <li class="painel__item tem-sub">
+      <div class="painel__linha"><a href="thalasso.html">Thalasso</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-thalasso"><span class="sr-only">Submenu Thalasso</span></button></div>
+      <ul id="sub-thalasso" hidden class="painel__sub painel__sub--n3">
+      <li class="painel__item"><a href="thalassoterapia.html">Thalassoterapia</a></li>
+      <li class="painel__item"><a href="thalasso-flows.html">Thalasso Flows</a></li>
+      </ul>
+    </li>
+    <li class="painel__item tem-sub">
+      <div class="painel__linha"><a href="bem-estar.html">Práticas Wellness</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-bem-estar"><span class="sr-only">Submenu Práticas Wellness</span></button></div>
+      <ul id="sub-bem-estar" hidden class="painel__sub painel__sub--n3">
+      <li class="painel__item"><a href="pratica-mindful-motion.html">Mindful &amp;&nbsp;Motion</a></li>
+      <li class="painel__item"><a href="pratica-ancient-techniques.html">Ancient Techniques</a></li>
+      <li class="painel__item"><a href="pratica-hybrid-training.html">Hybrid Training</a></li>
+      <li class="painel__item"><a href="pratica-premium-balance.html">Premium Balance</a></li>
+      <li class="painel__item"><a href="pratica-rituals-of-connection.html">Rituals of&nbsp;Connection</a></li>
+      </ul>
+    </li>
+    <li class="painel__item"><a href="plano-alimentar-anti-inflamatorio.html">Nutrição</a></li>
+    <li class="painel__item"><a href="centro-fitness.html">Fitness</a></li>
+    </ul>
+  </li>
+  <li class="painel__item tem-sub">
+    <div class="painel__linha"><a href="clubs.html" data-categoria="clubs">Clubs</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-clubs"><span class="sr-only">Submenu Clubs</span></button></div>
+    <ul id="sub-clubs" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item"><a href="racket-club.html">Racket Club</a></li>
+    <li class="painel__item"><a href="kids-club.html">Kids Club</a></li>
+    <li class="painel__item"><a href="beach-club.html">Beach Club</a></li>
+    </ul>
+  </li>
+  <li class="painel__item tem-sub">
+    <div class="painel__linha"><a href="experiencias.html" data-categoria="experiencias">Experiências</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-experiencias"><span class="sr-only">Submenu Experiências</span></button></div>
+    <ul id="sub-experiencias" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item"><a href="experiencia-george-ansley-tour.html">The&nbsp;George Ansley Tour</a></li>
+    <li class="painel__item"><a href="experiencia-from-market-to-table.html">From Market to&nbsp;Table</a></li>
+    <li class="painel__item"><a href="experiencia-bottle-blending.html">Bottle Blending</a></li>
+    <li class="painel__item"><a href="experiencia-market-walk.html">Market Walk</a></li>
+    <li class="painel__item"><a href="experiencia-behind-the-wine.html">Behind the&nbsp;Wine</a></li>
+    <li class="painel__item"><a href="experiencia-ceramica.html">Traditional Ceramics</a></li>
+    <li class="painel__item"><a href="experiencia-velas.html">Craft Candle Workshop</a></li>
+    <li class="painel__item"><a href="experiencia-biologo-astronomia.html">Biólogo e&nbsp;Astronomia</a></li>
+    </ul>
+  </li>
+  <li class="painel__item"><a href="occasions.html" data-categoria="occasions">Occasions</a></li>
+  <li class="painel__item"><a href="60-aniversario.html" data-categoria="60-aniversario">60.º Aniversário</a></li>
+  </ul>
+  </div>
+  <p class="painel__morada"><img src="assets/img/marca/morada.png" alt="Praia das Gaivotas, Alporchinhos, Porches 8400-450, Portugal" width="839" height="300" loading="lazy"></p>
+</nav>
+<!-- /BLOCO: painel-menu -->
+
+<script src="assets/js/site.js?v=20261120u"></script>
+</body>
+</html>

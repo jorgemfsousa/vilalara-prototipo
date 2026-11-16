@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>60.º Aniversário · Vilalara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&family=Marcellus&family=Pinyon+Script&display=swap">
+<link rel="stylesheet" href="https://use.typekit.net/oav4umc.css"><!-- Adobe Fonts: Optima nova + Richmond Display (projeto "Vilalara site prototipo") -->
+<link rel="stylesheet" href="https://use.typekit.net/ozg0foo.css"><!-- Adobe Fonts: Fact VF (projeto "Vilalara site prototipo Fact") -->
+<link rel="stylesheet" href="assets/css/tokens.css?v=20261120u">
+<link rel="stylesheet" href="assets/css/base.css?v=20261120u">
+<link rel="stylesheet" href="assets/css/blocos.css?v=20261120u">
+</head>
+<body>
+
+<!-- =================================================================
+     60.º ANIVERSÁRIO (landing page da categoria)
+     Blocos, por ordem: cabecalho-interior (sobre foto), hero-landing,
+     intro (com dois botões), titulo-seccao, destaques (4: foto + texto,
+     alternados), titulo-seccao, cronologia (o ano em revista, mês a mês),
+     perguntas (fecho com "Reserve a sua estadia"), rodape, painel-menu.
+     Conteúdo e fotos: vilalara.com/pt/60-aniversario/.
+     ================================================================= -->
+
+
+<!-- BLOCO: cabecalho-interior (variante sobre foto) -->
+<header class="cab-interior cab-interior--sobre-foto" data-sobre-foto>
+  <button class="botao-menu" type="button" data-abre-painel aria-expanded="false" aria-controls="painel-menu">
+    <span class="tracos"></span><span class="sr-only">Abrir menu</span>
+  </button>
+  <a class="cab-interior__monograma" href="index.html" aria-label="Vilalara Grand Hotel Algarve, página inicial">
+    <img src="assets/img/marca/monograma-escuro.png" alt="Vilalara" width="277" height="274">
+  </a>
+  <div class="cab-acoes">
+    <div class="idioma">
+      <button class="idioma__botao" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="lista-idiomas">
+        <span class="idioma__atual">PT</span><span class="sr-only">, escolher idioma</span>
+      </button>
+      <ul class="idioma__lista" id="lista-idiomas" hidden>
+        <li><button type="button" data-lingua="pt" aria-current="true">PT</button></li>
+        <li><button type="button" data-lingua="en">EN</button></li>
+        <li><button type="button" data-lingua="es">ES</button></li>
+        <li><button type="button" data-lingua="fr">FR</button></li>
+        <li><button type="button" data-lingua="de">DE</button></li>
+      </ul>
+    </div>
+    <a class="botao-link" href="reservas.html">Reservar</a>
+  </div>
+</header>
+<!-- /BLOCO: cabecalho-interior -->
+
+
+<main>
+
+  <!-- BLOCO: hero-landing -->
+  <section class="slide landing landing--fixo" aria-label="60.º Aniversário">
+    <figure class="slide__media" style="--foco: 50% 55%">
+      <img src="assets/img/home/09-60-aniversario.jpg" alt="Fotografia antiga do Vilalara sobre a falésia" fetchpriority="high">
+    </figure>
+    <div class="hero-quarto__texto hero-restaurante">
+      <h1><img class="hero-restaurante__logo hero-restaurante__logo--60" src="assets/img/60-anos/selo-60.svg" alt="Grand Hotel Algarve, 60 anos, fundado em 1966" width="155" height="156"></h1>
+    </div>
+    <a class="seta-scroll" href="#apresentacao" aria-label="Descer para a apresentação">
+      <svg viewBox="0 0 14 32" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M7 0v31M1 25l6 6 6-6"/></svg>
+    </a>
+  </section>
+  <!-- /BLOCO: hero-landing -->
+
+  <div class="landing--fixo__conteudo"><!-- tudo o que sobe por cima do banner fixo (fundo contínuo, sem frestas) -->
+
+
+  <!-- BLOCO: intro (com dois botões) -->
+  <section class="intro" id="apresentacao">
+    <h2 class="intro__titulo">60 anos de<br><span class="intro__script" style="white-space: nowrap">Vilalara</span></h2>
+    <div class="intro__texto">
+      <p class="intro__sobre">Vilalara Grand Hotel Algarve, fundado em&nbsp;1966</p>
+      <p>Uma&nbsp;época marcada pela&nbsp;gastronomia, bem-estar, cultura e&nbsp;património.</p>
+      <div class="intro__acoes">
+        <a class="botao-contorno botao--cheio" href="#ano-em-revista">O&nbsp;ano em&nbsp;revista</a>
+        <a class="botao-contorno" href="reservas.html">Reserve a&nbsp;sua&nbsp;estadia</a>
+      </div>
+    </div>
+  </section>
+  <!-- /BLOCO: intro -->
+
+
+  <h2 class="titulo-seccao" id="destaques">Nove momentos <span class="intro__script">de&nbsp;maio a&nbsp;outubro de&nbsp;2026</span></h2>
+
+  <!-- BLOCO: destaques (foto + texto, alternados) -->
+  <section class="destaques" aria-label="Os destaques">
+
+    <!-- DESTAQUE: Eclipse -->
+    <article class="destaque" id="eclipse">
+      <figure class="destaque__foto"><img src="assets/img/60-anos/eclipse-oculos.jpg" alt="Óculos de eclipse com o selo dos 60 anos do Vilalara, sobre a relva" loading="lazy"></figure>
+      <div class="destaque__texto">
+        <p class="destaque__quando">12 de&nbsp;agosto</p>
+        <h3>O&nbsp;último eclipse da&nbsp;tua vida</h3>
+        <p class="destaque__frase">Sob um&nbsp;sol escurecido.</p>
+        <p>Começou às&nbsp;18h33, quase sem&nbsp;se&nbsp;notar, uma&nbsp;pequena dentada na&nbsp;orla do&nbsp;sol. Às&nbsp;19h30, noventa e&nbsp;três por&nbsp;cento tinham desaparecido atrás da&nbsp;lua, e&nbsp;o&nbsp;Algarve mergulhou numa luz que&nbsp;nenhum de&nbsp;nós sabia bem nomear, nem&nbsp;crepúsculo, nem&nbsp;sombra, mais fresca e&nbsp;mais estranha do&nbsp;que&nbsp;ambos.</p>
+        <dl class="destaque__dados">
+          <div><dt>Primeiro contacto</dt><dd>18h33</dd></div>
+          <div><dt>No&nbsp;auge</dt><dd>Noventa e&nbsp;três por&nbsp;cento, às&nbsp;19h30</dd></div>
+        </dl>
+      </div>
+    </article>
+
+    <!-- DESTAQUE: Uma semana de sabores (com os 4 chefs) -->
+    <article class="destaque destaque--inverso" id="sabores">
+      <figure class="destaque__foto"><img src="assets/img/60-anos/sabores.jpg" alt="Mesa posta ao ar livre no Algarve" loading="lazy"></figure>
+      <div class="destaque__texto">
+        <p class="destaque__quando">4 a&nbsp;8 de&nbsp;setembro, quatro&nbsp;restaurantes</p>
+        <h3>Uma&nbsp;semana de&nbsp;sabores</h3>
+        <p class="destaque__frase">Sessenta anos de&nbsp;Vilalara, celebrados à&nbsp;mesa.</p>
+        <p>Os&nbsp;Vilalara Chronicle Dinners fecharam a&nbsp;temporada com&nbsp;quatro noites e&nbsp;quatro chefs convidados, cada um&nbsp;a&nbsp;cozinhar a&nbsp;quatro mãos com&nbsp;os&nbsp;nossos.</p>
+      </div>
+      <ul class="destaque__chefs" aria-label="Os quatro chefs convidados">
+        <li><img src="assets/img/60-anos/chef-atlantico.jpg" alt="Chef João Viegas na sala" loading="lazy"><span>4 set · Atlântico</span>Coral, com&nbsp;João&nbsp;Viegas</li>
+        <li><img src="assets/img/60-anos/chef-fogo.jpg" alt="Chef Alexandre Silva com um machado, junto a uma pilha de lenha" loading="lazy"><span>5 set · Fogo</span>Raízes, com&nbsp;Alexandre&nbsp;Silva</li>
+        <li><img src="assets/img/60-anos/chef-mediterraneo.jpg" alt="Chef Stefano Bulla na cozinha" loading="lazy"><span>7 set · Mediterrâneo</span>Trattoria Pantaleone, com&nbsp;Stefano&nbsp;Bulla</li>
+        <li><img src="assets/img/60-anos/chef-algarve.jpg" alt="Chef Louis Anjos sob as luzes do passe da cozinha" loading="lazy"><span>8 set · Algarve</span>Praça das&nbsp;Rosas, com&nbsp;Louis&nbsp;Anjos</li>
+      </ul>
+    </article>
+
+    <!-- DESTAQUE: Thalassotherapy Legacy Week -->
+    <article class="destaque" id="thalasso-legacy">
+      <figure class="destaque__foto"><img src="assets/img/60-anos/thalasso.jpg" alt="Hóspede a flutuar na piscina de talassoterapia durante uma sessão de cura sonora, com duas taças sobre a água" loading="lazy"></figure>
+      <div class="destaque__texto">
+        <p class="destaque__quando">21 a&nbsp;28 de&nbsp;setembro, Wellness&nbsp;Club</p>
+        <h3>Thalassotherapy Legacy Week</h3>
+        <p class="destaque__frase">O&nbsp;Atlântico sempre foi o&nbsp;tratamento.</p>
+        <p>Uma&nbsp;semana dedicada ao&nbsp;que&nbsp;Vilalara pratica discretamente há seis décadas, a&nbsp;arte de&nbsp;devolver o&nbsp;equilíbrio à&nbsp;beira-mar. Tratamentos exclusivos e&nbsp;rituais de&nbsp;bem-estar, herdeiros da&nbsp;tradição de&nbsp;talassoterapia que&nbsp;define este lugar desde a&nbsp;origem.</p>
+        <dl class="destaque__dados">
+          <div><dt>Programa</dt><dd>Vinte e&nbsp;cinco aulas de&nbsp;grupo, vinte e&nbsp;quatro sessões privadas, três workshops</dd></div>
+          <div><dt>Em&nbsp;residência</dt><dd>Gudrun Docherty · João Palma · Dr. João Pestana</dd></div>
+        </dl>
+      </div>
+    </article>
+
+    <!-- DESTAQUE: Martina Hingis -->
+    <article class="destaque destaque--inverso" id="martina-hingis">
+      <figure class="destaque__foto"><img src="assets/img/60-anos/martina-sorriso.jpg" alt="Martina Hingis a sorrir no court, com casaco verde-claro e viseira branca" loading="lazy"></figure>
+      <div class="destaque__texto">
+        <p class="destaque__quando">5 a&nbsp;7 de&nbsp;outubro, Racket&nbsp;Club</p>
+        <h3>Martina Hingis no&nbsp;Vilalara</h3>
+        <p>A&nbsp;antiga número 1 mundial Martina Hingis passou três dias no&nbsp;Vilalara, com&nbsp;nove sessões privadas de&nbsp;trinta minutos nos&nbsp;nossos courts e&nbsp;um&nbsp;Meet &amp;&nbsp;Greet.</p>
+        <p>Foi número 1 mundial aos&nbsp;dezasseis anos, venceu 25 títulos do&nbsp;Grand Slam em&nbsp;singulares, pares e&nbsp;pares mistos, e&nbsp;entrou para&nbsp;o&nbsp;International Tennis Hall of&nbsp;Fame em&nbsp;2013.</p>
+        <dl class="destaque__dados">
+          <div><dt>Em&nbsp;colaboração com</dt><dd>LUX Tennis</dd></div>
+        </dl>
+      </div>
+    </article>
+  </section>
+  <!-- /BLOCO: destaques -->
+
+
+  <h2 class="titulo-seccao" id="ano-em-revista">O&nbsp;ano <span class="intro__script">em&nbsp;revista</span></h2>
+  <p class="titulo-seccao__texto">Cada momento da&nbsp;nossa sexagésima temporada, pela&nbsp;ordem em&nbsp;que&nbsp;aconteceu.</p>
+
+  <!-- BLOCO: cronologia (mês a mês) -->
+  <section class="cronologia" aria-label="O ano em revista">
+    <div class="cronologia__mes">
+      <h3>Maio</h3>
+      <div class="cronologia__eventos">
+        <article class="evento">
+          <figure class="evento__foto"><img src="assets/img/60-anos/60-anos.jpg" alt="Jantar de abertura dos 60 anos no Gaivotas" loading="lazy"></figure>
+          <div class="evento__texto">
+            <p class="evento__data">23 de&nbsp;maio</p>
+            <h4>60 anos nas&nbsp;falésias</h4>
+          <p class="evento__onde">Gaivotas</p>
+            <p>A&nbsp;temporada abriu no&nbsp;Gaivotas com&nbsp;um&nbsp;jantar intimista que&nbsp;percorreu sessenta anos de&nbsp;Vilalara, uma&nbsp;década de&nbsp;cada vez, na&nbsp;presença da&nbsp;Lara, neta do&nbsp;fundador.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="cronologia__mes">
+      <h3>Junho</h3>
+      <div class="cronologia__eventos">
+        <article class="evento">
+          <figure class="evento__foto"><img src="assets/img/60-anos/vila-lisa.jpg" alt="Jantar Vilalara x Vila Lisa no Raízes" loading="lazy"></figure>
+          <div class="evento__texto">
+            <p class="evento__data">17 de&nbsp;junho</p>
+            <h4>Vilalara x Vila Lisa Jantares Crónica</h4>
+          <p class="evento__onde">Raízes</p>
+            <p>Duas casas com&nbsp;alma e&nbsp;idade, uma&nbsp;só mesa. Os&nbsp;Vilalara Chronicle Dinners trouxeram a&nbsp;Vila Lisa ao&nbsp;Raízes por&nbsp;uma&nbsp;noite.</p>
+          </div>
+        </article>
+        <article class="evento">
+          <figure class="evento__foto"><img src="assets/img/60-anos/santos-populares.jpg" alt="Noite de Santos Populares na Praça das Rosas" loading="lazy"></figure>
+          <div class="evento__texto">
+            <p class="evento__data">27 de&nbsp;junho</p>
+            <h4>Santos Populares no&nbsp;Vilalara</h4>
+          <p class="evento__onde">Praça das&nbsp;Rosas</p>
+            <p>Os&nbsp;Santos Populares de&nbsp;junho, celebrados no&nbsp;Vilalara na&nbsp;noite mais descontraída da&nbsp;temporada.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="cronologia__mes">
+      <h3>Julho</h3>
+      <div class="cronologia__eventos">
+        <article class="evento">
+          <figure class="evento__foto"><img src="assets/img/60-anos/atlantico-pacifico.jpg" alt="Jantar a quatro mãos no Coral" loading="lazy"></figure>
+          <div class="evento__texto">
+            <p class="evento__data">11 de&nbsp;julho</p>
+            <h4>O&nbsp;Atlântico encontra-se com&nbsp;o&nbsp;Pacífico</h4>
+          <p class="evento__onde">Coral</p>
+            <p>O&nbsp;Coral (Guia MICHELIN) recebeu o&nbsp;chef Sebastião Coutinho, do&nbsp;Kabuki (uma&nbsp;estrela MICHELIN), para&nbsp;um&nbsp;jantar a&nbsp;quatro mãos partilhado por&nbsp;apenas vinte convidados. Duas filosofias, uma&nbsp;mesa, o&nbsp;mesmo respeito pelo&nbsp;ingrediente.</p>
+          </div>
+        </article>
+        <article class="evento">
+          <figure class="evento__foto"><img src="assets/img/60-anos/blanc-des-blancs.jpg" alt="Noite Blanc des Blancs, de branco, à hora dourada" loading="lazy"></figure>
+          <div class="evento__texto">
+            <p class="evento__data">25 de&nbsp;julho</p>
+            <h4>Blanc des Blancs</h4>
+          <p class="evento__onde">Praça das&nbsp;Rosas</p>
+            <p>No&nbsp;auge do&nbsp;nosso sexagésimo verão, vestimos a&nbsp;noite de&nbsp;branco. Champanhe à&nbsp;hora dourada, música trazida pela&nbsp;brisa do&nbsp;mar e&nbsp;o&nbsp;calor de&nbsp;uma&nbsp;casa que&nbsp;passou seis décadas a&nbsp;aprender a&nbsp;receber.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="cronologia__mes">
+      <h3>Agosto</h3>
+      <div class="cronologia__eventos">
+        <article class="evento">
+          <figure class="evento__foto"><img src="assets/img/60-anos/eclipse-noite.jpg" alt="O eclipse visto do Vilalara" loading="lazy"></figure>
+          <div class="evento__texto">
+            <p class="evento__data">12 de&nbsp;agosto</p>
+            <h4>O&nbsp;último eclipse da&nbsp;tua vida</h4>
+            <p>Noventa e&nbsp;três por&nbsp;cento do&nbsp;sol atrás da&nbsp;lua, às&nbsp;19h30.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="cronologia__mes">
+      <h3>Setembro</h3>
+      <div class="cronologia__eventos">
+        <article class="evento">
+          <figure class="evento__foto"><img src="assets/img/60-anos/chef-mediterraneo.jpg" alt="Um dos chefs convidados na cozinha" loading="lazy"></figure>
+          <div class="evento__texto">
+            <p class="evento__data">4 a&nbsp;8 set</p>
+            <h4>Uma&nbsp;semana de&nbsp;sabores</h4>
+          <p class="evento__onde">Coral, Raízes, Trattoria Pantaleone, Praça das&nbsp;Rosas</p>
+            <p>Quatro noites, quatro chefs convidados a&nbsp;cozinhar a&nbsp;quatro mãos com&nbsp;os&nbsp;nossos.</p>
+          </div>
+        </article>
+        <article class="evento">
+          <figure class="evento__foto"><img src="assets/img/60-anos/thalasso.jpg" alt="Sessão de cura sonora na piscina de talassoterapia" loading="lazy"></figure>
+          <div class="evento__texto">
+            <p class="evento__data">21 a&nbsp;28 set</p>
+            <h4>Thalassotherapy Legacy Week</h4>
+          <p class="evento__onde">Wellness Club</p>
+            <p>Uma&nbsp;semana dedicada à&nbsp;arte de&nbsp;devolver o&nbsp;equilíbrio à&nbsp;beira-mar.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="cronologia__mes">
+      <h3>Outubro</h3>
+      <div class="cronologia__eventos">
+        <article class="evento">
+          <figure class="evento__foto"><img src="assets/img/60-anos/martina-direita.jpg" alt="Martina Hingis a jogar no court" loading="lazy"></figure>
+          <div class="evento__texto">
+            <p class="evento__data">5 a&nbsp;7 out</p>
+            <h4>Martina Hingis no&nbsp;Vilalara</h4>
+          <p class="evento__onde">Racket Club</p>
+            <p>Três dias com&nbsp;a&nbsp;antiga número 1 mundial, em&nbsp;colaboração com&nbsp;a&nbsp;LUX&nbsp;Tennis.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="cronologia__mes">
+      <h3>2027</h3>
+      <div class="cronologia__eventos">
+        <article class="evento">
+          <figure class="evento__foto"><img src="assets/img/60-anos/arquivo.jpg" alt="Fotografia de arquivo de uma celebração no Vilalara" loading="lazy"></figure>
+          <div class="evento__texto">
+            <p class="evento__data">Data a&nbsp;anunciar</p>
+            <h4>Vilalara 60 Years Legacy Celebration</h4>
+            <p>A&nbsp;celebração dos&nbsp;nossos sessenta anos continua em&nbsp;2027, numa data ainda a&nbsp;anunciar.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- /BLOCO: cronologia -->
+
+  <div class="espaco-final" aria-hidden="true"></div><!-- espaço antes do rodapé (no lugar do antigo bloco "perguntas") -->
+  </div>
+</main>
+
+
+<!-- BLOCO: rodape -->
+<footer class="rodape">
+  <div class="rodape__dentro">
+
+    <div class="rodape__marca">
+      <a class="rodape__logo" href="index.html" aria-label="Vilalara Grand Hotel Algarve, página inicial">
+        <img src="assets/img/marca/logo-branco.png" alt="Vilalara Grand Hotel Algarve" width="1669" height="395" loading="lazy">
+      </a>
+      <p class="rodape__morada">
+        <img src="assets/img/marca/morada.png" alt="Praia das Gaivotas, Alporchinhos, Porches 8400-450, Portugal" width="839" height="300" loading="lazy">
+      </p>
+      <div class="rodape__selos">
+        <span class="rodape__selos-faixa">
+          <img src="assets/img/marca/selos-parceiros.png" alt="Visit Algarve, Forbes Travel Guide, XO Private, guia Michelin, Takumians, Mr &amp; Mrs Smith, Ensemble" width="2397" height="143" loading="lazy">
+          <a class="rodape__selo" href="https://visitalgarve.pt/en/" target="_blank" rel="noopener" aria-label="Visit Algarve (abre numa nova janela)" style="left:0.00%;width:15.56%"></a>
+          <a class="rodape__selo" href="https://forbestravelguide.com/" target="_blank" rel="noopener" aria-label="Forbes Travel Guide (abre numa nova janela)" style="left:21.23%;width:9.05%"></a>
+          <a class="rodape__selo" href="https://www.xoprivate.com/" target="_blank" rel="noopener" aria-label="XO Private (abre numa nova janela)" style="left:35.71%;width:6.05%"></a>
+          <a class="rodape__selo" href="https://guide.michelin.com/pt/pt_PT" target="_blank" rel="noopener" aria-label="Guia Michelin (abre numa nova janela)" style="left:47.23%;width:6.01%"></a>
+          <a class="rodape__selo" href="https://www.mrandmrssmith.com/" target="_blank" rel="noopener" aria-label="Mr &amp; Mrs Smith (abre numa nova janela)" style="left:75.18%;width:8.34%"></a>
+          <a class="rodape__selo" href="https://www.ensembletravel.com/" target="_blank" rel="noopener" aria-label="Ensemble Travel (abre numa nova janela)" style="left:89.19%;width:10.81%"></a>
+        </span>
+      </div>
+    </div>
+
+    <div class="rodape__info">
+      <div class="rodape__linha">
+        <div>
+          <h2>Contactos</h2>
+          <p><a href="tel:+351282320000">(+351) 282 320 000</a></p>
+          <p class="rodape__nota">Custo de&nbsp;uma&nbsp;chamada para&nbsp;a&nbsp;rede fixa nacional (ou&nbsp;internacional, se&nbsp;a&nbsp;chamada for feita fora da&nbsp;UE).</p>
+          <p><a href="mailto:reservas@vilalara.com">reservas@vilalara.com</a></p>
+        </div>
+        <div>
+          <h2 class="sr-only">Sobre</h2>
+          <ul>
+            <li><a href="newsletter.html">Registo na&nbsp;Newsletter</a></li>
+            <li><a href="sustentabilidade.html">Sustentabilidade</a></li>
+            <li><a href="carreiras.html">Carreiras</a></li>
+            <li><a href="https://lost.faundit.com/vilalara-grand-hotel-algarve" target="_blank" rel="noopener">Lost &amp;&nbsp;Found</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="sr-only">Informação legal</h2>
+          <ul>
+            <li><a href="termos-condicoes.html">Termos &amp;&nbsp;Condições</a></li>
+            <li><a href="politica-privacidade.html">Política de&nbsp;Privacidade</a></li>
+            <li><a href="politica-cookies.html">Política de&nbsp;Cookies</a></li>
+            <li><a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noopener">Livro de&nbsp;Reclamações</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Redes sociais</h2>
+          <ul>
+            <li><a href="https://www.instagram.com/vilalaragrandhotel" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="#">Linkedin</a></li>
+            <li><a href="https://www.facebook.com/VilalaraThalassaResort" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.tripadvisor.com/Hotel_Review-g652080-d231460-Reviews-Vilalara_Thalassa_Resort-Porches_Faro_District_Algarve.html" target="_blank" rel="noopener">Tripadvisor</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rodape__linha rodape__linha--legal">
+        <div>
+          <h2>Aviso ao&nbsp;consumidor</h2>
+          <p class="rodape__legal">Ao&nbsp;abrigo do&nbsp;artigo 18.º da&nbsp;Lei n.º 144/2015, de&nbsp;8 de&nbsp;setembro, em&nbsp;caso de&nbsp;litígio de&nbsp;consumo, o&nbsp;consumidor pode recorrer à&nbsp;Plataforma Europeia de&nbsp;Resolução de&nbsp;Litígios em&nbsp;Linha: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr</a>. Pode igualmente recorrer a&nbsp;uma&nbsp;entidade de&nbsp;resolução alternativa de&nbsp;litígios de&nbsp;consumo disponível em&nbsp;Portugal em&nbsp;<a href="https://www.consumidor.gov.pt/" target="_blank" rel="noopener">https://www.consumidor.gov.pt</a>. O&nbsp;recurso a&nbsp;estas entidades não prejudica o&nbsp;direito de&nbsp;o&nbsp;consumidor recorrer aos&nbsp;tribunais judiciais, nos&nbsp;termos da&nbsp;lei.</p>
+          <p class="rodape__copyright">2026 © Vilalara Grand Hotel Algarve. All rights reserved.</p>
+        </div>
+        <div>
+          <h2>Entidade exploradora</h2>
+          <p class="rodape__nota">Goldtur – Hotéis e&nbsp;Turismo, S. A.<br>NIPC 500 201 072<br>Praia das&nbsp;Gaivotas – Alporchinhos<br>8400-450 Porches, Portugal</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+<!-- /BLOCO: rodape -->
+
+
+<!-- BLOCO: painel-menu -->
+<div class="veu-painel" aria-hidden="true"></div>
+<nav class="painel" id="painel-menu" aria-label="Menu principal">
+  <div class="painel__topo">
+    <a class="painel__logo" href="index.html"><img src="assets/img/marca/logo-escuro.png" alt="Vilalara Grand Hotel Algarve" width="1669" height="395"></a>
+    <button class="painel__fechar" type="button"><span class="sr-only">Fechar menu</span></button>
+  </div>
+  <div class="painel__menu">
+  <ul>
+  <li class="painel__item"><a href="index.html" data-categoria="home">Home</a></li>
+  <li class="painel__item"><a href="our-heritage.html" data-categoria="our-heritage">Our Heritage</a></li>
+  <li class="painel__item tem-sub">
+    <div class="painel__linha"><a href="suites-residencias.html" data-categoria="suites-residencias">Suítes &amp;&nbsp;Residências</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-suites-residencias"><span class="sr-only">Submenu Suítes &amp;&nbsp;Residências</span></button></div>
+    <ul id="sub-suites-residencias" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item"><a href="elegant-suite.html">Elegant Suite</a></li>
+    <li class="painel__item"><a href="master-suite.html">Master Suite</a></li>
+    <li class="painel__item"><a href="ocean-suite.html">Ocean Suite</a></li>
+    <li class="painel__item"><a href="grand-suite.html">Grand Suite</a></li>
+    <li class="painel__item"><a href="george-ansley-suite.html">George Ansley Suite</a></li>
+    <li class="painel__item"><a href="jose-de-harry-suite.html">José de&nbsp;Harry Suite</a></li>
+    <li class="painel__item"><a href="private-residences.html">Private Residences</a></li>
+    <li class="painel__item"><a href="casa-laranjo.html">Casa Laranjo</a></li>
+    <li class="painel__item"><a href="casa-levy.html">Casa Levy</a></li>
+    <li class="painel__item"><a href="casa-lara.html">Casa Lara</a></li>
+    </ul>
+  </li>
+  <li class="painel__item tem-sub">
+    <div class="painel__linha"><a href="gastronomia.html" data-categoria="gastronomia">Gastronomia</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-gastronomia"><span class="sr-only">Submenu Gastronomia</span></button></div>
+    <ul id="sub-gastronomia" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item"><a href="coral.html">Coral</a></li>
+    <li class="painel__item"><a href="raizes.html">Raízes</a></li>
+    <li class="painel__item"><a href="trattoria.html">Trattoria</a></li>
+    <li class="painel__item"><a href="a-costa.html">A-costa</a></li>
+    <li class="painel__item"><a href="vento.html">Vento</a></li>
+    <li class="painel__item"><a href="gaivotas.html">Gaivotas</a></li>
+    </ul>
+  </li>
+  <li class="painel__item tem-sub">
+    <div class="painel__linha"><a href="wellness.html" data-categoria="wellness">Wellness</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-wellness"><span class="sr-only">Submenu Wellness</span></button></div>
+    <ul id="sub-wellness" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item tem-sub">
+      <div class="painel__linha"><a href="tratamentos.html">Tratamentos</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-tratamentos"><span class="sr-only">Submenu Tratamentos</span></button></div>
+      <ul id="sub-tratamentos" hidden class="painel__sub painel__sub--n3">
+      <li class="painel__item"><a href="tratamento-rituais.html">Rituals</a></li>
+      <li class="painel__item"><a href="tratamento-faciais.html">Faciais</a></li>
+      <li class="painel__item"><a href="tratamento-body.html">Body</a></li>
+      <li class="painel__item"><a href="tratamento-body-therapy.html">Body Therapy</a></li>
+      <li class="painel__item"><a href="tratamento-body-shaping.html">Body Shaping</a></li>
+      <li class="painel__item"><a href="tratamento-shared-care.html">Shared Care</a></li>
+      <li class="painel__item"><a href="tratamento-flows.html">Flows</a></li>
+      <li class="painel__item"><a href="tratamento-self-discovery.html">Self Discovery</a></li>
+      </ul>
+    </li>
+    <li class="painel__item tem-sub">
+      <div class="painel__linha"><a href="programas.html">Programas</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-programas"><span class="sr-only">Submenu Programas</span></button></div>
+      <ul id="sub-programas" hidden class="painel__sub painel__sub--n3">
+      <li class="painel__item"><a href="programa-thalassotherapy-healing.html">Thalassotherapy Healing</a></li>
+      <li class="painel__item"><a href="programa-fitness-essence.html">Fitness Essence</a></li>
+      <li class="painel__item"><a href="programa-bespoke-anti-ageing-retreat.html">Bespoke Anti-ageing Retreat</a></li>
+      <li class="painel__item"><a href="programa-stress-relief-recover.html">Stress Relief &amp;&nbsp;Recover</a></li>
+      <li class="painel__item"><a href="programa-detox-weight-management.html">Detox &amp;&nbsp;Weight Management</a></li>
+      </ul>
+    </li>
+    <li class="painel__item tem-sub">
+      <div class="painel__linha"><a href="thalasso.html">Thalasso</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-thalasso"><span class="sr-only">Submenu Thalasso</span></button></div>
+      <ul id="sub-thalasso" hidden class="painel__sub painel__sub--n3">
+      <li class="painel__item"><a href="thalassoterapia.html">Thalassoterapia</a></li>
+      <li class="painel__item"><a href="thalasso-flows.html">Thalasso Flows</a></li>
+      </ul>
+    </li>
+    <li class="painel__item tem-sub">
+      <div class="painel__linha"><a href="bem-estar.html">Práticas Wellness</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-bem-estar"><span class="sr-only">Submenu Práticas Wellness</span></button></div>
+      <ul id="sub-bem-estar" hidden class="painel__sub painel__sub--n3">
+      <li class="painel__item"><a href="pratica-mindful-motion.html">Mindful &amp;&nbsp;Motion</a></li>
+      <li class="painel__item"><a href="pratica-ancient-techniques.html">Ancient Techniques</a></li>
+      <li class="painel__item"><a href="pratica-hybrid-training.html">Hybrid Training</a></li>
+      <li class="painel__item"><a href="pratica-premium-balance.html">Premium Balance</a></li>
+      <li class="painel__item"><a href="pratica-rituals-of-connection.html">Rituals of&nbsp;Connection</a></li>
+      </ul>
+    </li>
+    <li class="painel__item"><a href="plano-alimentar-anti-inflamatorio.html">Nutrição</a></li>
+    <li class="painel__item"><a href="centro-fitness.html">Fitness</a></li>
+    </ul>
+  </li>
+  <li class="painel__item tem-sub">
+    <div class="painel__linha"><a href="clubs.html" data-categoria="clubs">Clubs</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-clubs"><span class="sr-only">Submenu Clubs</span></button></div>
+    <ul id="sub-clubs" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item"><a href="racket-club.html">Racket Club</a></li>
+    <li class="painel__item"><a href="kids-club.html">Kids Club</a></li>
+    <li class="painel__item"><a href="beach-club.html">Beach Club</a></li>
+    </ul>
+  </li>
+  <li class="painel__item tem-sub">
+    <div class="painel__linha"><a href="experiencias.html" data-categoria="experiencias">Experiências</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-experiencias"><span class="sr-only">Submenu Experiências</span></button></div>
+    <ul id="sub-experiencias" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item"><a href="experiencia-george-ansley-tour.html">The&nbsp;George Ansley Tour</a></li>
+    <li class="painel__item"><a href="experiencia-from-market-to-table.html">From Market to&nbsp;Table</a></li>
+    <li class="painel__item"><a href="experiencia-bottle-blending.html">Bottle Blending</a></li>
+    <li class="painel__item"><a href="experiencia-market-walk.html">Market Walk</a></li>
+    <li class="painel__item"><a href="experiencia-behind-the-wine.html">Behind the&nbsp;Wine</a></li>
+    <li class="painel__item"><a href="experiencia-ceramica.html">Traditional Ceramics</a></li>
+    <li class="painel__item"><a href="experiencia-velas.html">Craft Candle Workshop</a></li>
+    <li class="painel__item"><a href="experiencia-biologo-astronomia.html">Biólogo e&nbsp;Astronomia</a></li>
+    </ul>
+  </li>
+  <li class="painel__item"><a href="occasions.html" data-categoria="occasions">Occasions</a></li>
+  <li class="painel__item no-caminho"><a href="60-aniversario.html" data-categoria="60-aniversario" aria-current="page">60.º Aniversário</a></li>
+  </ul>
+  </div>
+  <p class="painel__morada"><img src="assets/img/marca/morada.png" alt="Praia das Gaivotas, Alporchinhos, Porches 8400-450, Portugal" width="839" height="300" loading="lazy"></p>
+</nav>
+<!-- /BLOCO: painel-menu -->
+
+<script src="assets/js/site.js?v=20261120u"></script>
+</body>
+</html>

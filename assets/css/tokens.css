@@ -1,0 +1,151 @@
+/* =====================================================================
+   VILALARA — TOKENS DE DESIGN
+   ---------------------------------------------------------------------
+   Este ficheiro é a "fonte da verdade" do site: cores, fontes, tamanhos
+   e espaçamentos. No WordPress, estes valores passam para o theme.json
+   e aparecem no editor como opções fixas (a equipa escolhe da lista,
+   não inventa cores nem tamanhos novos).
+
+   Regra: nenhum outro ficheiro deve ter cores ou fontes escritas à mão.
+   Usa sempre var(--nome-do-token).
+   ===================================================================== */
+
+/* ---------- Fontes ----------
+   As fontes da marca são licenciadas (Optima nova LT Pro, Fact VF,
+   Millionaire Script). No protótipo usamos a cópia instalada no
+   computador de quem vê (local). Quem não as tiver vê a alternativa
+   mais próxima. Para o site final é preciso a licença WEB de cada uma. */
+@font-face {
+  font-family: "VL Optima";
+  src: local("Optima nova LT Pro"), local("OptimaNovaLTPro-Regular"), local("Optima Regular"), local("Optima-Regular");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "VL Optima";
+  src: local("Optima nova LT Pro Medium"), local("OptimaNovaLTPro-Medium"), local("Optima Regular"), local("Optima-Regular");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "VL Optima";
+  src: local("Optima nova LT Pro Demi"), local("OptimaNovaLTPro-Demi"), local("Optima Bold"), local("Optima-Bold");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "VL Optima Light";
+  src: local("Optima nova LT Pro Light"), local("OptimaNovaLTPro-Light"), local("Optima Regular"), local("Optima-Regular");
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "VL Fact";
+  src: local("Fact VF"), local("FactVF-Regular"), local("Fact");
+  font-weight: 300 700;
+  font-display: swap;
+}
+/* Millionaire Script: ficheiro da marca, alojado no próprio site */
+@font-face {
+  font-family: "VL Script";
+  src: url("../fonts/millionaire-script.woff2") format("woff2"), local("Millionaire Script");
+  font-display: swap;
+}
+
+:root {
+  /* ---------- Cores atuais da marca ---------- */
+  --cor-creme-marca: #e1ddd3;
+  --cor-castanho-marca: #42321a;
+
+  /* ---------- Paleta proposta (prancheta 1) ---------- */
+  --cor-creme: #ece7df;
+  --cor-areia: #d5cab9;
+  --cor-castanho-dourado: #957a58;
+  --cor-verde-cinza: #3b3d37;
+  --cor-quase-preto: #2a2928;
+  --cor-palha: #efdaa8;
+  --cor-ocre: #bd7e45;
+  --cor-castanho-medio: #5e4e40;
+  --cor-castanho-escuro: #2e2421;
+  --cor-castanho-noite: #3a2f28;
+
+  /* ---------- Pretos em percentagem (como no Illustrator, K em CMYK) ----------
+     Não é opacidade: é a cor sólida equivalente a essa percentagem de preto
+     (convertida do perfil FOGRA39 do layout para o ecrã). */
+  --cor-preto-90: #3c3c3b;   /* K 90%: títulos e textos */
+  --cor-preto-70: #706f6f;   /* K 70%: textos da linha do tempo */
+  --cor-preto-50: #9d9d9c;   /* K 50%: etiquetas secundárias ("De 1966", "Até hoje") */
+
+  /* ---------- Cores de função (usar estas nos blocos) ---------- */
+  --cor-fundo: #ffffff;
+  --cor-texto: var(--cor-preto-90);
+  --cor-texto-suave: #8f8b85;          /* itens inativos: "a cinzento e mais pequenos" */
+  --cor-linha: #bdb9b2;                /* linhas finas (barra do menu, painel) */
+  --cor-sobre-foto: #ffffff;           /* texto por cima de fotografias */
+  --cor-rodape-fundo: #1e160d;              /* castanho escuro (pedido do utilizador, 2026-11-12) */
+  --cor-rodape-texto: #f3f1ec;
+  --cor-rodape-linha: rgba(243, 241, 236, 0.35);
+
+  /* ---------- Famílias tipográficas ---------- */
+  /* "optima-nova-lt-pro" e "richmond-display" vêm do Adobe Fonts (projeto web
+     "Vilalara site prototipo", gerido em fonts.adobe.com). */
+  --fonte-titulos: "optima-nova-lt-pro", "VL Optima", Optima, "Marcellus", "Palatino", serif;
+  --fonte-texto: "fact-variable", "VL Fact", "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif; /* Fact VF via Adobe Fonts */
+  --fonte-destaque: "VL Script", "Pinyon Script", cursive; /* só palavras soltas, nunca frases */
+  /* Texto de introdução das páginas: Richmond Display Ultra Light (peso 200). */
+  --fonte-intro: "richmond-display", "Richmond Display", "VL Optima Light", Optima, "Marcellus", serif;
+
+  /* ---------- Tamanhos de letra (base: ecrã 1440px) ---------- */
+  --tam-menu: 0.6875rem;               /* 11px — itens do menu */
+  --tam-etiqueta: 0.75rem;             /* 12px — etiquetas, PT */
+  --tam-botao: 0.9375rem;              /* 15px — RESERVAR */
+  --tam-texto: 1rem;                   /* 16px — texto corrido */
+  --tam-subtitulo: clamp(0.8125rem, 0.75rem + 0.3vw, 1rem);
+  --tam-titulo-hero: clamp(2rem, 1.2rem + 2.6vw, 3.25rem);
+  --tam-texto-grande: clamp(1.5rem, 1.1rem + 1.4vw, 2.25rem);
+  --tam-titulo-landing: clamp(1.25rem, 0.8rem + 1.5vw, 1.975rem);   /* 31,6 pt no layout: nome da categoria ao centro */
+  --tam-titulo-seccao: clamp(1.875rem, 1rem + 2.8vw, 3.125rem);     /* 50 px: títulos em Optima maiúsculas (regra do cliente) */
+  --tam-script: clamp(1.75rem, 0.9rem + 2vw, 2.5rem);               /* 40 px: Millionaire Script (regra do cliente) */
+  --tam-intro: clamp(1.25rem, 0.8rem + 1.6vw, 1.875rem);            /* 30 pt: texto de introdução */
+  --tam-texto-pequeno: 0.9375rem;                                   /* 15 pt: textos da linha do tempo */
+  --cor-script: var(--cor-preto-90);                                /* palavra em Millionaire Script: igual ao título */
+  --cor-ano-inativo: #c9c4bc;                                       /* anos não selecionados na roda da linha do tempo */
+  --cor-inativo: #c9c4bc;                                           /* separadores de tipologia não selecionados */
+  --cor-cartao-claro: #e0ddd2;                                      /* cartões de categoria (Suítes & Residências) */
+  --cor-cartao-escuro: #c7c1ab;
+  --cor-wellness-fundo: #1a0f0d;
+  --cor-wellness-painel: #b4a78f;                                   /* caixas das aulas (páginas de práticas Wellness) */
+  --cor-cartao-cinza: #f3f2f0;                                      /* cartões "Inclui" dos programas */                                    /* fundo castanho-escuro da página Wellness */
+  --tam-titulo-grande: var(--tam-titulo-seccao);                    /* (era 56,2 pt) — agora 50 px como os outros */
+  --tam-titulo-destaque: var(--tam-titulo-seccao);                  /* (era 62,9 pt) — agora 50 px como os outros */
+  --tam-script-pequeno: var(--tam-script);                          /* (era 38,6 pt) — agora 40 px */
+  --tam-separador: clamp(0.8125rem, 0.6rem + 0.45vw, 0.9875rem);    /* 15,8 pt: nomes das tipologias */
+  --tam-botao-pequeno: 0.76rem;                                     /* 12 pt: "+ INFORMAÇÕES", "RESERVAR", "VER" */
+  --tam-titulo-cartao: clamp(1.0625rem, 0.75rem + 0.8vw, 1.325rem); /* 21 pt: títulos dos cartões */
+
+  --espaco-letras-menu: 0.09em;
+  --espaco-letras-titulo: 0.02em;
+
+  /* ---------- Espaçamentos e medidas ---------- */
+  --margem-lateral: clamp(20px, 5vw, 72px);  /* 72px num ecrã de 1440px */
+  --margem-topo: clamp(20px, 3.4vw, 48px);
+  --altura-barra: clamp(72px, 7.8vw, 112px); /* barra das páginas interiores */
+  --largura-painel: clamp(300px, 30vw, 440px);   /* menu lateral (antes até 300 px) */
+  --raio-botao: 999px;
+
+  /* ---------- Movimento ---------- */
+  --duracao: 450ms;
+  --curva: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* ---------- Tema escuro (página Wellness) ----------
+   Basta pôr class="tema-escuro" no <html> da página: os blocos usam as
+   cores de função, por isso mudam sozinhos (fundo, textos, barra, rodapé). */
+.tema-escuro {
+  --cor-fundo: var(--cor-wellness-fundo);
+  --cor-texto: var(--cor-cartao-claro);
+  --cor-script: var(--cor-cartao-claro);
+  --cor-texto-suave: #9a8f86;
+  --cor-linha: rgba(224, 221, 210, 0.18);
+  --cor-inativo: #5a4c46;
+}

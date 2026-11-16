@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Elegant Suite · Vilalara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&family=Marcellus&family=Pinyon+Script&display=swap">
+<link rel="stylesheet" href="https://use.typekit.net/oav4umc.css"><!-- Adobe Fonts: Optima nova + Richmond Display (projeto "Vilalara site prototipo") -->
+<link rel="stylesheet" href="https://use.typekit.net/ozg0foo.css"><!-- Adobe Fonts: Fact VF (projeto "Vilalara site prototipo Fact") -->
+<script>/* chegada pela animação do "Ver …" */try{if(sessionStorage.getItem("vl-transicao")==="quarto"){document.documentElement.classList.add("chegada-quarto");sessionStorage.removeItem("vl-transicao");}}catch(e){}</script>
+<link rel="stylesheet" href="assets/css/tokens.css?v=20261120u">
+<link rel="stylesheet" href="assets/css/base.css?v=20261120u">
+<link rel="stylesheet" href="assets/css/blocos.css?v=20261120u">
+</head>
+<body>
+
+<!-- =================================================================
+     ELEGANT SUITE (landing page do quarto)
+     Abre a partir do botão "Ver …" em Suítes & Residências.
+     Blocos, por ordem: cabecalho-interior (sobre foto), hero-quarto,
+     intro (só texto), caracteristicas-quarto, galeria-quarto,
+     comodidades, reservar, outras-suites, rodape, painel-menu.
+     Para criar a página de outro quarto: copiar este ficheiro e mudar
+     fotos e textos.
+     ================================================================= -->
+
+
+<!-- BLOCO: cabecalho-interior (variante sobre foto) -->
+<header class="cab-interior cab-interior--sobre-foto" data-sobre-foto>
+  <button class="botao-menu" type="button" data-abre-painel aria-expanded="false" aria-controls="painel-menu">
+    <span class="tracos"></span><span class="sr-only">Abrir menu</span>
+  </button>
+  <a class="cab-interior__monograma" href="index.html" aria-label="Vilalara Grand Hotel Algarve, página inicial">
+    <img src="assets/img/marca/monograma-escuro.png" alt="Vilalara" width="277" height="274">
+  </a>
+  <div class="cab-acoes">
+    <div class="idioma">
+      <button class="idioma__botao" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="lista-idiomas">
+        <span class="idioma__atual">PT</span><span class="sr-only">, escolher idioma</span>
+      </button>
+      <ul class="idioma__lista" id="lista-idiomas" hidden>
+        <li><button type="button" data-lingua="pt" aria-current="true">PT</button></li>
+        <li><button type="button" data-lingua="en">EN</button></li>
+        <li><button type="button" data-lingua="es">ES</button></li>
+        <li><button type="button" data-lingua="fr">FR</button></li>
+        <li><button type="button" data-lingua="de">DE</button></li>
+      </ul>
+    </div>
+    <a class="botao-link" href="reservas.html">Reservar</a>
+  </div>
+</header>
+<!-- /BLOCO: cabecalho-interior -->
+
+
+<main>
+
+  <!-- BLOCO: hero-quarto -->
+  <section class="slide landing landing--fixo" aria-label="Elegant Suite">
+    <figure class="slide__media" style="--foco: 50% 60%">
+      <img src="assets/img/suites/elegant/hero.jpg" alt="Elegant Suite com cama sob o arco e zona de estar" fetchpriority="high">
+    </figure>
+    <div class="hero-quarto__texto">
+      <p class="hero-quarto__nome">Elegant Suite</p>
+      <h1 class="hero-quarto__titulo">Sofisticado <span class="intro__script">Espaçoso</span></h1>
+    </div>
+    <a class="seta-scroll" href="#sobre" aria-label="Descer para a descrição">
+      <svg viewBox="0 0 14 32" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M7 0v31M1 25l6 6 6-6"/></svg>
+    </a>
+  </section>
+  <!-- /BLOCO: hero-quarto -->
+
+  <div class="landing--fixo__conteudo"><!-- tudo o que sobe por cima do banner fixo (fundo contínuo, sem frestas) -->
+
+
+  <!-- BLOCO: intro (só texto) -->
+  <section class="intro intro--so-texto" id="sobre">
+    <p class="intro__texto">Desfrute da&nbsp;nossa Elegant Suite de&nbsp;55 m², com&nbsp;cama de&nbsp;casal ou&nbsp;duas camas individuais, área de&nbsp;estar e&nbsp;ampla varanda com&nbsp;vista para&nbsp;o&nbsp;resort. O&nbsp;espaço ideal para&nbsp;relaxar com&nbsp;uma&nbsp;bebida e&nbsp;apreciar o&nbsp;ambiente junto à&nbsp;água.</p>
+  </section>
+  <!-- /BLOCO: intro -->
+
+
+  <!-- BLOCO: caracteristicas-quarto -->
+  <dl class="caracteristicas">
+    <div><dt>Área</dt><dd>55 m²</dd></div>
+    <div><dt>Capacidade máxima</dt><dd>3 hóspedes</dd></div>
+    <div><dt>Casa de&nbsp;banho</dt><dd>1 casa de&nbsp;banho com&nbsp;duche</dd></div>
+    <div><dt>Quarto</dt><dd>1 cama de&nbsp;casal ou&nbsp;2 camas individuais</dd></div>
+  </dl>
+  <!-- /BLOCO: caracteristicas-quarto -->
+
+
+  <!-- BLOCO: galeria-editorial (teste na Elegant Suite; substitui a galeria-quarto)
+       Dois momentos sobre fundo branco, inspirados em revistas de interiores:
+       1. abertura: foto pequena de pormenor + texto curto, foto grande à direita (até à margem);
+       2. faixa: fotos ao alto, lado a lado, que deslizam para o lado com o scroll (no telemóvel arrastam-se);
+       Fotos: Imagens/Suits & Residências (Junior Suite Garden / Pool / Ocean View). -->
+  <section class="galeria-ed" aria-label="Fotografias da Elegant Suite">
+    <div class="ge-abertura">
+      <figure class="ge-foto ge-abertura__pequena"><img src="assets/img/suites/elegant/editorial/abertura-cabeceira.jpg" alt="Pormenor da cabeceira com candeeiro de fibra e almofadas" loading="lazy"></figure>
+      <p class="ge-abertura__texto">Arcos brancos, linho em&nbsp;tons de&nbsp;areia e&nbsp;azulejos pintados à&nbsp;mão. Cada pormenor da&nbsp;Elegant Suite foi pensado para&nbsp;que&nbsp;o&nbsp;tempo abrande: a&nbsp;cama sob o&nbsp;arco, a&nbsp;mesa de&nbsp;azulejo artesanal e&nbsp;a&nbsp;varanda aberta para&nbsp;os&nbsp;jardins do&nbsp;resort.</p>
+      <figure class="ge-foto ge-abertura__grande"><img src="assets/img/suites/elegant/editorial/abertura-sala.jpg" alt="Zona de estar com sofá claro, mesa de azulejo e tapete terracota" loading="lazy"></figure>
+    </div>
+    <div class="ge-faixa">
+      <ul class="ge-faixa__pista">
+        <li><figure class="ge-foto"><img src="assets/img/suites/elegant/editorial/faixa-1-arco.jpg" alt="Cama de casal sob o arco branco" loading="lazy"></figure></li>
+        <li><figure class="ge-foto"><img src="assets/img/suites/elegant/editorial/faixa-2-banho.jpg" alt="Casa de banho com duche e porta em arco" loading="lazy"></figure></li>
+        <li><figure class="ge-foto"><img src="assets/img/suites/elegant/editorial/faixa-3-varanda.jpg" alt="Cadeirão na varanda com vista para a piscina e as palmeiras" loading="lazy"></figure></li>
+        <li><figure class="ge-foto"><img src="assets/img/suites/elegant/editorial/faixa-4-vista.jpg" alt="Vista da varanda sobre a lavanda e o mar" loading="lazy"></figure></li>
+        <li><figure class="ge-foto"><img src="assets/img/suites/elegant/editorial/faixa-5-jardim.jpg" alt="Mesa e cadeiras junto à janela aberta para o jardim" loading="lazy"></figure></li>
+        <li><figure class="ge-foto"><img src="assets/img/suites/elegant/editorial/faixa-6-estar.jpg" alt="Zona de estar com mesa de azulejo e acesso à varanda" loading="lazy"></figure></li>
+      </ul>
+    </div>
+  </section>
+  <!-- /BLOCO: galeria-editorial -->
+
+
+  <!-- BLOCO: galeria-editorial (variante espelho) — a abertura ao contrário:
+       foto grande nas colunas 1–2 (até à margem esquerda do ecrã), foto pequena na 4.ª coluna
+       e o texto por baixo dela, a acabar na linha de baixo da foto grande; topos alinhados;
+       na mesma grelha de 4 colunas das características. -->
+  <section class="galeria-ed galeria-ed--espelho" aria-label="O quarto e a varanda">
+    <div class="ge-abertura ge-abertura--espelho">
+      <figure class="ge-foto ge-abertura__grande"><img src="assets/img/suites/elegant/editorial/fecho-quarto.jpg" alt="Quarto com a cama sob o arco e a porta de entrada em arco" loading="lazy"></figure>
+      <figure class="ge-foto ge-abertura__pequena"><img src="assets/img/suites/elegant/editorial/fecho-janela.jpg" alt="Varanda com cadeirão e muro curvo sobre a lavanda" loading="lazy"></figure>
+      <p class="ge-abertura__texto">A&nbsp;ampla varanda prolonga o&nbsp;quarto para&nbsp;o&nbsp;exterior: o&nbsp;muro curvo em&nbsp;tons de&nbsp;terra, a&nbsp;lavanda dos&nbsp;jardins e, ao&nbsp;fundo, o&nbsp;azul do&nbsp;mar. O&nbsp;lugar ideal para&nbsp;relaxar com&nbsp;uma&nbsp;bebida ao&nbsp;fim do&nbsp;dia.</p>
+    </div>
+  </section>
+  <!-- /BLOCO: galeria-editorial (espelho) -->
+
+
+  <!-- BLOCO: galeria-editorial (variante par) — duas fotos de pormenor ao alto, lado a lado,
+       nas colunas 2 e 3 de uma grelha de 3 colunas, sem legendas; na 1.ª coluna ficam as comodidades. -->
+  <section class="galeria-ed galeria-ed--par" aria-label="Comodidades e pormenores da Elegant Suite">
+    <div class="ge-par">
+      <!-- BLOCO: comodidades (na coluna livre, ao lado das duas fotos: título em cima, lista em baixo) -->
+      <div class="comodidades comodidades--coluna">
+        <h2>Comodidades</h2>
+        <div class="comodidades__listas">
+          <ul>
+            <li>Acesso gratuito à&nbsp;Internet&nbsp;Wi-Fi</li>
+            <li>Máquina de&nbsp;café Nespresso com&nbsp;cápsulas</li>
+            <li>Chaleira com&nbsp;uma&nbsp;grande variedade de&nbsp;chás</li>
+          </ul>
+          <ul>
+            <li>Roupão de&nbsp;banho, chinelos e&nbsp;secador de&nbsp;cabelo</li>
+            <li>Minibar</li>
+            <li>Room service</li>
+          </ul>
+          <ul>
+            <li>Proibido fumar</li>
+            <li>Proibido animais de&nbsp;estimação</li>
+          </ul>
+        </div>
+      </div>
+      <!-- /BLOCO: comodidades -->
+      <figure class="ge-par__item"><div class="ge-foto"><img src="assets/img/suites/elegant/editorial/par-cabeceira.jpg" alt="Canto da cama com candeeiro de fibra na cabeceira" loading="lazy"></div></figure>
+      <figure class="ge-par__item"><div class="ge-foto"><img src="assets/img/suites/elegant/editorial/par-mesa.jpg" alt="Mesa de madeira e cadeira junto à janela com cortinas de linho" loading="lazy"></div></figure>
+    </div>
+  </section>
+  <!-- /BLOCO: galeria-editorial (par) -->
+
+
+  <!-- BLOCO: video-quarto — uma zona só para o vídeo do quarto, quase de margem a margem.
+       Começa sozinho, sem som e em ciclo, quando entra no ecrã (pára quando sai).
+       PROVISÓRIO: vídeo "Quarto 0007 new" (Imagens/…/2026/Quartos Video); não é a Elegant Suite,
+       trocar pelo vídeo do quarto certo (mesmo nome de ficheiro ou mudar o src). -->
+  <section class="video-quarto" aria-label="Vídeo da Elegant Suite">
+    <div class="video-quarto__moldura">
+      <video class="video-quarto__video" src="assets/video/quarto-video.mp4" poster="assets/img/suites/elegant/editorial/video-poster.jpg" muted loop playsinline preload="metadata" aria-label="Vídeo de apresentação do quarto"></video>
+      <button class="video-quarto__botao" type="button" aria-pressed="false" data-video-botao>Pausar</button>
+    </div>
+  </section>
+  <!-- /BLOCO: video-quarto -->
+
+
+  <!-- BLOCO: reservar (variante destaque: nome e preço à esquerda, botão cheio maior à direita; preço: reservas.html) -->
+  <div class="reservar-faixa reservar-faixa--destaque">
+    <div class="reservar-faixa__info">
+      <p class="reservar-faixa__nome">Elegant Suite</p>
+      <p class="quarto__preco"><span>Desde</span> <strong>258,13&nbsp;€</strong> <span>/ noite</span></p>
+    </div>
+    <a class="botao-contorno botao--cheio" href="reservas.html">Reservar</a>
+  </div>
+  <!-- /BLOCO: reservar -->
+
+
+  <!-- BLOCO: outras-suites -->
+  <section class="outras outras--compacto outras--largo" aria-label="Outras suítes">
+    <h2>Outras suítes</h2>
+    <ul>
+      <li><a href="master-suite.html"><img src="assets/img/suites/master-suite.jpg?v=3" alt="" loading="lazy"><span>Master Suite</span></a></li>
+      <li><a href="ocean-suite.html"><img src="assets/img/suites/ocean-suite.jpg?v=3" alt="" loading="lazy"><span>Ocean Suite</span></a></li>
+      <li><a href="grand-suite.html"><img src="assets/img/suites/grand-suite.jpg?v=3" alt="" loading="lazy"><span>Grand Suite</span></a></li>
+      <li><a href="george-ansley-suite.html"><img src="assets/img/suites/george-ansley-suite.jpg?v=3" alt="" loading="lazy"><span>George Ansley Suite</span></a></li>
+      <li><a href="jose-de-harry-suite.html"><img src="assets/img/suites/jose-de-harry-suite.jpg?v=3" alt="" loading="lazy"><span>José de&nbsp;Harry Suite</span></a></li>
+    </ul>
+  </section>
+  <!-- /BLOCO: outras-suites -->
+  <!-- BLOCO: outras-suites (variante: ver residências, por baixo de "Outras suítes") -->
+  <section class="outras outras--compacto outras--largo" aria-label="Ver residências">
+    <h2>Ver residências</h2>
+    <ul>
+      <li><a href="private-residences.html"><img src="assets/img/suites/private-residences.jpg?v=3" alt="" loading="lazy"><span>Private Residences</span></a></li>
+      <li><a href="casa-laranjo.html"><img src="assets/img/suites/casa-laranjo.jpg?v=3" alt="" loading="lazy"><span>Casa Laranjo</span></a></li>
+      <li><a href="casa-levy.html"><img src="assets/img/suites/casa-levy.jpg?v=3" alt="" loading="lazy"><span>Casa Levy</span></a></li>
+      <li><a href="casa-lara.html"><img src="assets/img/suites/casa-lara.jpg?v=3" alt="" loading="lazy"><span>Casa Lara</span></a></li>
+    </ul>
+  </section>
+  <!-- /BLOCO: outras-suites -->
+
+  </div>
+</main>
+
+
+<!-- BLOCO: rodape -->
+<footer class="rodape">
+  <div class="rodape__dentro">
+
+    <div class="rodape__marca">
+      <a class="rodape__logo" href="index.html" aria-label="Vilalara Grand Hotel Algarve, página inicial">
+        <img src="assets/img/marca/logo-branco.png" alt="Vilalara Grand Hotel Algarve" width="1669" height="395" loading="lazy">
+      </a>
+      <p class="rodape__morada">
+        <img src="assets/img/marca/morada.png" alt="Praia das Gaivotas, Alporchinhos, Porches 8400-450, Portugal" width="839" height="300" loading="lazy">
+      </p>
+      <div class="rodape__selos">
+        <span class="rodape__selos-faixa">
+          <img src="assets/img/marca/selos-parceiros.png" alt="Visit Algarve, Forbes Travel Guide, XO Private, guia Michelin, Takumians, Mr &amp; Mrs Smith, Ensemble" width="2397" height="143" loading="lazy">
+          <a class="rodape__selo" href="https://visitalgarve.pt/en/" target="_blank" rel="noopener" aria-label="Visit Algarve (abre numa nova janela)" style="left:0.00%;width:15.56%"></a>
+          <a class="rodape__selo" href="https://forbestravelguide.com/" target="_blank" rel="noopener" aria-label="Forbes Travel Guide (abre numa nova janela)" style="left:21.23%;width:9.05%"></a>
+          <a class="rodape__selo" href="https://www.xoprivate.com/" target="_blank" rel="noopener" aria-label="XO Private (abre numa nova janela)" style="left:35.71%;width:6.05%"></a>
+          <a class="rodape__selo" href="https://guide.michelin.com/pt/pt_PT" target="_blank" rel="noopener" aria-label="Guia Michelin (abre numa nova janela)" style="left:47.23%;width:6.01%"></a>
+          <a class="rodape__selo" href="https://www.mrandmrssmith.com/" target="_blank" rel="noopener" aria-label="Mr &amp; Mrs Smith (abre numa nova janela)" style="left:75.18%;width:8.34%"></a>
+          <a class="rodape__selo" href="https://www.ensembletravel.com/" target="_blank" rel="noopener" aria-label="Ensemble Travel (abre numa nova janela)" style="left:89.19%;width:10.81%"></a>
+        </span>
+      </div>
+    </div>
+
+    <div class="rodape__info">
+      <div class="rodape__linha">
+        <div>
+          <h2>Contactos</h2>
+          <p><a href="tel:+351282320000">(+351) 282 320 000</a></p>
+          <p class="rodape__nota">Custo de&nbsp;uma&nbsp;chamada para&nbsp;a&nbsp;rede fixa nacional (ou&nbsp;internacional, se&nbsp;a&nbsp;chamada for feita fora da&nbsp;UE).</p>
+          <p><a href="mailto:reservas@vilalara.com">reservas@vilalara.com</a></p>
+        </div>
+        <div>
+          <h2 class="sr-only">Sobre</h2>
+          <ul>
+            <li><a href="newsletter.html">Registo na&nbsp;Newsletter</a></li>
+            <li><a href="sustentabilidade.html">Sustentabilidade</a></li>
+            <li><a href="carreiras.html">Carreiras</a></li>
+            <li><a href="https://lost.faundit.com/vilalara-grand-hotel-algarve" target="_blank" rel="noopener">Lost &amp;&nbsp;Found</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="sr-only">Informação legal</h2>
+          <ul>
+            <li><a href="termos-condicoes.html">Termos &amp;&nbsp;Condições</a></li>
+            <li><a href="politica-privacidade.html">Política de&nbsp;Privacidade</a></li>
+            <li><a href="politica-cookies.html">Política de&nbsp;Cookies</a></li>
+            <li><a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noopener">Livro de&nbsp;Reclamações</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Redes sociais</h2>
+          <ul>
+            <li><a href="https://www.instagram.com/vilalaragrandhotel" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="#">Linkedin</a></li>
+            <li><a href="https://www.facebook.com/VilalaraThalassaResort" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.tripadvisor.com/Hotel_Review-g652080-d231460-Reviews-Vilalara_Thalassa_Resort-Porches_Faro_District_Algarve.html" target="_blank" rel="noopener">Tripadvisor</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rodape__linha rodape__linha--legal">
+        <div>
+          <h2>Aviso ao&nbsp;consumidor</h2>
+          <p class="rodape__legal">Ao&nbsp;abrigo do&nbsp;artigo 18.º da&nbsp;Lei n.º 144/2015, de&nbsp;8 de&nbsp;setembro, em&nbsp;caso de&nbsp;litígio de&nbsp;consumo, o&nbsp;consumidor pode recorrer à&nbsp;Plataforma Europeia de&nbsp;Resolução de&nbsp;Litígios em&nbsp;Linha: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr</a>. Pode igualmente recorrer a&nbsp;uma&nbsp;entidade de&nbsp;resolução alternativa de&nbsp;litígios de&nbsp;consumo disponível em&nbsp;Portugal em&nbsp;<a href="https://www.consumidor.gov.pt/" target="_blank" rel="noopener">https://www.consumidor.gov.pt</a>. O&nbsp;recurso a&nbsp;estas entidades não prejudica o&nbsp;direito de&nbsp;o&nbsp;consumidor recorrer aos&nbsp;tribunais judiciais, nos&nbsp;termos da&nbsp;lei.</p>
+          <p class="rodape__copyright">2026 © Vilalara Grand Hotel Algarve. All rights reserved.</p>
+        </div>
+        <div>
+          <h2>Entidade exploradora</h2>
+          <p class="rodape__nota">Goldtur – Hotéis e&nbsp;Turismo, S. A.<br>NIPC 500 201 072<br>Praia das&nbsp;Gaivotas – Alporchinhos<br>8400-450 Porches, Portugal</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+<!-- /BLOCO: rodape -->
+
+
+<!-- BLOCO: painel-menu -->
+<div class="veu-painel" aria-hidden="true"></div>
+<nav class="painel" id="painel-menu" aria-label="Menu principal">
+  <div class="painel__topo">
+    <a class="painel__logo" href="index.html"><img src="assets/img/marca/logo-escuro.png" alt="Vilalara Grand Hotel Algarve" width="1669" height="395"></a>
+    <button class="painel__fechar" type="button"><span class="sr-only">Fechar menu</span></button>
+  </div>
+  <p class="painel__caminho" aria-label="Está aqui"><a href="suites-residencias.html">Suítes &amp;&nbsp;Residências</a><span class="painel__sep" aria-hidden="true">/</span><span aria-current="page">Elegant Suite</span></p>
+  <div class="painel__menu">
+  <ul>
+  <li class="painel__item"><a href="index.html" data-categoria="home">Home</a></li>
+  <li class="painel__item"><a href="our-heritage.html" data-categoria="our-heritage">Our Heritage</a></li>
+  <li class="painel__item no-caminho tem-sub">
+    <div class="painel__linha"><a href="suites-residencias.html" data-categoria="suites-residencias" aria-current="location">Suítes &amp;&nbsp;Residências</a><button class="painel__abre" type="button" aria-expanded="true" aria-controls="sub-suites-residencias"><span class="sr-only">Submenu Suítes &amp;&nbsp;Residências</span></button></div>
+    <ul id="sub-suites-residencias" class="painel__sub painel__sub--n2">
+    <li class="painel__item no-caminho"><a href="elegant-suite.html" aria-current="page">Elegant Suite</a></li>
+    <li class="painel__item"><a href="master-suite.html">Master Suite</a></li>
+    <li class="painel__item"><a href="ocean-suite.html">Ocean Suite</a></li>
+    <li class="painel__item"><a href="grand-suite.html">Grand Suite</a></li>
+    <li class="painel__item"><a href="george-ansley-suite.html">George Ansley Suite</a></li>
+    <li class="painel__item"><a href="jose-de-harry-suite.html">José de&nbsp;Harry Suite</a></li>
+    <li class="painel__item"><a href="private-residences.html">Private Residences</a></li>
+    <li class="painel__item"><a href="casa-laranjo.html">Casa Laranjo</a></li>
+    <li class="painel__item"><a href="casa-levy.html">Casa Levy</a></li>
+    <li class="painel__item"><a href="casa-lara.html">Casa Lara</a></li>
+    </ul>
+  </li>
+  <li class="painel__item tem-sub">
+    <div class="painel__linha"><a href="gastronomia.html" data-categoria="gastronomia">Gastronomia</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-gastronomia"><span class="sr-only">Submenu Gastronomia</span></button></div>
+    <ul id="sub-gastronomia" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item"><a href="coral.html">Coral</a></li>
+    <li class="painel__item"><a href="raizes.html">Raízes</a></li>
+    <li class="painel__item"><a href="trattoria.html">Trattoria</a></li>
+    <li class="painel__item"><a href="a-costa.html">A-costa</a></li>
+    <li class="painel__item"><a href="vento.html">Vento</a></li>
+    <li class="painel__item"><a href="gaivotas.html">Gaivotas</a></li>
+    </ul>
+  </li>
+  <li class="painel__item tem-sub">
+    <div class="painel__linha"><a href="wellness.html" data-categoria="wellness">Wellness</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-wellness"><span class="sr-only">Submenu Wellness</span></button></div>
+    <ul id="sub-wellness" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item tem-sub">
+      <div class="painel__linha"><a href="tratamentos.html">Tratamentos</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-tratamentos"><span class="sr-only">Submenu Tratamentos</span></button></div>
+      <ul id="sub-tratamentos" hidden class="painel__sub painel__sub--n3">
+      <li class="painel__item"><a href="tratamento-rituais.html">Rituals</a></li>
+      <li class="painel__item"><a href="tratamento-faciais.html">Faciais</a></li>
+      <li class="painel__item"><a href="tratamento-body.html">Body</a></li>
+      <li class="painel__item"><a href="tratamento-body-therapy.html">Body Therapy</a></li>
+      <li class="painel__item"><a href="tratamento-body-shaping.html">Body Shaping</a></li>
+      <li class="painel__item"><a href="tratamento-shared-care.html">Shared Care</a></li>
+      <li class="painel__item"><a href="tratamento-flows.html">Flows</a></li>
+      <li class="painel__item"><a href="tratamento-self-discovery.html">Self Discovery</a></li>
+      </ul>
+    </li>
+    <li class="painel__item tem-sub">
+      <div class="painel__linha"><a href="programas.html">Programas</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-programas"><span class="sr-only">Submenu Programas</span></button></div>
+      <ul id="sub-programas" hidden class="painel__sub painel__sub--n3">
+      <li class="painel__item"><a href="programa-thalassotherapy-healing.html">Thalassotherapy Healing</a></li>
+      <li class="painel__item"><a href="programa-fitness-essence.html">Fitness Essence</a></li>
+      <li class="painel__item"><a href="programa-bespoke-anti-ageing-retreat.html">Bespoke Anti-ageing Retreat</a></li>
+      <li class="painel__item"><a href="programa-stress-relief-recover.html">Stress Relief &amp;&nbsp;Recover</a></li>
+      <li class="painel__item"><a href="programa-detox-weight-management.html">Detox &amp;&nbsp;Weight Management</a></li>
+      </ul>
+    </li>
+    <li class="painel__item tem-sub">
+      <div class="painel__linha"><a href="thalasso.html">Thalasso</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-thalasso"><span class="sr-only">Submenu Thalasso</span></button></div>
+      <ul id="sub-thalasso" hidden class="painel__sub painel__sub--n3">
+      <li class="painel__item"><a href="thalassoterapia.html">Thalassoterapia</a></li>
+      <li class="painel__item"><a href="thalasso-flows.html">Thalasso Flows</a></li>
+      </ul>
+    </li>
+    <li class="painel__item tem-sub">
+      <div class="painel__linha"><a href="bem-estar.html">Práticas Wellness</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-bem-estar"><span class="sr-only">Submenu Práticas Wellness</span></button></div>
+      <ul id="sub-bem-estar" hidden class="painel__sub painel__sub--n3">
+      <li class="painel__item"><a href="pratica-mindful-motion.html">Mindful &amp;&nbsp;Motion</a></li>
+      <li class="painel__item"><a href="pratica-ancient-techniques.html">Ancient Techniques</a></li>
+      <li class="painel__item"><a href="pratica-hybrid-training.html">Hybrid Training</a></li>
+      <li class="painel__item"><a href="pratica-premium-balance.html">Premium Balance</a></li>
+      <li class="painel__item"><a href="pratica-rituals-of-connection.html">Rituals of&nbsp;Connection</a></li>
+      </ul>
+    </li>
+    <li class="painel__item"><a href="plano-alimentar-anti-inflamatorio.html">Nutrição</a></li>
+    <li class="painel__item"><a href="centro-fitness.html">Fitness</a></li>
+    </ul>
+  </li>
+  <li class="painel__item tem-sub">
+    <div class="painel__linha"><a href="clubs.html" data-categoria="clubs">Clubs</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-clubs"><span class="sr-only">Submenu Clubs</span></button></div>
+    <ul id="sub-clubs" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item"><a href="racket-club.html">Racket Club</a></li>
+    <li class="painel__item"><a href="kids-club.html">Kids Club</a></li>
+    <li class="painel__item"><a href="beach-club.html">Beach Club</a></li>
+    </ul>
+  </li>
+  <li class="painel__item tem-sub">
+    <div class="painel__linha"><a href="experiencias.html" data-categoria="experiencias">Experiências</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-experiencias"><span class="sr-only">Submenu Experiências</span></button></div>
+    <ul id="sub-experiencias" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item"><a href="experiencia-george-ansley-tour.html">The&nbsp;George Ansley Tour</a></li>
+    <li class="painel__item"><a href="experiencia-from-market-to-table.html">From Market to&nbsp;Table</a></li>
+    <li class="painel__item"><a href="experiencia-bottle-blending.html">Bottle Blending</a></li>
+    <li class="painel__item"><a href="experiencia-market-walk.html">Market Walk</a></li>
+    <li class="painel__item"><a href="experiencia-behind-the-wine.html">Behind the&nbsp;Wine</a></li>
+    <li class="painel__item"><a href="experiencia-ceramica.html">Traditional Ceramics</a></li>
+    <li class="painel__item"><a href="experiencia-velas.html">Craft Candle Workshop</a></li>
+    <li class="painel__item"><a href="experiencia-biologo-astronomia.html">Biólogo e&nbsp;Astronomia</a></li>
+    </ul>
+  </li>
+  <li class="painel__item"><a href="occasions.html" data-categoria="occasions">Occasions</a></li>
+  <li class="painel__item"><a href="60-aniversario.html" data-categoria="60-aniversario">60.º Aniversário</a></li>
+  </ul>
+  </div>
+  <p class="painel__morada"><img src="assets/img/marca/morada.png" alt="Praia das Gaivotas, Alporchinhos, Porches 8400-450, Portugal" width="839" height="300" loading="lazy"></p>
+</nav>
+<!-- /BLOCO: painel-menu -->
+
+<script src="assets/js/site.js?v=20261120u"></script>
+</body>
+</html>

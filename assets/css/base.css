@@ -1,0 +1,158 @@
+/* =====================================================================
+   VILALARA — BASE
+   Regras gerais e os botões (iguais em todo o site).
+   ===================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  background: var(--cor-fundo);
+}
+@media (prefers-reduced-motion: no-preference) {
+  html:not(:has(.home-slides)) { scroll-behavior: smooth; }
+}
+
+body {
+  margin: 0;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--fonte-texto);
+  font-size: var(--tam-texto);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, video { display: block; max-width: 100%; }
+
+a { color: inherit; }
+
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+
+:focus-visible { outline: 1px solid currentColor; outline-offset: 4px; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* ---------------------------------------------------------------------
+   BOTÕES (prancheta 1)
+   Regra: ao passar o rato, qualquer botão fica "em negativo".
+   .botao-link      → RESERVAR sublinhado          → pílula cheia
+   .botao-contorno  → pílula com contorno           → pílula cheia
+   .botao-mais      → "VER SUÍTE" a cinzento        → fica escuro (texto: "Ver" + nome do destino)
+   Em cima de fotografias, junta a classe .sobre-foto (cores invertidas).
+   --------------------------------------------------------------------- */
+.botao-link,
+.botao-contorno {
+  --b-cor: var(--cor-texto);
+  --b-inverso: var(--cor-fundo);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fonte-titulos);
+  font-size: var(--tam-botao);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--b-cor);
+  border-radius: var(--raio-botao);
+  transition: background-color var(--duracao) var(--curva), color var(--duracao) var(--curva), border-color var(--duracao) var(--curva);
+}
+.sobre-foto.botao-link,
+.sobre-foto.botao-contorno,
+.sobre-foto .botao-link,
+.sobre-foto .botao-contorno {
+  --b-cor: var(--cor-sobre-foto);
+  --b-inverso: var(--cor-quase-preto);
+}
+
+.botao-link {
+  padding: 0.35em 1.1em;
+  margin-inline: -1.1em; /* o texto fica alinhado com a margem; o fundo cresce para fora */
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+  border: 1px solid transparent;
+}
+.botao-link:hover,
+.botao-link:focus-visible {
+  background: var(--b-cor);
+  color: var(--b-inverso);
+  text-decoration-color: transparent;
+}
+
+.botao-contorno {
+  padding: 0.55em 2.2em;
+  border: 1px solid var(--b-cor);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+.botao-contorno:hover,
+.botao-contorno:focus-visible {
+  background: var(--b-cor);
+  color: var(--b-inverso);
+}
+/* Variante cheia (já em negativo), para mais contraste sobre fotografias claras.
+   Ao passar o rato fica escura. Ex.: botões do banner do restaurante. */
+.botao-contorno.botao--cheio {
+  background: var(--b-cor);
+  color: var(--b-inverso);
+}
+.botao-contorno.botao--cheio:hover,
+.botao-contorno.botao--cheio:focus-visible {
+  background: var(--b-inverso);
+  border-color: var(--b-inverso);
+  color: var(--b-cor);
+}
+
+.botao-mais {
+  font-family: var(--fonte-titulos);
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--cor-texto-suave);
+  transition: color var(--duracao) var(--curva);
+}
+.botao-mais:hover,
+.botao-mais:focus-visible { color: var(--cor-texto); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+/* Harmonia nos blocos de texto (pedido do cliente):
+   títulos com linhas equilibradas (sem uma palavra a pender sozinha) e parágrafos
+   sem palavra sozinha na última linha. As palavras curtas ("a", "de", "no", "um"…)
+   estão presas à seguinte com &nbsp; no HTML (script prende_palavras.py). */
+h1, h2, h3, h4, h5, h6, .lt-ano__titulo span, .intro__script, figcaption, button, .botao-contorno { text-wrap: balance; }
+p, li, dd, dt, blockquote, label { text-wrap: pretty; }
+
+/* Salto dos cartões de categoria (#suites, #residencias): a página desvanece, salta e volta (site.js 2h) */
+body { transition: opacity 260ms var(--curva); }
+html.a-saltar body { opacity: 0; transition-duration: 150ms; }
+
+/* =====================================================================
+   EXPERIÊNCIA: cursor gaivota (ratos/trackpads). Gaivota desenhada em vetor, com asas
+   articuladas que batem de forma contínua: bate ao andar, plana quando para, recolhe as asas a mergulhar.
+   Em campos de texto volta o cursor normal. Para desligar: tirar o bloco
+   "Cursor gaivota" do site.js.
+   ===================================================================== */
+html.cursor-gaivota, html.cursor-gaivota * { cursor: none !important; }
+html.cursor-gaivota input:not([type="checkbox"]):not([type="radio"]):not([type="date"]),
+html.cursor-gaivota textarea, html.cursor-gaivota [contenteditable] { cursor: text !important; }
+.gaivota-cursor {
+  position: fixed; left: 0; top: 0; z-index: 10000;
+  width: 60px; height: 30px;                       /* a ponta do rato fica no corpo da gaivota */
+  pointer-events: none;
+  opacity: 0; transition: opacity 200ms;
+  will-change: transform;
+}
+.gaivota-cursor svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.gaivota-cursor path { fill: #2a2928; transition: fill 300ms ease; }
+.gaivota-cursor.clara path { fill: #fff; }   /* sobre fundos escuros fica branca */
+.gaivota-cursor.visivel { opacity: 1; }
+.gaivota-cursor.em-texto { opacity: 0; }

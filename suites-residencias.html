@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Suítes &amp;&nbsp;Residências · Vilalara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&family=Marcellus&family=Pinyon+Script&display=swap">
+<link rel="stylesheet" href="https://use.typekit.net/oav4umc.css"><!-- Adobe Fonts: Optima nova + Richmond Display (projeto "Vilalara site prototipo") -->
+<link rel="stylesheet" href="https://use.typekit.net/ozg0foo.css"><!-- Adobe Fonts: Fact VF (projeto "Vilalara site prototipo Fact") -->
+<link rel="stylesheet" href="assets/css/tokens.css?v=20261120u">
+<link rel="stylesheet" href="assets/css/base.css?v=20261120u">
+<link rel="stylesheet" href="assets/css/blocos.css?v=20261120u">
+</head>
+<body>
+
+<!-- =================================================================
+     SUÍTES & RESIDÊNCIAS (landing page da categoria)
+     Blocos, por ordem: cabecalho-interior (sobre foto), hero-landing,
+     intro-categoria, cartoes-categoria, titulo-seccao + tipologias
+     (suítes), titulo-seccao + tipologias (residências), rodape,
+     painel-menu.
+     ================================================================= -->
+
+
+<!-- BLOCO: cabecalho-interior (variante sobre foto) -->
+<header class="cab-interior cab-interior--sobre-foto" data-sobre-foto>
+  <button class="botao-menu" type="button" data-abre-painel aria-expanded="false" aria-controls="painel-menu">
+    <span class="tracos"></span><span class="sr-only">Abrir menu</span>
+  </button>
+  <a class="cab-interior__monograma" href="index.html" aria-label="Vilalara Grand Hotel Algarve, página inicial">
+    <img src="assets/img/marca/monograma-escuro.png" alt="Vilalara" width="277" height="274">
+  </a>
+  <div class="cab-acoes">
+    <div class="idioma">
+      <button class="idioma__botao" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="lista-idiomas">
+        <span class="idioma__atual">PT</span><span class="sr-only">, escolher idioma</span>
+      </button>
+      <ul class="idioma__lista" id="lista-idiomas" hidden>
+        <li><button type="button" data-lingua="pt" aria-current="true">PT</button></li>
+        <li><button type="button" data-lingua="en">EN</button></li>
+        <li><button type="button" data-lingua="es">ES</button></li>
+        <li><button type="button" data-lingua="fr">FR</button></li>
+        <li><button type="button" data-lingua="de">DE</button></li>
+      </ul>
+    </div>
+    <a class="botao-link" href="reservas.html">Reservar</a>
+  </div>
+</header>
+<!-- /BLOCO: cabecalho-interior -->
+
+
+<main>
+
+  <!-- BLOCO: hero-landing -->
+  <section class="slide landing landing--fixo" aria-label="Suítes &amp; Residências">
+    <figure class="slide__media">
+      <img src="assets/img/home/03-suites-residencias.jpg" alt="Suíte com arcos brancos e cama de casal" fetchpriority="high">
+    </figure>
+    <h1 class="landing__titulo">Suítes &amp;&nbsp;Residências</h1>
+    <a class="seta-scroll" href="#apresentacao" aria-label="Descer para a apresentação">
+      <svg viewBox="0 0 14 32" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M7 0v31M1 25l6 6 6-6"/></svg>
+    </a>
+  </section>
+  <!-- /BLOCO: hero-landing -->
+
+  <div class="landing--fixo__conteudo"><!-- tudo o que sobe por cima do banner fixo (fundo contínuo, sem frestas) -->
+
+
+  <!-- BLOCO: intro-categoria -->
+  <section class="intro" id="apresentacao">
+    <h2 class="intro__titulo">As&nbsp;nossas Suítes<br>&amp;&nbsp;Residências <span class="intro__script">de&nbsp;luxo</span></h2>
+    <p class="intro__texto">As&nbsp;nossas Suítes &amp;&nbsp;Residências tranquilas e&nbsp;elegantemente concebidas, são abundantes em&nbsp;luz solar e&nbsp;oferecem vistas deslumbrantes para&nbsp;os&nbsp;jardins, piscinas ou&nbsp;oceano.</p>
+  </section>
+  <!-- /BLOCO: intro-categoria -->
+
+
+  <!-- BLOCO: cartoes-categoria -->
+  <section class="cartoes" aria-label="Categorias de alojamento">
+    <article class="cartao">
+      <figure class="cartao__foto"><img src="assets/img/suites/cartao-favoritos.jpg?v=2" alt="Quarto branco com arco e cama de casal, numa suíte" loading="lazy"></figure>
+      <div class="cartao__conteudo">
+        <h3>Os&nbsp;favoritos</h3>
+        <p>As&nbsp;suítes mais escolhidas por&nbsp;quem nos&nbsp;visita: espaços luminosos, com&nbsp;varanda e&nbsp;vista para&nbsp;os&nbsp;jardins ou&nbsp;para&nbsp;o&nbsp;mar, pensados para&nbsp;quem regressa ao&nbsp;Vilalara e&nbsp;para&nbsp;quem o&nbsp;descobre pela&nbsp;primeira&nbsp;vez.</p>
+        <a class="botao-contorno sobre-foto" href="#">Ver&nbsp;favoritos</a>
+      </div>
+    </article>
+    <article class="cartao">
+      <figure class="cartao__foto"><img src="assets/img/suites/cartao-suites.jpg?v=2" alt="Quarto de uma suíte em tons claros, com cama de casal e banco de madeira" loading="lazy"></figure>
+      <div class="cartao__conteudo">
+        <h3>Suítes</h3>
+        <p>As&nbsp;nossas suítes oferecem uma&nbsp;atmosfera serena, perfeita para&nbsp;indivíduos, casais ou&nbsp;famílias pequenas. Com&nbsp;magníficas vistas sobre os&nbsp;jardins, as&nbsp;piscinas ou&nbsp;oceano, cada suíte cria um&nbsp;retiro&nbsp;tranquilo.</p>
+        <a class="botao-contorno sobre-foto" href="#suites">Ver&nbsp;suítes</a>
+      </div>
+    </article>
+    <article class="cartao">
+      <figure class="cartao__foto"><img src="assets/img/suites/cartao-residencias.jpg?v=2" alt="Sala de uma residência em tons claros, com vista para o jardim" loading="lazy"></figure>
+      <div class="cartao__conteudo">
+        <h3>Residências</h3>
+        <p>Ideais para&nbsp;famílias ou&nbsp;grupos, as&nbsp;nossas residências apresentam áreas de&nbsp;estar espaçosas e&nbsp;terraços privados que&nbsp;oferecem uma&nbsp;estadia confortável com&nbsp;vista para&nbsp;os&nbsp;jardins, piscinas ou&nbsp;oceano.</p>
+        <a class="botao-contorno sobre-foto" href="#residencias">Ver&nbsp;residências</a>
+      </div>
+    </article>
+  </section>
+  <!-- /BLOCO: cartoes-categoria -->
+
+
+  <!-- BLOCO: tipologias (suítes) -->
+  <section class="tipologias tipologias--com-titulo" id="suites" aria-label="Suítes">
+    <div class="tipologias__palco">
+      <!-- título da secção: fica visível enquanto se veem os quartos -->
+      <h2 class="titulo-seccao">Quartos <span class="intro__script">Indivíduos &amp;&nbsp;casais</span></h2>
+      <ul class="separadores" aria-label="Escolher suítes">
+        <li><button type="button" data-ir-tipo="0" aria-current="true">Elegant Suite</button></li>
+        <li><button type="button" data-ir-tipo="1">Master Suite</button></li>
+        <li><button type="button" data-ir-tipo="2">Ocean Suite</button></li>
+        <li><button type="button" data-ir-tipo="3">Grand Suite</button></li>
+        <li><button type="button" data-ir-tipo="4">George Ansley Suite</button></li>
+        <li><button type="button" data-ir-tipo="5">José de&nbsp;Harry Suite</button></li>
+      </ul>
+      <div class="tipologias__janela">
+        <button class="seta-tipo seta-tipo--anterior" type="button" data-tipo-anterior aria-label="Quarto anterior"><svg viewBox="0 0 14 32" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M7 0v31M1 25l6 6 6-6"/></svg></button>
+        <button class="seta-tipo seta-tipo--seguinte" type="button" data-tipo-seguinte aria-label="Quarto seguinte"><svg viewBox="0 0 14 32" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M7 0v31M1 25l6 6 6-6"/></svg></button>
+      <div class="tipologias__pista">
+        <!-- TIPOLOGIA: Elegant Suite -->
+        <article class="tipo" id="elegant-suite" aria-label="Elegant Suite">
+          <figure class="tipo__foto"><img src="assets/img/suites/elegant-suite.jpg?v=3" alt="Elegant Suite" loading="lazy"></figure>
+          <div class="tipo__info">
+            <p>Desfrute do&nbsp;ambiente e&nbsp;das&nbsp;vistas para&nbsp;o&nbsp;resort a&nbsp;partir da&nbsp;varanda desta elegante junior suite, perfeita para&nbsp;uma&nbsp;estadia relaxante. Com&nbsp;uma&nbsp;decoração moderna e&nbsp;acolhedora e&nbsp;uma&nbsp;área de&nbsp;estar convidativa, é&nbsp;o&nbsp;refúgio ideal para&nbsp;descansar com&nbsp;vista para&nbsp;o&nbsp;resort.</p>
+            <div class="tipo__acoes">
+              <a class="botao-contorno" href="elegant-suite.html" data-abre-quarto data-hero="assets/img/suites/elegant/hero.jpg" data-foco="50% 60%">Ver&nbsp;suíte</a>
+              <a class="botao-contorno" href="reservas.html">Reservar</a>
+            </div>
+          </div>
+        </article>
+        <!-- TIPOLOGIA: Master Suite -->
+        <article class="tipo" id="master-suite" aria-label="Master Suite">
+          <figure class="tipo__foto"><img src="assets/img/suites/master-suite.jpg?v=3" alt="Master Suite" loading="lazy"></figure>
+          <div class="tipo__info">
+            <p>Desfrute do&nbsp;conforto deste retiro espaçoso, ideal para&nbsp;casais que&nbsp;procuram espaço extra e&nbsp;comodidade. Conta com&nbsp;uma&nbsp;elegante banheira, uma&nbsp;ampla varanda com&nbsp;um&nbsp;confortável sofá-cama e&nbsp;vista para&nbsp;o&nbsp;jardim.</p>
+            <div class="tipo__acoes">
+              <a class="botao-contorno" href="master-suite.html" data-abre-quarto data-hero="assets/img/suites/master-suite/editorial/hero.jpg?v=3" data-foco="50% 55%">Ver&nbsp;suíte</a>
+              <a class="botao-contorno" href="reservas.html">Reservar</a>
+            </div>
+          </div>
+        </article>
+        <!-- TIPOLOGIA: Ocean Suite -->
+        <article class="tipo" id="ocean-suite" aria-label="Ocean Suite">
+          <figure class="tipo__foto"><img src="assets/img/suites/ocean-suite.jpg?v=3" alt="Ocean Suite" loading="lazy"></figure>
+          <div class="tipo__info">
+            <p>Desfrute de&nbsp;uma&nbsp;escapadela romântica com&nbsp;belas vistas sobre o&nbsp;mar e&nbsp;o&nbsp;pôr do&nbsp;sol algarvio. Um&nbsp;espaço com&nbsp;decoração requintada e&nbsp;acolhedora, sala de&nbsp;estar confortável e&nbsp;uma&nbsp;ampla varanda para&nbsp;aproveitar cada&nbsp;momento.</p>
+            <div class="tipo__acoes">
+              <a class="botao-contorno" href="ocean-suite.html" data-abre-quarto data-hero="assets/img/suites/ocean-suite/editorial/hero.jpg?v=3" data-foco="50% 55%">Ver&nbsp;suíte</a>
+              <a class="botao-contorno" href="reservas.html">Reservar</a>
+            </div>
+          </div>
+        </article>
+        <!-- TIPOLOGIA: Grand Suite -->
+        <article class="tipo" id="grand-suite" aria-label="Grand Suite">
+          <figure class="tipo__foto"><img src="assets/img/suites/grand-suite.jpg?v=3" alt="Grand Suite" loading="lazy"></figure>
+          <div class="tipo__info">
+            <p>Desfrute do&nbsp;conforto desta impressionante Suite, ideal para&nbsp;famílias ou&nbsp;para&nbsp;quem procura espaço extra. Com&nbsp;um&nbsp;quarto espaçoso, sala de&nbsp;estar separada e&nbsp;uma&nbsp;ampla varanda com&nbsp;um&nbsp;confortável sofá-cama e&nbsp;vista para&nbsp;o&nbsp;jardim.</p>
+            <div class="tipo__acoes">
+              <a class="botao-contorno" href="grand-suite.html" data-abre-quarto data-hero="assets/img/suites/grand-suite/editorial/hero.jpg?v=3" data-foco="50% 55%">Ver&nbsp;suíte</a>
+              <a class="botao-contorno" href="reservas.html">Reservar</a>
+            </div>
+          </div>
+        </article>
+        <!-- TIPOLOGIA: George Ansley Suite -->
+        <article class="tipo" id="george-ansley-suite" aria-label="George Ansley Suite">
+          <figure class="tipo__foto"><img src="assets/img/suites/george-ansley-suite.jpg?v=3" alt="George Ansley Suite" loading="lazy"></figure>
+          <div class="tipo__info">
+            <p>A&nbsp;nossa Grand Suite oferece um&nbsp;luxo sofisticado em&nbsp;mais de&nbsp;140 m², ideal para&nbsp;casais e&nbsp;famílias que&nbsp;procuram o&nbsp;máximo conforto e&nbsp;espaço. Dispõe de&nbsp;um&nbsp;quarto e&nbsp;sala de&nbsp;estar amplos, kitchenette e&nbsp;uma&nbsp;espaçosa varanda com&nbsp;vista para&nbsp;o&nbsp;resort.</p>
+            <div class="tipo__acoes">
+              <a class="botao-contorno" href="george-ansley-suite.html" data-abre-quarto data-hero="assets/img/suites/george-ansley-suite/editorial/hero.jpg?v=3" data-foco="50% 60%">Ver&nbsp;suíte</a>
+              <a class="botao-contorno" href="reservas.html">Reservar</a>
+            </div>
+          </div>
+        </article>
+        <!-- TIPOLOGIA: José de Harry Suite -->
+        <article class="tipo" id="jose-de-harry-suite" aria-label="José de Harry Suite">
+          <figure class="tipo__foto"><img src="assets/img/suites/jose-de-harry-suite.jpg?v=3" alt="José de Harry Suite" loading="lazy"></figure>
+          <div class="tipo__info">
+            <p>A&nbsp;nossa Grand Suite oferece um&nbsp;luxo sofisticado em&nbsp;mais de&nbsp;140 m², ideal para&nbsp;casais e&nbsp;famílias que&nbsp;procuram o&nbsp;máximo conforto e&nbsp;espaço. Dispõe de&nbsp;um&nbsp;quarto e&nbsp;sala de&nbsp;estar amplos, kitchenette e&nbsp;uma&nbsp;espaçosa varanda com&nbsp;vista para&nbsp;o&nbsp;resort.</p>
+            <div class="tipo__acoes">
+              <a class="botao-contorno" href="jose-de-harry-suite.html" data-abre-quarto data-hero="assets/img/suites/jose-de-harry-suite/editorial/hero.jpg?v=3" data-foco="50% 55%">Ver&nbsp;suíte</a>
+              <a class="botao-contorno" href="reservas.html">Reservar</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      </div>
+    </div>
+  </section>
+  <!-- /BLOCO: tipologias (suítes) -->
+
+
+  <!-- BLOCO: tipologias (residências) -->
+  <section class="tipologias tipologias--com-titulo" id="residencias" aria-label="Residências">
+    <div class="tipologias__palco">
+      <!-- título da secção: fica visível enquanto se veem os quartos -->
+      <h2 class="titulo-seccao">Residências <span class="intro__script">Ideal para&nbsp;famílias</span></h2>
+      <ul class="separadores separadores--poucos" aria-label="Escolher residências">
+        <li><button type="button" data-ir-tipo="0" aria-current="true">Private Residences</button></li>
+        <li><button type="button" data-ir-tipo="1">Casa Laranjo</button></li>
+        <li><button type="button" data-ir-tipo="2">Casa Levy</button></li>
+        <li><button type="button" data-ir-tipo="3">Casa Lara</button></li>
+      </ul>
+      <div class="tipologias__janela">
+        <button class="seta-tipo seta-tipo--anterior" type="button" data-tipo-anterior aria-label="Quarto anterior"><svg viewBox="0 0 14 32" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M7 0v31M1 25l6 6 6-6"/></svg></button>
+        <button class="seta-tipo seta-tipo--seguinte" type="button" data-tipo-seguinte aria-label="Quarto seguinte"><svg viewBox="0 0 14 32" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M7 0v31M1 25l6 6 6-6"/></svg></button>
+      <div class="tipologias__pista">
+        <!-- TIPOLOGIA: Private Residences -->
+        <article class="tipo" id="private-residences" aria-label="Private Residences">
+          <figure class="tipo__foto"><img src="assets/img/suites/private-residences.jpg?v=3" alt="Private Residences" loading="lazy"></figure>
+          <div class="tipo__info">
+            <p>Crie momentos memoráveis em&nbsp;família nesta residência acolhedora, ideal para&nbsp;escapadelas relaxantes com&nbsp;todo o&nbsp;conforto de&nbsp;casa. Dispõe de&nbsp;dois quartos, cozinha totalmente equipada, áreas de&nbsp;estar e&nbsp;de&nbsp;jantar separadas e&nbsp;uma&nbsp;ampla varanda com&nbsp;vista para&nbsp;o&nbsp;hotel.</p>
+            <div class="tipo__acoes">
+              <a class="botao-contorno" href="private-residences.html" data-abre-quarto data-hero="assets/img/suites/private-residences/editorial/hero.jpg?v=3" data-foco="50% 55%">Ver&nbsp;residência</a>
+              <a class="botao-contorno" href="reservas.html">Reservar</a>
+            </div>
+          </div>
+        </article>
+        <!-- TIPOLOGIA: Casa Laranjo -->
+        <article class="tipo" id="casa-laranjo" aria-label="Casa Laranjo">
+          <figure class="tipo__foto"><img src="assets/img/suites/casa-laranjo.jpg?v=3" alt="Casa Laranjo" loading="lazy"></figure>
+          <div class="tipo__info">
+            <p>Desfrute da&nbsp;elegância deste luxuoso apartamento, ideal para&nbsp;famílias e&nbsp;grupos. Dispõe de&nbsp;dois quartos confortáveis, cozinha totalmente equipada, zonas de&nbsp;estar e&nbsp;jantar harmoniosas e&nbsp;uma&nbsp;ampla varanda de&nbsp;54 m² com&nbsp;vista para&nbsp;os&nbsp;jardins do&nbsp;hotel, perfeita para&nbsp;aproveitar o&nbsp;sol e&nbsp;a&nbsp;serenidade do&nbsp;Algarve.</p>
+            <div class="tipo__acoes">
+              <a class="botao-contorno" href="casa-laranjo.html" data-abre-quarto data-hero="assets/img/suites/casa-laranjo/editorial/hero.jpg?v=3" data-foco="50% 55%">Ver&nbsp;residência</a>
+              <a class="botao-contorno" href="reservas.html">Reservar</a>
+            </div>
+          </div>
+        </article>
+        <!-- TIPOLOGIA: Casa Levy -->
+        <article class="tipo" id="casa-levy" aria-label="Casa Levy">
+          <figure class="tipo__foto"><img src="assets/img/suites/casa-levy.jpg?v=3" alt="Casa Levy" loading="lazy"></figure>
+          <div class="tipo__info">
+            <p>Ideal para&nbsp;famílias e&nbsp;grupos, o&nbsp;Vilalara Residence (Vista Jardim) oferece o&nbsp;espaço e&nbsp;o&nbsp;conforto ideais para&nbsp;criar memórias inesquecíveis e&nbsp;desfrutar da&nbsp;natureza e&nbsp;do&nbsp;sol do&nbsp;Algarve. Dispõe de&nbsp;dois quartos espaçosos com&nbsp;casa de&nbsp;banho privativa, cozinha totalmente equipada, áreas de&nbsp;estar e&nbsp;de&nbsp;jantar e&nbsp;uma&nbsp;ampla varanda com&nbsp;vista para&nbsp;os&nbsp;jardins do&nbsp;hotel.</p>
+            <div class="tipo__acoes">
+              <a class="botao-contorno" href="casa-levy.html" data-abre-quarto data-hero="assets/img/suites/casa-levy/editorial/hero.jpg?v=3" data-foco="50% 55%">Ver&nbsp;residência</a>
+              <a class="botao-contorno" href="reservas.html">Reservar</a>
+            </div>
+          </div>
+        </article>
+        <!-- TIPOLOGIA: Casa Lara -->
+        <article class="tipo" id="casa-lara" aria-label="Casa Lara">
+          <figure class="tipo__foto"><img src="assets/img/suites/casa-lara.jpg?v=3" alt="Casa Lara" loading="lazy"></figure>
+          <div class="tipo__info">
+            <p>Criado para&nbsp;famílias e&nbsp;grupos, este espaçoso apartamento de&nbsp;dois quartos oferece o&nbsp;conforto ideal para&nbsp;criar memórias inesquecíveis, com&nbsp;uma&nbsp;decoração cuidada, cozinha totalmente equipada, zonas de&nbsp;estar e&nbsp;jantar e&nbsp;uma&nbsp;ampla varanda com&nbsp;vistas deslumbrantes sobre o&nbsp;oceano.</p>
+            <div class="tipo__acoes">
+              <a class="botao-contorno" href="casa-lara.html" data-abre-quarto data-hero="assets/img/suites/casa-lara/editorial/hero.jpg?v=3" data-foco="50% 55%">Ver&nbsp;residência</a>
+              <a class="botao-contorno" href="reservas.html">Reservar</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      </div>
+    </div>
+  </section>
+  <!-- /BLOCO: tipologias (residências) -->
+
+  </div>
+</main>
+
+
+<!-- BLOCO: rodape -->
+<footer class="rodape">
+  <div class="rodape__dentro">
+
+    <div class="rodape__marca">
+      <a class="rodape__logo" href="index.html" aria-label="Vilalara Grand Hotel Algarve, página inicial">
+        <img src="assets/img/marca/logo-branco.png" alt="Vilalara Grand Hotel Algarve" width="1669" height="395" loading="lazy">
+      </a>
+      <p class="rodape__morada">
+        <img src="assets/img/marca/morada.png" alt="Praia das Gaivotas, Alporchinhos, Porches 8400-450, Portugal" width="839" height="300" loading="lazy">
+      </p>
+      <div class="rodape__selos">
+        <span class="rodape__selos-faixa">
+          <img src="assets/img/marca/selos-parceiros.png" alt="Visit Algarve, Forbes Travel Guide, XO Private, guia Michelin, Takumians, Mr &amp; Mrs Smith, Ensemble" width="2397" height="143" loading="lazy">
+          <a class="rodape__selo" href="https://visitalgarve.pt/en/" target="_blank" rel="noopener" aria-label="Visit Algarve (abre numa nova janela)" style="left:0.00%;width:15.56%"></a>
+          <a class="rodape__selo" href="https://forbestravelguide.com/" target="_blank" rel="noopener" aria-label="Forbes Travel Guide (abre numa nova janela)" style="left:21.23%;width:9.05%"></a>
+          <a class="rodape__selo" href="https://www.xoprivate.com/" target="_blank" rel="noopener" aria-label="XO Private (abre numa nova janela)" style="left:35.71%;width:6.05%"></a>
+          <a class="rodape__selo" href="https://guide.michelin.com/pt/pt_PT" target="_blank" rel="noopener" aria-label="Guia Michelin (abre numa nova janela)" style="left:47.23%;width:6.01%"></a>
+          <a class="rodape__selo" href="https://www.mrandmrssmith.com/" target="_blank" rel="noopener" aria-label="Mr &amp; Mrs Smith (abre numa nova janela)" style="left:75.18%;width:8.34%"></a>
+          <a class="rodape__selo" href="https://www.ensembletravel.com/" target="_blank" rel="noopener" aria-label="Ensemble Travel (abre numa nova janela)" style="left:89.19%;width:10.81%"></a>
+        </span>
+      </div>
+    </div>
+
+    <div class="rodape__info">
+      <div class="rodape__linha">
+        <div>
+          <h2>Contactos</h2>
+          <p><a href="tel:+351282320000">(+351) 282 320 000</a></p>
+          <p class="rodape__nota">Custo de&nbsp;uma&nbsp;chamada para&nbsp;a&nbsp;rede fixa nacional (ou&nbsp;internacional, se&nbsp;a&nbsp;chamada for feita fora da&nbsp;UE).</p>
+          <p><a href="mailto:reservas@vilalara.com">reservas@vilalara.com</a></p>
+        </div>
+        <div>
+          <h2 class="sr-only">Sobre</h2>
+          <ul>
+            <li><a href="newsletter.html">Registo na&nbsp;Newsletter</a></li>
+            <li><a href="sustentabilidade.html">Sustentabilidade</a></li>
+            <li><a href="carreiras.html">Carreiras</a></li>
+            <li><a href="https://lost.faundit.com/vilalara-grand-hotel-algarve" target="_blank" rel="noopener">Lost &amp;&nbsp;Found</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="sr-only">Informação legal</h2>
+          <ul>
+            <li><a href="termos-condicoes.html">Termos &amp;&nbsp;Condições</a></li>
+            <li><a href="politica-privacidade.html">Política de&nbsp;Privacidade</a></li>
+            <li><a href="politica-cookies.html">Política de&nbsp;Cookies</a></li>
+            <li><a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noopener">Livro de&nbsp;Reclamações</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Redes sociais</h2>
+          <ul>
+            <li><a href="https://www.instagram.com/vilalaragrandhotel" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="#">Linkedin</a></li>
+            <li><a href="https://www.facebook.com/VilalaraThalassaResort" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.tripadvisor.com/Hotel_Review-g652080-d231460-Reviews-Vilalara_Thalassa_Resort-Porches_Faro_District_Algarve.html" target="_blank" rel="noopener">Tripadvisor</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rodape__linha rodape__linha--legal">
+        <div>
+          <h2>Aviso ao&nbsp;consumidor</h2>
+          <p class="rodape__legal">Ao&nbsp;abrigo do&nbsp;artigo 18.º da&nbsp;Lei n.º 144/2015, de&nbsp;8 de&nbsp;setembro, em&nbsp;caso de&nbsp;litígio de&nbsp;consumo, o&nbsp;consumidor pode recorrer à&nbsp;Plataforma Europeia de&nbsp;Resolução de&nbsp;Litígios em&nbsp;Linha: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr</a>. Pode igualmente recorrer a&nbsp;uma&nbsp;entidade de&nbsp;resolução alternativa de&nbsp;litígios de&nbsp;consumo disponível em&nbsp;Portugal em&nbsp;<a href="https://www.consumidor.gov.pt/" target="_blank" rel="noopener">https://www.consumidor.gov.pt</a>. O&nbsp;recurso a&nbsp;estas entidades não prejudica o&nbsp;direito de&nbsp;o&nbsp;consumidor recorrer aos&nbsp;tribunais judiciais, nos&nbsp;termos da&nbsp;lei.</p>
+          <p class="rodape__copyright">2026 © Vilalara Grand Hotel Algarve. All rights reserved.</p>
+        </div>
+        <div>
+          <h2>Entidade exploradora</h2>
+          <p class="rodape__nota">Goldtur – Hotéis e&nbsp;Turismo, S. A.<br>NIPC 500 201 072<br>Praia das&nbsp;Gaivotas – Alporchinhos<br>8400-450 Porches, Portugal</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+<!-- /BLOCO: rodape -->
+
+
+<!-- BLOCO: painel-menu -->
+<div class="veu-painel" aria-hidden="true"></div>
+<nav class="painel" id="painel-menu" aria-label="Menu principal">
+  <div class="painel__topo">
+    <a class="painel__logo" href="index.html"><img src="assets/img/marca/logo-escuro.png" alt="Vilalara Grand Hotel Algarve" width="1669" height="395"></a>
+    <button class="painel__fechar" type="button"><span class="sr-only">Fechar menu</span></button>
+  </div>
+  <div class="painel__menu">
+  <ul>
+  <li class="painel__item"><a href="index.html" data-categoria="home">Home</a></li>
+  <li class="painel__item"><a href="our-heritage.html" data-categoria="our-heritage">Our Heritage</a></li>
+  <li class="painel__item no-caminho tem-sub">
+    <div class="painel__linha"><a href="suites-residencias.html" data-categoria="suites-residencias" aria-current="page">Suítes &amp;&nbsp;Residências</a><button class="painel__abre" type="button" aria-expanded="true" aria-controls="sub-suites-residencias"><span class="sr-only">Submenu Suítes &amp;&nbsp;Residências</span></button></div>
+    <ul id="sub-suites-residencias" class="painel__sub painel__sub--n2">
+    <li class="painel__item"><a href="elegant-suite.html">Elegant Suite</a></li>
+    <li class="painel__item"><a href="master-suite.html">Master Suite</a></li>
+    <li class="painel__item"><a href="ocean-suite.html">Ocean Suite</a></li>
+    <li class="painel__item"><a href="grand-suite.html">Grand Suite</a></li>
+    <li class="painel__item"><a href="george-ansley-suite.html">George Ansley Suite</a></li>
+    <li class="painel__item"><a href="jose-de-harry-suite.html">José de&nbsp;Harry Suite</a></li>
+    <li class="painel__item"><a href="private-residences.html">Private Residences</a></li>
+    <li class="painel__item"><a href="casa-laranjo.html">Casa Laranjo</a></li>
+    <li class="painel__item"><a href="casa-levy.html">Casa Levy</a></li>
+    <li class="painel__item"><a href="casa-lara.html">Casa Lara</a></li>
+    </ul>
+  </li>
+  <li class="painel__item tem-sub">
+    <div class="painel__linha"><a href="gastronomia.html" data-categoria="gastronomia">Gastronomia</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-gastronomia"><span class="sr-only">Submenu Gastronomia</span></button></div>
+    <ul id="sub-gastronomia" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item"><a href="coral.html">Coral</a></li>
+    <li class="painel__item"><a href="raizes.html">Raízes</a></li>
+    <li class="painel__item"><a href="trattoria.html">Trattoria</a></li>
+    <li class="painel__item"><a href="a-costa.html">A-costa</a></li>
+    <li class="painel__item"><a href="vento.html">Vento</a></li>
+    <li class="painel__item"><a href="gaivotas.html">Gaivotas</a></li>
+    </ul>
+  </li>
+  <li class="painel__item tem-sub">
+    <div class="painel__linha"><a href="wellness.html" data-categoria="wellness">Wellness</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-wellness"><span class="sr-only">Submenu Wellness</span></button></div>
+    <ul id="sub-wellness" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item tem-sub">
+      <div class="painel__linha"><a href="tratamentos.html">Tratamentos</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-tratamentos"><span class="sr-only">Submenu Tratamentos</span></button></div>
+      <ul id="sub-tratamentos" hidden class="painel__sub painel__sub--n3">
+      <li class="painel__item"><a href="tratamento-rituais.html">Rituals</a></li>
+      <li class="painel__item"><a href="tratamento-faciais.html">Faciais</a></li>
+      <li class="painel__item"><a href="tratamento-body.html">Body</a></li>
+      <li class="painel__item"><a href="tratamento-body-therapy.html">Body Therapy</a></li>
+      <li class="painel__item"><a href="tratamento-body-shaping.html">Body Shaping</a></li>
+      <li class="painel__item"><a href="tratamento-shared-care.html">Shared Care</a></li>
+      <li class="painel__item"><a href="tratamento-flows.html">Flows</a></li>
+      <li class="painel__item"><a href="tratamento-self-discovery.html">Self Discovery</a></li>
+      </ul>
+    </li>
+    <li class="painel__item tem-sub">
+      <div class="painel__linha"><a href="programas.html">Programas</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-programas"><span class="sr-only">Submenu Programas</span></button></div>
+      <ul id="sub-programas" hidden class="painel__sub painel__sub--n3">
+      <li class="painel__item"><a href="programa-thalassotherapy-healing.html">Thalassotherapy Healing</a></li>
+      <li class="painel__item"><a href="programa-fitness-essence.html">Fitness Essence</a></li>
+      <li class="painel__item"><a href="programa-bespoke-anti-ageing-retreat.html">Bespoke Anti-ageing Retreat</a></li>
+      <li class="painel__item"><a href="programa-stress-relief-recover.html">Stress Relief &amp;&nbsp;Recover</a></li>
+      <li class="painel__item"><a href="programa-detox-weight-management.html">Detox &amp;&nbsp;Weight Management</a></li>
+      </ul>
+    </li>
+    <li class="painel__item tem-sub">
+      <div class="painel__linha"><a href="thalasso.html">Thalasso</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-thalasso"><span class="sr-only">Submenu Thalasso</span></button></div>
+      <ul id="sub-thalasso" hidden class="painel__sub painel__sub--n3">
+      <li class="painel__item"><a href="thalassoterapia.html">Thalassoterapia</a></li>
+      <li class="painel__item"><a href="thalasso-flows.html">Thalasso Flows</a></li>
+      </ul>
+    </li>
+    <li class="painel__item tem-sub">
+      <div class="painel__linha"><a href="bem-estar.html">Práticas Wellness</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-bem-estar"><span class="sr-only">Submenu Práticas Wellness</span></button></div>
+      <ul id="sub-bem-estar" hidden class="painel__sub painel__sub--n3">
+      <li class="painel__item"><a href="pratica-mindful-motion.html">Mindful &amp;&nbsp;Motion</a></li>
+      <li class="painel__item"><a href="pratica-ancient-techniques.html">Ancient Techniques</a></li>
+      <li class="painel__item"><a href="pratica-hybrid-training.html">Hybrid Training</a></li>
+      <li class="painel__item"><a href="pratica-premium-balance.html">Premium Balance</a></li>
+      <li class="painel__item"><a href="pratica-rituals-of-connection.html">Rituals of&nbsp;Connection</a></li>
+      </ul>
+    </li>
+    <li class="painel__item"><a href="plano-alimentar-anti-inflamatorio.html">Nutrição</a></li>
+    <li class="painel__item"><a href="centro-fitness.html">Fitness</a></li>
+    </ul>
+  </li>
+  <li class="painel__item tem-sub">
+    <div class="painel__linha"><a href="clubs.html" data-categoria="clubs">Clubs</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-clubs"><span class="sr-only">Submenu Clubs</span></button></div>
+    <ul id="sub-clubs" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item"><a href="racket-club.html">Racket Club</a></li>
+    <li class="painel__item"><a href="kids-club.html">Kids Club</a></li>
+    <li class="painel__item"><a href="beach-club.html">Beach Club</a></li>
+    </ul>
+  </li>
+  <li class="painel__item tem-sub">
+    <div class="painel__linha"><a href="experiencias.html" data-categoria="experiencias">Experiências</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-experiencias"><span class="sr-only">Submenu Experiências</span></button></div>
+    <ul id="sub-experiencias" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item"><a href="experiencia-george-ansley-tour.html">The&nbsp;George Ansley Tour</a></li>
+    <li class="painel__item"><a href="experiencia-from-market-to-table.html">From Market to&nbsp;Table</a></li>
+    <li class="painel__item"><a href="experiencia-bottle-blending.html">Bottle Blending</a></li>
+    <li class="painel__item"><a href="experiencia-market-walk.html">Market Walk</a></li>
+    <li class="painel__item"><a href="experiencia-behind-the-wine.html">Behind the&nbsp;Wine</a></li>
+    <li class="painel__item"><a href="experiencia-ceramica.html">Traditional Ceramics</a></li>
+    <li class="painel__item"><a href="experiencia-velas.html">Craft Candle Workshop</a></li>
+    <li class="painel__item"><a href="experiencia-biologo-astronomia.html">Biólogo e&nbsp;Astronomia</a></li>
+    </ul>
+  </li>
+  <li class="painel__item"><a href="occasions.html" data-categoria="occasions">Occasions</a></li>
+  <li class="painel__item"><a href="60-aniversario.html" data-categoria="60-aniversario">60.º Aniversário</a></li>
+  </ul>
+  </div>
+  <p class="painel__morada"><img src="assets/img/marca/morada.png" alt="Praia das Gaivotas, Alporchinhos, Porches 8400-450, Portugal" width="839" height="300" loading="lazy"></p>
+</nav>
+<!-- /BLOCO: painel-menu -->
+
+<script src="assets/js/site.js?v=20261120u"></script>
+</body>
+</html>

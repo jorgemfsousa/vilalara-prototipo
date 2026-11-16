@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="pt" class="tema-escuro">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Body Therapy · Tratamentos · Vilalara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&family=Marcellus&family=Pinyon+Script&display=swap">
+<link rel="stylesheet" href="https://use.typekit.net/oav4umc.css"><!-- Adobe Fonts: Optima nova + Richmond Display (projeto "Vilalara site prototipo") -->
+<link rel="stylesheet" href="https://use.typekit.net/ozg0foo.css"><!-- Adobe Fonts: Fact VF (projeto "Vilalara site prototipo Fact") -->
+<link rel="stylesheet" href="assets/css/tokens.css?v=20261120u">
+<link rel="stylesheet" href="assets/css/base.css?v=20261120u">
+<link rel="stylesheet" href="assets/css/blocos.css?v=20261120u">
+</head>
+<body>
+
+<!-- =================================================================
+     BODY THERAPY (tratamentos)
+     Abre a partir do cartão em tratamentos.html. Textos, durações e preços do layout.
+     Cada tratamento: foto + painel (classe area--granulado). Para acrescentar um, copiar um <article class="area ...">.
+     ================================================================= -->
+
+
+<!-- BLOCO: cabecalho-interior (variante sobre foto) -->
+<header class="cab-interior cab-interior--sobre-foto" data-sobre-foto>
+  <button class="botao-menu" type="button" data-abre-painel aria-expanded="false" aria-controls="painel-menu">
+    <span class="tracos"></span><span class="sr-only">Abrir menu</span>
+  </button>
+  <a class="cab-interior__monograma" href="index.html" aria-label="Vilalara Grand Hotel Algarve, página inicial">
+    <img src="assets/img/marca/monograma-escuro.png" alt="Vilalara" width="277" height="274">
+  </a>
+  <div class="cab-acoes">
+    <div class="idioma">
+      <button class="idioma__botao" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="lista-idiomas">
+        <span class="idioma__atual">PT</span><span class="sr-only">, escolher idioma</span>
+      </button>
+      <ul class="idioma__lista" id="lista-idiomas" hidden>
+        <li><button type="button" data-lingua="pt" aria-current="true">PT</button></li>
+        <li><button type="button" data-lingua="en">EN</button></li>
+        <li><button type="button" data-lingua="es">ES</button></li>
+        <li><button type="button" data-lingua="fr">FR</button></li>
+        <li><button type="button" data-lingua="de">DE</button></li>
+      </ul>
+    </div>
+    <a class="botao-link" href="reservas.html">Reservar</a>
+  </div>
+</header>
+<!-- /BLOCO: cabecalho-interior -->
+
+
+<main>
+
+  <!-- BLOCO: hero-detalhe -->
+  <section class="slide landing landing--fixo hero-detalhe" aria-label="Body Therapy">
+    <figure class="slide__media" style="--foco: 50% 40%">
+      <img src="assets/img/wellness/tratamentos/body-therapy.jpg" alt="Body Therapy" fetchpriority="high">
+    </figure>
+    <div class="hero-detalhe__texto">
+      <h1>Body Therapy</h1>
+      <p>Cuidados especializados para&nbsp;uma&nbsp;cura&nbsp;holística</p>
+    </div>
+    <a class="seta-scroll" href="#sobre" aria-label="Descer para a descrição">
+      <svg viewBox="0 0 14 32" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M7 0v31M1 25l6 6 6-6"/></svg>
+    </a>
+  </section>
+  <!-- /BLOCO: hero-detalhe -->
+
+  <div class="landing--fixo__conteudo"><!-- tudo o que sobe por cima do banner fixo (fundo contínuo, sem frestas) -->
+
+
+  <!-- BLOCO: intro-detalhe -->
+  <section class="detalhe-intro" id="sobre">
+    <p>Experimente uma&nbsp;abordagem holística de&nbsp;bem-estar com&nbsp;os&nbsp;nossos tratamentos especializados de&nbsp;Terapia Corporal, concebidos para&nbsp;dar resposta a&nbsp;diversas necessidades. Os&nbsp;nossos terapeutas altamente qualificados utilizam técnicas avançadas, como osteopatia, drenagem linfática, alinhamento postural, terapia craniossacral e&nbsp;equilíbrio visceral, para&nbsp;restaurar a&nbsp;harmonia natural do&nbsp;seu&nbsp;corpo.</p>
+  </section>
+  <!-- /BLOCO: intro-detalhe -->
+
+
+  <!-- BLOCO: texto-fotos (texto curto + 2 fotos) -->
+  <section class="texto-fotos" aria-label="Fotografias">
+    <figure class="tf-grande"><img src="assets/img/wellness/pinterest/therapy-anca.jpg" alt="Terapeuta a trabalhar a anca com as mãos" loading="lazy"></figure>
+    <p>Cada sessão é&nbsp;personalizada para&nbsp;aliviar tensões, melhorar a&nbsp;mobilidade e&nbsp;promover um&nbsp;funcionamento mais equilibrado e&nbsp;saudável. Estas técnicas funcionam em&nbsp;sinergia para&nbsp;aliviar o&nbsp;desconforto e&nbsp;até mesmo resolver problemas como a&nbsp;insónia, promovem um&nbsp;relaxamento profundo e&nbsp;melhoram os&nbsp;processos de&nbsp;cura inerentes ao&nbsp;corpo.</p>
+    <figure class="tf-pequena"><img src="assets/img/wellness/pinterest/therapy-costas.jpg" alt="Terapia manual nos ombros" loading="lazy"></figure>
+  </section>
+  <!-- /BLOCO: texto-fotos -->
+
+
+  <!-- BLOCO: filas-tratamentos (foto + painel; cada fila ocupa o ecrã e o scroll encaixa como na home) -->
+  <section class="linhas" aria-label="Tratamentos">
+    <!-- TRATAMENTO 1 -->
+    <article class="area area--granulado area--painel-esq" style="--base: #978171; --tinta: #ae9d91; --brilho: 0.85">
+      <figure class="area__foto"><img src="assets/img/wellness/pinterest/therapy-drenagem.jpg" alt="Drenagem linfática manual no abdómen" loading="lazy"></figure>
+      <div class="area__painel">
+        <img class="area__textura" src="assets/img/wellness/pinterest/therapy-drenagem.jpg" alt="" aria-hidden="true" loading="lazy">
+        <div class="detalhe-painel">
+          <h3>DRENAGEM LINFÁTICA <span>Manual</span></h3>
+          <p>Uma&nbsp;terapia corporal delicada e&nbsp;envolvente que&nbsp;utiliza movimentos suaves e&nbsp;precisos para&nbsp;estimular o&nbsp;fluxo da&nbsp;linfa, promovendo a&nbsp;eliminação de&nbsp;toxinas e&nbsp;a&nbsp;redução de&nbsp;retenção de&nbsp;líquidos assim como edemas. Trabalha a&nbsp;circulação numa experiência relaxante que&nbsp;não só revitaliza o&nbsp;corpo, mas também traz harmonia e&nbsp;tranquilidade à&nbsp;mente.</p>
+          <a class="botao-contorno sobre-foto" href="reservas.html?tratamento=tratamento-body-therapy--drenagem-linfatica-manual#marcar-tratamento">Marcar tratamento</a>
+          <div class="detalhe-painel__rodape"><span>50 min</span><span>130 €</span></div>
+        </div>
+      </div>
+    </article>
+    <!-- TRATAMENTO 2 -->
+    <article class="area area--granulado area--painel-dir" style="--base: #88847a; --tinta: #c3beb5; --brilho: 0.65">
+      <figure class="area__foto"><img src="assets/img/wellness/pinterest/therapy-mobilidade.jpg" alt="Terapeuta a mobilizar a articulação do joelho" loading="lazy"></figure>
+      <div class="area__painel">
+        <img class="area__textura" src="assets/img/wellness/pinterest/therapy-mobilidade.jpg" alt="" aria-hidden="true" loading="lazy">
+        <div class="detalhe-painel">
+          <h3>TERAPIA DE&nbsp;MOBILIDADE <span>Articular</span></h3>
+          <p>Tratamento que&nbsp;promove a&nbsp;descompressão articular, alívio da&nbsp;dor, aumento da&nbsp;mobilidade e&nbsp;flexibilidade articulares, previne lesões musculares, libertação de&nbsp;tensões ao&nbsp;nível das&nbsp;estruturas articulares e&nbsp;melhoria postural. Realizado nos&nbsp;membros inferiores, superiores e&nbsp;coluna vertebral, de&nbsp;forma manual suave e&nbsp;progressiva.</p>
+          <a class="botao-contorno sobre-foto" href="reservas.html?tratamento=tratamento-body-therapy--terapia-de-mobilidade-articular#marcar-tratamento">Marcar tratamento</a>
+          <div class="detalhe-painel__rodape"><span>50 min</span><span>130 €</span></div>
+        </div>
+      </div>
+    </article>
+    <!-- TRATAMENTO 3 -->
+    <article class="area area--granulado area--painel-esq" style="--base: #857d76; --tinta: #a19a95; --brilho: 0.85">
+      <figure class="area__foto"><img src="assets/img/wellness/pinterest/therapy-osteopatia.jpg?v=fm2" alt="Osteopata a tratar as costas na marquesa" loading="lazy"></figure>
+      <div class="area__painel">
+        <img class="area__textura" src="assets/img/wellness/pinterest/therapy-osteopatia.jpg?v=fm2" alt="" aria-hidden="true" loading="lazy">
+        <div class="detalhe-painel">
+          <h3>OSTEOPATIA</h3>
+          <p>Uma&nbsp;abordagem terapêutica que&nbsp;utiliza técnicas manuais para&nbsp;diagnosticar, tratar e&nbsp;prevenir disfunções do&nbsp;corpo, restaurando o&nbsp;equilíbrio e&nbsp;a&nbsp;mobilidade. Através de&nbsp;manipulações suaves nos&nbsp;músculos, articulações e&nbsp;tecidos, alivia dores, melhora a&nbsp;circulação e&nbsp;promove o&nbsp;bem-estar geral. Ideal para&nbsp;quem busca alívio de&nbsp;tensões musculares, dores crónicas ou&nbsp;distúrbios posturais, proporcionando uma&nbsp;sensação de&nbsp;leveza e&nbsp;harmonia.</p>
+          <a class="botao-contorno sobre-foto" href="reservas.html?tratamento=tratamento-body-therapy--osteopatia#marcar-tratamento">Marcar tratamento</a>
+          <div class="detalhe-painel__rodape"><span>50 min</span><span>175 €</span></div>
+        </div>
+      </div>
+    </article>
+    <!-- TRATAMENTO 4 -->
+    <article class="area area--granulado area--painel-dir" style="--base: #776e63; --tinta: #b2a99f; --brilho: 0.65">
+      <figure class="area__foto"><img src="assets/img/wellness/pinterest/therapy-sacro-craniana.jpg" alt="Terapeuta a segurar suavemente a cabeça" loading="lazy"></figure>
+      <div class="area__painel">
+        <img class="area__textura" src="assets/img/wellness/pinterest/therapy-sacro-craniana.jpg" alt="" aria-hidden="true" loading="lazy">
+        <div class="detalhe-painel">
+          <h3>TERAPIA <span>Sacro-Craniana</span></h3>
+          <p>Terapia manual centrada na&nbsp;melhoria do&nbsp;sistema craniossacral, que&nbsp;protege o&nbsp;cérebro e&nbsp;a&nbsp;espinal medula. Alivia as&nbsp;tensões e&nbsp;dissipa os&nbsp;efeitos negativos do&nbsp;stress no&nbsp;sistema nervoso central. Esta terapia preventiva apoia a&nbsp;resistência natural contra as&nbsp;doenças, sendo adequada para&nbsp;todas as&nbsp;idades.</p>
+          <a class="botao-contorno sobre-foto" href="reservas.html?tratamento=tratamento-body-therapy--terapia-sacro-craniana#marcar-tratamento">Marcar tratamento</a>
+          <div class="detalhe-painel__rodape"><span>50 min</span><span>175 €</span></div>
+        </div>
+      </div>
+    </article>
+    <!-- TRATAMENTO 5 -->
+    <article class="area area--granulado area--painel-esq" style="--base: #b99682; --tinta: #c8ae9e; --brilho: 0.85">
+      <figure class="area__foto"><img src="assets/img/wellness/pinterest/therapy-reequilibrio.jpg" alt="Mãos sobre o corpo numa sessão de reequilíbrio energético" loading="lazy"></figure>
+      <div class="area__painel">
+        <img class="area__textura" src="assets/img/wellness/pinterest/therapy-reequilibrio.jpg" alt="" aria-hidden="true" loading="lazy">
+        <div class="detalhe-painel">
+          <h3>TERAPIA DE&nbsp;REEQUILÍBRIO <span>Energético</span></h3>
+          <p>A&nbsp;Medicina Energética organiza e&nbsp;regula o&nbsp;crescimento, a&nbsp;reparação e&nbsp;o&nbsp;equilíbrio do&nbsp;corpo. De&nbsp;forma não invasiva, promove a&nbsp;harmonia e&nbsp;o&nbsp;fluxo vital, restaurando o&nbsp;bem-estar físico e&nbsp;emocional. Com&nbsp;técnicas que&nbsp;ajudam a&nbsp;corrigir desequilíbrios, a&nbsp;despertar a&nbsp;força interior e&nbsp;a&nbsp;aumentar a&nbsp;resiliência, eleva a&nbsp;vitalidade do&nbsp;corpo, das&nbsp;células e&nbsp;da&nbsp;mente.</p>
+          <a class="botao-contorno sobre-foto" href="reservas.html?tratamento=tratamento-body-therapy--terapia-de-reequilibrio-energetico#marcar-tratamento">Marcar tratamento</a>
+          <div class="detalhe-painel__rodape"><span>50 min</span><span>185 €</span></div>
+        </div>
+      </div>
+    </article>
+  </section>
+  <!-- /BLOCO: filas-tratamentos -->
+
+  <div class="espaco-final" aria-hidden="true"></div><!-- espaço antes do rodapé (no lugar do antigo bloco "perguntas") -->
+  </div>
+</main>
+
+
+<!-- BLOCO: rodape -->
+<footer class="rodape">
+  <div class="rodape__dentro">
+
+    <div class="rodape__marca">
+      <a class="rodape__logo" href="index.html" aria-label="Vilalara Grand Hotel Algarve, página inicial">
+        <img src="assets/img/marca/logo-branco.png" alt="Vilalara Grand Hotel Algarve" width="1669" height="395" loading="lazy">
+      </a>
+      <p class="rodape__morada">
+        <img src="assets/img/marca/morada.png" alt="Praia das Gaivotas, Alporchinhos, Porches 8400-450, Portugal" width="839" height="300" loading="lazy">
+      </p>
+      <div class="rodape__selos">
+        <span class="rodape__selos-faixa">
+          <img src="assets/img/marca/selos-parceiros.png" alt="Visit Algarve, Forbes Travel Guide, XO Private, guia Michelin, Takumians, Mr &amp; Mrs Smith, Ensemble" width="2397" height="143" loading="lazy">
+          <a class="rodape__selo" href="https://visitalgarve.pt/en/" target="_blank" rel="noopener" aria-label="Visit Algarve (abre numa nova janela)" style="left:0.00%;width:15.56%"></a>
+          <a class="rodape__selo" href="https://forbestravelguide.com/" target="_blank" rel="noopener" aria-label="Forbes Travel Guide (abre numa nova janela)" style="left:21.23%;width:9.05%"></a>
+          <a class="rodape__selo" href="https://www.xoprivate.com/" target="_blank" rel="noopener" aria-label="XO Private (abre numa nova janela)" style="left:35.71%;width:6.05%"></a>
+          <a class="rodape__selo" href="https://guide.michelin.com/pt/pt_PT" target="_blank" rel="noopener" aria-label="Guia Michelin (abre numa nova janela)" style="left:47.23%;width:6.01%"></a>
+          <a class="rodape__selo" href="https://www.mrandmrssmith.com/" target="_blank" rel="noopener" aria-label="Mr &amp; Mrs Smith (abre numa nova janela)" style="left:75.18%;width:8.34%"></a>
+          <a class="rodape__selo" href="https://www.ensembletravel.com/" target="_blank" rel="noopener" aria-label="Ensemble Travel (abre numa nova janela)" style="left:89.19%;width:10.81%"></a>
+        </span>
+      </div>
+    </div>
+
+    <div class="rodape__info">
+      <div class="rodape__linha">
+        <div>
+          <h2>Contactos</h2>
+          <p><a href="tel:+351282320000">(+351) 282 320 000</a></p>
+          <p class="rodape__nota">Custo de&nbsp;uma&nbsp;chamada para&nbsp;a&nbsp;rede fixa nacional (ou&nbsp;internacional, se&nbsp;a&nbsp;chamada for feita fora da&nbsp;UE).</p>
+          <p><a href="mailto:reservas@vilalara.com">reservas@vilalara.com</a></p>
+        </div>
+        <div>
+          <h2 class="sr-only">Sobre</h2>
+          <ul>
+            <li><a href="newsletter.html">Registo na&nbsp;Newsletter</a></li>
+            <li><a href="sustentabilidade.html">Sustentabilidade</a></li>
+            <li><a href="carreiras.html">Carreiras</a></li>
+            <li><a href="https://lost.faundit.com/vilalara-grand-hotel-algarve" target="_blank" rel="noopener">Lost &amp;&nbsp;Found</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="sr-only">Informação legal</h2>
+          <ul>
+            <li><a href="termos-condicoes.html">Termos &amp;&nbsp;Condições</a></li>
+            <li><a href="politica-privacidade.html">Política de&nbsp;Privacidade</a></li>
+            <li><a href="politica-cookies.html">Política de&nbsp;Cookies</a></li>
+            <li><a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noopener">Livro de&nbsp;Reclamações</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Redes sociais</h2>
+          <ul>
+            <li><a href="https://www.instagram.com/vilalaragrandhotel" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="#">Linkedin</a></li>
+            <li><a href="https://www.facebook.com/VilalaraThalassaResort" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.tripadvisor.com/Hotel_Review-g652080-d231460-Reviews-Vilalara_Thalassa_Resort-Porches_Faro_District_Algarve.html" target="_blank" rel="noopener">Tripadvisor</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rodape__linha rodape__linha--legal">
+        <div>
+          <h2>Aviso ao&nbsp;consumidor</h2>
+          <p class="rodape__legal">Ao&nbsp;abrigo do&nbsp;artigo 18.º da&nbsp;Lei n.º 144/2015, de&nbsp;8 de&nbsp;setembro, em&nbsp;caso de&nbsp;litígio de&nbsp;consumo, o&nbsp;consumidor pode recorrer à&nbsp;Plataforma Europeia de&nbsp;Resolução de&nbsp;Litígios em&nbsp;Linha: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr</a>. Pode igualmente recorrer a&nbsp;uma&nbsp;entidade de&nbsp;resolução alternativa de&nbsp;litígios de&nbsp;consumo disponível em&nbsp;Portugal em&nbsp;<a href="https://www.consumidor.gov.pt/" target="_blank" rel="noopener">https://www.consumidor.gov.pt</a>. O&nbsp;recurso a&nbsp;estas entidades não prejudica o&nbsp;direito de&nbsp;o&nbsp;consumidor recorrer aos&nbsp;tribunais judiciais, nos&nbsp;termos da&nbsp;lei.</p>
+          <p class="rodape__copyright">2026 © Vilalara Grand Hotel Algarve. All rights reserved.</p>
+        </div>
+        <div>
+          <h2>Entidade exploradora</h2>
+          <p class="rodape__nota">Goldtur – Hotéis e&nbsp;Turismo, S. A.<br>NIPC 500 201 072<br>Praia das&nbsp;Gaivotas – Alporchinhos<br>8400-450 Porches, Portugal</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+<!-- /BLOCO: rodape -->
+
+
+<!-- BLOCO: painel-menu -->
+<div class="veu-painel" aria-hidden="true"></div>
+<nav class="painel" id="painel-menu" aria-label="Menu principal">
+  <div class="painel__topo">
+    <a class="painel__logo" href="index.html"><img src="assets/img/marca/logo-escuro.png" alt="Vilalara Grand Hotel Algarve" width="1669" height="395"></a>
+    <button class="painel__fechar" type="button"><span class="sr-only">Fechar menu</span></button>
+  </div>
+  <p class="painel__caminho" aria-label="Está aqui"><a href="wellness.html">Wellness</a><span class="painel__sep" aria-hidden="true">/</span><a href="tratamentos.html">Tratamentos</a><span class="painel__sep" aria-hidden="true">/</span><span aria-current="page">Body Therapy</span></p>
+  <div class="painel__menu">
+  <ul>
+  <li class="painel__item"><a href="index.html" data-categoria="home">Home</a></li>
+  <li class="painel__item"><a href="our-heritage.html" data-categoria="our-heritage">Our Heritage</a></li>
+  <li class="painel__item tem-sub">
+    <div class="painel__linha"><a href="suites-residencias.html" data-categoria="suites-residencias">Suítes &amp;&nbsp;Residências</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-suites-residencias"><span class="sr-only">Submenu Suítes &amp;&nbsp;Residências</span></button></div>
+    <ul id="sub-suites-residencias" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item"><a href="elegant-suite.html">Elegant Suite</a></li>
+    <li class="painel__item"><a href="master-suite.html">Master Suite</a></li>
+    <li class="painel__item"><a href="ocean-suite.html">Ocean Suite</a></li>
+    <li class="painel__item"><a href="grand-suite.html">Grand Suite</a></li>
+    <li class="painel__item"><a href="george-ansley-suite.html">George Ansley Suite</a></li>
+    <li class="painel__item"><a href="jose-de-harry-suite.html">José de&nbsp;Harry Suite</a></li>
+    <li class="painel__item"><a href="private-residences.html">Private Residences</a></li>
+    <li class="painel__item"><a href="casa-laranjo.html">Casa Laranjo</a></li>
+    <li class="painel__item"><a href="casa-levy.html">Casa Levy</a></li>
+    <li class="painel__item"><a href="casa-lara.html">Casa Lara</a></li>
+    </ul>
+  </li>
+  <li class="painel__item tem-sub">
+    <div class="painel__linha"><a href="gastronomia.html" data-categoria="gastronomia">Gastronomia</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-gastronomia"><span class="sr-only">Submenu Gastronomia</span></button></div>
+    <ul id="sub-gastronomia" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item"><a href="coral.html">Coral</a></li>
+    <li class="painel__item"><a href="raizes.html">Raízes</a></li>
+    <li class="painel__item"><a href="trattoria.html">Trattoria</a></li>
+    <li class="painel__item"><a href="a-costa.html">A-costa</a></li>
+    <li class="painel__item"><a href="vento.html">Vento</a></li>
+    <li class="painel__item"><a href="gaivotas.html">Gaivotas</a></li>
+    </ul>
+  </li>
+  <li class="painel__item no-caminho tem-sub">
+    <div class="painel__linha"><a href="wellness.html" data-categoria="wellness" aria-current="location">Wellness</a><button class="painel__abre" type="button" aria-expanded="true" aria-controls="sub-wellness"><span class="sr-only">Submenu Wellness</span></button></div>
+    <ul id="sub-wellness" class="painel__sub painel__sub--n2">
+    <li class="painel__item no-caminho tem-sub">
+      <div class="painel__linha"><a href="tratamentos.html" aria-current="location">Tratamentos</a><button class="painel__abre" type="button" aria-expanded="true" aria-controls="sub-tratamentos"><span class="sr-only">Submenu Tratamentos</span></button></div>
+      <ul id="sub-tratamentos" class="painel__sub painel__sub--n3">
+      <li class="painel__item"><a href="tratamento-rituais.html">Rituals</a></li>
+      <li class="painel__item"><a href="tratamento-faciais.html">Faciais</a></li>
+      <li class="painel__item"><a href="tratamento-body.html">Body</a></li>
+      <li class="painel__item no-caminho"><a href="tratamento-body-therapy.html" aria-current="page">Body Therapy</a></li>
+      <li class="painel__item"><a href="tratamento-body-shaping.html">Body Shaping</a></li>
+      <li class="painel__item"><a href="tratamento-shared-care.html">Shared Care</a></li>
+      <li class="painel__item"><a href="tratamento-flows.html">Flows</a></li>
+      <li class="painel__item"><a href="tratamento-self-discovery.html">Self Discovery</a></li>
+      </ul>
+    </li>
+    <li class="painel__item tem-sub">
+      <div class="painel__linha"><a href="programas.html">Programas</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-programas"><span class="sr-only">Submenu Programas</span></button></div>
+      <ul id="sub-programas" hidden class="painel__sub painel__sub--n3">
+      <li class="painel__item"><a href="programa-thalassotherapy-healing.html">Thalassotherapy Healing</a></li>
+      <li class="painel__item"><a href="programa-fitness-essence.html">Fitness Essence</a></li>
+      <li class="painel__item"><a href="programa-bespoke-anti-ageing-retreat.html">Bespoke Anti-ageing Retreat</a></li>
+      <li class="painel__item"><a href="programa-stress-relief-recover.html">Stress Relief &amp;&nbsp;Recover</a></li>
+      <li class="painel__item"><a href="programa-detox-weight-management.html">Detox &amp;&nbsp;Weight Management</a></li>
+      </ul>
+    </li>
+    <li class="painel__item tem-sub">
+      <div class="painel__linha"><a href="thalasso.html">Thalasso</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-thalasso"><span class="sr-only">Submenu Thalasso</span></button></div>
+      <ul id="sub-thalasso" hidden class="painel__sub painel__sub--n3">
+      <li class="painel__item"><a href="thalassoterapia.html">Thalassoterapia</a></li>
+      <li class="painel__item"><a href="thalasso-flows.html">Thalasso Flows</a></li>
+      </ul>
+    </li>
+    <li class="painel__item tem-sub">
+      <div class="painel__linha"><a href="bem-estar.html">Práticas Wellness</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-bem-estar"><span class="sr-only">Submenu Práticas Wellness</span></button></div>
+      <ul id="sub-bem-estar" hidden class="painel__sub painel__sub--n3">
+      <li class="painel__item"><a href="pratica-mindful-motion.html">Mindful &amp;&nbsp;Motion</a></li>
+      <li class="painel__item"><a href="pratica-ancient-techniques.html">Ancient Techniques</a></li>
+      <li class="painel__item"><a href="pratica-hybrid-training.html">Hybrid Training</a></li>
+      <li class="painel__item"><a href="pratica-premium-balance.html">Premium Balance</a></li>
+      <li class="painel__item"><a href="pratica-rituals-of-connection.html">Rituals of&nbsp;Connection</a></li>
+      </ul>
+    </li>
+    <li class="painel__item"><a href="plano-alimentar-anti-inflamatorio.html">Nutrição</a></li>
+    <li class="painel__item"><a href="centro-fitness.html">Fitness</a></li>
+    </ul>
+  </li>
+  <li class="painel__item tem-sub">
+    <div class="painel__linha"><a href="clubs.html" data-categoria="clubs">Clubs</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-clubs"><span class="sr-only">Submenu Clubs</span></button></div>
+    <ul id="sub-clubs" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item"><a href="racket-club.html">Racket Club</a></li>
+    <li class="painel__item"><a href="kids-club.html">Kids Club</a></li>
+    <li class="painel__item"><a href="beach-club.html">Beach Club</a></li>
+    </ul>
+  </li>
+  <li class="painel__item tem-sub">
+    <div class="painel__linha"><a href="experiencias.html" data-categoria="experiencias">Experiências</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-experiencias"><span class="sr-only">Submenu Experiências</span></button></div>
+    <ul id="sub-experiencias" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item"><a href="experiencia-george-ansley-tour.html">The&nbsp;George Ansley Tour</a></li>
+    <li class="painel__item"><a href="experiencia-from-market-to-table.html">From Market to&nbsp;Table</a></li>
+    <li class="painel__item"><a href="experiencia-bottle-blending.html">Bottle Blending</a></li>
+    <li class="painel__item"><a href="experiencia-market-walk.html">Market Walk</a></li>
+    <li class="painel__item"><a href="experiencia-behind-the-wine.html">Behind the&nbsp;Wine</a></li>
+    <li class="painel__item"><a href="experiencia-ceramica.html">Traditional Ceramics</a></li>
+    <li class="painel__item"><a href="experiencia-velas.html">Craft Candle Workshop</a></li>
+    <li class="painel__item"><a href="experiencia-biologo-astronomia.html">Biólogo e&nbsp;Astronomia</a></li>
+    </ul>
+  </li>
+  <li class="painel__item"><a href="occasions.html" data-categoria="occasions">Occasions</a></li>
+  <li class="painel__item"><a href="60-aniversario.html" data-categoria="60-aniversario">60.º Aniversário</a></li>
+  </ul>
+  </div>
+  <p class="painel__morada"><img src="assets/img/marca/morada.png" alt="Praia das Gaivotas, Alporchinhos, Porches 8400-450, Portugal" width="839" height="300" loading="lazy"></p>
+</nav>
+<!-- /BLOCO: painel-menu -->
+
+<script src="assets/js/site.js?v=20261120u"></script>
+</body>
+</html>
