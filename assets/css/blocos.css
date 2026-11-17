@@ -3825,11 +3825,11 @@ html .cab-interior.cab--escuro .botao-link { --b-cor: var(--cor-preto-90); --b-i
 /* Wellness (Tratamentos, Programas, Bem-estar, Thalasso): cartões em 3 colunas nos ecrãs grandes,
    ligeiramente ao alto, 5:6 (pedido do utilizador, 2026-11-17).
    Se a última fila não ficar completa, os cartões mantêm o tamanho e fica o espaço vazio (decisão do utilizador).
-   As Experiências (tratamentos--claro) mantêm as 2 colunas. */
+   As Experiências seguem o mesmo formato (pedido do utilizador, 2026-11-17). */
 @media (min-width: 1101px) {
-  .tratamentos:not(.tratamentos--claro) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .tratamentos:not(.tratamentos--claro) > .tratamento,
-  .tratamentos:not(.tratamentos--claro) > .tratamento:last-child:nth-child(odd) { grid-column: auto; aspect-ratio: 5 / 6; }   /* um pouco ao alto (entre o quadrado e o 4:5) */
+  .tratamentos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .tratamentos > .tratamento,
+  .tratamentos > .tratamento:last-child:nth-child(odd) { grid-column: auto; aspect-ratio: 5 / 6; }   /* um pouco ao alto (entre o quadrado e o 4:5) */
 }
 
 /* Cartões do Wellness (2026-11-17): texto alinhado à esquerda. O nome do tratamento fica no topo da foto;
@@ -3837,23 +3837,29 @@ html .cab-interior.cab--escuro .botao-link { --b-cor: var(--cor-preto-90); --b-i
    à direita da frase, alinhado à base; entre 1101 e 1559 px fica por baixo da frase.
    Um véu escuro suave no topo deixa o nome ler-se em fotos claras. */
 @media (min-width: 1101px) {
-  .tratamentos:not(.tratamentos--claro) .tratamento__texto {
+  .tratamentos .tratamento__texto {
     align-self: stretch; grid-template-rows: auto 1fr auto auto;
     justify-items: start; text-align: left; padding: 7%;
   }
-  .tratamentos:not(.tratamentos--claro) .tratamento h2 { grid-row: 1; align-self: start; }
-  .tratamentos:not(.tratamentos--claro) .tratamento p { grid-row: 3; margin: 0 0 16px; font-size: 0.75rem; opacity: 0.85; max-width: var(--meia-frase, 34ch); text-wrap: balance; }   /* --meia-frase: metade do comprimento da frase (site.js), para dar 2 linhas */
-  .tratamentos:not(.tratamentos--claro) .tratamento .botao-contorno { grid-row: 4; }
-  .tratamentos:not(.tratamentos--claro) .tratamento::before {
-    content: ""; position: absolute; inset: 0 0 65% 0; z-index: 0; pointer-events: none;
-    background: linear-gradient(to bottom, rgba(20, 18, 16, 0.45), rgba(20, 18, 16, 0));
+  .tratamentos .tratamento h2 { grid-row: 1; align-self: start; }
+  .tratamentos .tratamento p { grid-row: 3; margin: 0 0 16px; font-size: 0.75rem; color: #fff; opacity: 1; max-width: var(--meia-frase, 34ch); text-wrap: balance; }   /* --meia-frase: metade do comprimento da frase (site.js), para dar 2 linhas */
+  .tratamentos .tratamento .botao-contorno { grid-row: 4; }
+  .tratamentos .tratamento::before {
+    content: ""; position: absolute; inset: 0 0 72% 0; z-index: 1; pointer-events: none;   /* por cima da foto, por baixo do texto */
+    /* degradé só na faixa de cima (onde está o nome): escuro no topo, desaparece até ~28% da altura */
+    background: linear-gradient(to bottom, rgba(20, 18, 16, 0.55) 0%, rgba(20, 18, 16, 0.35) 45%, rgba(20, 18, 16, 0) 100%);
+  }
+  /* em baixo, o mesmo degradé espelhado: só na faixa da frase e do botão */
+  .tratamentos .tratamento::after {
+    inset: 72% 0 0 0;
+    background: linear-gradient(to top, rgba(20, 18, 16, 0.55) 0%, rgba(20, 18, 16, 0.35) 45%, rgba(20, 18, 16, 0) 100%);
   }
 }
 @media (min-width: 1560px) {
-  .tratamentos:not(.tratamentos--claro) .tratamento__texto { grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto 1fr auto; column-gap: 32px; }
-  .tratamentos:not(.tratamentos--claro) .tratamento h2 { grid-column: 1 / -1; }
-  .tratamentos:not(.tratamentos--claro) .tratamento p { grid-column: 1; margin-bottom: 0; }
-  .tratamentos:not(.tratamentos--claro) .tratamento .botao-contorno { grid-column: 2; grid-row: 3; align-self: end; }
+  .tratamentos .tratamento__texto { grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto 1fr auto; column-gap: 32px; }
+  .tratamentos .tratamento h2 { grid-column: 1 / -1; }
+  .tratamentos .tratamento p { grid-column: 1; margin-bottom: 0; }
+  .tratamentos .tratamento .botao-contorno { grid-column: 2; grid-row: 3; align-self: end; }
 }
 
 /* Thalasso: só dois tratamentos, por isso duas colunas a toda a largura (pedido do utilizador, 2026-11-17) */
@@ -3867,7 +3873,7 @@ html .cab-interior.cab--escuro .botao-link { --b-cor: var(--cor-preto-90); --b-i
    Só aparece nos ecrãs grandes (3 colunas) e só quando há espaço vazio; se sobrarem 2 lugares, ocupa os dois. */
 .tratamento-nota { display: none; }
 @media (min-width: 1101px) {
-  .tratamentos:not(.tratamentos--claro):not(.tratamentos--duas) > .tratamento-nota {
+  .tratamentos:not(.tratamentos--duas) > .tratamento-nota {
     display: grid; align-content: end; justify-items: start; gap: 14px;
     padding: 7%; color: var(--cor-texto);   /* só o texto: sem moldura, título nem botão (pedido do utilizador) */
   }
@@ -3878,4 +3884,17 @@ html .cab-interior.cab--escuro .botao-link { --b-cor: var(--cor-preto-90); --b-i
 /* entre 701 e 1100 px (2 colunas) o cartão de texto está escondido: o último tratamento ímpar continua a ocupar a fila toda */
 @media (min-width: 701px) and (max-width: 1100px) {
   .tratamentos > .tratamento:nth-last-child(2):nth-child(odd):has(+ .tratamento-nota) { grid-column: 1 / -1; aspect-ratio: 1324 / 659; }
+}
+
+/* Histórias: títulos dos artigos discretos — letra sem serifa, pequena, sem maiúsculas (pedido do utilizador, 2026-11-17).
+   Os destaques são só um pouco maiores. */
+.rv__titulo,
+.revista__resultado .rv__titulo,
+.historia__titulo {
+  font-family: var(--fonte-texto); font-weight: 400; text-transform: none; letter-spacing: 0;
+  font-size: 0.875rem; line-height: 1.45;
+}
+.rv--destaque .rv__titulo, .rv--grande .rv__titulo, .rv--faixa .rv__titulo {
+  font-family: var(--fonte-texto); font-weight: 400; text-transform: none; letter-spacing: 0;
+  font-size: 1.0625rem; line-height: 1.4;
 }

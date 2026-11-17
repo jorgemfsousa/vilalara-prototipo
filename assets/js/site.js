@@ -1262,7 +1262,7 @@
 })();
 
 /* Cartões do Wellness: a frase curta fica sempre em duas linhas — a largura máxima é metade do seu comprimento */
-document.querySelectorAll(".tratamentos:not(.tratamentos--claro) .tratamento p").forEach(function (p) {
+document.querySelectorAll(".tratamentos .tratamento p").forEach(function (p) {
   var n = p.textContent.replace(/\s+/g, " ").trim().length;
   p.style.setProperty("--meia-frase", Math.ceil(n / 2) + 2 + "ch");
 });
