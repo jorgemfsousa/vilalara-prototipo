@@ -468,7 +468,7 @@ html:has(.home-slides) { scroll-snap-type: y mandatory; }
   scroll-snap-align: end;
   background: var(--cor-rodape-fundo);
   color: var(--cor-rodape-texto);
-  font-size: 0.8125rem;
+  font-size: 0.75rem;   /* 12 px (era 13; rodapé mais discreto, 2026-11-17) */
   line-height: 1.45;
 }
 .rodape__dentro {
@@ -517,19 +517,19 @@ html:has(.home-slides) { scroll-snap-type: y mandatory; }
 .rodape h2 {
   margin: 0 0 14px;
   font-family: var(--fonte-texto);
-  font-size: 0.6875rem;
+  font-size: 0.65625rem;   /* 10,5 px (era 11) */
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 .rodape ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; }
 /* colunas sem título visível (Sobre, Informação legal): descem a altura do título para alinharem com o telefone e o Instagram */
-.rodape__linha > div:has(> h2.sr-only) { padding-top: calc(0.6875rem * 1.45 + 14px); }
+.rodape__linha > div:has(> h2.sr-only) { padding-top: calc(0.65625rem * 1.45 + 14px); }
 .rodape p { margin: 0 0 10px; }
 .rodape a { text-decoration: none; }
 .rodape a:hover, .rodape a:focus-visible { text-decoration: underline; text-underline-offset: 0.25em; }
-.rodape__nota { font-size: 0.6875rem; opacity: 0.85; max-width: 26ch; }
-.rodape__legal { font-size: 0.6875rem; opacity: 0.85; max-width: 72ch; }
+.rodape__nota { font-size: 0.65625rem; opacity: 0.85; max-width: 26ch; }
+.rodape__legal { font-size: 0.65625rem; opacity: 0.85; max-width: 72ch; }
 .rodape__copyright { font-size: 0.625rem; letter-spacing: 0.05em; text-transform: uppercase; opacity: 0.85; }
 .rodape__vazio { min-height: 1px; }
 
@@ -607,9 +607,9 @@ html:has(.home-slides) { scroll-snap-type: y mandatory; }
   left: 50%;
   margin: 0;
   transform: translate(-50%, -50%);
-  font-family: var(--fonte-texto);
+  font-family: var(--fonte-titulos);   /* Optima, como a palavra que cresce do menu (2026-11-17) */
   font-size: var(--tam-titulo-landing);
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: var(--espaco-letras-menu);
   text-transform: uppercase;
   white-space: nowrap;
@@ -1423,8 +1423,8 @@ html:has(.home-slides) { scroll-snap-type: y mandatory; }
   position: fixed;
   z-index: 60;
   margin: 0;
-  font-family: var(--fonte-texto);
-  font-weight: 400;
+  font-family: var(--fonte-titulos);   /* já cresce em Optima, igual ao título da página que abre */
+  font-weight: 500;
   letter-spacing: var(--espaco-letras-menu);
   text-transform: uppercase;
   white-space: nowrap;
@@ -3334,6 +3334,19 @@ html .cab-interior.cab--escuro .botao-link { --b-cor: var(--cor-preto-90); --b-i
 @media (max-width: 900px) {
   .indicado-vidro--etiqueta .indicado-vidro__painel { grid-template-columns: minmax(0, 1fr); }
 }
+/* Etiqueta mais compacta em altura (pedido do utilizador, 2026-11-17): título e introdução numa faixa
+   em cima; em baixo os dois grupos lado a lado, cada um com as regras em duas colunas. */
+@media (min-width: 1101px) {
+  .indicado-vidro--etiqueta { min-height: 0; padding-block: clamp(56px, 6vw, 96px); }
+  .indicado-vidro--etiqueta .indicado-vidro__painel { grid-template-columns: minmax(0, 1fr); gap: clamp(28px, 3vw, 44px); padding: clamp(32px, 3.6vw, 60px); }
+  .indicado-vidro--etiqueta .indicado-vidro__intro { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: end; column-gap: clamp(40px, 4vw, 72px); }   /* as mesmas colunas da lista: o texto começa onde começa "Informação adicional" */
+  .indicado-vidro--etiqueta .indicado-vidro__intro h2 { margin: 0; }
+  .indicado-vidro--etiqueta .indicado-vidro__intro p { max-width: 52ch; }
+  .indicado-vidro--etiqueta .indicado-vidro__lista { gap: 0 clamp(40px, 4vw, 72px); }
+  .indicado-vidro--etiqueta .indicado-vidro__lista ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(20px, 2vw, 32px); }
+  .indicado-vidro--etiqueta .indicado-vidro__lista li { padding: clamp(10px, 1vw, 14px) 0; font-size: clamp(1rem, 0.85rem + 0.3vw, 1.1875rem); }
+  .indicado-vidro--etiqueta .indicado-vidro__desc { margin-top: 4px; line-height: 1.4; }
+}
 
 /* Wellness: horário e contactos do spa lado a lado; a etiqueta por baixo */
 .horario--contactos { grid-template-columns: auto auto auto; column-gap: clamp(72px, 8vw, 128px); justify-content: start; }
@@ -3373,21 +3386,21 @@ html .cab-interior.cab--escuro .botao-link { --b-cor: var(--cor-preto-90); --b-i
   .tipologias--clubes { --logo-h: 64px; --folga-logos: 20px; --logo-extra: 0px; }
   .separadores--clubes { justify-content: space-between; gap: 16px; }
 }
-/* Clubs: sublinhado fino por baixo do logo ao passar o rato */
+/* Clubs: como nas suítes, o clube selecionado fica sublinhado (traço fino cinzento, um pouco mais largo
+   do que o logótipo); ao passar o rato só muda a intensidade (pedido do utilizador, 2026-11-17) */
 .separadores--clubes button { position: relative; }
 .separadores--clubes button::after {
   content: "";
   position: absolute;
-  left: 15%;
-  right: 15%;
+  left: -10px;
+  right: -10px;
   bottom: -12px;
   height: 1px;
-  background: currentColor;
-  transform: scaleX(0);
-  transition: transform var(--duracao) var(--curva);
+  background: var(--cor-preto-50);
+  opacity: 0;
+  transition: opacity var(--duracao) var(--curva);
 }
-.separadores--clubes button:hover::after,
-.separadores--clubes button:focus-visible::after { transform: scaleX(1); }
+.separadores--clubes button[aria-current="true"]::after { opacity: 1; }
 @media (max-width: 900px) { .separadores--clubes button::after { bottom: -6px; } }
 
 /* =====================================================================
@@ -3782,3 +3795,87 @@ html .cab-interior.cab--escuro .botao-link { --b-cor: var(--cor-preto-90); --b-i
 /* títulos ao centro da página: as duas linhas centradas uma sobre a outra (pedido do utilizador, 2026-11-17) */
 .titulo-seccao, .historias-newsletter .intro__titulo, .mais-historias > .intro__titulo { justify-content: center; justify-items: center; }
 .intro__titulo > .intro__script, .titulo-seccao > .intro__script, .indicado-vidro__intro h2 > .intro__script { margin-left: 0; margin-right: 0; }
+
+/* Reservas: o topo ocupa metade do ecrã (pedido do utilizador, 2026-11-17); a barra de pesquisa
+   fica centrada na foto (abaixo da barra do menu) e não há seta para descer. */
+.hero-reservas { height: max(50vh, 460px); height: max(50svh, 460px); }
+.hero-reservas .seta-scroll { display: none; }
+@media (min-width: 1001px) {
+  .hero-reservas .pesquisa { top: calc(50% + var(--altura-barra) / 2); transform: translate(-50%, -50%); }
+}
+@media (max-width: 1000px) {
+  .hero-reservas { height: auto; min-height: max(50svh, 460px); justify-content: flex-end; padding-top: calc(var(--altura-barra) + 24px); padding-bottom: clamp(28px, 5vh, 48px); }
+}
+
+/* Intro sem título (Reservas): o texto fica na coluna da direita, onde estava; sem o recuo
+   que o afastava do título e com menos espaço à volta da secção */
+.intro--sem-titulo { padding-block: clamp(56px, 6vw, 100px); }
+.intro--sem-titulo .intro__texto { margin-top: 0; }
+@media (min-width: 901px) { .intro--sem-titulo .intro__texto { grid-column: 2; } }
+
+/* Reservas: alojamentos em 3 colunas nos ecrãs grandes (pedido do utilizador, 2026-11-17).
+   Se o último ficar sozinho na fila (site.js marca .quarto--sozinho), ocupa a fila toda: foto à esquerda, texto à direita. */
+@media (min-width: 1101px) {
+  .alojamentos__lista { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: clamp(48px, 5vw, 80px); }
+  .quarto--sozinho { grid-column: 1 / -1; grid-template-columns: calc((200% - clamp(24px, 2.4vw, 34px)) / 3) minmax(0, 1fr); grid-template-rows: auto; column-gap: clamp(24px, 2.4vw, 34px); }
+  .quarto--sozinho .quarto__info { justify-content: flex-end; }
+  .quarto--sozinho .quarto__info > .quarto__acoes { margin-top: 0; }
+}
+
+/* Wellness (Tratamentos, Programas, Bem-estar, Thalasso): cartões em 3 colunas nos ecrãs grandes,
+   ligeiramente ao alto, 5:6 (pedido do utilizador, 2026-11-17).
+   Se a última fila não ficar completa, os cartões mantêm o tamanho e fica o espaço vazio (decisão do utilizador).
+   As Experiências (tratamentos--claro) mantêm as 2 colunas. */
+@media (min-width: 1101px) {
+  .tratamentos:not(.tratamentos--claro) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .tratamentos:not(.tratamentos--claro) > .tratamento,
+  .tratamentos:not(.tratamentos--claro) > .tratamento:last-child:nth-child(odd) { grid-column: auto; aspect-ratio: 5 / 6; }   /* um pouco ao alto (entre o quadrado e o 4:5) */
+}
+
+/* Cartões do Wellness (2026-11-17): texto alinhado à esquerda. O nome do tratamento fica no topo da foto;
+   a frase curta (sempre em duas linhas) e o botão ficam na base. Nos ecrãs largos (>= 1560 px) o botão fica
+   à direita da frase, alinhado à base; entre 1101 e 1559 px fica por baixo da frase.
+   Um véu escuro suave no topo deixa o nome ler-se em fotos claras. */
+@media (min-width: 1101px) {
+  .tratamentos:not(.tratamentos--claro) .tratamento__texto {
+    align-self: stretch; grid-template-rows: auto 1fr auto auto;
+    justify-items: start; text-align: left; padding: 7%;
+  }
+  .tratamentos:not(.tratamentos--claro) .tratamento h2 { grid-row: 1; align-self: start; }
+  .tratamentos:not(.tratamentos--claro) .tratamento p { grid-row: 3; margin: 0 0 16px; font-size: 0.75rem; opacity: 0.85; max-width: var(--meia-frase, 34ch); text-wrap: balance; }   /* --meia-frase: metade do comprimento da frase (site.js), para dar 2 linhas */
+  .tratamentos:not(.tratamentos--claro) .tratamento .botao-contorno { grid-row: 4; }
+  .tratamentos:not(.tratamentos--claro) .tratamento::before {
+    content: ""; position: absolute; inset: 0 0 65% 0; z-index: 0; pointer-events: none;
+    background: linear-gradient(to bottom, rgba(20, 18, 16, 0.45), rgba(20, 18, 16, 0));
+  }
+}
+@media (min-width: 1560px) {
+  .tratamentos:not(.tratamentos--claro) .tratamento__texto { grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto 1fr auto; column-gap: 32px; }
+  .tratamentos:not(.tratamentos--claro) .tratamento h2 { grid-column: 1 / -1; }
+  .tratamentos:not(.tratamentos--claro) .tratamento p { grid-column: 1; margin-bottom: 0; }
+  .tratamentos:not(.tratamentos--claro) .tratamento .botao-contorno { grid-column: 2; grid-row: 3; align-self: end; }
+}
+
+/* Thalasso: só dois tratamentos, por isso duas colunas a toda a largura (pedido do utilizador, 2026-11-17) */
+@media (min-width: 1101px) {
+  .tratamentos.tratamentos--duas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tratamentos.tratamentos--duas > .tratamento,
+  .tratamentos.tratamentos--duas > .tratamento:last-child:nth-child(odd) { aspect-ratio: 643 / 659; }
+}
+
+/* Wellness: cartão de texto que preenche o espaço vazio da última fila (Tratamentos, Programas, Práticas).
+   Só aparece nos ecrãs grandes (3 colunas) e só quando há espaço vazio; se sobrarem 2 lugares, ocupa os dois. */
+.tratamento-nota { display: none; }
+@media (min-width: 1101px) {
+  .tratamentos:not(.tratamentos--claro):not(.tratamentos--duas) > .tratamento-nota {
+    display: grid; align-content: end; justify-items: start; gap: 14px;
+    padding: 7%; color: var(--cor-texto);   /* só o texto: sem moldura, título nem botão (pedido do utilizador) */
+  }
+  .tratamentos > .tratamento-nota:nth-child(3n+1) { display: none !important; }   /* começaria uma fila nova: não há buraco */
+  .tratamentos > .tratamento-nota:nth-child(3n+2) { grid-column: span 2; }
+  .tratamento-nota p { margin: 0; max-width: 34ch; font-size: var(--tam-texto-pequeno); font-weight: 300; line-height: 1.5; opacity: 0.85; }
+}
+/* entre 701 e 1100 px (2 colunas) o cartão de texto está escondido: o último tratamento ímpar continua a ocupar a fila toda */
+@media (min-width: 701px) and (max-width: 1100px) {
+  .tratamentos > .tratamento:nth-last-child(2):nth-child(odd):has(+ .tratamento-nota) { grid-column: 1 / -1; aspect-ratio: 1324 / 659; }
+}

@@ -155,10 +155,17 @@
       document.querySelectorAll(".quarto[data-tipo]").forEach(function (q) {
         q.hidden = f === "todos" ? q.getAttribute("data-tipo") === "pacotes" : q.getAttribute("data-tipo") !== f;
       });
+      marcaSozinho();
     });
   });
   // Por defeito, "Todos os quartos" mostra suítes e residências (os pacotes têm o seu separador)
   document.querySelectorAll('.quarto[data-tipo="pacotes"]').forEach(function (q) { q.hidden = true; });
+  // Grelha de 3 colunas: se o último alojamento visível ficar sozinho na fila, ocupa a fila toda (versão horizontal)
+  function marcaSozinho() {
+    var vis = Array.prototype.filter.call(document.querySelectorAll(".quarto[data-tipo]"), function (q) { q.classList.remove("quarto--sozinho"); return !q.hidden; });
+    if (vis.length % 3 === 1 && vis.length > 1) vis[vis.length - 1].classList.add("quarto--sozinho");
+  }
+  marcaSozinho();
 
   /* Menu lateral: botões + / − abrem e fecham os submenus.
      Ao abrir um submenu, os outros do mesmo nível que estavam abertos recolhem
@@ -1253,3 +1260,9 @@
     comp.hidden = true; res.hidden = false;
   });
 })();
+
+/* Cartões do Wellness: a frase curta fica sempre em duas linhas — a largura máxima é metade do seu comprimento */
+document.querySelectorAll(".tratamentos:not(.tratamentos--claro) .tratamento p").forEach(function (p) {
+  var n = p.textContent.replace(/\s+/g, " ").trim().length;
+  p.style.setProperty("--meia-frase", Math.ceil(n / 2) + 2 + "ch");
+});

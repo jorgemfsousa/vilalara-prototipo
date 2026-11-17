@@ -83,7 +83,7 @@
   --cor-linha: #bdb9b2;                /* linhas finas (barra do menu, painel) */
   --cor-sobre-foto: #ffffff;           /* texto por cima de fotografias */
   --cor-rodape-fundo: var(--cor-castanho-marca);   /* castanho Vilalara #42321a (pedido do utilizador, 2026-11-16) */
-  --cor-titulos: #000000;                         /* títulos de secção (Optima + Millionaire Script): preto 100% (decisão do utilizador, 2026-11-17; antes castanho Vilalara) */
+  --cor-titulos: var(--cor-preto-90);             /* títulos de secção (Optima + Millionaire Script): cinzento escuro K90, como os textos (decisão do utilizador, 2026-11-17; experimentados castanho e preto 100%) */
   --cor-menu: var(--cor-castanho-marca);           /* categorias do menu lateral e logótipo: castanho Vilalara (pedido do utilizador, 2026-11-17) */
   --cor-rodape-texto: #f3f1ec;
   --cor-rodape-linha: rgba(243, 241, 236, 0.35);
@@ -105,7 +105,7 @@
   --tam-subtitulo: clamp(0.8125rem, 0.75rem + 0.3vw, 1rem);
   --tam-titulo-hero: clamp(2rem, 1.2rem + 2.6vw, 3.25rem);
   --tam-texto-grande: clamp(1.5rem, 1.1rem + 1.4vw, 2.25rem);
-  --tam-titulo-landing: clamp(1.25rem, 0.8rem + 1.5vw, 1.975rem);   /* 31,6 pt no layout: nome da categoria ao centro */
+  --tam-titulo-landing: clamp(1.125rem, 0.72rem + 1.2vw, 1.625rem);   /* 26 px: nome da categoria ao centro (era 31,6; mais pequeno a pedido do utilizador, 2026-11-17) */
   --tam-titulo-seccao: clamp(1.875rem, 1rem + 2.8vw, 3.125rem);     /* 50 px: títulos em Optima maiúsculas (regra do cliente) */
   --tam-script: clamp(1.375rem, 0.72rem + 1.6vw, 2rem);             /* 32 px: Millionaire Script (era 40 px; mais pequena a pedido do utilizador, 2026-11-17) */
   --tam-intro: clamp(1.25rem, 0.8rem + 1.6vw, 1.875rem);            /* 30 pt: texto de introdução */
