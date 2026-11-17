@@ -424,6 +424,9 @@ html:has(.home-slides) { scroll-snap-type: y mandatory; }
 .painel__sub--n3 a { font-size: 0.75rem; letter-spacing: 0.02em; text-transform: none; white-space: normal; }
 .painel__sub a:hover, .painel__sub a[aria-current] { color: var(--cor-texto); }
 .painel__sub a[aria-current="location"] { text-decoration-color: transparent; }
+/* categorias do menu no castanho Vilalara (1.º nível, setas e o caminho atual); submenus a cinzento, castanho ao passar o rato */
+.painel__menu > ul > li > a, .painel__menu > ul > li > .painel__linha > a, .painel__menu > ul > li > .painel__linha > .painel__abre { color: var(--cor-menu); }
+.painel__sub a:hover, .painel__sub a[aria-current], .painel__sub .painel__abre, .painel__caminho [aria-current] { color: var(--cor-menu); }
 
 /* Submenus (como no layout): abrem por baixo, recuados; setas › (fechado) e ⌄ (aberto);
    no 2.º nível as setas ficam alinhadas à direita. No computador abrem ao passar o rato (site.js). */
@@ -655,7 +658,7 @@ html:has(.home-slides) { scroll-snap-type: y mandatory; }
   line-height: 1;
   letter-spacing: 0.01em;
   text-transform: uppercase;
-  color: var(--cor-texto);
+  color: var(--cor-titulos);
 }
 .intro__script {
   align-self: flex-start;
@@ -991,7 +994,7 @@ html:has(.home-slides) { scroll-snap-type: y mandatory; }
   line-height: 1;
   text-transform: uppercase;
   text-align: center;
-  color: var(--cor-texto);
+  color: var(--cor-titulos);
 }
 .titulo-seccao .intro__script { align-self: center; margin: 0.05em 0 0; font-size: var(--tam-script-pequeno); }
 
@@ -3686,7 +3689,7 @@ html .cab-interior.cab--escuro .botao-link { --b-cor: var(--cor-preto-90); --b-i
    ================================================================= */
 .revista { --rv-vao: clamp(24px, 3vw, 48px); }
 .revista-topo { display: grid; justify-items: center; text-align: center; padding: calc(var(--altura-barra) + clamp(40px, 6vw, 90px)) var(--margem-lateral) clamp(48px, 6vw, 90px); }
-.revista-topo__titulo { margin: 0; display: grid; justify-items: center; font-family: var(--fonte-titulos); font-weight: 500; font-size: clamp(3rem, 1.4rem + 6vw, 7.5rem); line-height: 0.95; letter-spacing: 0.01em; text-transform: uppercase; }
+.revista-topo__titulo { color: var(--cor-titulos); margin: 0; display: grid; justify-items: center; font-family: var(--fonte-titulos); font-weight: 500; font-size: clamp(3rem, 1.4rem + 6vw, 7.5rem); line-height: 0.95; letter-spacing: 0.01em; text-transform: uppercase; }
 .revista-topo__titulo .intro__script { font-size: var(--tam-script); text-transform: none; justify-self: end; margin: -0.1em -0.3em 0 0; }
 .revista-topo__texto { margin: clamp(22px, 2.6vw, 36px) 0 clamp(28px, 3vw, 44px); max-width: 52ch; font-weight: 300; color: var(--cor-preto-70); }
 .revista-topo .historias-filtro { padding: 0; }
@@ -3767,3 +3770,15 @@ html .cab-interior.cab--escuro .botao-link { --b-cor: var(--cor-preto-90); --b-i
 }
 /* faixa "Reservar" nas páginas das suítes e residências: sem preço, só o convite para a reserva */
 .reservar-faixa__texto { margin: 6px 0 0; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--cor-texto-suave); }
+
+/* =====================================================================
+   Títulos (Optima + Millionaire Script): nos títulos alinhados à esquerda, a frase
+   manuscrita fica alinhada à direita da palavra em maiúsculas; nos títulos ao centro,
+   fica centrada (pedido do utilizador, 2026-11-17).
+   O título passa a ter a largura do seu texto (grelha) e cada linha encosta à direita;
+   a posição do bloco (à esquerda ou ao centro) mantém-se.
+   ===================================================================== */
+.intro__titulo, .titulo-seccao, .indicado-vidro__intro h2 { display: grid; justify-items: end; justify-content: start; align-content: start; }   /* as linhas ficam juntas no topo, mesmo quando o título é mais alto (ao lado de um texto comprido) */
+/* títulos ao centro da página: as duas linhas centradas uma sobre a outra (pedido do utilizador, 2026-11-17) */
+.titulo-seccao, .historias-newsletter .intro__titulo, .mais-historias > .intro__titulo { justify-content: center; justify-items: center; }
+.intro__titulo > .intro__script, .titulo-seccao > .intro__script, .indicado-vidro__intro h2 > .intro__script { margin-left: 0; margin-right: 0; }

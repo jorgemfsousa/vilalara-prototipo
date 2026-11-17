@@ -83,6 +83,8 @@
   --cor-linha: #bdb9b2;                /* linhas finas (barra do menu, painel) */
   --cor-sobre-foto: #ffffff;           /* texto por cima de fotografias */
   --cor-rodape-fundo: var(--cor-castanho-marca);   /* castanho Vilalara #42321a (pedido do utilizador, 2026-11-16) */
+  --cor-titulos: #000000;                         /* títulos de secção (Optima + Millionaire Script): preto 100% (decisão do utilizador, 2026-11-17; antes castanho Vilalara) */
+  --cor-menu: var(--cor-castanho-marca);           /* categorias do menu lateral e logótipo: castanho Vilalara (pedido do utilizador, 2026-11-17) */
   --cor-rodape-texto: #f3f1ec;
   --cor-rodape-linha: rgba(243, 241, 236, 0.35);
 
@@ -105,12 +107,12 @@
   --tam-texto-grande: clamp(1.5rem, 1.1rem + 1.4vw, 2.25rem);
   --tam-titulo-landing: clamp(1.25rem, 0.8rem + 1.5vw, 1.975rem);   /* 31,6 pt no layout: nome da categoria ao centro */
   --tam-titulo-seccao: clamp(1.875rem, 1rem + 2.8vw, 3.125rem);     /* 50 px: títulos em Optima maiúsculas (regra do cliente) */
-  --tam-script: clamp(1.75rem, 0.9rem + 2vw, 2.5rem);               /* 40 px: Millionaire Script (regra do cliente) */
+  --tam-script: clamp(1.375rem, 0.72rem + 1.6vw, 2rem);             /* 32 px: Millionaire Script (era 40 px; mais pequena a pedido do utilizador, 2026-11-17) */
   --tam-intro: clamp(1.25rem, 0.8rem + 1.6vw, 1.875rem);            /* 30 pt: texto de introdução */
   --tam-texto-pequeno: 0.9375rem;                                   /* 15 pt: textos da linha do tempo */
-  --cor-script: var(--cor-preto-90);                                /* palavra em Millionaire Script: igual ao título */
+  --cor-script: var(--cor-titulos);                                 /* palavra em Millionaire Script: igual ao título */
   --cor-ano-inativo: #c9c4bc;                                       /* anos não selecionados na roda da linha do tempo */
-  --cor-inativo: #c9c4bc;                                           /* separadores de tipologia não selecionados */
+  --cor-inativo: #c6c6c6;                                           /* separadores de tipologia não selecionados: cinzento claro neutro (era #c9c4bc, acastanhado; 2026-11-17) */
   --cor-cartao-claro: #e0ddd2;                                      /* cartões de categoria (Suítes & Residências) */
   --cor-cartao-escuro: #c7c1ab;
   --cor-wellness-fundo: #1a0f0d;
@@ -118,7 +120,7 @@
   --cor-cartao-cinza: #f3f2f0;                                      /* cartões "Inclui" dos programas */                                    /* fundo castanho-escuro da página Wellness */
   --tam-titulo-grande: var(--tam-titulo-seccao);                    /* (era 56,2 pt) — agora 50 px como os outros */
   --tam-titulo-destaque: var(--tam-titulo-seccao);                  /* (era 62,9 pt) — agora 50 px como os outros */
-  --tam-script-pequeno: var(--tam-script);                          /* (era 38,6 pt) — agora 40 px */
+  --tam-script-pequeno: var(--tam-script);                          /* (era 38,6 pt) — agora igual à --tam-script (32 px) */
   --tam-separador: clamp(0.8125rem, 0.6rem + 0.45vw, 0.9875rem);    /* 15,8 pt: nomes das tipologias */
   --tam-botao-pequeno: 0.76rem;                                     /* 12 pt: "+ INFORMAÇÕES", "RESERVAR", "VER" */
   --tam-titulo-cartao: clamp(1.0625rem, 0.75rem + 0.8vw, 1.325rem); /* 21 pt: títulos dos cartões */
@@ -142,6 +144,8 @@
    Basta pôr class="tema-escuro" no <html> da página: os blocos usam as
    cores de função, por isso mudam sozinhos (fundo, textos, barra, rodapé). */
 .tema-escuro {
+  --cor-menu: var(--cor-texto);                   /* no tema escuro o menu fica claro */
+  --cor-titulos: var(--cor-texto);                /* no tema escuro os títulos ficam claros */
   --cor-fundo: var(--cor-wellness-fundo);
   --cor-texto: var(--cor-cartao-claro);
   --cor-script: var(--cor-cartao-claro);
