@@ -3910,3 +3910,208 @@ html .cab-interior.cab--escuro .botao-link { --b-cor: var(--cor-preto-90); --b-i
   filter: brightness(0) saturate(100%) invert(17%) sepia(24%) saturate(1191%) hue-rotate(358deg) brightness(95%) contrast(91%);
   opacity: 1;
 }
+
+/* Fim da página: sem a faixa branca do "elástico" do Mac depois do rodapé.
+   O fundo de trás da página passa a ser o creme do rodapé (o conteúdo continua sobre branco)
+   e o efeito elástico fica desligado. */
+html { background: var(--cor-rodape-fundo); overscroll-behavior-y: none; }
+body { background: var(--cor-fundo); overscroll-behavior-y: none; }
+
+/* Menu lateral aberto (ecrãs grandes): a página encolhe para a área visível ao lado do menu,
+   em vez de ficar tapada; ao fechar volta à largura total (pedido do utilizador, 2026-11-17).
+   No telemóvel o menu continua por cima da página. */
+@media (min-width: 901px) {
+  body { transition: padding-left var(--duracao) var(--curva), opacity 260ms var(--curva); }
+  .cab-home, .cab-interior, .menu-categorias { transition: left var(--duracao) var(--curva), transform var(--duracao) var(--curva), opacity var(--duracao) var(--curva); }
+  html.painel-aberto body { padding-left: var(--largura-painel); overflow-x: hidden; }
+  html.painel-aberto .cab-home,
+  html.painel-aberto .cab-interior,
+  html.painel-aberto .menu-categorias { left: var(--largura-painel); }
+  .veu-painel { background: transparent; left: var(--largura-painel); }   /* sem véu cinzento: clicar na página fecha o menu */
+}
+
+/* Histórias: etiqueta + título com a mesma configuração das características dos quartos
+   ("Área" / "55 m²"): etiqueta em cinzento escuro, título por baixo, mais leve, em cinzento médio (2026-11-17). */
+.rv__etiqueta, .historia__etiqueta, .revista__resultado .rv__etiqueta {
+  margin: 0; font-family: var(--fonte-texto); font-size: var(--tam-texto-pequeno); font-weight: 400;
+  letter-spacing: 0; text-transform: none; color: var(--cor-texto); opacity: 1;
+}
+.rv__titulo, .revista__resultado .rv__titulo, .historia__titulo,
+.rv--destaque .rv__titulo, .rv--grande .rv__titulo, .rv--faixa .rv__titulo {
+  margin: 2px 0 0; font-family: var(--fonte-texto); font-size: var(--tam-texto-pequeno); font-weight: 300;
+  letter-spacing: 0; text-transform: none; line-height: 1.4; color: var(--cor-preto-70); max-width: none;
+}
+.rv__titulo a, .historia__titulo a { color: inherit; }
+/* sobre a foto (faixa larga): as duas linhas a branco */
+.rv--faixa .rv__etiqueta, .rv--faixa .rv__titulo { color: var(--cor-sobre-foto); }
+
+/* Histórias — "capa" (como as revistas): painel de texto claro à esquerda (etiqueta e data em cima,
+   nome grande em Optima em baixo) e a foto à direita; e "trio": foto pequena, grande ao centro, pequena. */
+.rv-capa { margin-bottom: clamp(90px, 11vw, 170px); }
+.rv--capa { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.rv--capa .rv__texto {
+  display: flex; flex-direction: column; justify-content: space-between; gap: 40px;
+  padding: clamp(24px, 3vw, 48px); background: var(--cor-cartao-cinza);
+}
+.rv--capa .rv__topo { display: flex; justify-content: space-between; align-items: baseline; margin: 0; }
+.rv--capa .rv__data { font-size: 0.75rem; color: var(--cor-texto-suave); }
+.rv--capa .rv__titulo {
+  margin: 0; font-family: var(--fonte-titulos); font-weight: 500; text-transform: uppercase;
+  font-size: clamp(2.5rem, 1.2rem + 4vw, 5.5rem); line-height: 0.95; letter-spacing: 0.01em; color: var(--cor-texto);
+}
+.rv--capa .rv__resumo { margin: 18px 0 0; max-width: 40ch; }
+.rv--capa .rv__foto { aspect-ratio: 1 / 1; }
+.rv-trio { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--rv-vao); align-items: end; margin-bottom: clamp(90px, 11vw, 170px); }
+.rv--trio-a { grid-column: 1 / 4; } .rv--trio-a .rv__foto { aspect-ratio: 4 / 5; }
+.rv--trio-b { grid-column: 4 / 10; } .rv--trio-b .rv__foto { aspect-ratio: 4 / 3; }
+.rv--trio-c { grid-column: 10 / 13; } .rv--trio-c .rv__foto { aspect-ratio: 4 / 5; }
+@media (max-width: 900px) {
+  .rv--capa { grid-template-columns: minmax(0, 1fr); }
+  .rv--capa .rv__foto { order: -1; }
+  .rv-trio { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); row-gap: 40px; }
+  .rv--trio-a { grid-column: 1; } .rv--trio-c { grid-column: 2; } .rv--trio-b { grid-column: 1 / -1; order: -1; }
+}
+
+/* Newsletter das Histórias: traço também em baixo (igual ao de cima) */
+.historias-newsletter { border-bottom: 1px solid var(--cor-linha); }
+
+/* Histórias — grelha de colunas paralelas (como na revista de referência):
+   rótulo ao centro entre dois traços; à esquerda dois artigos empilhados, ao centro um artigo alto
+   e largo, à direita um artigo alto. As três colunas têm a mesma altura (2026-11-17). */
+.rv-grelha { margin-bottom: clamp(90px, 11vw, 170px); }
+.rv-grelha__rotulo {
+  display: flex; align-items: center; justify-content: center; gap: 24px;
+  margin: 0 0 clamp(28px, 3vw, 48px); font-family: var(--fonte-titulos); font-size: 0.75rem;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--cor-texto);
+}
+.rv-grelha__rotulo::before, .rv-grelha__rotulo::after { content: ""; width: clamp(60px, 9vw, 140px); height: 1px; background: var(--cor-preto-50); }
+.rv-grelha__corpo { display: grid; grid-template-columns: 1fr 1.75fr 1fr; gap: var(--rv-vao); align-items: stretch; }
+.rv-grelha__col { display: flex; flex-direction: column; gap: var(--rv-vao); min-width: 0; }
+.rv--g-pequeno .rv__foto { aspect-ratio: 4 / 3; }
+.rv--g-alto { display: flex; flex-direction: column; flex: 1; }
+.rv--g-alto .rv__foto { flex: 1; min-height: 0; aspect-ratio: auto; }
+.rv--g-alto .rv__foto img { height: 100%; }
+@media (max-width: 900px) {
+  .rv-grelha__corpo { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .rv-grelha__col--b { grid-column: 1 / -1; order: -1; }
+  .rv--g-alto .rv__foto { flex: none; aspect-ratio: 4 / 5; }
+  .rv-grelha__col--b .rv--g-alto .rv__foto { aspect-ratio: 4 / 3; }
+}
+
+/* Histórias: as faixas largas encostam à direita e começam onde começa a coluna central das grelhas
+   (colunas 1fr · 1,75fr · 1fr), ficando alinhadas com as fotos de cima e de baixo (2026-11-17) */
+@media (min-width: 901px) {
+  .rv-faixa { margin-left: calc((100% - 2 * var(--rv-vao)) / 3.75 + var(--rv-vao)); }
+}
+
+/* Histórias: o espaço entre blocos é igual ao espaço entre artigos dentro da grelha (--rv-vao),
+   para a página seguir uma só medida (pedido do utilizador, 2026-11-17) */
+.revista .rv-capa, .revista .rv-grelha, .revista .rv-faixa, .revista .rv-par, .revista .rv-misto, .revista .rv-trio { margin-bottom: var(--rv-vao); }
+
+/* 60.º Aniversário em formato de revista (mesma estrutura das Histórias, 2026-11-17) */
+.rv__foto { margin: 0; }
+.revista-topo__selo { width: clamp(84px, 7vw, 120px); height: auto; margin-bottom: clamp(18px, 2vw, 28px); filter: brightness(0); opacity: 0.82; }
+/* capas: a foto acompanha a altura do painel de texto; variante com a foto à esquerda */
+.rv--capa { align-items: stretch; }
+.rv--capa .rv__foto { aspect-ratio: auto; min-height: clamp(360px, 42vw, 720px); height: 100%; }
+.rv--capa .rv__foto img { height: 100%; }
+.rv-capa--inverso .rv--capa .rv__foto { order: -1; }
+#destaques .rv--capa .rv__titulo { font-size: clamp(1.75rem, 0.9rem + 2.2vw, 3.25rem); line-height: 1.02; }
+.rv--capa .rv__frase { margin: 10px 0 0; font-size: var(--tam-script); line-height: 1.1; text-transform: none; color: var(--cor-texto); }
+.rv--capa .rv__resumo + .rv__resumo { margin-top: 10px; }
+.rv--capa .rv__dados { margin: 22px 0 0; padding: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 24px; max-width: 46ch; }
+/* Semana de sabores: os quatro chefs numa fila por baixo da capa */
+.rv__chefs { list-style: none; margin: var(--rv-vao) 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--rv-vao); }
+.rv__chefs li { font-size: var(--tam-texto-pequeno); font-weight: 300; line-height: 1.4; color: var(--cor-preto-70); }
+.rv__chefs img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; margin-bottom: 12px; }
+.rv__chefs span { display: block; color: var(--cor-texto); font-weight: 400; }
+@media (max-width: 900px) {
+  .rv-capa--inverso .rv--capa .rv__foto { order: -1; }
+  .rv--capa .rv__foto { min-height: 0; aspect-ratio: 4 / 3; }
+  .rv__chefs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Semana de sabores: a capa e os quatro chefs formam um só bloco (o mesmo fundo claro envolve tudo) */
+.rv-capa--com-chefs { background: var(--cor-cartao-cinza); padding-bottom: clamp(24px, 3vw, 48px); }
+.rv-capa--com-chefs .rv--capa .rv__texto { background: transparent; }
+.rv__chefs-rotulo {
+  display: flex; align-items: center; justify-content: center; gap: 24px;
+  margin: clamp(28px, 3vw, 48px) 0 0; padding: 0 clamp(24px, 3vw, 48px);
+  font-family: var(--fonte-titulos); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cor-texto);
+}
+.rv__chefs-rotulo::before, .rv__chefs-rotulo::after { content: ""; width: clamp(60px, 9vw, 140px); height: 1px; background: var(--cor-preto-50); }
+.rv-capa--com-chefs .rv__chefs { margin: clamp(20px, 2.4vw, 36px) 0 0; padding: 0 clamp(24px, 3vw, 48px); }
+
+/* Cartões das grelhas: o resumo alinhado à esquerda, com a data e o título */
+.rv-grelha .rv__resumo, .rv--capa .rv__resumo { margin-left: 0; margin-right: 0; }
+.rv-grelha .rv__resumo { margin-top: 10px; }
+
+/* 60.º Aniversário (cartões e faixas): primeiro o nome do evento, mais forte; depois a data e o local, a cinzento e mais finos */
+#destaques .rv__texto > .rv__titulo { margin: 0; font-weight: 400; color: var(--cor-texto); }
+#destaques .rv__texto > .rv__quando { margin: 2px 0 0; font-weight: 300; color: var(--cor-preto-70); }
+#destaques .rv--faixa .rv__texto > .rv__titulo, #destaques .rv--faixa .rv__texto > .rv__quando { color: var(--cor-sobre-foto); }
+/* capas dos 60 anos: o mês sozinho em cima, à direita; data e local por baixo do título, a cinzento e mais finos */
+#destaques .rv--capa .rv__quando { margin: 10px 0 0; font-size: var(--tam-texto-pequeno); font-weight: 300; color: var(--cor-preto-70); }
+/* chefs: o restaurante e o chef primeiro (mais forte), a data e o tema depois (cinzento, mais fino) */
+.rv__chefs strong { display: block; font-weight: 400; color: var(--cor-texto); }
+.rv__chefs span { display: block; margin-top: 2px; font-weight: 300; color: var(--cor-preto-70); }
+
+/* 60.º Aniversário — formatos variados para não repetir layouts (2026-11-17) */
+/* Foto imersiva: foto a toda a largura, cartão de texto claro sobreposto a sair pelo canto inferior direito */
+.rv-imersiva { position: relative; margin-bottom: var(--rv-vao); padding-bottom: clamp(120px, 14vw, 240px); }
+.rv--imersiva .rv__foto { aspect-ratio: 16 / 7; }
+.rv--imersiva .rv__texto {
+  position: absolute; right: clamp(24px, 4vw, 72px); bottom: 0; width: min(46%, 640px);
+  padding: clamp(28px, 3vw, 52px); background: var(--cor-cartao-cinza);
+}
+.rv--imersiva .rv__topo { display: flex; justify-content: flex-end; margin: 0 0 18px; }
+.rv--imersiva .rv__data { font-size: 0.75rem; color: var(--cor-texto-suave); }
+.rv--imersiva .rv__titulo { margin: 0; font-family: var(--fonte-titulos); font-weight: 500; text-transform: uppercase; font-size: clamp(1.5rem, 0.9rem + 1.6vw, 2.5rem); line-height: 1.05; color: var(--cor-texto); }
+.rv--imersiva .rv__quando { margin: 10px 0 0; font-size: var(--tam-texto-pequeno); font-weight: 300; color: var(--cor-preto-70); }
+.rv--imersiva .rv__frase { margin: 10px 0 0; font-size: var(--tam-script); line-height: 1.1; text-transform: none; color: var(--cor-texto); }
+.rv--imersiva .rv__resumo { margin: 12px 0 0; max-width: 52ch; }
+.rv--imersiva .rv__dados { margin: 22px 0 0; padding: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 24px; }
+/* Editorial em três colunas: texto · foto grande · foto pequena mais abaixo */
+.rv-editorial { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--rv-vao); align-items: start; margin-bottom: var(--rv-vao); }
+.rv-editorial__texto { grid-column: 1 / 5; align-self: end; }
+.rv-editorial__texto .rv__topo { margin: 0 0 18px; }
+.rv-editorial__texto .rv__data { font-size: 0.75rem; color: var(--cor-texto-suave); }
+.rv-editorial__texto .rv__titulo { margin: 0; font-family: var(--fonte-titulos); font-weight: 500; text-transform: uppercase; font-size: clamp(1.5rem, 0.9rem + 1.6vw, 2.5rem); line-height: 1.05; color: var(--cor-texto); }
+.rv-editorial__texto .rv__quando { margin: 10px 0 0; font-size: var(--tam-texto-pequeno); font-weight: 300; color: var(--cor-preto-70); }
+.rv-editorial__texto .rv__resumo { margin: 12px 0 0; max-width: 46ch; }
+.rv-editorial__texto .rv__dados { margin: 22px 0 0; padding: 0; grid-template-columns: minmax(0, 1fr); }
+.rv-editorial__grande { grid-column: 5 / 10; margin: 0; aspect-ratio: 4 / 5; overflow: hidden; }
+.rv-editorial__pequena { grid-column: 10 / 13; margin: clamp(120px, 16vw, 280px) 0 0; aspect-ratio: 3 / 4; overflow: hidden; }
+.rv-editorial img { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 900px) {
+  .rv-imersiva { padding-bottom: 0; }
+  .rv--imersiva .rv__foto { aspect-ratio: 4 / 3; }
+  .rv--imersiva .rv__texto { position: static; width: auto; }
+  .rv-editorial { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); row-gap: 24px; }
+  .rv-editorial__texto { grid-column: 1 / -1; order: 2; }
+  .rv-editorial__grande { grid-column: 1; } .rv-editorial__pequena { grid-column: 2; margin-top: 40px; }
+}
+/* 60.º Aniversário (blocos grandes): data e local em cima, à esquerda (cinzento, fino); o mês à direita */
+#destaques .rv__topo, #destaques .rv--capa .rv__topo, #destaques .rv--imersiva .rv__topo { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+#destaques .rv__topo .rv__quando { margin: 0; font-size: var(--tam-texto-pequeno); font-weight: 300; color: var(--cor-preto-70); }
+
+/* Grelhas: as fotos altas (colunas do centro e da direita) acabam à mesma altura — as duas colunas
+   partilham a mesma linha para o texto (subgrid), por isso o texto mais comprido não encurta a foto */
+@media (min-width: 901px) {
+  .rv-grelha__corpo { grid-template-rows: 1fr auto; }
+  .rv-grelha__col--a { grid-row: 1 / 3; }
+  .rv-grelha__col--b, .rv-grelha__col--c { display: grid; grid-row: 1 / 3; grid-template-rows: subgrid; gap: 0; }
+  .rv--g-alto { display: grid; grid-row: 1 / 3; grid-template-rows: subgrid; row-gap: 0; }
+  .rv--g-alto .rv__foto { flex: none; height: 100%; min-height: 0; }
+}
+
+/* Capas: a foto preenche a altura do bloco sem a aumentar (fotos ao alto deixavam o bloco enorme) */
+@media (min-width: 901px) {
+  .rv--capa .rv__foto { position: relative; overflow: hidden; }
+  .rv--capa .rv__foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+}
+
+/* Thalasso (foto imersiva): o cartão sobe — fica quase todo sobre a foto e só sai um pouco por baixo */
+@media (min-width: 901px) {
+  .rv-imersiva { padding-bottom: clamp(40px, 4.5vw, 80px); }
+}

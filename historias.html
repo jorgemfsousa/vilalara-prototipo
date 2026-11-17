@@ -10,9 +10,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&family=Marcellus&family=Pinyon+Script&display=swap">
 <link rel="stylesheet" href="https://use.typekit.net/oav4umc.css"><!-- Adobe Fonts: Optima nova + Richmond Display (projeto "Vilalara site prototipo") -->
 <link rel="stylesheet" href="https://use.typekit.net/ozg0foo.css"><!-- Adobe Fonts: Fact VF (projeto "Vilalara site prototipo Fact") -->
-<link rel="stylesheet" href="assets/css/tokens.css?v=20261123o">
-<link rel="stylesheet" href="assets/css/base.css?v=20261123o">
-<link rel="stylesheet" href="assets/css/blocos.css?v=20261123o">
+<link rel="stylesheet" href="assets/css/tokens.css?v=20261124i">
+<link rel="stylesheet" href="assets/css/base.css?v=20261124i">
+<link rel="stylesheet" href="assets/css/blocos.css?v=20261124i">
 </head>
 <body>
 
@@ -76,39 +76,57 @@
        Cada <article class="rv"> tem data-tema; o filtro mostra só os desse tema numa grelha simples. -->
   <div class="revista__composicao" data-revista>
 
-    <section class="rv-destaque">
-    <article class="rv rv--destaque" data-tema="cultura">
-      <a class="rv__foto" href="historia-azulejos.html" tabindex="-1" aria-hidden="true"><img src="assets/img/historias/hero.jpg?v=h2" alt="Pratos de cerâmica portuguesa pintados à mão, com cores vivas e figuras tradicionais" loading="lazy"></a>
+    <section class="rv-capa">
+    <article class="rv rv--capa" data-tema="cultura">
       <div class="rv__texto">
-        <p class="rv__etiqueta">Cultura</p>
-        <h3 class="rv__titulo"><a href="historia-azulejos.html">Azulejos: o&nbsp;Algarve pintado à&nbsp;mão</a></h3>
-        <p class="rv__resumo">Herdeiro da&nbsp;tradição mourisca e&nbsp;reinventado ao&nbsp;longo de&nbsp;cinco séculos, o&nbsp;azulejo continua a&nbsp;ser pintado à&nbsp;mão em&nbsp;pequenas oficinas do&nbsp;Sul.</p>
+        <p class="rv__topo"><span class="rv__etiqueta">Cultura</span><span class="rv__data">Novembro 2026</span></p>
+        <div class="rv__capa-fundo">
+          <h3 class="rv__titulo"><a href="historia-silves.html">Silves</a></h3>
+          <p class="rv__resumo">Antiga capital do&nbsp;Algarve islâmico, Silves sobe a&nbsp;encosta até&nbsp;ao&nbsp;castelo de&nbsp;grés vermelho, sobre o&nbsp;rio&nbsp;Arade.</p>
+        </div>
       </div>
+      <a class="rv__foto" href="historia-silves.html" tabindex="-1" aria-hidden="true"><img src="assets/img/historias/algarve/silves.jpg?v=s1" alt="Rua inclinada de Silves, com casas caiadas de barras ocre e vermelhas" loading="lazy"></a>
     </article>
     </section>
 
-    <section class="rv-par">
-    <article class="rv rv--a" data-tema="cultura">
+    <section class="rv-grelha" aria-label="Vilas e aldeias">
+      <p class="rv-grelha__rotulo"><span>Vilas e aldeias</span></p>
+      <div class="rv-grelha__corpo">
+        <div class="rv-grelha__col rv-grelha__col--a">
+    <article class="rv rv--g-pequeno" data-tema="cultura">
       <a class="rv__foto" href="historia-cacela-velha.html" tabindex="-1" aria-hidden="true"><img src="assets/img/historias/algarve/cacela-velha.jpg?v=s1" alt="Rua de calçada entre casas caiadas com barras azuis, em Cacela Velha" loading="lazy"></a>
       <div class="rv__texto">
         <p class="rv__etiqueta">Cultura</p>
         <h3 class="rv__titulo"><a href="historia-cacela-velha.html">Cacela Velha, a&nbsp;aldeia branca sobre a&nbsp;ria</a></h3>
       </div>
     </article>
-    <article class="rv rv--b" data-tema="cultura">
+    <article class="rv rv--g-pequeno" data-tema="natureza">
+      <a class="rv__foto" href="historia-ferragudo.html" tabindex="-1" aria-hidden="true"><img src="assets/img/historias/algarve/ferragudo.jpg?v=s1" alt="Casas brancas de Ferragudo junto à água, com barcos de pesca no rio" loading="lazy"></a>
+      <div class="rv__texto">
+        <p class="rv__etiqueta">Mar</p>
+        <h3 class="rv__titulo"><a href="historia-ferragudo.html">Ferragudo, a&nbsp;aldeia na&nbsp;foz&nbsp;do&nbsp;Arade</a></h3>
+      </div>
+    </article>
+        </div>
+        <div class="rv-grelha__col rv-grelha__col--b">
+    <article class="rv rv--g-alto" data-tema="cultura">
       <a class="rv__foto" href="historia-cal-e-buganvilias.html" tabindex="-1" aria-hidden="true" style="--foco: 45% 50%"><img src="assets/img/historias/algarve/porta-buganvilia.jpg?v=s1" alt="Porta azul aberta numa parede caiada, com buganvílias" loading="lazy"></a>
       <div class="rv__texto">
         <p class="rv__etiqueta">Arquitetura</p>
         <h3 class="rv__titulo"><a href="historia-cal-e-buganvilias.html">Cal, portas e&nbsp;buganvílias: as&nbsp;cores do&nbsp;Sul</a></h3>
       </div>
     </article>
-    <article class="rv rv--c" data-tema="cultura">
+        </div>
+        <div class="rv-grelha__col rv-grelha__col--c">
+    <article class="rv rv--g-alto" data-tema="cultura">
       <a class="rv__foto" href="historia-lagos.html" tabindex="-1" aria-hidden="true"><img src="assets/img/historias/algarve/lagos-muralhas.jpg?v=s1" alt="Porta das muralhas de Lagos entre palmeiras" loading="lazy"></a>
       <div class="rv__texto">
         <p class="rv__etiqueta">Cultura</p>
         <h3 class="rv__titulo"><a href="historia-lagos.html">Lagos, dentro das&nbsp;muralhas</a></h3>
       </div>
     </article>
+        </div>
+      </div>
     </section>
 
     <section class="rv-faixa">
@@ -122,31 +140,59 @@
     </article>
     </section>
 
-    <section class="rv-misto rv-misto--inverso">
-    <article class="rv rv--largo" data-tema="sabores">
-      <a class="rv__foto" href="historia-mercado-loule.html" tabindex="-1" aria-hidden="true"><img src="assets/img/historias/algarve/loule-mercado.jpg?v=s1" alt="Torre e cúpula do Mercado Municipal de Loulé, de inspiração árabe" loading="lazy"></a>
+    <section class="rv-capa">
+    <article class="rv rv--capa" data-tema="cultura">
       <div class="rv__texto">
-        <p class="rv__etiqueta">Sabores</p>
-        <h3 class="rv__titulo"><a href="historia-mercado-loule.html">O&nbsp;mercado de&nbsp;Loulé e&nbsp;as&nbsp;suas cúpulas</a></h3>
+        <p class="rv__topo"><span class="rv__etiqueta">Cultura</span><span class="rv__data">Novembro 2026</span></p>
+        <div class="rv__capa-fundo">
+          <h3 class="rv__titulo"><a href="historia-castro-marim.html">Castro Marim</a></h3>
+          <p class="rv__resumo">Na&nbsp;foz do&nbsp;Guadiana, Castro Marim guarda um&nbsp;castelo e&nbsp;uma&nbsp;fortaleza, rodeados por&nbsp;salinas e&nbsp;pela reserva natural do&nbsp;sapal.</p>
+        </div>
       </div>
+      <a class="rv__foto" href="historia-castro-marim.html" tabindex="-1" aria-hidden="true"><img src="assets/img/historias/algarve/castro-marim.jpg?v=s1" alt="Forte de São Sebastião, em Castro Marim, sobre a colina" loading="lazy"></a>
     </article>
-      <div class="rv-misto__pequenos rv-misto__pequenos--dois">
-    <article class="rv rv--pequeno" data-tema="natureza">
+    </section>
+
+    <section class="rv-grelha" aria-label="Do mar à serra">
+      <p class="rv-grelha__rotulo"><span>Do mar à serra</span></p>
+      <div class="rv-grelha__corpo">
+        <div class="rv-grelha__col rv-grelha__col--a">
+    <article class="rv rv--g-pequeno" data-tema="natureza">
       <a class="rv__foto" href="historia-barcos-pesca.html" tabindex="-1" aria-hidden="true"><img src="assets/img/historias/algarve/barcos-pesca.jpg?v=s1" alt="Barcos de pesca coloridos num pequeno porto do Algarve" loading="lazy"></a>
       <div class="rv__texto">
         <p class="rv__etiqueta">Mar</p>
         <h3 class="rv__titulo"><a href="historia-barcos-pesca.html">Barcos e&nbsp;redes: a&nbsp;vida no&nbsp;cais</a></h3>
       </div>
     </article>
-    <article class="rv rv--pequeno" data-tema="agenda">
-      <a class="rv__foto" href="60-aniversario.html#destaques" tabindex="-1" aria-hidden="true"><img src="assets/img/60-anos/eclipse-oculos.jpg" alt="Óculos de eclipse com o selo dos 60 anos do Vilalara, sobre a relva" loading="lazy"></a>
+    <article class="rv rv--g-pequeno" data-tema="natureza">
+      <a class="rv__foto" href="historia-alcoutim.html" tabindex="-1" aria-hidden="true"><img src="assets/img/historias/algarve/alcoutim.jpg?v=s1" alt="Vista aérea de Sanlúcar de Guadiana, na margem espanhola, a partir de Alcoutim" loading="lazy"></a>
       <div class="rv__texto">
-        <p class="rv__etiqueta">Agenda · Agosto 2026</p>
-        <h3 class="rv__titulo"><a href="60-aniversario.html#destaques">O&nbsp;eclipse visto do&nbsp;Vilalara</a></h3>
+        <p class="rv__etiqueta">Natureza</p>
+        <h3 class="rv__titulo"><a href="historia-alcoutim.html">Alcoutim e&nbsp;o&nbsp;Guadiana, o&nbsp;Algarve interior</a></h3>
       </div>
     </article>
+        </div>
+        <div class="rv-grelha__col rv-grelha__col--b">
+    <article class="rv rv--g-alto" data-tema="natureza">
+      <a class="rv__foto" href="historia-carvoeiro.html" tabindex="-1" aria-hidden="true"><img src="assets/img/historias/algarve/carvoeiro.jpg?v=s1" alt="Praia do Carvoeiro com banhistas, entre falésias e casas brancas na encosta" loading="lazy"></a>
+      <div class="rv__texto">
+        <p class="rv__etiqueta">Mar</p>
+        <h3 class="rv__titulo"><a href="historia-carvoeiro.html">Carvoeiro, a&nbsp;praia entre as&nbsp;falésias</a></h3>
+      </div>
+    </article>
+        </div>
+        <div class="rv-grelha__col rv-grelha__col--c">
+    <article class="rv rv--g-alto" data-tema="sabores">
+      <a class="rv__foto" href="historia-mercado-loule.html" tabindex="-1" aria-hidden="true"><img src="assets/img/historias/algarve/loule-mercado.jpg?v=s1" alt="Torre e cúpula do Mercado Municipal de Loulé, de inspiração árabe" loading="lazy"></a>
+      <div class="rv__texto">
+        <p class="rv__etiqueta">Sabores</p>
+        <h3 class="rv__titulo"><a href="historia-mercado-loule.html">O&nbsp;mercado de&nbsp;Loulé e&nbsp;as&nbsp;suas cúpulas</a></h3>
+      </div>
+    </article>
+        </div>
       </div>
     </section>
+
 
   </div>
   <div class="revista__resultado" data-revista-resultado hidden></div>
@@ -155,7 +201,7 @@
 
   <!-- BLOCO: historias-newsletter -->
   <section class="historias-newsletter">
-    <h2 class="intro__titulo">Receba<br><span class="intro__script" style="white-space: nowrap">as&nbsp;próximas histórias</span></h2>
+    <h2 class="intro__titulo">Receba as&nbsp;próximas<br><span class="intro__script" style="white-space: nowrap">histórias</span></h2>
     <p>Uma&nbsp;carta por&nbsp;estação, com&nbsp;o&nbsp;melhor do&nbsp;Algarve e&nbsp;as&nbsp;novidades do&nbsp;Vilalara.</p>
     <a class="botao-contorno" href="newsletter.html">Subscrever</a>
   </section>
@@ -361,6 +407,6 @@
 </nav>
 <!-- /BLOCO: painel-menu -->
 
-<script src="assets/js/site.js?v=20261123o"></script>
+<script src="assets/js/site.js?v=20261124i"></script>
 </body>
 </html>

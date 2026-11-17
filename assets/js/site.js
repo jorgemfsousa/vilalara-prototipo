@@ -21,6 +21,7 @@
     if (!painel) return;
     ultimoFoco = document.activeElement;
     painel.classList.add("aberto");
+    document.documentElement.classList.add("painel-aberto");   /* a página encolhe para a área ao lado do menu */
     if (veu) veu.classList.add("visivel");
     painel.removeAttribute("inert");
     botoesMenu.forEach(function (b) { b.setAttribute("aria-expanded", "true"); });
@@ -31,6 +32,7 @@
   function fecharPainel() {
     if (!painel || !painel.classList.contains("aberto")) return;
     painel.classList.remove("aberto");
+    document.documentElement.classList.remove("painel-aberto");
     if (veu) veu.classList.remove("visivel");
     painel.setAttribute("inert", "");
     botoesMenu.forEach(function (b) { b.setAttribute("aria-expanded", "false"); });
