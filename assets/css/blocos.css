@@ -3898,3 +3898,15 @@ html .cab-interior.cab--escuro .botao-link { --b-cor: var(--cor-preto-90); --b-i
   font-family: var(--fonte-texto); font-weight: 400; text-transform: none; letter-spacing: 0;
   font-size: 1.0625rem; line-height: 1.4;
 }
+
+/* Rodapé claro (decisão do utilizador, 2026-11-17): fundo creme Vilalara e informação no castanho Vilalara.
+   Logótipo em castanho; morada e selos (imagens brancas) passam a castanho por filtro.
+   (Antes: fundo castanho #42321a com texto claro.) */
+:root { --cor-rodape-fundo: var(--cor-creme-marca); --cor-rodape-texto: var(--cor-castanho-marca); --cor-rodape-linha: rgba(66, 50, 26, 0.25); }
+.rodape, .tema-escuro .rodape { background: var(--cor-creme-marca); color: var(--cor-castanho-marca); }
+.rodape .rodape__linha { border-top-color: rgba(66, 50, 26, 0.25); }
+.rodape__logo img { content: url("../img/marca/logo-castanho.png"); }
+.rodape__morada img, .rodape__selos img {
+  filter: brightness(0) saturate(100%) invert(17%) sepia(24%) saturate(1191%) hue-rotate(358deg) brightness(95%) contrast(91%);
+  opacity: 1;
+}
