@@ -785,6 +785,40 @@
         { transform: fim }
       ], { duration: 1100, easing: curva, fill: "forwards" });
 
+      // Páginas com título no banner (ex.: Our Heritage): a palavra do menu voa para o sítio da etiqueta
+      // pequena do banner e, ao mesmo tempo, o título grande ("Meio século / de história") aparece já
+      // na home, no sítio exato onde está na página — ao mudar de página não há salto.
+      var tituloLanding = slide.getAttribute("data-landing-titulo");
+      if (tituloLanding) {
+        anim.cancel();
+        var caixaT = document.createElement("div");
+        caixaT.className = "hero-quarto__texto hero-titulo-transicao";
+        caixaT.setAttribute("aria-hidden", "true");
+        caixaT.innerHTML = '<p class="hero-quarto__nome">' + slide.getAttribute("data-landing-nome") + '</p>' +
+          '<p class="hero-quarto__titulo">' + tituloLanding + ' <span class="intro__script">' + (slide.getAttribute("data-landing-script") || "") + '</span></p>';
+        slide.appendChild(caixaT);
+        var nomeT = caixaT.querySelector(".hero-quarto__nome"), tituloT = caixaT.querySelector(".hero-quarto__titulo");
+        nomeT.style.opacity = "0";
+        // a palavra que voa passa a ter a mesma letra, peso e espaçamento da etiqueta do banner,
+        // e anima tamanho e posição até aos valores exatos dela (no fim fica pixel a pixel por cima)
+        var nr = nomeT.getBoundingClientRect(), ns = getComputedStyle(nomeT), ps = getComputedStyle(palavra);
+        voadora.style.fontFamily = ns.fontFamily;
+        voadora.style.fontWeight = ns.fontWeight;
+        voadora.style.transformOrigin = "0 0";
+        var voo = voadora.animate([
+          { left: r.left + "px", top: r.top + "px", fontSize: ps.fontSize, letterSpacing: ps.letterSpacing, lineHeight: r.height + "px" },
+          { left: nr.left + "px", top: nr.top + "px", fontSize: ns.fontSize, letterSpacing: ns.letterSpacing, lineHeight: ns.lineHeight === "normal" ? nr.height + "px" : ns.lineHeight }
+        ], { duration: 1100, easing: curva, fill: "forwards" });
+        tituloT.animate([{ opacity: 0, transform: "translateY(14px)" }, { opacity: 1, transform: "none" }],
+          { duration: 800, delay: 550, easing: "cubic-bezier(0.22, 1, 0.36, 1)", fill: "both" });
+        voo.onfinish = function () {
+          nomeT.style.opacity = "1";
+          voadora.style.visibility = "hidden";   /* está exatamente por cima da etiqueta: troca sem se notar */
+          setTimeout(function () { window.location.href = url; }, 380);
+        };
+        return;
+      }
+
       // 60.º Aniversário: a landing abre com o selo em vez da palavra.
       // A palavra desfaz-se (as letras afastam-se e desfocam) e o selo forma-se
       // no mesmo sítio, a rodar como se as letras se enrolassem no círculo.
@@ -841,7 +875,8 @@
     if (!e.persisted) return;
     aAbrir = false;
     document.documentElement.classList.remove("a-abrir");
-    document.querySelectorAll(".palavra-voadora, .slide > .hero-restaurante[aria-hidden]").forEach(function (v) { v.remove(); });
+    document.querySelectorAll(".palavra-voadora, .slide > .hero-restaurante[aria-hidden], .hero-titulo-transicao").forEach(function (v) { v.remove(); });
+    document.querySelectorAll(".slide.veu-a-entrar").forEach(function (sl) { sl.classList.remove("landing--veu", "veu-a-entrar"); });
     document.querySelectorAll(".menu-categorias a.escolhida").forEach(function (a) { a.classList.remove("escolhida"); });
   });
 
@@ -1062,7 +1097,7 @@
   NP = NP.map(reduz);
   PATAS = PATAS.map(function (P) { return P.map(reduz); });
   el.appendChild(svg); document.body.appendChild(el);
-  document.documentElement.classList.add("cursor-gaivota");
+  /* Decisão do utilizador (2026-11-18): o rato fica normal e a gaivota segue-o com atraso, pousando ao lado dele (não esconde o cursor) */
 
   var SX = 50, SY = 26.4;                       /* ombro (por cima do corpo) */
   function f(n) { return n.toFixed(2); }
@@ -1080,7 +1115,8 @@
       " Q" + f(SX + dir * 5) + " " + f(SY + 5.4) + " " + f(SX + dir * 3.5) + " " + f(SY + 4) + " Z";
   }
 
-  var x = -100, y = -100, vx = 0, vy = 0, inclina = 0, ultimo = 0, antes = 0;
+  var x = -100, y = -100, rx = -100, ry = -100, vx = 0, vy = 0, inclina = 0, ultimo = 0, antes = 0;   /* rx, ry: posição do rato; x, y: posição da gaivota, que o segue */
+  var SEGUE_X = 34, SEGUE_Y = 26;   /* onde a gaivota fica em relação à ponta do rato quando ele pára (ao lado, sem o tapar) */
   var alvoLado = 1, lado = 1, vLado = 0, empurra = 0, balanco = 0, curva = 0, rumo = 0, rodar = 0;
   var pousa = 0;                               /* 0 a voar, 1 pousada (em pé) */
   var fase = 0, amp = 0.07, base = 0.5, pBase = -0.12, abre = 1, batidas = 0, planaAte = 0;
@@ -1088,6 +1124,9 @@
 
   function desenha(t) {
     var dt = Math.min(0.05, (t - (antes || t)) / 1000); antes = t;
+    /* a gaivota voa atrás do rato: aproxima-se suavemente do ponto ao lado dele */
+    x += (rx + SEGUE_X - x) * Math.min(1, dt * 5);
+    y += (ry + SEGUE_Y - y) * Math.min(1, dt * 5);
     var parada = t - ultimo > 200;
     /* pousar demora ~0,8 s, levantar voo ~0,45 s, sempre ao mesmo ritmo (a suavidade vem da curva abaixo) */
     pousa = t - ultimo > 300 ? Math.min(1, pousa + dt / 0.8) : Math.max(0, pousa - dt / 0.45);
@@ -1167,8 +1206,9 @@
     requestAnimationFrame(desenha);
   }
   window.addEventListener("mousemove", function (e) {
-    var dx = e.clientX - x, dy = e.clientY - y;
-    x = e.clientX; y = e.clientY; ultimo = performance.now();
+    var dx = e.clientX - rx, dy = e.clientY - ry;
+    if (rx < -50) { x = e.clientX + SEGUE_X; y = e.clientY + SEGUE_Y; }   /* primeira vez: aparece já junto ao rato */
+    rx = e.clientX; ry = e.clientY; ultimo = performance.now();
     vx = vx * 0.6 + dx * 0.4; vy = vy * 0.6 + dy * 0.4;
     /* só vira depois de andar uns píxeis seguidos para o outro lado */
     empurra = empurra * 0.9 + dx;

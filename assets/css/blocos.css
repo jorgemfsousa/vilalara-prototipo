@@ -3809,7 +3809,7 @@ html .cab-interior.cab--escuro .botao-link { --b-cor: var(--cor-preto-90); --b-i
 
 /* Intro sem título (Reservas): o texto fica na coluna da direita, onde estava; sem o recuo
    que o afastava do título e com menos espaço à volta da secção */
-.intro--sem-titulo { padding-block: clamp(56px, 6vw, 100px); }
+.intro--sem-titulo { padding-block: clamp(88px, 10vw, 168px); }   /* mais branco em cima e em baixo (era até 100 px) */
 .intro--sem-titulo .intro__texto { margin-top: 0; }
 @media (min-width: 901px) { .intro--sem-titulo .intro__texto { grid-column: 2; } }
 
@@ -4115,3 +4115,10 @@ body { background: var(--cor-fundo); overscroll-behavior-y: none; }
 @media (min-width: 901px) {
   .rv-imersiva { padding-bottom: clamp(40px, 4.5vw, 80px); }
 }
+
+/* 60.º Aniversário: sem o título em texto, o selo dos 60 anos é o elemento principal do topo */
+.revista-topo__selo--grande { width: clamp(180px, 17vw, 280px); margin-bottom: clamp(28px, 3vw, 48px); }
+
+/* Transição home → página com título no banner (Our Heritage): o véu escuro entra suavemente */
+.veu-a-entrar .slide__media::after { animation: veu-entra 900ms var(--curva) both; }
+@keyframes veu-entra { from { opacity: 0; } to { opacity: 1; } }

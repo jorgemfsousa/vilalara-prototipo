@@ -141,6 +141,7 @@ html.a-saltar body { opacity: 0; transition-duration: 150ms; }
    Em campos de texto volta o cursor normal. Para desligar: tirar o bloco
    "Cursor gaivota" do site.js.
    ===================================================================== */
+/* (sem uso desde 2026-11-18: o rato fica normal e a gaivota segue-o — a classe cursor-gaivota já não é posta) */
 html.cursor-gaivota, html.cursor-gaivota * { cursor: none !important; }
 html.cursor-gaivota input:not([type="checkbox"]):not([type="radio"]):not([type="date"]),
 html.cursor-gaivota textarea, html.cursor-gaivota [contenteditable] { cursor: text !important; }
