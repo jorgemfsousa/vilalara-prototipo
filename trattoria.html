@@ -11,9 +11,9 @@
 <link rel="stylesheet" href="https://use.typekit.net/oav4umc.css"><!-- Adobe Fonts: Optima nova + Richmond Display (projeto "Vilalara site prototipo") -->
 <link rel="stylesheet" href="https://use.typekit.net/ozg0foo.css"><!-- Adobe Fonts: Fact VF (projeto "Vilalara site prototipo Fact") -->
 <script>/* chegada pela animação do "Ver …" */try{if(sessionStorage.getItem("vl-transicao")==="quarto"){document.documentElement.classList.add("chegada-quarto");sessionStorage.removeItem("vl-transicao");}}catch(e){}</script>
-<link rel="stylesheet" href="assets/css/tokens.css?v=20261124q">
-<link rel="stylesheet" href="assets/css/base.css?v=20261124q">
-<link rel="stylesheet" href="assets/css/blocos.css?v=20261124q">
+<link rel="stylesheet" href="assets/css/tokens.css?v=20261126e">
+<link rel="stylesheet" href="assets/css/base.css?v=20261126e">
+<link rel="stylesheet" href="assets/css/blocos.css?v=20261126e">
 </head>
 <body>
 
@@ -89,7 +89,7 @@
   <dl class="caracteristicas">
     <div><dt>Atmosfera</dt><dd>Acolhedora e&nbsp;Familiar</dd></div>
     <div><dt>Gastronomia</dt><dd>Clássica Italiana</dd></div>
-    <div><dt>Quinta-feira a&nbsp;segunda-feira</dt><dd>18h30 às&nbsp;22h</dd></div>
+    <div><dt><span class="sem-quebra">Quinta-feira</span> a&nbsp;<span class="sem-quebra">segunda-feira</span></dt><dd>18h30 às&nbsp;22h</dd></div>
     <div><dt>Atmosfera Romântica</dt><dd>Vista Mar</dd></div>
     <div><dt>Produtos locais</dt><dd>Sustentáveis e&nbsp;autênticos Italianos</dd></div>
     <div><dt>Dress Code</dt><dd>Resort Chic</dd></div>
@@ -135,7 +135,7 @@
   <section class="galeria-ed" aria-label="A equipa do Trattoria">
     <div class="ge-abertura">
       <figure class="ge-foto ge-abertura__pequena"><img src="assets/img/gastronomia/trattoria/editorial/equipa-pequena.jpg" alt="Equipa da Trattoria a servir pizza e vinho" loading="lazy"></figure>
-      <p class="ge-abertura__texto">Uma&nbsp;equipa que&nbsp;recebe como em&nbsp;casa, com&nbsp;a&nbsp;generosidade da&nbsp;mesa&nbsp;italiana.</p>
+      <p class="ge-abertura__texto">Uma&nbsp;equipa que&nbsp;recebe como&nbsp;em&nbsp;casa, com&nbsp;a&nbsp;generosidade da&nbsp;mesa&nbsp;italiana.</p>
       <figure class="ge-foto ge-abertura__grande"><img src="assets/img/gastronomia/trattoria/editorial/equipa-grande.jpg" alt="Equipa da Trattoria à mesa" loading="lazy"></figure>
     </div>
   </section>
@@ -170,7 +170,7 @@
   <div class="reservar-faixa reservar-faixa--destaque">
     <div class="reservar-faixa__info">
       <p class="reservar-faixa__nome reservar-faixa__nome--logo"><img src="assets/img/gastronomia/logos/trattoria.png" alt="Trattoria" style="--h: 48.7"></p>
-      <p class="quarto__preco quarto__preco--consultar">Quinta-feira a&nbsp;segunda-feira · 18h30&nbsp;–&nbsp;22h00</p>
+      <p class="quarto__preco quarto__preco--consultar"><span class="sem-quebra">Quinta-feira</span> a&nbsp;<span class="sem-quebra">segunda-feira</span> · 18h30&nbsp;–&nbsp;22h00</p>
     </div>
     <a class="botao-contorno botao--cheio" href="reserva-restaurante.html?r=trattoria">Reservar</a>
   </div>
@@ -288,12 +288,15 @@
   <li class="painel__item tem-sub">
     <div class="painel__linha"><a href="suites-residencias.html" data-categoria="suites-residencias">Suítes &amp;&nbsp;Residências</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-suites-residencias"><span class="sr-only">Submenu Suítes &amp;&nbsp;Residências</span></button></div>
     <ul id="sub-suites-residencias" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item painel__favoritos"><a href="suites-residencias.html#favoritos">Os&nbsp;favoritos</a></li>
+    <li class="painel__grupo">Suítes</li>
     <li class="painel__item"><a href="elegant-suite.html">Elegant Suite</a></li>
     <li class="painel__item"><a href="master-suite.html">Master Suite</a></li>
     <li class="painel__item"><a href="ocean-suite.html">Ocean Suite</a></li>
     <li class="painel__item"><a href="grand-suite.html">Grand Suite</a></li>
     <li class="painel__item"><a href="george-ansley-suite.html">George Ansley Suite</a></li>
     <li class="painel__item"><a href="jose-de-harry-suite.html">José de&nbsp;Harry Suite</a></li>
+    <li class="painel__grupo">Residências</li>
     <li class="painel__item"><a href="private-residences.html">Private Residences</a></li>
     <li class="painel__item"><a href="casa-laranjo.html">Casa Laranjo</a></li>
     <li class="painel__item"><a href="casa-levy.html">Casa Levy</a></li>
@@ -306,7 +309,7 @@
     <li class="painel__item"><a href="coral.html">Coral</a></li>
     <li class="painel__item"><a href="raizes.html">Raízes</a></li>
     <li class="painel__item no-caminho"><a href="trattoria.html" aria-current="page">Trattoria</a></li>
-    <li class="painel__item"><a href="a-costa.html">A-costa</a></li>
+    <li class="painel__item"><a href="a-costa.html"><span class="sem-quebra">A-costa</span></a></li>
     <li class="painel__item"><a href="vento.html">Vento</a></li>
     <li class="painel__item"><a href="gaivotas.html">Gaivotas</a></li>
     </ul>
@@ -332,7 +335,7 @@
       <ul id="sub-programas" hidden class="painel__sub painel__sub--n3">
       <li class="painel__item"><a href="programa-thalassotherapy-healing.html">Thalassotherapy Healing</a></li>
       <li class="painel__item"><a href="programa-fitness-essence.html">Fitness Essence</a></li>
-      <li class="painel__item"><a href="programa-bespoke-anti-ageing-retreat.html">Bespoke Anti-ageing Retreat</a></li>
+      <li class="painel__item"><a href="programa-bespoke-anti-ageing-retreat.html">Bespoke <span class="sem-quebra">Anti-ageing</span> Retreat</a></li>
       <li class="painel__item"><a href="programa-stress-relief-recover.html">Stress Relief &amp;&nbsp;Recover</a></li>
       <li class="painel__item"><a href="programa-detox-weight-management.html">Detox &amp;&nbsp;Weight Management</a></li>
       </ul>
@@ -392,6 +395,6 @@
 </nav>
 <!-- /BLOCO: painel-menu -->
 
-<script src="assets/js/site.js?v=20261124q"></script>
+<script src="assets/js/site.js?v=20261126e"></script>
 </body>
 </html>

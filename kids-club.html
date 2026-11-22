@@ -10,9 +10,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&family=Marcellus&family=Pinyon+Script&display=swap">
 <link rel="stylesheet" href="https://use.typekit.net/oav4umc.css"><!-- Adobe Fonts: Optima nova + Richmond Display (projeto "Vilalara site prototipo") -->
 <link rel="stylesheet" href="https://use.typekit.net/ozg0foo.css"><!-- Adobe Fonts: Fact VF (projeto "Vilalara site prototipo Fact") -->
-<link rel="stylesheet" href="assets/css/tokens.css?v=20261124q">
-<link rel="stylesheet" href="assets/css/base.css?v=20261124q">
-<link rel="stylesheet" href="assets/css/blocos.css?v=20261124q">
+<link rel="stylesheet" href="assets/css/tokens.css?v=20261126e">
+<link rel="stylesheet" href="assets/css/base.css?v=20261126e">
+<link rel="stylesheet" href="assets/css/blocos.css?v=20261126e">
 </head>
 <body>
 
@@ -62,6 +62,7 @@
     </figure>
     <div class="hero-quarto__texto hero-restaurante">
       <h1><img class="hero-restaurante__logo hero-restaurante__logo--clube" src="assets/img/clubs/logos/kids-club-nome.svg" alt="Kids Club" width="100" height="166"></h1>
+      <p class="hero-quarto__titulo hero-clube__titulo">Um&nbsp;paraíso <span class="intro__script">encantador</span></p>
     </div>
     <a class="seta-scroll" href="#sobre" aria-label="Descer para a apresentação">
       <svg viewBox="0 0 14 32" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M7 0v31M1 25l6 6 6-6"/></svg>
@@ -73,8 +74,7 @@
 
 
   <!-- BLOCO: intro-categoria -->
-  <section class="intro" id="sobre">
-    <h2 class="intro__titulo">Um&nbsp;paraíso<br><span class="intro__script" style="white-space: nowrap">encantador</span></h2>
+  <section class="intro intro--sem-titulo" id="sobre">
     <p class="intro__texto">O&nbsp;Vilalara é&nbsp;um&nbsp;paraíso encantador para&nbsp;os&nbsp;pequenos heróis, oferecendo um&nbsp;ambiente seguro e&nbsp;supervisionado onde as&nbsp;crianças podem brincar, explorar e&nbsp;fazer novos&nbsp;amigos.</p>
   </section>
   <!-- /BLOCO: intro-categoria -->
@@ -85,7 +85,7 @@
   <section class="galeria-ed" aria-label="Fotografias do Kids Club">
     <div class="ge-abertura">
       <figure class="ge-foto ge-abertura__pequena"><img src="assets/img/clubs/kids/editorial/abertura-pequena.jpg?v=2" alt="Parede de boas-vindas da sala do Kids Club, com desenhos das crianças" loading="lazy"></figure>
-      <p class="ge-abertura__texto">Desde ateliers de&nbsp;artesanato a&nbsp;aventuras de&nbsp;fantasia, o&nbsp;programa de&nbsp;atividade do&nbsp;hotel incentiva as&nbsp;crianças a&nbsp;ligarem-se à&nbsp;natureza e&nbsp;a&nbsp;si&nbsp;próprias.</p>
+      <p class="ge-abertura__texto">Desde&nbsp;ateliers de&nbsp;artesanato a&nbsp;aventuras de&nbsp;fantasia, o&nbsp;programa de&nbsp;atividade do&nbsp;hotel incentiva as&nbsp;crianças a&nbsp;<span class="sem-quebra">ligarem-se</span> à&nbsp;natureza e&nbsp;a&nbsp;si&nbsp;próprias.</p>
       <figure class="ge-foto ge-abertura__grande"><img src="assets/img/clubs/kids/editorial/abertura-grande.jpg" alt="Tenda, carrinhos de madeira e pirâmide de cordas no parque do Kids Club" loading="lazy"></figure>
     </div>
     <div class="ge-faixa">
@@ -107,7 +107,7 @@
     <div class="ge-abertura ge-abertura--espelho">
       <figure class="ge-foto ge-abertura__grande"><img src="assets/img/clubs/kids/editorial/espelho-grande.jpg" alt="Parque infantil com pirâmide de cordas, escorrega e insuflável, entre pinheiros" loading="lazy"></figure>
       <figure class="ge-foto ge-abertura__pequena"><img src="assets/img/clubs/kids/editorial/espelho-pequena.jpg?v=2" alt="Criança sentada numa cadeira junto ao campo de ténis" loading="lazy"></figure>
-      <p class="ge-abertura__texto">Disponíveis das&nbsp;09:00 às&nbsp;18:00 (maio a&nbsp;setembro) e&nbsp;noutros meses a&nbsp;pedido, as&nbsp;atividades oferecem às&nbsp;famílias a&nbsp;oportunidade de&nbsp;criar laços, divertir-se e&nbsp;criar memórias inesquecíveis em&nbsp;conjunto.</p>
+      <p class="ge-abertura__texto">Disponíveis das&nbsp;09:00 às&nbsp;18:00 (maio a&nbsp;setembro) e&nbsp;noutros meses a&nbsp;pedido, as&nbsp;atividades oferecem às&nbsp;famílias a&nbsp;oportunidade de&nbsp;criar laços, <span class="sem-quebra">divertir-se</span> e&nbsp;criar memórias inesquecíveis em&nbsp;conjunto.</p>
     </div>
   </section>
   <!-- /BLOCO: galeria-editorial (espelho) -->
@@ -117,7 +117,7 @@
   <section class="galeria-ed" aria-label="Kids Club, a sala">
     <div class="ge-abertura">
       <figure class="ge-foto ge-abertura__pequena"><img src="assets/img/clubs/kids/editorial/sala-pequena.jpg" alt="Recanto da sala do Kids Club com urso de peluche e almofadas" style="object-position: 30% 50%" loading="lazy"></figure>
-      <p class="ge-abertura__texto">Entre o&nbsp;parque ao&nbsp;ar livre e&nbsp;a&nbsp;sala, com&nbsp;tendas, almofadas e&nbsp;brinquedos, há sempre um&nbsp;canto para&nbsp;brincar, descansar ou&nbsp;inventar uma&nbsp;nova aventura.</p>
+      <p class="ge-abertura__texto">Entre&nbsp;o&nbsp;parque ao&nbsp;ar livre e&nbsp;a&nbsp;sala, com&nbsp;tendas, almofadas e&nbsp;brinquedos, há sempre um&nbsp;canto para&nbsp;brincar, descansar ou&nbsp;inventar uma&nbsp;nova aventura.</p>
       <figure class="ge-foto ge-abertura__grande"><img src="assets/img/clubs/kids/editorial/sala-grande.jpg" alt="Tendas, guarda-sóis e mesa de pingue-pongue no parque do Kids Club" loading="lazy"></figure>
     </div>
   </section>
@@ -144,7 +144,7 @@
     <h2>Outros clubes</h2>
     <ul>
       <li><a href="beach-club.html"><img src="assets/img/clubs/beach-club-aerea-vertical.jpg" alt="" style="object-position: 50% 15%" loading="lazy"><img class="outras__logo" style="--h: 88" src="assets/img/clubs/logos/beach-club-nome.svg" alt="Beach Club"></a></li>
-      <li><a href="wellness.html"><img src="assets/img/clubs/wellness-club-piscina.jpg" alt="" style="object-position: 50% 55%" loading="lazy"><img class="outras__logo" style="--h: 88" src="assets/img/clubs/logos/wellness-club-nome.svg" alt="Wellness Club"></a></li>
+      <li><a href="wellness.html"><img src="assets/img/clubs/wellness-club-render-piscina.jpg" alt="" style="object-position: 50% 55%" loading="lazy"><img class="outras__logo" style="--h: 88" src="assets/img/clubs/logos/wellness-club-nome.svg" alt="Wellness Club"></a></li>
       <li><a href="racket-club.html"><img src="assets/img/clubs/racket-club-campo-relva.jpg" alt="" style="object-position: 50% 60%" loading="lazy"><img class="outras__logo" style="--h: 88" src="assets/img/clubs/logos/racket-club-nome.svg" alt="Racket Club"></a></li>
     </ul>
   </section>
@@ -248,12 +248,15 @@
   <li class="painel__item tem-sub">
     <div class="painel__linha"><a href="suites-residencias.html" data-categoria="suites-residencias">Suítes &amp;&nbsp;Residências</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-suites-residencias"><span class="sr-only">Submenu Suítes &amp;&nbsp;Residências</span></button></div>
     <ul id="sub-suites-residencias" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item painel__favoritos"><a href="suites-residencias.html#favoritos">Os&nbsp;favoritos</a></li>
+    <li class="painel__grupo">Suítes</li>
     <li class="painel__item"><a href="elegant-suite.html">Elegant Suite</a></li>
     <li class="painel__item"><a href="master-suite.html">Master Suite</a></li>
     <li class="painel__item"><a href="ocean-suite.html">Ocean Suite</a></li>
     <li class="painel__item"><a href="grand-suite.html">Grand Suite</a></li>
     <li class="painel__item"><a href="george-ansley-suite.html">George Ansley Suite</a></li>
     <li class="painel__item"><a href="jose-de-harry-suite.html">José de&nbsp;Harry Suite</a></li>
+    <li class="painel__grupo">Residências</li>
     <li class="painel__item"><a href="private-residences.html">Private Residences</a></li>
     <li class="painel__item"><a href="casa-laranjo.html">Casa Laranjo</a></li>
     <li class="painel__item"><a href="casa-levy.html">Casa Levy</a></li>
@@ -266,7 +269,7 @@
     <li class="painel__item"><a href="coral.html">Coral</a></li>
     <li class="painel__item"><a href="raizes.html">Raízes</a></li>
     <li class="painel__item"><a href="trattoria.html">Trattoria</a></li>
-    <li class="painel__item"><a href="a-costa.html">A-costa</a></li>
+    <li class="painel__item"><a href="a-costa.html"><span class="sem-quebra">A-costa</span></a></li>
     <li class="painel__item"><a href="vento.html">Vento</a></li>
     <li class="painel__item"><a href="gaivotas.html">Gaivotas</a></li>
     </ul>
@@ -292,7 +295,7 @@
       <ul id="sub-programas" hidden class="painel__sub painel__sub--n3">
       <li class="painel__item"><a href="programa-thalassotherapy-healing.html">Thalassotherapy Healing</a></li>
       <li class="painel__item"><a href="programa-fitness-essence.html">Fitness Essence</a></li>
-      <li class="painel__item"><a href="programa-bespoke-anti-ageing-retreat.html">Bespoke Anti-ageing Retreat</a></li>
+      <li class="painel__item"><a href="programa-bespoke-anti-ageing-retreat.html">Bespoke <span class="sem-quebra">Anti-ageing</span> Retreat</a></li>
       <li class="painel__item"><a href="programa-stress-relief-recover.html">Stress Relief &amp;&nbsp;Recover</a></li>
       <li class="painel__item"><a href="programa-detox-weight-management.html">Detox &amp;&nbsp;Weight Management</a></li>
       </ul>
@@ -352,6 +355,6 @@
 </nav>
 <!-- /BLOCO: painel-menu -->
 
-<script src="assets/js/site.js?v=20261124q"></script>
+<script src="assets/js/site.js?v=20261126e"></script>
 </body>
 </html>

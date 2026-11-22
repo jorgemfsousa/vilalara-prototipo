@@ -144,7 +144,7 @@
 .menu-categorias a {
   display: block;
   padding-block: 6px;
-  font-size: var(--tam-menu);
+  font-size: 0.75rem;                  /* 12px — menu da home, ligeiramente maior que --tam-menu (11px) */
   font-weight: 400;
   letter-spacing: var(--espaco-letras-menu);
   text-transform: uppercase;
@@ -382,7 +382,7 @@ html:has(.home-slides) { scroll-snap-type: y mandatory; }
   transition: text-decoration-color var(--duracao) var(--curva);
 }
 .painel__menu > ul > li > a,
-.painel__menu > ul > li > .painel__linha > a { font-size: 0.75rem; }   /* 1.º nível maior que os submenus (12px > 11px; 3.º nível 12px em minúsculas) */
+.painel__menu > ul > li > .painel__linha > a { font-size: 0.8125rem; }   /* 1.º nível maior que os submenus (13px > 11px; 3.º nível 12px em minúsculas); era 12px (2026-11-22) */
 .painel a:hover,
 .painel a[aria-current="page"] { text-decoration-color: currentColor; }
 
@@ -495,7 +495,7 @@ html:has(.home-slides) { scroll-snap-type: y mandatory; }
 .rodape__logo, .rodape__morada { margin: 0; }
 /* os selos ficam centrados na linha do copyright (mesma altura de linha e mesma margem de baixo) */
 .rodape__selos { align-self: stretch; display: flex; justify-content: center; align-items: center; height: calc(0.625rem * 1.45); margin-bottom: clamp(16px, 1.3vw, 26px); }   /* os selos sobem um pouco acima da linha do copyright */
-.rodape__selos-faixa { position: relative; display: block; width: min(100%, 400px); line-height: 0; }
+.rodape__selos-faixa { position: relative; display: block; width: min(100%, 520px);   /* 400 → 520px: os selos mais pequenos (XO, Michelin, Takumians) passam a ler-se (2026-11-21) */ line-height: 0; }
 .rodape__selos img { width: 100%; height: auto; opacity: 0.9; }
 /* cada logo de parceiro é uma ligação: zonas transparentes por cima da imagem (posição em % da largura) */
 .rodape__selo { position: absolute; top: 0; bottom: 0; }
@@ -3371,7 +3371,7 @@ html .cab-interior.cab--escuro .botao-link { --b-cor: var(--cor-preto-90); --b-i
   --folga-logos: clamp(24px, 4svh, 48px);
   --logo-extra: clamp(16px, 3svh, 32px);   /* os logos crescem só para cima: a foto e o texto não mexem */
   --altura-foto: min(41.7vw, calc(100svh - var(--altura-barra) - var(--logo-h) - var(--folga-logos) - var(--margem-baixo) - 8px));
-  margin-top: calc(-1 * var(--altura-barra) - 30px);   /* o espaço da barra já está no fim da introdução */
+  margin-top: calc(-1 * var(--altura-barra) + 10px);   /* o espaço da barra já está no fim da introdução; +40px de folga entre o texto e os logos (2026-11-21) */
 }
 .tipologias--clubes .tipologias__palco { justify-content: flex-start; gap: var(--folga-logos); padding-top: calc(var(--altura-barra) + 8px - var(--logo-extra)); }
 .separadores--clubes { justify-content: center; align-items: flex-end; gap: clamp(48px, 12vw, 220px); }
@@ -3630,16 +3630,6 @@ html .cab-interior.cab--escuro .botao-link { --b-cor: var(--cor-preto-90); --b-i
   .historia--destaque .historia__foto { aspect-ratio: 4 / 5; }
 }
 
-/* Véu escuro e suave por trás do título do banner (fotos muito claras, ex.: Kayak Tours).
-   Usar acrescentando a classe "landing--veu" à <section class="slide landing ...">. */
-.landing--veu .slide__media::after {
-  content: "";
-  position: absolute;
-  inset: 0 0 14% 0;   /* o mesmo ecrã visível (a figura tem 14% a mais em baixo) */
-  background: radial-gradient(ellipse 48% 34% at 50% 52%, rgba(10, 20, 30, 0.42), rgba(10, 20, 30, 0.18) 55%, rgba(10, 20, 30, 0) 80%);
-  pointer-events: none;
-}
-
 /* Histórias: filtro por tema (revista) */
 .historias-filtro {
   display: flex; flex-wrap: wrap; justify-content: center; gap: 6px clamp(18px, 2.4vw, 40px);
@@ -3692,11 +3682,6 @@ html .cab-interior.cab--escuro .botao-link { --b-cor: var(--cor-preto-90); --b-i
 .mais-historias > .intro__titulo .intro__script { align-self: center; }
 .mais-historias .historias { padding-inline: 0; }
 @media (max-width: 700px) { .artigo__foto { margin-inline: 0; } }
-/* véu mais forte, para fotos muito coloridas (ex.: Histórias) */
-.landing--veu-forte .slide__media::after {
-  background: radial-gradient(ellipse 42% 30% at 50% 50%, rgba(15, 10, 5, 0.62), rgba(15, 10, 5, 0.3) 55%, rgba(15, 10, 5, 0.08) 85%);
-}
-
 /* =================================================================
    BLOCO: revista (página Histórias · composição editorial)
    ================================================================= */
@@ -4122,3 +4107,174 @@ body { background: var(--cor-fundo); overscroll-behavior-y: none; }
 /* Transição home → página com título no banner (Our Heritage): o véu escuro entra suavemente */
 .veu-a-entrar .slide__media::after { animation: veu-entra 900ms var(--curva) both; }
 @keyframes veu-entra { from { opacity: 0; } to { opacity: 1; } }
+
+/* Menu lateral · Suítes & Residências: etiquetas de grupo (Suítes / Residências) a separar as tipologias */
+.painel__sub > .painel__grupo {
+  margin-top: 0.3rem;
+  font-size: 0.5625rem;                /* 9px, abaixo dos itens (11px) */
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cor-texto-suave);
+  opacity: 0.85;
+  pointer-events: none;
+}
+/* "Os favoritos": link com a mesma letra das etiquetas Suítes / Residências */
+.painel__sub > .painel__favoritos > a {
+  font-size: 0.5625rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--cor-texto-suave);
+  opacity: 0.85;
+}
+.painel__sub > .painel__favoritos > a:hover { opacity: 1; color: var(--cor-menu); }
+/* Submenus do painel: altura de linha justa ao texto (antes herdava 24px do corpo e os itens ficavam afastados) */
+.painel ul.painel__sub > li { line-height: 1rem; }
+/* Suítes & Residências: nomes dos quartos ligeiramente recuados em relação às etiquetas Suítes / Residências */
+#sub-suites-residencias > .painel__item:not(.painel__favoritos) { padding-left: 18px; }
+
+/* Histórias e 60.º Aniversário: as capas vão de margem a margem da página (sem a margem lateral);
+   o texto continua alinhado com a margem do resto da página */
+.revista__composicao > .rv-capa { margin-inline: calc(-1 * var(--margem-lateral)); }
+.revista__composicao > .rv-capa .rv--capa .rv__texto { padding-left: var(--margem-lateral); }
+.revista__composicao > .rv-capa--inverso .rv--capa .rv__texto { padding-left: clamp(24px, 3vw, 48px); padding-right: var(--margem-lateral); }
+.revista__composicao > .rv-capa--com-chefs .rv__chefs { padding-inline: var(--margem-lateral); }
+@media (max-width: 900px) {
+  .revista__composicao > .rv-capa .rv--capa .rv__texto,
+  .revista__composicao > .rv-capa--inverso .rv--capa .rv__texto { padding-inline: var(--margem-lateral); }
+}
+
+/* Heros sem sombra atrás do título (pedido 2026-11-21): nas fotos claras, a foto inteira fica
+   um pouco mais escura, por igual, para o título branco se ler. Classe "landing--escurecida". */
+.landing--escurecida .slide__media::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 14% 0;   /* o mesmo ecrã visível (a figura tem 14% a mais em baixo) */
+  background: rgba(10, 12, 15, 0.22);
+  pointer-events: none;
+}
+
+/* Thalasso (60.º Aniversário): em vez do cartão sobre a foto, foto à esquerda e texto simples ao lado,
+   fora da imagem e sem fundo (menos mistura de layouts na página; pedido 2026-11-21) */
+.rv-imersiva { padding-bottom: 0; }
+.rv--imersiva { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); column-gap: var(--rv-vao); align-items: end; }
+.rv--imersiva .rv__foto { aspect-ratio: 4 / 3; overflow: hidden; }
+.rv--imersiva .rv__foto img { width: 100%; height: 100%; object-fit: cover; }
+.rv--imersiva .rv__texto { position: static; width: auto; padding: 0; background: none; }
+@media (max-width: 900px) {
+  .rv--imersiva { grid-template-columns: minmax(0, 1fr); row-gap: 20px; }
+}
+
+/* Blocos informativos (Sustentabilidade, Carreiras): o título alinha com o topo da foto e o texto com a base */
+@media (min-width: 901px) {
+  .destaque { align-items: stretch; }
+  .destaque__texto { display: flex; flex-direction: column; }
+  .destaque__texto > h3 { margin-bottom: auto; }
+}
+
+/* Tipografia: palavras com hífen nunca partem entre linhas (ex.: anti-envelhecimento, bem-estar) */
+.sem-quebra { white-space: nowrap; }
+
+/* =================================================================
+   BLOCO: pilha de fotos (Our Heritage · "De 1966 até hoje", 2026-11-21)
+   As fotos começam empilhadas no centro (tamanhos e ângulos diferentes);
+   com o scroll afastam-se até ao seu lugar e o título aparece no meio.
+   --x / --y: centro final em % do palco · --w: largura em vw · --r: rotação inicial.
+   O movimento é calculado em site.js (variável --p de 0 a 1 em cada foto).
+   ================================================================= */
+.pilha { position: relative; height: 340svh; }
+.pilha__palco { position: sticky; top: 0; height: 100svh; overflow: hidden; }
+.pilha__foto {
+  --p: 0; --cx: var(--x); --cy: var(--y);
+  position: absolute; left: calc(var(--cx) * 1%); top: calc(var(--cy) * 1%);
+  width: calc(var(--w) * 1vw); margin: 0; z-index: calc(20 - var(--ordem));
+  transform:
+    translate(-50%, -50%)
+    translate(calc((50 - var(--cx)) * (1 - var(--p)) * 1vw), calc((50 - var(--cy)) * (1 - var(--p)) * 1svh))
+    rotate(calc(var(--r) * (1 - var(--p))))
+    scale(calc(1.7 - 0.7 * var(--p)));   /* empilhadas são maiores; abertas ficam no tamanho final */
+  will-change: transform;
+}
+.pilha__foto img { display: block; width: 100%; height: auto; }
+.pilha__titulo {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 30; margin: 0;
+  display: grid; justify-items: center; text-align: center; white-space: nowrap;
+  font-family: var(--fonte-titulos); font-weight: 500; text-transform: uppercase; letter-spacing: 0.02em;
+  font-size: clamp(2rem, 1rem + 2.6vw, 3.6rem); line-height: 1; color: var(--cor-titulos);
+  opacity: var(--titulo, 0);
+}
+.pilha__titulo .intro__script { text-transform: none; font-size: var(--tam-script); margin-top: -0.05em; }
+
+/* telemóvel: as fotos ficam maiores e o palco mais alto, para cada uma se ver bem */
+@media (max-width: 700px) {
+  .pilha { height: 300svh; }
+  .pilha__foto { --cx: var(--xm); --cy: var(--ym); width: calc(var(--wm) * 1.08vw); }   /* posições próprias: 6 fotos por cima e 6 por baixo do título */
+  .pilha__titulo { font-size: 1.9rem; }
+}
+/* sem animação: as fotos já abertas e o título visível */
+@media (prefers-reduced-motion: reduce) {
+  .pilha { height: auto; }
+  .pilha__palco { position: relative; }
+  .pilha__foto { --p: 1 !important; }
+  .pilha__titulo { opacity: 1; }
+}
+
+/* Transição para as páginas em formato de revista (60.º Aniversário, Histórias, 2026-11-21):
+   a foto do hero encolhe até ao selo/título; por trás, o topo da página de destino já no lugar certo */
+.transicao-revista { position: fixed; inset: 0; z-index: 9000; background: var(--cor-fundo); overflow: hidden; }
+.transicao-revista .cab-interior { position: absolute; }
+.transicao-revista__foto { position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; z-index: 9001; object-fit: cover; pointer-events: none; }
+/* ao chegar por esta transição, o topo da página já está visível (sem animações de entrada) */
+html.chegada-revista .revista-topo > * { animation: none !important; transition: none !important; opacity: 1 !important; transform: none !important; }
+
+/* Vídeo da home: o iPhone (modo de poupança de energia) não arranca o vídeo sozinho e mostra
+   um botão de play por cima — escondido; fica o 1.º fotograma do vídeo, parado */
+.slide__video::-webkit-media-controls,
+.slide__video::-webkit-media-controls-start-playback-button,
+.slide__video::-webkit-media-controls-overlay-play-button { display: none !important; -webkit-appearance: none; opacity: 0; }
+.slide__video { background: #0f1f1c; }
+
+/* BLOCO: convite — bloco central com título, frase e botão (fim do Our Heritage, 2026-11-22);
+   o mesmo desenho do convite da newsletter nas Histórias */
+.convite {
+  display: grid; justify-items: center; text-align: center; gap: clamp(18px, 2vw, 28px);
+  margin: clamp(60px, 7vw, 120px) var(--margem-lateral) clamp(100px, 12vw, 180px);
+  padding: clamp(60px, 7vw, 110px) var(--margem-lateral);
+  border-top: 1px solid var(--cor-linha); border-bottom: 1px solid var(--cor-linha);
+}
+.convite .intro__titulo { padding: 0; margin: 0; display: grid; justify-items: center; text-align: center; }
+.convite .intro__script { align-self: center; justify-self: center; }
+.convite p { margin: 0; max-width: 44ch; font-weight: 300; color: var(--cor-preto-70); }
+
+/* Barra interior: cada elemento tem a sua cor, conforme o fundo por baixo dele (zonas mistas) */
+html .cab-interior .parte--claro { color: var(--cor-sobre-foto); }
+html .cab-interior .parte--escuro { color: var(--cor-preto-90); }
+html .cab-interior .cab-interior__monograma.parte--claro img { filter: brightness(0) invert(1); opacity: 1; }
+html .cab-interior .cab-interior__monograma.parte--escuro img { filter: brightness(0); opacity: 0.85; }
+html .cab-interior .botao-link.parte--claro { --b-cor: var(--cor-sobre-foto); --b-inverso: var(--cor-quase-preto); }
+html .cab-interior .botao-link.parte--escuro { --b-cor: var(--cor-preto-90); --b-inverso: #fff; }
+.cab-interior .botao-menu, .cab-interior .idioma__botao, .cab-interior .botao-link { transition: color 350ms var(--curva); }
+
+/* Títulos dos banners em duas linhas com o "&" na letra script (ex.: As nossas Suítes / & Residências) */
+.hero-quarto__titulo > span:not(.intro__script) { display: block; }
+.titulo-e { font-family: var(--fonte-destaque); font-weight: 400; text-transform: none; font-size: 0.75em; line-height: 0; }
+
+/* Clubes (Racket, Beach, Kids): o título passa para o hero, por baixo do logótipo (2026-11-22) */
+.hero-restaurante .hero-clube__titulo { color: var(--cor-sobre-foto); margin-top: calc(-1 * clamp(10px, 2vh, 24px)); }
+
+/* Experiência (2026-11-22): título todo em Optima e só uma palavra em script (ex.: Clubs → "criar") */
+.titulo-palavra { font-family: var(--fonte-destaque); font-weight: 400; text-transform: none; font-size: 0.95em; line-height: 0; letter-spacing: 0; margin-right: 0.08em; }
+
+/* Blocos em vidro (equipamento, "Indicado para", programas…): espaçamento mais compacto para o painel
+   caber no ecrã, sem mudar a estrutura (2026-11-22) */
+.indicado-vidro { padding-block: clamp(56px, 6vw, 96px); }
+.indicado-vidro__painel { padding: clamp(32px, 3.6vw, 64px); }
+.indicado-vidro__lista li { padding: clamp(9px, 0.9vw, 13px) 0; line-height: 1.2; }
+.indicado-vidro__tipo { margin-bottom: 2px; }
+.indicado-vidro__lista .indicado-vidro__novo-grupo { margin-top: clamp(22px, 2.2vw, 36px); }
+.indicado-vidro--equipamento .indicado-vidro__lista { row-gap: clamp(26px, 2.8vw, 44px); }
+
+/* Menu lateral, 1.º nível: um pouco mais de espaço entre categorias (8,8 → 14px) e a mesma altura
+   para todas (as que têm seta ficavam 4px mais juntas) — 2026-11-22 */
+.painel .painel__menu > ul { gap: 0.875rem; }
+.painel__menu > ul > li > .painel__linha { min-height: 24px; }

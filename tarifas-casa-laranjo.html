@@ -11,9 +11,9 @@
 <link rel="stylesheet" href="https://use.typekit.net/oav4umc.css"><!-- Adobe Fonts: Optima nova + Richmond Display (projeto "Vilalara site prototipo") -->
 <link rel="stylesheet" href="https://use.typekit.net/ozg0foo.css"><!-- Adobe Fonts: Fact VF (projeto "Vilalara site prototipo Fact") -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.css">
-<link rel="stylesheet" href="assets/css/tokens.css?v=20261124q">
-<link rel="stylesheet" href="assets/css/base.css?v=20261124q">
-<link rel="stylesheet" href="assets/css/blocos.css?v=20261124q">
+<link rel="stylesheet" href="assets/css/tokens.css?v=20261126e">
+<link rel="stylesheet" href="assets/css/base.css?v=20261126e">
+<link rel="stylesheet" href="assets/css/blocos.css?v=20261126e">
 </head>
 <body>
 
@@ -62,7 +62,7 @@
     <div class="tarifas-topo__texto">
       <a class="tarifas-topo__voltar" href="reservas.html#alojamentos">Todos os&nbsp;alojamentos</a>
       <h1 id="tarifas-nome">Casa Laranjo</h1>
-      <p>83 m² recentemente renovados, com&nbsp;dois quartos com&nbsp;casa de&nbsp;banho e&nbsp;uma&nbsp;varanda de&nbsp;54 m² sobre os&nbsp;jardins.</p>
+      <p>83 m² recentemente renovados, com&nbsp;dois quartos com&nbsp;casa de&nbsp;banho e&nbsp;uma&nbsp;varanda de&nbsp;54 m² sobre&nbsp;os&nbsp;jardins.</p>
       <dl class="caracteristicas caracteristicas--tarifas">
     <div><dt>Área interior</dt><dd>83 m²</dd></div>
     <div><dt>Área exterior</dt><dd>54 m²</dd></div>
@@ -91,7 +91,7 @@
     <div class="tarifas__lista">
       <div class="tarifa tarifa--indisponivel">
         <div class="tarifa__info">
-          <h3>Sem disponibilidade para&nbsp;estas datas</h3>
+          <h3>Sem&nbsp;disponibilidade para&nbsp;estas datas</h3>
           <p class="tarifa__meta">13 – 14 nov. 2026 · 2 adultos</p>
           <p>Escolha outras datas ou&nbsp;fale com&nbsp;a&nbsp;nossa equipa de&nbsp;reservas: <a href="tel:+351282320000">+351&nbsp;282&nbsp;320&nbsp;000</a> · <a href="mailto:reservas@vilalara.com">reservas@vilalara.com</a></p>
         </div>
@@ -110,7 +110,7 @@
     <div>
       <h2>No&nbsp;alojamento</h2>
       <ul>
-        <li>Wi-Fi gratuito no&nbsp;quarto e&nbsp;em&nbsp;todas as&nbsp;áreas públicas</li>
+        <li><span class="sem-quebra">Wi-Fi</span> gratuito no&nbsp;quarto e&nbsp;em&nbsp;todas as&nbsp;áreas públicas</li>
         <li>Chaleira e&nbsp;máquina de&nbsp;café Nespresso, com&nbsp;cápsulas, açúcar e&nbsp;leite repostos todos os&nbsp;dias</li>
         <li>Minibar</li>
         <li>Banheira e&nbsp;duche de&nbsp;efeito chuva, com&nbsp;chuveiro de&nbsp;mão</li>
@@ -133,9 +133,9 @@
       <h2>Horário</h2>
       <ul>
         <li>Check&#8209;in a&nbsp;partir das&nbsp;16:00</li>
-        <li>Check&#8209;out até às&nbsp;11:00</li>
+        <li>Check&#8209;out até&nbsp;às&nbsp;11:00</li>
       </ul>
-      <p class="tarifas-info__nota">O&nbsp;tamanho, a&nbsp;decoração e&nbsp;a&nbsp;disposição podem variar entre alojamentos da&nbsp;mesma tipologia.</p>
+      <p class="tarifas-info__nota">O&nbsp;tamanho, a&nbsp;decoração e&nbsp;a&nbsp;disposição podem variar entre&nbsp;alojamentos da&nbsp;mesma tipologia.</p>
     </div>
   </section>
   <!-- /BLOCO: tarifas-info -->
@@ -236,12 +236,15 @@
   <li class="painel__item tem-sub">
     <div class="painel__linha"><a href="suites-residencias.html" data-categoria="suites-residencias">Suítes &amp;&nbsp;Residências</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-suites-residencias"><span class="sr-only">Submenu Suítes &amp;&nbsp;Residências</span></button></div>
     <ul id="sub-suites-residencias" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item painel__favoritos"><a href="suites-residencias.html#favoritos">Os&nbsp;favoritos</a></li>
+    <li class="painel__grupo">Suítes</li>
     <li class="painel__item"><a href="elegant-suite.html">Elegant Suite</a></li>
     <li class="painel__item"><a href="master-suite.html">Master Suite</a></li>
     <li class="painel__item"><a href="ocean-suite.html">Ocean Suite</a></li>
     <li class="painel__item"><a href="grand-suite.html">Grand Suite</a></li>
     <li class="painel__item"><a href="george-ansley-suite.html">George Ansley Suite</a></li>
     <li class="painel__item"><a href="jose-de-harry-suite.html">José de&nbsp;Harry Suite</a></li>
+    <li class="painel__grupo">Residências</li>
     <li class="painel__item"><a href="private-residences.html">Private Residences</a></li>
     <li class="painel__item"><a href="casa-laranjo.html">Casa Laranjo</a></li>
     <li class="painel__item"><a href="casa-levy.html">Casa Levy</a></li>
@@ -254,7 +257,7 @@
     <li class="painel__item"><a href="coral.html">Coral</a></li>
     <li class="painel__item"><a href="raizes.html">Raízes</a></li>
     <li class="painel__item"><a href="trattoria.html">Trattoria</a></li>
-    <li class="painel__item"><a href="a-costa.html">A-costa</a></li>
+    <li class="painel__item"><a href="a-costa.html"><span class="sem-quebra">A-costa</span></a></li>
     <li class="painel__item"><a href="vento.html">Vento</a></li>
     <li class="painel__item"><a href="gaivotas.html">Gaivotas</a></li>
     </ul>
@@ -280,7 +283,7 @@
       <ul id="sub-programas" hidden class="painel__sub painel__sub--n3">
       <li class="painel__item"><a href="programa-thalassotherapy-healing.html">Thalassotherapy Healing</a></li>
       <li class="painel__item"><a href="programa-fitness-essence.html">Fitness Essence</a></li>
-      <li class="painel__item"><a href="programa-bespoke-anti-ageing-retreat.html">Bespoke Anti-ageing Retreat</a></li>
+      <li class="painel__item"><a href="programa-bespoke-anti-ageing-retreat.html">Bespoke <span class="sem-quebra">Anti-ageing</span> Retreat</a></li>
       <li class="painel__item"><a href="programa-stress-relief-recover.html">Stress Relief &amp;&nbsp;Recover</a></li>
       <li class="painel__item"><a href="programa-detox-weight-management.html">Detox &amp;&nbsp;Weight Management</a></li>
       </ul>
@@ -341,7 +344,7 @@
 <!-- /BLOCO: painel-menu -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.js"></script>
-<script src="assets/js/mapa.js?v=20261124q"></script>
-<script src="assets/js/site.js?v=20261124q"></script>
+<script src="assets/js/mapa.js?v=20261126e"></script>
+<script src="assets/js/site.js?v=20261126e"></script>
 </body>
 </html>

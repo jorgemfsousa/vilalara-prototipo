@@ -10,9 +10,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&family=Marcellus&family=Pinyon+Script&display=swap">
 <link rel="stylesheet" href="https://use.typekit.net/oav4umc.css"><!-- Adobe Fonts: Optima nova + Richmond Display (projeto "Vilalara site prototipo") -->
 <link rel="stylesheet" href="https://use.typekit.net/ozg0foo.css"><!-- Adobe Fonts: Fact VF (projeto "Vilalara site prototipo Fact") -->
-<link rel="stylesheet" href="assets/css/tokens.css?v=20261124q">
-<link rel="stylesheet" href="assets/css/base.css?v=20261124q">
-<link rel="stylesheet" href="assets/css/blocos.css?v=20261124q">
+<link rel="stylesheet" href="assets/css/tokens.css?v=20261126e">
+<link rel="stylesheet" href="assets/css/base.css?v=20261126e">
+<link rel="stylesheet" href="assets/css/blocos.css?v=20261126e">
 </head>
 <body>
 
@@ -62,6 +62,7 @@
     </figure>
     <div class="hero-quarto__texto hero-restaurante">
       <h1><img class="hero-restaurante__logo hero-restaurante__logo--clube" src="assets/img/clubs/logos/beach-club-nome.svg" alt="Beach Club" width="100" height="166"></h1>
+      <p class="hero-quarto__titulo hero-clube__titulo">Embrace <span class="intro__script">o&nbsp;oásis</span></p>
     </div>
     <a class="seta-scroll" href="#sobre" aria-label="Descer para a apresentação">
       <svg viewBox="0 0 14 32" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M7 0v31M1 25l6 6 6-6"/></svg>
@@ -73,8 +74,7 @@
 
 
   <!-- BLOCO: intro-categoria -->
-  <section class="intro" id="sobre">
-    <h2 class="intro__titulo">Embrace<br><span class="intro__script" style="white-space: nowrap">o&nbsp;oásis</span></h2>
+  <section class="intro intro--sem-titulo" id="sobre">
     <p class="intro__texto">Comece o&nbsp;dia com&nbsp;uma&nbsp;meditação ao&nbsp;nascer do&nbsp;sol ou&nbsp;termine a&nbsp;noite a&nbsp;passear pela&nbsp;areia ao&nbsp;luar. O&nbsp;Beach Club é&nbsp;o&nbsp;local ideal para&nbsp;aqueles que&nbsp;têm uma&nbsp;profunda afinidade com&nbsp;o&nbsp;oceano, independentemente das&nbsp;suas&nbsp;preferências.</p>
   </section>
   <!-- /BLOCO: intro-categoria -->
@@ -83,7 +83,7 @@
   <dl class="caracteristicas">
     <div><dt>Aberto</dt><dd>Sazonalmente</dd></div>
     <div><dt>Horário</dt><dd>09h00 – 19h00</dd></div>
-    <div><dt>Espreguiçadeiras</dt><dd>e&nbsp;guarda-sóis</dd></div>
+    <div><dt>Espreguiçadeiras</dt><dd>e&nbsp;<span class="sem-quebra">guarda-sóis</span></dd></div>
     <div><dt>Cocktails e&nbsp;refeições leves</dt><dd>Disponíveis na&nbsp;praia</dd></div>
   </dl>
   <!-- /BLOCO: caracteristicas -->
@@ -135,7 +135,7 @@
   <section class="outras outras--restaurantes outras--clubes outras--compacto outras--largo" aria-label="Outros clubes">
     <h2>Outros clubes</h2>
     <ul>
-      <li><a href="wellness.html"><img src="assets/img/clubs/wellness-club-piscina.jpg" alt="" style="object-position: 50% 55%" loading="lazy"><img class="outras__logo" style="--h: 88" src="assets/img/clubs/logos/wellness-club-nome.svg" alt="Wellness Club"></a></li>
+      <li><a href="wellness.html"><img src="assets/img/clubs/wellness-club-render-piscina.jpg" alt="" style="object-position: 50% 55%" loading="lazy"><img class="outras__logo" style="--h: 88" src="assets/img/clubs/logos/wellness-club-nome.svg" alt="Wellness Club"></a></li>
       <li><a href="racket-club.html"><img src="assets/img/clubs/racket-club-campo-relva.jpg" alt="" style="object-position: 50% 60%" loading="lazy"><img class="outras__logo" style="--h: 88" src="assets/img/clubs/logos/racket-club-nome.svg" alt="Racket Club"></a></li>
       <li><a href="kids-club.html"><img src="assets/img/clubs/kids-club-parque.jpg" alt="" style="object-position: 50% 55%" loading="lazy"><img class="outras__logo" style="--h: 88" src="assets/img/clubs/logos/kids-club-nome.svg" alt="Kids Club"></a></li>
     </ul>
@@ -240,12 +240,15 @@
   <li class="painel__item tem-sub">
     <div class="painel__linha"><a href="suites-residencias.html" data-categoria="suites-residencias">Suítes &amp;&nbsp;Residências</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-suites-residencias"><span class="sr-only">Submenu Suítes &amp;&nbsp;Residências</span></button></div>
     <ul id="sub-suites-residencias" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item painel__favoritos"><a href="suites-residencias.html#favoritos">Os&nbsp;favoritos</a></li>
+    <li class="painel__grupo">Suítes</li>
     <li class="painel__item"><a href="elegant-suite.html">Elegant Suite</a></li>
     <li class="painel__item"><a href="master-suite.html">Master Suite</a></li>
     <li class="painel__item"><a href="ocean-suite.html">Ocean Suite</a></li>
     <li class="painel__item"><a href="grand-suite.html">Grand Suite</a></li>
     <li class="painel__item"><a href="george-ansley-suite.html">George Ansley Suite</a></li>
     <li class="painel__item"><a href="jose-de-harry-suite.html">José de&nbsp;Harry Suite</a></li>
+    <li class="painel__grupo">Residências</li>
     <li class="painel__item"><a href="private-residences.html">Private Residences</a></li>
     <li class="painel__item"><a href="casa-laranjo.html">Casa Laranjo</a></li>
     <li class="painel__item"><a href="casa-levy.html">Casa Levy</a></li>
@@ -258,7 +261,7 @@
     <li class="painel__item"><a href="coral.html">Coral</a></li>
     <li class="painel__item"><a href="raizes.html">Raízes</a></li>
     <li class="painel__item"><a href="trattoria.html">Trattoria</a></li>
-    <li class="painel__item"><a href="a-costa.html">A-costa</a></li>
+    <li class="painel__item"><a href="a-costa.html"><span class="sem-quebra">A-costa</span></a></li>
     <li class="painel__item"><a href="vento.html">Vento</a></li>
     <li class="painel__item"><a href="gaivotas.html">Gaivotas</a></li>
     </ul>
@@ -284,7 +287,7 @@
       <ul id="sub-programas" hidden class="painel__sub painel__sub--n3">
       <li class="painel__item"><a href="programa-thalassotherapy-healing.html">Thalassotherapy Healing</a></li>
       <li class="painel__item"><a href="programa-fitness-essence.html">Fitness Essence</a></li>
-      <li class="painel__item"><a href="programa-bespoke-anti-ageing-retreat.html">Bespoke Anti-ageing Retreat</a></li>
+      <li class="painel__item"><a href="programa-bespoke-anti-ageing-retreat.html">Bespoke <span class="sem-quebra">Anti-ageing</span> Retreat</a></li>
       <li class="painel__item"><a href="programa-stress-relief-recover.html">Stress Relief &amp;&nbsp;Recover</a></li>
       <li class="painel__item"><a href="programa-detox-weight-management.html">Detox &amp;&nbsp;Weight Management</a></li>
       </ul>
@@ -344,6 +347,6 @@
 </nav>
 <!-- /BLOCO: painel-menu -->
 
-<script src="assets/js/site.js?v=20261124q"></script>
+<script src="assets/js/site.js?v=20261126e"></script>
 </body>
 </html>

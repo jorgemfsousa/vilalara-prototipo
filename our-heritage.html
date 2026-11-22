@@ -10,9 +10,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&family=Marcellus&family=Pinyon+Script&display=swap">
 <link rel="stylesheet" href="https://use.typekit.net/oav4umc.css"><!-- Adobe Fonts: Optima nova + Richmond Display (projeto "Vilalara site prototipo") -->
 <link rel="stylesheet" href="https://use.typekit.net/ozg0foo.css"><!-- Adobe Fonts: Fact VF (projeto "Vilalara site prototipo Fact") -->
-<link rel="stylesheet" href="assets/css/tokens.css?v=20261124q">
-<link rel="stylesheet" href="assets/css/base.css?v=20261124q">
-<link rel="stylesheet" href="assets/css/blocos.css?v=20261124q">
+<link rel="stylesheet" href="assets/css/tokens.css?v=20261126e">
+<link rel="stylesheet" href="assets/css/base.css?v=20261126e">
+<link rel="stylesheet" href="assets/css/blocos.css?v=20261126e">
 </head>
 <body>
 
@@ -72,26 +72,27 @@
 
   <!-- BLOCO: intro-categoria -->
   <section class="intro intro--sem-titulo" id="historia">
-    <p class="intro__texto">Descubra a&nbsp;história do&nbsp;Vilalara Grand Hotel. Uma&nbsp;história de&nbsp;visão, elegância e&nbsp;transformação que&nbsp;tornou este resort num dos&nbsp;mais emblemáticos e&nbsp;exclusivos do&nbsp;Algarve. Desde o&nbsp;seu&nbsp;início, até aos&nbsp;dias de&nbsp;hoje, o&nbsp;Vilalara tem sido um&nbsp;destino onde o&nbsp;luxo, a&nbsp;natureza e&nbsp;a&nbsp;história se&nbsp;unem para&nbsp;proporcionar a&nbsp;quem o&nbsp;visita uma&nbsp;experiência&nbsp;única.</p>
+    <p class="intro__texto">Descubra a&nbsp;história do&nbsp;Vilalara Grand Hotel. Uma&nbsp;história de&nbsp;visão, elegância e&nbsp;transformação que&nbsp;tornou este resort num&nbsp;dos&nbsp;mais emblemáticos e&nbsp;exclusivos do&nbsp;Algarve. Desde&nbsp;o&nbsp;seu&nbsp;início, até&nbsp;aos&nbsp;dias de&nbsp;hoje, o&nbsp;Vilalara tem sido um&nbsp;destino onde o&nbsp;luxo, a&nbsp;natureza e&nbsp;a&nbsp;história se&nbsp;unem para&nbsp;proporcionar a&nbsp;quem o&nbsp;visita uma&nbsp;experiência&nbsp;única.</p>
   </section>
   <!-- /BLOCO: intro-categoria -->
 
 
-  <!-- BLOCO: colagem-de-ate -->
-  <section class="colagem" aria-label="De 1966 até hoje">
-    <p class="colagem__etiqueta colagem__etiqueta--de">De&nbsp;1966</p>
-    <figure class="colagem__foto colagem__foto--1"><img src="assets/img/our-heritage/colagem-maqueta.jpg" alt="Maqueta original do Vilalara sobre a falésia" loading="lazy"></figure>
-    <figure class="colagem__foto colagem__foto--2"><img src="assets/img/our-heritage/colagem-piscina.jpg" alt="Piscina redonda do Vilalara nos primeiros anos, a preto e branco" loading="lazy"></figure>
-    <figure class="colagem__foto colagem__foto--3"><img src="assets/img/our-heritage/colagem-janela.jpg" alt="Hóspede à janela, com o jardim e o mar ao fundo, nos anos 70" loading="lazy"></figure>
-    <figure class="colagem__foto colagem__foto--4"><img src="assets/img/our-heritage/colagem-piscina-casal.jpg" alt="Hóspedes junto à piscina, numa fotografia do livro do Vilalara" loading="lazy"></figure>
-    <figure class="colagem__foto colagem__foto--5"><img src="assets/img/our-heritage/colagem-arcos.jpg" alt="Piscina e edifício com arcos" loading="lazy"></figure>
-    <figure class="colagem__foto colagem__foto--6"><img src="assets/img/our-heritage/colagem-bar.jpg" alt="Bar do Vilalara sob as abóbadas, à noite" loading="lazy"></figure>
-    <figure class="colagem__foto colagem__foto--7"><img src="assets/img/our-heritage/colagem-tenis-jogo.jpg" alt="Jogo de ténis nos campos do Vilalara" loading="lazy"></figure>
-    <figure class="colagem__foto colagem__foto--8"><img src="assets/img/our-heritage/colagem-jardim.jpg" alt="Hóspede a passear no jardim ao fim da tarde" loading="lazy"></figure>
-    <figure class="colagem__foto colagem__foto--9"><img src="assets/img/our-heritage/colagem-arco.jpg" alt="Terraço da piscina visto através de um arco" loading="lazy"></figure>
-    <p class="colagem__etiqueta colagem__etiqueta--ate">Até hoje</p>
+  <!-- BLOCO: pilha-de-fotos (Our Heritage) — empilhadas ao entrar; com o scroll afastam-se até cada uma ficar no seu lugar -->
+  <section class="pilha" aria-label="De 1966 até hoje" data-pilha>
+    <div class="pilha__palco">
+      <h2 class="pilha__titulo">De&nbsp;1966 <span class="intro__script">até hoje</span></h2>
+      <figure class="pilha__foto" style="--x: 14; --y: 30; --w: 18.4; --r: -7deg; --ordem: 0; --xm: 26; --ym: 15; --wm: 40;"><img src="assets/img/our-heritage/colagem-maqueta.jpg" alt="Maqueta original do Vilalara sobre a falésia" loading="lazy"></figure>
+      <figure class="pilha__foto" style="--x: 38; --y: 20; --w: 14.9; --r: 5deg; --ordem: 1; --xm: 74; --ym: 14; --wm: 36;"><img src="assets/img/our-heritage/colagem-piscina.jpg" alt="Piscina redonda do Vilalara nos primeiros anos, a preto e branco" loading="lazy"></figure>
+      <figure class="pilha__foto" style="--x: 63; --y: 21; --w: 17.2; --r: -4deg; --ordem: 2; --xm: 73; --ym: 26; --wm: 38;"><img src="assets/img/our-heritage/colagem-janela.jpg" alt="Hóspede à janela, com o jardim e o mar ao fundo, nos anos 70" loading="lazy"></figure>
+      <figure class="pilha__foto" style="--x: 87; --y: 28; --w: 13.8; --r: 8deg; --ordem: 3; --xm: 27; --ym: 27; --wm: 30;"><img src="assets/img/our-heritage/colagem-piscina-casal.jpg" alt="Hóspedes junto à piscina, numa fotografia do livro do Vilalara" loading="lazy"></figure>
+      <figure class="pilha__foto" style="--x: 12; --y: 57; --w: 17.2; --r: -10deg; --ordem: 4; --xm: 50; --ym: 38; --wm: 34;"><img src="assets/img/our-heritage/colagem-arcos.jpg" alt="Piscina e edifício com arcos" loading="lazy"></figure>
+      <figure class="pilha__foto" style="--x: 88; --y: 57; --w: 12.6; --r: 6deg; --ordem: 5; --xm: 73; --ym: 82; --wm: 30;"><img src="assets/img/our-heritage/colagem-arco.jpg" alt="Terraço da piscina visto através de um arco" loading="lazy"></figure>
+      <figure class="pilha__foto" style="--x: 22; --y: 83; --w: 16.1; --r: 4deg; --ordem: 6; --xm: 27; --ym: 64; --wm: 40;"><img src="assets/img/our-heritage/colagem-bar.jpg" alt="Bar do Vilalara sob as abóbadas, à noite" loading="lazy"></figure>
+      <figure class="pilha__foto" style="--x: 50; --y: 84; --w: 12.6; --r: -6deg; --ordem: 7; --xm: 74; --ym: 65; --wm: 30;"><img src="assets/img/our-heritage/colagem-tenis-jogo.jpg" alt="Jogo de ténis nos campos do Vilalara" loading="lazy"></figure>
+      <figure class="pilha__foto" style="--x: 78; --y: 83; --w: 14.9; --r: 9deg; --ordem: 8; --xm: 27; --ym: 82; --wm: 36;"><img src="assets/img/our-heritage/colagem-jardim.jpg" alt="Hóspede a passear no jardim ao fim da tarde" loading="lazy"></figure>
+    </div>
   </section>
-  <!-- /BLOCO: colagem-de-ate -->
+  <!-- /BLOCO: pilha-de-fotos -->
 
 
   <!-- BLOCO: linha-do-tempo -->
@@ -107,8 +108,8 @@
         <div class="lt-ano__texto">
           <h3 class="lt-ano__titulo"><span>Uma&nbsp;visão do&nbsp;mar</span><span>Sardenha portuguesa</span></h3>
           <p class="sr-only">1966</p>
-          <p>George Ansley, um&nbsp;visionário inglês, embarcou numa viagem de&nbsp;barco ao&nbsp;longo da&nbsp;costa algarvia e&nbsp;foi no&nbsp;meio destas deslumbrantes falésias da&nbsp;Praia das&nbsp;Gaivotas que&nbsp;descobriu um&nbsp;terreno de&nbsp;11 hectares que&nbsp;fez despertar a&nbsp;sua&nbsp;imaginação.</p>
-          <p>Inspirado pela&nbsp;beleza única da&nbsp;Costa Esmeralda da&nbsp;Sardenha, o&nbsp;visionário inglês projetou neste cenário a&nbsp;criação de&nbsp;um&nbsp;local de&nbsp;renome mundial, com&nbsp;moradias exclusivas e&nbsp;condições de&nbsp;excelência. Deste sonho nasceu o&nbsp;início da&nbsp;história do&nbsp;Vilalara.</p>
+          <p>George Ansley, um&nbsp;visionário inglês, embarcou numa&nbsp;viagem de&nbsp;barco ao&nbsp;longo da&nbsp;costa algarvia e&nbsp;foi no&nbsp;meio destas&nbsp;deslumbrantes falésias da&nbsp;Praia das&nbsp;Gaivotas que&nbsp;descobriu um&nbsp;terreno de&nbsp;11 hectares que&nbsp;fez despertar a&nbsp;sua&nbsp;imaginação.</p>
+          <p>Inspirado pela&nbsp;beleza única da&nbsp;Costa Esmeralda da&nbsp;Sardenha, o&nbsp;visionário inglês projetou neste&nbsp;cenário a&nbsp;criação de&nbsp;um&nbsp;local de&nbsp;renome mundial, com&nbsp;moradias exclusivas e&nbsp;condições de&nbsp;excelência. Deste&nbsp;sonho nasceu o&nbsp;início da&nbsp;história do&nbsp;Vilalara.</p>
         </div>
       </article>
       <!-- ANO 1967 -->
@@ -120,7 +121,7 @@
           <h3 class="lt-ano__titulo"><span>Um&nbsp;nome em&nbsp;honra</span><span>de&nbsp;Lara, a&nbsp;neta</span></h3>
           <p class="sr-only">1967</p>
           <p>O&nbsp;nome da&nbsp;propriedade, Vilalara, foi escolhido em&nbsp;homenagem ao&nbsp;nascimento da&nbsp;neta de&nbsp;George Ansley,&nbsp;Lara.</p>
-          <p>Com&nbsp;o&nbsp;seu&nbsp;novo nome, o&nbsp;Vilalara tornou-se um&nbsp;símbolo de&nbsp;família, amor e&nbsp;compromisso, transformando-se num destino de&nbsp;luxo intemporal que, ao&nbsp;longo do&nbsp;tempo, se&nbsp;estabeleceu como um&nbsp;dos&nbsp;destinos mais prestigiados da&nbsp;história do&nbsp;Algarve.</p>
+          <p>Com&nbsp;o&nbsp;seu&nbsp;novo nome, o&nbsp;Vilalara <span class="sem-quebra">tornou-se</span> um&nbsp;símbolo de&nbsp;família, amor e&nbsp;compromisso, <span class="sem-quebra">transformando-se</span> num&nbsp;destino de&nbsp;luxo intemporal que, ao&nbsp;longo do&nbsp;tempo, se&nbsp;estabeleceu como&nbsp;um&nbsp;dos&nbsp;destinos mais prestigiados da&nbsp;história do&nbsp;Algarve.</p>
         </div>
       </article>
       <!-- ANO 1968 -->
@@ -131,8 +132,8 @@
         <div class="lt-ano__texto">
           <h3 class="lt-ano__titulo"><span>O&nbsp;destino de&nbsp;elite</span><span>Santuário exclusivo</span></h3>
           <p class="sr-only">1968</p>
-          <p>Léon Levy, um&nbsp;empresário suíço com&nbsp;grande afinidade pelo&nbsp;luxo exclusivo, visitou o&nbsp;Vilalara e&nbsp;apaixonou-se imediatamente pela&nbsp;propriedade. Comprou-a dois anos mais tarde e&nbsp;transformou o&nbsp;Vilalara num clube privado para&nbsp;a&nbsp;elite&nbsp;mundial.</p>
-          <p>Sob a&nbsp;sua&nbsp;liderança, o&nbsp;prestígio do&nbsp;resort cresceu, atraindo celebridades, aristocratas e&nbsp;a&nbsp;alta sociedade de&nbsp;todo o&nbsp;mundo. O&nbsp;Vilalara deixou de&nbsp;ser apenas um&nbsp;alojamento, transformando-se num santuário escondido, perfeito para&nbsp;quem procurava privacidade e&nbsp;exclusividade.</p>
+          <p>Léon Levy, um&nbsp;empresário suíço com&nbsp;grande afinidade pelo&nbsp;luxo exclusivo, visitou o&nbsp;Vilalara e&nbsp;<span class="sem-quebra">apaixonou-se</span> imediatamente pela&nbsp;propriedade. <span class="sem-quebra">Comprou-a</span> dois anos mais tarde e&nbsp;transformou o&nbsp;Vilalara num&nbsp;clube privado para&nbsp;a&nbsp;elite&nbsp;mundial.</p>
+          <p>Sob&nbsp;a&nbsp;sua&nbsp;liderança, o&nbsp;prestígio do&nbsp;resort cresceu, atraindo celebridades, aristocratas e&nbsp;a&nbsp;alta sociedade de&nbsp;todo o&nbsp;mundo. O&nbsp;Vilalara deixou de&nbsp;ser apenas um&nbsp;alojamento, <span class="sem-quebra">transformando-se</span> num&nbsp;santuário escondido, perfeito para&nbsp;quem procurava privacidade e&nbsp;exclusividade.</p>
         </div>
       </article>
       <!-- ANO 1990 -->
@@ -141,10 +142,10 @@
           <img src="assets/img/our-heritage/1990-talassoterapia-centro.jpg" alt="Interior do centro de Talassoterapia do Vilalara" style="--foco: 45% 50%" loading="lazy">
         </figure>
         <div class="lt-ano__texto">
-          <h3 class="lt-ano__titulo"><span>Uma&nbsp;revolução no&nbsp;bem-estar</span><span>Talassoterapia</span></h3>
+          <h3 class="lt-ano__titulo"><span>Uma&nbsp;revolução no&nbsp;<span class="sem-quebra">bem-estar</span></span><span>Talassoterapia</span></h3>
           <p class="sr-only">1990</p>
           <p>O&nbsp;Vilalara voltou a&nbsp;fazer história ao&nbsp;abrir o&nbsp;primeiro centro de&nbsp;Talassoterapia em&nbsp;Portugal.</p>
-          <p>Com&nbsp;uma&nbsp;área de&nbsp;2.600 metros quadrados, esta instalação de&nbsp;última geração tornou-se uma&nbsp;referência mundial das&nbsp;terapias à&nbsp;base de&nbsp;água do&nbsp;mar. Concebido pelo&nbsp;conceituado especialista Jean Bobet, em&nbsp;conjunto com&nbsp;o&nbsp;arquiteto Ramiro Laranjo e&nbsp;o&nbsp;designer de&nbsp;interiores Samuel Paillat, o&nbsp;centro de&nbsp;Talassoterapia atraiu visitantes de&nbsp;todo o&nbsp;mundo, incluindo a&nbsp;Princesa Diana, o&nbsp;antigo Presidente dos&nbsp;EUA Jimmy Carter e&nbsp;muitas outras&nbsp;celebridades.</p>
+          <p>Com&nbsp;uma&nbsp;área de&nbsp;2.600 metros quadrados, esta instalação de&nbsp;última geração <span class="sem-quebra">tornou-se</span> uma&nbsp;referência mundial das&nbsp;terapias à&nbsp;base de&nbsp;água do&nbsp;mar. Concebido pelo&nbsp;conceituado especialista Jean Bobet, em&nbsp;conjunto com&nbsp;o&nbsp;arquiteto Ramiro Laranjo e&nbsp;o&nbsp;designer de&nbsp;interiores Samuel Paillat, o&nbsp;centro de&nbsp;Talassoterapia atraiu visitantes de&nbsp;todo o&nbsp;mundo, incluindo a&nbsp;Princesa Diana, o&nbsp;antigo Presidente dos&nbsp;EUA Jimmy Carter e&nbsp;muitas outras&nbsp;celebridades.</p>
         </div>
       </article>
       <!-- ANO 2009 -->
@@ -155,8 +156,8 @@
         <div class="lt-ano__texto">
           <h3 class="lt-ano__titulo"><span>Começa&nbsp;um<br>novo&nbsp;capítulo</span><span>Elegância moderna, charme intemporal</span></h3>
           <p class="sr-only">2009</p>
-          <p>Após uma&nbsp;extensa renovação de&nbsp;oito meses, o&nbsp;Vilalara Grand Hotel reabriu em&nbsp;2009 com&nbsp;uma&nbsp;nova imagem e&nbsp;design moderno, mantendo o&nbsp;seu&nbsp;charme&nbsp;caraterístico.</p>
-          <p>Sob a&nbsp;direção do&nbsp;arquiteto João Nuno Laranjo, esta renovação assegurou que&nbsp;o&nbsp;Vilalara fosse ao&nbsp;encontro de&nbsp;todas as&nbsp;necessidades dos&nbsp;hóspedes, combinando a&nbsp;tradição do&nbsp;hotel com&nbsp;o&nbsp;luxo&nbsp;contemporâneo.</p>
+          <p>Após&nbsp;uma&nbsp;extensa renovação de&nbsp;oito meses, o&nbsp;Vilalara Grand Hotel reabriu em&nbsp;2009 com&nbsp;uma&nbsp;nova imagem e&nbsp;design moderno, mantendo o&nbsp;seu&nbsp;charme&nbsp;caraterístico.</p>
+          <p>Sob&nbsp;a&nbsp;direção do&nbsp;arquiteto João Nuno Laranjo, esta renovação assegurou que&nbsp;o&nbsp;Vilalara fosse ao&nbsp;encontro de&nbsp;todas as&nbsp;necessidades dos&nbsp;hóspedes, combinando a&nbsp;tradição do&nbsp;hotel com&nbsp;o&nbsp;luxo&nbsp;contemporâneo.</p>
         </div>
       </article>
       <!-- ANO 2026 -->
@@ -168,7 +169,7 @@
           <h3 class="lt-ano__titulo"><span>60&nbsp;anos de&nbsp;história</span><span>O&nbsp;mesmo mar, um&nbsp;novo olhar</span></h3>
           <p class="sr-only">2026</p>
           <p>Sessenta anos depois de&nbsp;George Ansley ter avistado estas falésias a&nbsp;partir do&nbsp;mar, o&nbsp;Vilalara celebra seis décadas de&nbsp;história na&nbsp;Praia das&nbsp;Gaivotas.</p>
-          <p>Os&nbsp;jardins cresceram, os&nbsp;espaços renovaram-se e&nbsp;a&nbsp;hospitalidade ganhou novas formas, mas a&nbsp;essência mantém-se: 11&nbsp;hectares entre o&nbsp;verde e&nbsp;o&nbsp;Atlântico, onde cada hóspede encontra a&nbsp;mesma calma, a&nbsp;mesma luz e&nbsp;o&nbsp;privilégio de&nbsp;um&nbsp;lugar&nbsp;único.</p>
+          <p>Os&nbsp;jardins cresceram, os&nbsp;espaços <span class="sem-quebra">renovaram-se</span> e&nbsp;a&nbsp;hospitalidade ganhou novas formas, mas&nbsp;a&nbsp;essência <span class="sem-quebra">mantém-se</span>: 11&nbsp;hectares entre&nbsp;o&nbsp;verde e&nbsp;o&nbsp;Atlântico, onde cada hóspede encontra a&nbsp;mesma calma, a&nbsp;mesma luz e&nbsp;o&nbsp;privilégio de&nbsp;um&nbsp;lugar&nbsp;único.</p>
         </div>
       </article>
       </div>
@@ -190,12 +191,10 @@
 
   <!-- BLOCO: intro-categoria (variante com botão) — Vilalara hoje: o mesmo bloco do topo da página (e do 60 Anos) -->
   <section class="intro" id="vilalara-hoje">
-    <h2 class="intro__titulo">Agora é a&nbsp;sua vez <span class="intro__script">junte-se à&nbsp;história</span></h2>
+    <h2 class="intro__titulo">Agora é a&nbsp;sua vez <span class="intro__script"><span class="sem-quebra">junte-se</span> à&nbsp;história</span></h2>
     <div class="intro__texto">
-      <p>À&nbsp;medida que continuamos a&nbsp;crescer e&nbsp;a&nbsp;evoluir, convidamo-lo a&nbsp;fazer parte do&nbsp;legado do&nbsp;Vilalara Grand&nbsp;Hotel.</p>
-      <div class="intro__acoes">
-        <a class="botao-contorno" href="reservas.html">Reserve a&nbsp;sua&nbsp;estadia</a>
-      </div>
+      <p>Sessenta anos depois, o&nbsp;Vilalara continua a&nbsp;ser o&nbsp;que&nbsp;George Ansley imaginou ao&nbsp;avistar estas falésias: um&nbsp;refúgio discreto entre&nbsp;os&nbsp;jardins e&nbsp;o&nbsp;Atlântico, onde o&nbsp;tempo abranda e&nbsp;cada estadia ganha o&nbsp;ritmo de&nbsp;quem&nbsp;a&nbsp;vive.</p>
+      <p>Renovámos as&nbsp;suítes, demos nova vida aos&nbsp;restaurantes e&nbsp;ao&nbsp;Wellness, mas&nbsp;guardámos o&nbsp;essencial: a&nbsp;arquitetura que&nbsp;acompanha a&nbsp;falésia, a&nbsp;Praia das&nbsp;Gaivotas aos&nbsp;nossos pés e&nbsp;a&nbsp;forma calorosa de&nbsp;receber que&nbsp;faz tantos hóspedes regressar, ano após ano. À&nbsp;medida que&nbsp;continuamos a&nbsp;crescer e&nbsp;a&nbsp;evoluir, <span class="sem-quebra">convidamo-lo</span> a&nbsp;escrever connosco o&nbsp;próximo capítulo desta história.</p>
     </div>
   </section>
   <!-- /BLOCO: intro-categoria -->
@@ -212,6 +211,14 @@
     <figure class="m6"><div class="foto"><img src="assets/img/our-heritage/hoje-m6.jpg?v=3" alt="Jardim com pinheiros e relvado em frente a um dos edifícios" loading="lazy"></div></figure>
   </section>
   <!-- /BLOCO: mosaico -->
+
+  <!-- BLOCO: convite (bloco central, como o convite da newsletter nas Histórias) -->
+  <section class="convite" aria-label="Reservar">
+    <h2 class="intro__titulo">O&nbsp;próximo capítulo <span class="intro__script">começa consigo</span></h2>
+    <p>Venha conhecer o&nbsp;Vilalara de&nbsp;hoje, com&nbsp;a&nbsp;mesma alma de&nbsp;1966.</p>
+    <a class="botao-contorno" href="reservas.html">Reserve a&nbsp;sua&nbsp;estadia</a>
+  </section>
+  <!-- /BLOCO: convite -->
 
   </div>
 </main>
@@ -310,12 +317,15 @@
   <li class="painel__item tem-sub">
     <div class="painel__linha"><a href="suites-residencias.html" data-categoria="suites-residencias">Suítes &amp;&nbsp;Residências</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-suites-residencias"><span class="sr-only">Submenu Suítes &amp;&nbsp;Residências</span></button></div>
     <ul id="sub-suites-residencias" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item painel__favoritos"><a href="suites-residencias.html#favoritos">Os&nbsp;favoritos</a></li>
+    <li class="painel__grupo">Suítes</li>
     <li class="painel__item"><a href="elegant-suite.html">Elegant Suite</a></li>
     <li class="painel__item"><a href="master-suite.html">Master Suite</a></li>
     <li class="painel__item"><a href="ocean-suite.html">Ocean Suite</a></li>
     <li class="painel__item"><a href="grand-suite.html">Grand Suite</a></li>
     <li class="painel__item"><a href="george-ansley-suite.html">George Ansley Suite</a></li>
     <li class="painel__item"><a href="jose-de-harry-suite.html">José de&nbsp;Harry Suite</a></li>
+    <li class="painel__grupo">Residências</li>
     <li class="painel__item"><a href="private-residences.html">Private Residences</a></li>
     <li class="painel__item"><a href="casa-laranjo.html">Casa Laranjo</a></li>
     <li class="painel__item"><a href="casa-levy.html">Casa Levy</a></li>
@@ -328,7 +338,7 @@
     <li class="painel__item"><a href="coral.html">Coral</a></li>
     <li class="painel__item"><a href="raizes.html">Raízes</a></li>
     <li class="painel__item"><a href="trattoria.html">Trattoria</a></li>
-    <li class="painel__item"><a href="a-costa.html">A-costa</a></li>
+    <li class="painel__item"><a href="a-costa.html"><span class="sem-quebra">A-costa</span></a></li>
     <li class="painel__item"><a href="vento.html">Vento</a></li>
     <li class="painel__item"><a href="gaivotas.html">Gaivotas</a></li>
     </ul>
@@ -354,7 +364,7 @@
       <ul id="sub-programas" hidden class="painel__sub painel__sub--n3">
       <li class="painel__item"><a href="programa-thalassotherapy-healing.html">Thalassotherapy Healing</a></li>
       <li class="painel__item"><a href="programa-fitness-essence.html">Fitness Essence</a></li>
-      <li class="painel__item"><a href="programa-bespoke-anti-ageing-retreat.html">Bespoke Anti-ageing Retreat</a></li>
+      <li class="painel__item"><a href="programa-bespoke-anti-ageing-retreat.html">Bespoke <span class="sem-quebra">Anti-ageing</span> Retreat</a></li>
       <li class="painel__item"><a href="programa-stress-relief-recover.html">Stress Relief &amp;&nbsp;Recover</a></li>
       <li class="painel__item"><a href="programa-detox-weight-management.html">Detox &amp;&nbsp;Weight Management</a></li>
       </ul>
@@ -414,6 +424,6 @@
 </nav>
 <!-- /BLOCO: painel-menu -->
 
-<script src="assets/js/site.js?v=20261124q"></script>
+<script src="assets/js/site.js?v=20261126e"></script>
 </body>
 </html>

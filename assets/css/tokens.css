@@ -115,7 +115,7 @@
   --cor-inativo: #c6c6c6;                                           /* separadores de tipologia não selecionados: cinzento claro neutro (era #c9c4bc, acastanhado; 2026-11-17) */
   --cor-cartao-claro: #e0ddd2;                                      /* cartões de categoria (Suítes & Residências) */
   --cor-cartao-escuro: #c7c1ab;
-  --cor-wellness-fundo: #1a0f0d;
+  --cor-wellness-fundo: #1a130e;   /* quase o escuro original (#1a0f0d), com o tom do castanho Vilalara #42321a em vez do avermelhado (2026-11-21) */
   --cor-wellness-painel: #b4a78f;                                   /* caixas das aulas (páginas de práticas Wellness) */
   --cor-cartao-cinza: #f3f2f0;                                      /* cartões "Inclui" dos programas */                                    /* fundo castanho-escuro da página Wellness */
   --tam-titulo-grande: var(--tam-titulo-seccao);                    /* (era 56,2 pt) — agora 50 px como os outros */

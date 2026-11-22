@@ -11,9 +11,9 @@
 <link rel="stylesheet" href="https://use.typekit.net/oav4umc.css"><!-- Adobe Fonts: Optima nova + Richmond Display (projeto "Vilalara site prototipo") -->
 <link rel="stylesheet" href="https://use.typekit.net/ozg0foo.css"><!-- Adobe Fonts: Fact VF (projeto "Vilalara site prototipo Fact") -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.css">
-<link rel="stylesheet" href="assets/css/tokens.css?v=20261124q">
-<link rel="stylesheet" href="assets/css/base.css?v=20261124q">
-<link rel="stylesheet" href="assets/css/blocos.css?v=20261124q">
+<link rel="stylesheet" href="assets/css/tokens.css?v=20261126e">
+<link rel="stylesheet" href="assets/css/base.css?v=20261126e">
+<link rel="stylesheet" href="assets/css/blocos.css?v=20261126e">
 </head>
 <body>
 
@@ -64,11 +64,11 @@
           <img src="assets/img/suites/ocean-suite.jpg?v=3" alt="Ocean Suite" width="240" height="180">
           <div class="checkout__quarto-texto">
             <h2>Ocean Suite</h2>
-            <p>2 adultos · Pequeno-almoço buffet</p>
-            <p data-co-tarifa-nome>Tarifa Não-Reembolsável</p>
+            <p>2 adultos · <span class="sem-quebra">Pequeno-almoço</span> buffet</p>
+            <p data-co-tarifa-nome>Tarifa <span class="sem-quebra">Não-Reembolsável</span></p>
             <a class="botao-mais" href="ocean-suite.html">Ver&nbsp;suíte</a>
           </div>
-          <label class="tarifa__unidades checkout__unidades"><span class="sr-only">Número de quartos</span>
+          <label class="tarifa__unidades checkout__unidades"><span class="sr-only">Número de&nbsp;quartos</span>
             <select name="quartos" data-co-quartos><option value="1">1 quarto</option><option value="2">2 quartos</option><option value="3">3 quartos</option></select>
           </label>
         </div>
@@ -85,8 +85,8 @@
             <label class="pedido__campo"><span>Indicativo</span><select name="indicativo"><option selected>+351</option><option>+34</option><option>+44</option><option>+353</option><option>+33</option><option>+49</option><option>+31</option><option>+32</option><option>+352</option><option>+41</option><option>+43</option><option>+39</option><option>+45</option><option>+46</option><option>+47</option><option>+358</option><option>+48</option><option>+1</option><option>+55</option></select></label>
             <label class="pedido__campo"><span>Telefone *</span><input type="tel" name="telefone" autocomplete="tel-national" required></label>
           </div>
-          <label class="pedido__campo"><span>E-mail *</span><input type="email" name="email" autocomplete="email" required></label>
-          <label class="pedido__campo"><span>Repetir o&nbsp;e-mail *</span><input type="email" name="email2" autocomplete="email" required></label>
+          <label class="pedido__campo"><span><span class="sem-quebra">E-mail</span> *</span><input type="email" name="email" autocomplete="email" required></label>
+          <label class="pedido__campo"><span>Repetir o&nbsp;<span class="sem-quebra">e-mail</span> *</span><input type="email" name="email2" autocomplete="email" required></label>
           <label class="pedido__campo"><span>Hora prevista de&nbsp;chegada *</span><select name="chegada" required><option value="" selected disabled>Escolher</option><option value="00:00">00:00</option><option value="00:30">00:30</option><option value="01:00">01:00</option><option value="01:30">01:30</option><option value="02:00">02:00</option><option value="02:30">02:30</option><option value="03:00">03:00</option><option value="03:30">03:30</option><option value="04:00">04:00</option><option value="04:30">04:30</option><option value="05:00">05:00</option><option value="05:30">05:30</option><option value="06:00">06:00</option><option value="06:30">06:30</option><option value="07:00">07:00</option><option value="07:30">07:30</option><option value="08:00">08:00</option><option value="08:30">08:30</option><option value="09:00">09:00</option><option value="09:30">09:30</option><option value="10:00">10:00</option><option value="10:30">10:30</option><option value="11:00">11:00</option><option value="11:30">11:30</option><option value="12:00">12:00</option><option value="12:30">12:30</option><option value="13:00">13:00</option><option value="13:30">13:30</option><option value="14:00">14:00</option><option value="14:30">14:30</option><option value="15:00">15:00</option><option value="15:30">15:30</option><option value="16:00">16:00</option><option value="16:30">16:30</option><option value="17:00">17:00</option><option value="17:30">17:30</option><option value="18:00">18:00</option><option value="18:30">18:30</option><option value="19:00">19:00</option><option value="19:30">19:30</option><option value="20:00">20:00</option><option value="20:30">20:30</option><option value="21:00">21:00</option><option value="21:30">21:30</option><option value="22:00">22:00</option><option value="22:30">22:30</option><option value="23:00">23:00</option><option value="23:30">23:30</option></select></label>
           <label class="pedido__campo pedido__campo--largo"><span>Comentários</span><textarea name="comentarios" rows="2" placeholder="Pedidos especiais, ocasião, preferências…"></textarea></label>
         </div>
@@ -94,9 +94,9 @@
 
       <fieldset class="rm-passo">
         <legend><span class="rm-passo__n">3</span> Garantia de&nbsp;pagamento</legend>
-        <p class="checkout__texto" data-co-garantia>A&nbsp;sua reserva requer um&nbsp;pagamento antecipado. O&nbsp;cartão de&nbsp;crédito serve como garantia e&nbsp;será usado de&nbsp;acordo com&nbsp;as&nbsp;condições da&nbsp;tarifa.</p>
+        <p class="checkout__texto" data-co-garantia>A&nbsp;sua reserva requer um&nbsp;pagamento antecipado. O&nbsp;cartão de&nbsp;crédito serve como&nbsp;garantia e&nbsp;será usado de&nbsp;acordo com&nbsp;as&nbsp;condições da&nbsp;tarifa.</p>
         <div class="checkout__cartao">
-          <p class="checkout__cartao-titulo">Cartão de&nbsp;crédito como garantia</p>
+          <p class="checkout__cartao-titulo">Cartão de&nbsp;crédito como&nbsp;garantia</p>
           <div class="pedido__form">
             <label class="pedido__campo pedido__campo--largo"><span>Titular do&nbsp;cartão</span><input type="text" disabled placeholder="Nome como aparece no cartão"></label>
             <label class="pedido__campo pedido__campo--largo"><span>Número do&nbsp;cartão</span><input type="text" disabled placeholder="0000 0000 0000 0000"></label>
@@ -124,7 +124,7 @@
       </div>
       <div class="rm-ok" data-co-ok hidden tabindex="-1">
         <h3>Reserva pronta a&nbsp;confirmar</h3>
-        <p>No&nbsp;site final, a&nbsp;reserva segue para&nbsp;o&nbsp;motor de&nbsp;reservas e&nbsp;a&nbsp;confirmação chega por&nbsp;e-mail.</p>
+        <p>No&nbsp;site final, a&nbsp;reserva segue para&nbsp;o&nbsp;motor de&nbsp;reservas e&nbsp;a&nbsp;confirmação chega por&nbsp;<span class="sem-quebra">e-mail</span>.</p>
       </div>
     </form>
 
@@ -132,12 +132,12 @@
       <div class="rm-resumo__caixa">
         <h2 class="checkout__resumo-titulo">Resumo</h2>
         <dl class="checkout__datas">
-          <div><dt>Check-in</dt><dd>13 nov. 2026<br><span>a&nbsp;partir das 15:00</span></dd></div>
-          <div><dt>Saída</dt><dd>14 nov. 2026<br><span>até às 12:00</span></dd></div>
+          <div><dt><span class="sem-quebra">Check-in</span></dt><dd>13 nov. 2026<br><span>a&nbsp;partir das&nbsp;15:00</span></dd></div>
+          <div><dt>Saída</dt><dd>14 nov. 2026<br><span>até&nbsp;às&nbsp;12:00</span></dd></div>
         </dl>
         <p class="rm-resumo__texto" data-co-estadia>1 noite · 2 hóspedes · 1 quarto</p>
         <dl class="rm-resumo__lista">
-          <div><dt>Total sem impostos</dt><dd data-co-base>243,52 €</dd></div>
+          <div><dt>Total sem&nbsp;impostos</dt><dd data-co-base>243,52 €</dd></div>
           <div><dt>IVA (6%)</dt><dd data-co-iva>14,61 €</dd></div>
           <div><dt>Taxa turística (1&nbsp;€ por&nbsp;pessoa/noite)</dt><dd data-co-taxa>2,00 €</dd></div>
           <div class="checkout__total"><dt>Total</dt><dd data-co-total>260,13 €</dd></div>
@@ -148,9 +148,9 @@
         </dl>
         <details class="tarifa__condicoes checkout__condicoes">
           <summary>Condições da&nbsp;tarifa</summary>
-          <div class="tarifa__condicoes-texto" data-co-cond="nr"><p class="tarifa__subtitulo">Pague já, poupe mais</p><p>Procura uma&nbsp;oferta de&nbsp;última hora? Reserve já e&nbsp;aproveite um&nbsp;ótimo desconto na&nbsp;sua estadia. Esta tarifa inclui pequeno-almoço.</p><p>Será cobrado um&nbsp;depósito no&nbsp;valor total da&nbsp;estadia (100%) aquando da&nbsp;confirmação, para&nbsp;garantir a&nbsp;reserva. Se&nbsp;a&nbsp;reserva for cancelada, será cobrada uma&nbsp;penalização no&nbsp;valor total da&nbsp;estadia (100%).</p></div>
-          <div class="tarifa__condicoes-texto" data-co-cond="web" hidden><p class="tarifa__subtitulo">Tarifa exclusiva para&nbsp;reservas diretas</p><p>Desconto garantido sobre a&nbsp;nossa tarifa mais flexível, a&nbsp;Especial Online, com&nbsp;pequeno-almoço incluído. Flexibilidade de&nbsp;cancelamento e&nbsp;de&nbsp;alteração da&nbsp;reserva, com&nbsp;pagamento final no&nbsp;hotel.</p><p>Cancelamento gratuito até sete dias antes da&nbsp;chegada. A&nbsp;menos de&nbsp;sete dias, é&nbsp;cobrada uma&nbsp;noite de&nbsp;estadia. Cancelamento no&nbsp;dia de&nbsp;chegada, não comparência ou&nbsp;saída antecipada: é&nbsp;cobrada a&nbsp;totalidade da&nbsp;reserva.</p></div>
-          <div class="tarifa__condicoes-texto" data-co-cond="online" hidden><p class="tarifa__subtitulo">A&nbsp;nossa tarifa mais flexível</p><p>Com&nbsp;pequeno-almoço incluído e&nbsp;sem&nbsp;depósito.</p><p>As&nbsp;condições completas de&nbsp;cancelamento são apresentadas no&nbsp;passo seguinte da&nbsp;reserva.</p></div>
+          <div class="tarifa__condicoes-texto" data-co-cond="nr"><p class="tarifa__subtitulo">Pague já, poupe mais</p><p>Procura uma&nbsp;oferta de&nbsp;última hora? Reserve já e&nbsp;aproveite um&nbsp;ótimo desconto na&nbsp;sua estadia. Esta tarifa inclui <span class="sem-quebra">pequeno-almoço</span>.</p><p>Será cobrado um&nbsp;depósito no&nbsp;valor total da&nbsp;estadia (100%) aquando da&nbsp;confirmação, para&nbsp;garantir a&nbsp;reserva. Se&nbsp;a&nbsp;reserva for cancelada, será cobrada uma&nbsp;penalização no&nbsp;valor total da&nbsp;estadia (100%).</p></div>
+          <div class="tarifa__condicoes-texto" data-co-cond="web" hidden><p class="tarifa__subtitulo">Tarifa exclusiva para&nbsp;reservas diretas</p><p>Desconto garantido sobre&nbsp;a&nbsp;nossa tarifa mais flexível, a&nbsp;Especial Online, com&nbsp;<span class="sem-quebra">pequeno-almoço</span> incluído. Flexibilidade de&nbsp;cancelamento e&nbsp;de&nbsp;alteração da&nbsp;reserva, com&nbsp;pagamento final no&nbsp;hotel.</p><p>Cancelamento gratuito até&nbsp;sete dias antes da&nbsp;chegada. A&nbsp;menos de&nbsp;sete dias, é&nbsp;cobrada uma&nbsp;noite de&nbsp;estadia. Cancelamento no&nbsp;dia de&nbsp;chegada, não comparência ou&nbsp;saída antecipada: é&nbsp;cobrada a&nbsp;totalidade da&nbsp;reserva.</p></div>
+          <div class="tarifa__condicoes-texto" data-co-cond="online" hidden><p class="tarifa__subtitulo">A&nbsp;nossa tarifa mais flexível</p><p>Com&nbsp;<span class="sem-quebra">pequeno-almoço</span> incluído e&nbsp;sem&nbsp;depósito.</p><p>As&nbsp;condições completas de&nbsp;cancelamento são apresentadas no&nbsp;passo seguinte da&nbsp;reserva.</p></div>
         </details>
         <div class="rm-resumo__contactos">
           <p>Vilalara Grand Hotel Algarve<br>Praia das&nbsp;Gaivotas, Alporchinhos<br>8400-450&nbsp;Porches</p>
@@ -256,12 +256,15 @@
   <li class="painel__item tem-sub">
     <div class="painel__linha"><a href="suites-residencias.html" data-categoria="suites-residencias">Suítes &amp;&nbsp;Residências</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-suites-residencias"><span class="sr-only">Submenu Suítes &amp;&nbsp;Residências</span></button></div>
     <ul id="sub-suites-residencias" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item painel__favoritos"><a href="suites-residencias.html#favoritos">Os&nbsp;favoritos</a></li>
+    <li class="painel__grupo">Suítes</li>
     <li class="painel__item"><a href="elegant-suite.html">Elegant Suite</a></li>
     <li class="painel__item"><a href="master-suite.html">Master Suite</a></li>
     <li class="painel__item"><a href="ocean-suite.html">Ocean Suite</a></li>
     <li class="painel__item"><a href="grand-suite.html">Grand Suite</a></li>
     <li class="painel__item"><a href="george-ansley-suite.html">George Ansley Suite</a></li>
     <li class="painel__item"><a href="jose-de-harry-suite.html">José de&nbsp;Harry Suite</a></li>
+    <li class="painel__grupo">Residências</li>
     <li class="painel__item"><a href="private-residences.html">Private Residences</a></li>
     <li class="painel__item"><a href="casa-laranjo.html">Casa Laranjo</a></li>
     <li class="painel__item"><a href="casa-levy.html">Casa Levy</a></li>
@@ -274,7 +277,7 @@
     <li class="painel__item"><a href="coral.html">Coral</a></li>
     <li class="painel__item"><a href="raizes.html">Raízes</a></li>
     <li class="painel__item"><a href="trattoria.html">Trattoria</a></li>
-    <li class="painel__item"><a href="a-costa.html">A-costa</a></li>
+    <li class="painel__item"><a href="a-costa.html"><span class="sem-quebra">A-costa</span></a></li>
     <li class="painel__item"><a href="vento.html">Vento</a></li>
     <li class="painel__item"><a href="gaivotas.html">Gaivotas</a></li>
     </ul>
@@ -300,7 +303,7 @@
       <ul id="sub-programas" hidden class="painel__sub painel__sub--n3">
       <li class="painel__item"><a href="programa-thalassotherapy-healing.html">Thalassotherapy Healing</a></li>
       <li class="painel__item"><a href="programa-fitness-essence.html">Fitness Essence</a></li>
-      <li class="painel__item"><a href="programa-bespoke-anti-ageing-retreat.html">Bespoke Anti-ageing Retreat</a></li>
+      <li class="painel__item"><a href="programa-bespoke-anti-ageing-retreat.html">Bespoke <span class="sem-quebra">Anti-ageing</span> Retreat</a></li>
       <li class="painel__item"><a href="programa-stress-relief-recover.html">Stress Relief &amp;&nbsp;Recover</a></li>
       <li class="painel__item"><a href="programa-detox-weight-management.html">Detox &amp;&nbsp;Weight Management</a></li>
       </ul>
@@ -361,7 +364,7 @@
 <!-- /BLOCO: painel-menu -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.js"></script>
-<script src="assets/js/mapa.js?v=20261124q"></script>
-<script src="assets/js/site.js?v=20261124q"></script>
+<script src="assets/js/mapa.js?v=20261126e"></script>
+<script src="assets/js/site.js?v=20261126e"></script>
 </body>
 </html>

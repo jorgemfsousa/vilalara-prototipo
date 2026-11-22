@@ -10,9 +10,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&family=Marcellus&family=Pinyon+Script&display=swap">
 <link rel="stylesheet" href="https://use.typekit.net/oav4umc.css"><!-- Adobe Fonts: Optima nova + Richmond Display (projeto "Vilalara site prototipo") -->
 <link rel="stylesheet" href="https://use.typekit.net/ozg0foo.css"><!-- Adobe Fonts: Fact VF (projeto "Vilalara site prototipo Fact") -->
-<link rel="stylesheet" href="assets/css/tokens.css?v=20261124q">
-<link rel="stylesheet" href="assets/css/base.css?v=20261124q">
-<link rel="stylesheet" href="assets/css/blocos.css?v=20261124q">
+<link rel="stylesheet" href="assets/css/tokens.css?v=20261126e">
+<link rel="stylesheet" href="assets/css/base.css?v=20261126e">
+<link rel="stylesheet" href="assets/css/blocos.css?v=20261126e">
+<script>/* chegada pela transição da home (revista) */try{if(sessionStorage.getItem("vl-transicao")==="revista"){document.documentElement.classList.add("chegada-revista");sessionStorage.removeItem("vl-transicao");}}catch(e){}</script>
 </head>
 <body>
 
@@ -57,9 +58,9 @@
 
   <!-- BLOCO: revista-topo (selo, título grande ao centro e introdução) — mesma estrutura das Histórias -->
   <header class="revista-topo revista-topo--60" id="apresentacao">
-    <h1 class="sr-only">60 anos de Vilalara</h1>
+    <h1 class="sr-only">60 anos de&nbsp;Vilalara</h1>
     <img class="revista-topo__selo revista-topo__selo--grande" src="assets/img/60-anos/selo-60.svg" alt="Grand Hotel Algarve, 60 anos, fundado em 1966" width="155" height="156">
-    <p class="revista-topo__texto">Desde&nbsp;1966, o&nbsp;Vilalara recebe quem procura o&nbsp;Algarve mais sereno, entre jardins debruçados sobre o&nbsp;mar e&nbsp;a&nbsp;Praia das&nbsp;Gaivotas. Em&nbsp;2026 celebramos sessenta anos com&nbsp;um&nbsp;ano marcado pela&nbsp;gastronomia, pelo&nbsp;bem-estar, pela&nbsp;cultura e&nbsp;pelo&nbsp;património que&nbsp;nos&nbsp;definem.</p>
+    <p class="revista-topo__texto">Desde&nbsp;1966, o&nbsp;Vilalara recebe quem procura o&nbsp;Algarve mais sereno, entre&nbsp;jardins debruçados sobre&nbsp;o&nbsp;mar e&nbsp;a&nbsp;Praia das&nbsp;Gaivotas. Em&nbsp;2026 celebramos sessenta anos com&nbsp;um&nbsp;ano marcado pela&nbsp;gastronomia, pelo&nbsp;<span class="sem-quebra">bem-estar</span>, pela&nbsp;cultura e&nbsp;pelo&nbsp;património que&nbsp;nos&nbsp;definem.</p>
   </header>
   <!-- /BLOCO: revista-topo -->
 
@@ -73,12 +74,7 @@
         <p class="rv__topo"><span class="rv__quando">12 de&nbsp;agosto</span><span class="rv__data">Agosto 2026</span></p>
         <div class="rv__capa-fundo">
           <h3 class="rv__titulo">O&nbsp;último eclipse da&nbsp;tua vida</h3>
-          <p class="rv__frase intro__script">Sob um&nbsp;sol escurecido.</p>
-          <p class="rv__resumo">Começou às&nbsp;18h33, quase sem&nbsp;se&nbsp;notar, uma&nbsp;pequena dentada na&nbsp;orla do&nbsp;sol. Às&nbsp;19h30, noventa e&nbsp;três por&nbsp;cento tinham desaparecido atrás da&nbsp;lua, e&nbsp;o&nbsp;Algarve mergulhou numa luz que&nbsp;nenhum de&nbsp;nós sabia bem nomear, nem&nbsp;crepúsculo, nem&nbsp;sombra, mais fresca e&nbsp;mais estranha do&nbsp;que&nbsp;ambos.</p>
-          <dl class="caracteristicas rv__dados">
-          <div><dt>Primeiro contacto</dt><dd>18h33</dd></div>
-          <div><dt>No&nbsp;auge</dt><dd>Noventa e&nbsp;três por&nbsp;cento, às&nbsp;19h30</dd></div>
-        </dl>
+          <p class="rv__resumo">Começou às&nbsp;18h33, quase sem&nbsp;se&nbsp;notar, uma&nbsp;pequena dentada na&nbsp;orla do&nbsp;sol. Às&nbsp;19h30, noventa e&nbsp;três por&nbsp;cento tinham desaparecido atrás da&nbsp;lua, e&nbsp;o&nbsp;Algarve mergulhou numa&nbsp;luz que&nbsp;nenhum de&nbsp;nós sabia bem nomear, nem&nbsp;crepúsculo, nem&nbsp;sombra, mais fresca e&nbsp;mais estranha do&nbsp;que&nbsp;ambos.</p>
         </div>
       </div>
       <figure class="rv__foto"><img src="assets/img/60-anos/eclipse-oculos.jpg" alt="Óculos de eclipse com o selo dos 60 anos do Vilalara, sobre a relva" loading="lazy"></figure>
@@ -86,7 +82,6 @@
     </section>
 
     <section class="rv-grelha" aria-label="De maio a julho" id="ano-em-revista">
-      <p class="rv-grelha__rotulo"><span>De&nbsp;maio a&nbsp;julho</span></p>
       <div class="rv-grelha__corpo">
         <div class="rv-grelha__col rv-grelha__col--a">
     <article class="rv rv--g-pequeno">
@@ -133,7 +128,7 @@
     <article class="rv rv--faixa">
       <figure class="rv__foto"><img src="assets/img/60-anos/atlantico-pacifico.jpg" alt="Jantar a quatro mãos no Coral" loading="lazy"></figure>
       <div class="rv__texto">
-        <h3 class="rv__titulo">O&nbsp;Atlântico encontra-se com&nbsp;o&nbsp;Pacífico</h3>
+        <h3 class="rv__titulo">O&nbsp;Atlântico <span class="sem-quebra">encontra-se</span> com&nbsp;o&nbsp;Pacífico</h3>
         <p class="rv__etiqueta rv__quando">11 de&nbsp;julho · Coral</p>
         <p class="rv__resumo">O&nbsp;Coral (Guia MICHELIN) recebeu o&nbsp;chef Sebastião Coutinho, do&nbsp;Kabuki (uma&nbsp;estrela MICHELIN), para&nbsp;um&nbsp;jantar a&nbsp;quatro mãos partilhado por&nbsp;apenas vinte convidados. Duas filosofias, uma&nbsp;mesa, o&nbsp;mesmo respeito pelo&nbsp;ingrediente.</p>
       </div>
@@ -146,13 +141,11 @@
         <p class="rv__topo"><span class="rv__quando">4 a&nbsp;8 de&nbsp;setembro, quatro&nbsp;restaurantes</span><span class="rv__data">Setembro 2026</span></p>
         <div class="rv__capa-fundo">
           <h3 class="rv__titulo">Uma&nbsp;semana de&nbsp;sabores</h3>
-          <p class="rv__frase intro__script">Sessenta anos de&nbsp;Vilalara, celebrados à&nbsp;mesa.</p>
-          <p class="rv__resumo">Os&nbsp;Vilalara Chronicle Dinners fecharam a&nbsp;temporada com&nbsp;quatro noites e&nbsp;quatro chefs convidados, cada um&nbsp;a&nbsp;cozinhar a&nbsp;quatro mãos com&nbsp;os&nbsp;nossos.</p>
+          <p class="rv__resumo">Sessenta anos de&nbsp;Vilalara, celebrados à&nbsp;mesa. Os&nbsp;Vilalara Chronicle Dinners fecharam a&nbsp;temporada com&nbsp;quatro noites e&nbsp;quatro chefs convidados, cada um&nbsp;a&nbsp;cozinhar a&nbsp;quatro mãos com&nbsp;os&nbsp;nossos.</p>
         </div>
       </div>
       <figure class="rv__foto"><img src="assets/img/60-anos/sabores.jpg" alt="Mesa posta ao ar livre no Algarve" loading="lazy"></figure>
     </article>
-      <p class="rv__chefs-rotulo"><span>Quatro noites, quatro&nbsp;chefs</span></p>
       <ul class="rv__chefs" aria-label="Os quatro chefs convidados">
         <li><img src="assets/img/60-anos/chef-atlantico.jpg" alt="Chef João Viegas na sala" loading="lazy"><strong>Coral, com&nbsp;João&nbsp;Viegas</strong><span>4 set · Atlântico</span>
         <li><img src="assets/img/60-anos/chef-fogo.jpg" alt="Chef Alexandre Silva com um machado, junto a uma pilha de lenha" loading="lazy"><strong>Raízes, com&nbsp;Alexandre&nbsp;Silva</strong><span>5 set · Fogo</span>
@@ -168,7 +161,7 @@
         <p class="rv__topo"><span class="rv__quando">21 a&nbsp;28 de&nbsp;setembro, Wellness&nbsp;Club</span><span class="rv__data">Setembro 2026</span></p>
         <h3 class="rv__titulo">Thalassotherapy Legacy Week</h3>
         <p class="rv__frase intro__script">O&nbsp;Atlântico sempre foi o&nbsp;tratamento.</p>
-        <p class="rv__resumo">Uma&nbsp;semana dedicada ao&nbsp;que&nbsp;Vilalara pratica discretamente há seis décadas, a&nbsp;arte de&nbsp;devolver o&nbsp;equilíbrio à&nbsp;beira-mar. Tratamentos exclusivos e&nbsp;rituais de&nbsp;bem-estar, herdeiros da&nbsp;tradição de&nbsp;talassoterapia que&nbsp;define este lugar desde a&nbsp;origem.</p>
+        <p class="rv__resumo">Uma&nbsp;semana dedicada ao&nbsp;que&nbsp;Vilalara pratica discretamente há seis décadas, a&nbsp;arte de&nbsp;devolver o&nbsp;equilíbrio à&nbsp;<span class="sem-quebra">beira-mar</span>. Tratamentos exclusivos e&nbsp;rituais de&nbsp;<span class="sem-quebra">bem-estar</span>, herdeiros da&nbsp;tradição de&nbsp;talassoterapia que&nbsp;define este lugar desde&nbsp;a&nbsp;origem.</p>
         <dl class="caracteristicas rv__dados">
           <div><dt>Programa</dt><dd>Vinte e&nbsp;cinco aulas de&nbsp;grupo, vinte e&nbsp;quatro sessões privadas, três workshops</dd></div>
           <div><dt>Em&nbsp;residência</dt><dd>Gudrun Docherty · João Palma · Dr. João Pestana</dd></div>
@@ -183,11 +176,8 @@
         <p class="rv__topo"><span class="rv__quando">5 a&nbsp;7 de&nbsp;outubro, Racket&nbsp;Club</span><span class="rv__data">Outubro 2026</span></p>
         <div class="rv__capa-fundo">
           <h3 class="rv__titulo">Martina Hingis no&nbsp;Vilalara</h3>
-          <p class="rv__resumo">A&nbsp;antiga número 1 mundial Martina Hingis passou três dias no&nbsp;Vilalara, com&nbsp;nove sessões privadas de&nbsp;trinta minutos nos&nbsp;nossos courts e&nbsp;um&nbsp;Meet &amp;&nbsp;Greet.</p>
+          <p class="rv__resumo">A&nbsp;antiga número 1 mundial Martina Hingis passou três dias no&nbsp;Vilalara, com&nbsp;nove sessões privadas de&nbsp;trinta minutos nos&nbsp;nossos courts e&nbsp;um&nbsp;Meet &amp;&nbsp;Greet, em&nbsp;colaboração com&nbsp;a&nbsp;LUX Tennis.</p>
           <p class="rv__resumo">Foi número 1 mundial aos&nbsp;dezasseis anos, venceu 25 títulos do&nbsp;Grand Slam em&nbsp;singulares, pares e&nbsp;pares mistos, e&nbsp;entrou para&nbsp;o&nbsp;International Tennis Hall of&nbsp;Fame em&nbsp;2013.</p>
-          <dl class="caracteristicas rv__dados">
-          <div><dt>Em&nbsp;colaboração com</dt><dd>LUX Tennis</dd></div>
-        </dl>
         </div>
       </div>
       <figure class="rv__foto"><img src="assets/img/60-anos/martina-rede.jpg" alt="Martina Hingis de pé junto à rede, com a raquete, no Racket Club" loading="lazy"></figure>
@@ -295,12 +285,15 @@
   <li class="painel__item tem-sub">
     <div class="painel__linha"><a href="suites-residencias.html" data-categoria="suites-residencias">Suítes &amp;&nbsp;Residências</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-suites-residencias"><span class="sr-only">Submenu Suítes &amp;&nbsp;Residências</span></button></div>
     <ul id="sub-suites-residencias" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item painel__favoritos"><a href="suites-residencias.html#favoritos">Os&nbsp;favoritos</a></li>
+    <li class="painel__grupo">Suítes</li>
     <li class="painel__item"><a href="elegant-suite.html">Elegant Suite</a></li>
     <li class="painel__item"><a href="master-suite.html">Master Suite</a></li>
     <li class="painel__item"><a href="ocean-suite.html">Ocean Suite</a></li>
     <li class="painel__item"><a href="grand-suite.html">Grand Suite</a></li>
     <li class="painel__item"><a href="george-ansley-suite.html">George Ansley Suite</a></li>
     <li class="painel__item"><a href="jose-de-harry-suite.html">José de&nbsp;Harry Suite</a></li>
+    <li class="painel__grupo">Residências</li>
     <li class="painel__item"><a href="private-residences.html">Private Residences</a></li>
     <li class="painel__item"><a href="casa-laranjo.html">Casa Laranjo</a></li>
     <li class="painel__item"><a href="casa-levy.html">Casa Levy</a></li>
@@ -313,7 +306,7 @@
     <li class="painel__item"><a href="coral.html">Coral</a></li>
     <li class="painel__item"><a href="raizes.html">Raízes</a></li>
     <li class="painel__item"><a href="trattoria.html">Trattoria</a></li>
-    <li class="painel__item"><a href="a-costa.html">A-costa</a></li>
+    <li class="painel__item"><a href="a-costa.html"><span class="sem-quebra">A-costa</span></a></li>
     <li class="painel__item"><a href="vento.html">Vento</a></li>
     <li class="painel__item"><a href="gaivotas.html">Gaivotas</a></li>
     </ul>
@@ -339,7 +332,7 @@
       <ul id="sub-programas" hidden class="painel__sub painel__sub--n3">
       <li class="painel__item"><a href="programa-thalassotherapy-healing.html">Thalassotherapy Healing</a></li>
       <li class="painel__item"><a href="programa-fitness-essence.html">Fitness Essence</a></li>
-      <li class="painel__item"><a href="programa-bespoke-anti-ageing-retreat.html">Bespoke Anti-ageing Retreat</a></li>
+      <li class="painel__item"><a href="programa-bespoke-anti-ageing-retreat.html">Bespoke <span class="sem-quebra">Anti-ageing</span> Retreat</a></li>
       <li class="painel__item"><a href="programa-stress-relief-recover.html">Stress Relief &amp;&nbsp;Recover</a></li>
       <li class="painel__item"><a href="programa-detox-weight-management.html">Detox &amp;&nbsp;Weight Management</a></li>
       </ul>
@@ -399,6 +392,6 @@
 </nav>
 <!-- /BLOCO: painel-menu -->
 
-<script src="assets/js/site.js?v=20261124q"></script>
+<script src="assets/js/site.js?v=20261126e"></script>
 </body>
 </html>

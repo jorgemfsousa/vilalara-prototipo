@@ -132,11 +132,24 @@
       var w = document.documentElement.clientWidth, claros = 0, n = 0;
       [0.05, 0.25, 0.5, 0.75, 0.95].forEach(function (f) { n++; if (corPorBaixo(w * f, y) === "claro") claros++; });
       var cor = claros * 2 > n ? "escuro" : "claro";   // a maioria do fundo é clara → texto escuro
-      if (cor === ultimaCor) return;
-      ultimaCor = cor;
-      barra.classList.toggle("cab--escuro", cor === "escuro");
-      barra.classList.toggle("cab--claro", cor === "claro");
+      if (cor !== ultimaCor) {
+        ultimaCor = cor;
+        barra.classList.toggle("cab--escuro", cor === "escuro");
+        barra.classList.toggle("cab--claro", cor === "claro");
+      }
+      // Cada elemento da barra (☰, logo, PT, Reservar) vê o que tem por baixo dele:
+      // numa zona mista uns ficam brancos e outros escuros (pedido de 2026-11-22)
+      partes.forEach(function (p) {
+        var r = p.getBoundingClientRect();
+        if (!r.width) return;
+        var cy = Math.max(2, Math.min(r.top + r.height / 2, window.innerHeight - 1)), c = 0, t = 0;
+        [0.1, 0.5, 0.9].forEach(function (f) { t++; if (corPorBaixo(r.left + r.width * f, cy) === "claro") c++; });
+        var corP = c * 2 > t ? "escuro" : "claro";
+        p.classList.toggle("parte--escuro", corP === "escuro");
+        p.classList.toggle("parte--claro", corP === "claro");
+      });
     }
+    var partes = Array.prototype.slice.call(barra.querySelectorAll(".botao-menu, .cab-interior__monograma, .idioma__botao, .cab-acoes > .botao-link"));
     var pedidoCor = false;
     window.addEventListener("scroll", function () {
       if (pedidoCor) return; pedidoCor = true;
@@ -785,6 +798,69 @@
         { transform: fim }
       ], { duration: 1100, easing: curva, fill: "forwards" });
 
+      // Páginas em formato de revista (60.º Aniversário, Histórias): não têm banner.
+      // A foto do hero encolhe até ao sítio do selo/título da página; por trás surge o topo da
+      // página (lido do próprio HTML dela), com o selo/título e o texto a aparecer no lugar exato
+      // onde vão estar → ao mudar de página não há salto.
+      if (slide.hasAttribute("data-landing-revista")) {
+        anim.cancel();
+        voadora.remove();
+        var vaiPara = function () { try { sessionStorage.setItem("vl-transicao", "revista"); } catch (err) {} window.location.href = url; };
+        fetch(url).then(function (r) { return r.text(); }).then(function (html) {
+          var doc = new DOMParser().parseFromString(html, "text/html");
+          var topo = doc.querySelector(".revista-topo"), cab = doc.querySelector(".cab-interior");
+          if (!topo) { vaiPara(); return; }
+          var camada = document.createElement("div");
+          camada.className = "transicao-revista";
+          camada.setAttribute("aria-hidden", "true");
+          if (cab) camada.appendChild(document.importNode(cab, true));
+          var t = document.importNode(topo, true);
+          camada.appendChild(t);
+          document.body.appendChild(camada);
+          var partes = Array.prototype.slice.call(t.children);
+          var alvo = t.querySelector(".revista-topo__selo, .revista-topo__titulo") || t;
+          partes.forEach(function (p) { p.style.opacity = "0"; });
+          var cabT = camada.querySelector(".cab-interior");
+          if (cabT) cabT.style.opacity = "0";
+          var imgHero = slide.querySelector(".slide__media img");
+          var foto = document.createElement("img");
+          foto.className = "transicao-revista__foto";
+          foto.src = imgHero.currentSrc || imgHero.src;
+          foto.style.objectPosition = getComputedStyle(imgHero).objectPosition;
+          document.body.appendChild(foto);
+          var comeca = function () {
+            // o texto da cópia segue as mesmas regras de quebra de linha da página (frases órfãs)
+            if (window.vilalaraQuebrasFrase) window.vilalaraQuebrasFrase();
+            var a = alvo.getBoundingClientRect(), W = document.documentElement.clientWidth, H = window.innerHeight;
+            var lado = Math.min(a.width, a.height) || 200;
+            var cx = a.left + a.width / 2, cy = a.top + a.height / 2;
+            var curvaR = "cubic-bezier(0.76, 0, 0.24, 1)";
+            // sempre em círculo: a foto fica no ecrã inteiro e um círculo (centrado no selo/título)
+            // vai fechando — começa com o raio até ao canto mais distante e termina do tamanho do selo
+            var raio = Math.max(Math.hypot(cx, cy), Math.hypot(W - cx, cy), Math.hypot(cx, H - cy), Math.hypot(W - cx, H - cy));
+            foto.animate([
+              { clipPath: "circle(" + raio + "px at " + cx + "px " + cy + "px)", opacity: 1 },
+              { opacity: 1, offset: 0.75 },
+              { clipPath: "circle(" + (lado / 2) + "px at " + cx + "px " + cy + "px)", opacity: 0 }
+            ], { duration: 1300, easing: curvaR, fill: "forwards" });
+            var atraso = 900;
+            partes.forEach(function (p, k) {
+              var ehAlvo = p === alvo || p.contains(alvo);
+              p.animate(ehAlvo
+                ? [{ opacity: 0, transform: "scale(0.86)" }, { opacity: 1, transform: "none" }]
+                : [{ opacity: 0, transform: "translateY(16px)" }, { opacity: 1, transform: "none" }],
+                { duration: 800, delay: atraso + k * 140, easing: "cubic-bezier(0.22, 1, 0.36, 1)", fill: "forwards" });
+            });
+            if (cabT) cabT.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 600, delay: 1100, fill: "forwards" });
+            setTimeout(vaiPara, atraso + partes.length * 140 + 900);
+          };
+          var imgsT = t.querySelectorAll("img");
+          Promise.all(Array.prototype.map.call(imgsT, function (i) { return i.decode ? i.decode().catch(function () {}) : null; }))
+            .then(function () { requestAnimationFrame(comeca); });
+        }).catch(vaiPara);
+        return;
+      }
+
       // Páginas com título no banner (ex.: Our Heritage): a palavra do menu voa para o sítio da etiqueta
       // pequena do banner e, ao mesmo tempo, o título grande ("Meio século / de história") aparece já
       // na home, no sítio exato onde está na página — ao mudar de página não há salto.
@@ -795,7 +871,7 @@
         caixaT.className = "hero-quarto__texto hero-titulo-transicao";
         caixaT.setAttribute("aria-hidden", "true");
         caixaT.innerHTML = '<p class="hero-quarto__nome">' + slide.getAttribute("data-landing-nome") + '</p>' +
-          '<p class="hero-quarto__titulo">' + tituloLanding + ' <span class="intro__script">' + (slide.getAttribute("data-landing-script") || "") + '</span></p>';
+          '<p class="hero-quarto__titulo">' + tituloLanding + (slide.getAttribute("data-landing-script") ? ' <span class="intro__script">' + slide.getAttribute("data-landing-script") + '</span>' : '') + '</p>';
         slide.appendChild(caixaT);
         var nomeT = caixaT.querySelector(".hero-quarto__nome"), tituloT = caixaT.querySelector(".hero-quarto__titulo");
         nomeT.style.opacity = "0";
@@ -1308,3 +1384,101 @@ document.querySelectorAll(".tratamentos .tratamento p").forEach(function (p) {
   var n = p.textContent.replace(/\s+/g, " ").trim().length;
   p.style.setProperty("--meia-frase", Math.ceil(n / 2) + 2 + "ch");
 });
+
+/* Tipografia (regra de design, 2026-11-21): uma frase nova não pode começar com uma só palavra
+   no fim de uma linha (ex.: "… cada momento. Técnicas"). Depois de o texto estar paginado,
+   mede cada início de frase; se a 1.ª palavra ficou sozinha no fim da linha e a 2.ª passou
+   para a linha seguinte, troca o espaço antes da frase por uma quebra de linha.
+   Volta a calcular quando a largura da janela muda. */
+(function () {
+  var SEL = "p, li, dd, blockquote";
+  var FIM = /[.!?…][»"”’)]?( )(?=\S)/g;
+
+  function limpa(el) {
+    var bs = el.querySelectorAll("br.quebra-frase");
+    if (!bs.length) return;
+    bs.forEach(function (b) { b.replaceWith(document.createTextNode(" ")); });
+    el.normalize();
+  }
+
+  function caixa(no, a, b) {
+    var r = document.createRange();
+    r.setStart(no, a); r.setEnd(no, b);
+    var rs = r.getClientRects();
+    return rs.length ? rs : null;
+  }
+
+  function corrigeUma(el) {
+    var w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), no;
+    while ((no = w.nextNode())) {
+      var t = no.data, m;
+      FIM.lastIndex = 0;
+      while ((m = FIM.exec(t))) {
+        var esp = m.index + m[0].length - 1;      // posição do espaço antes da frase
+        var s = esp + 1;
+        var e1 = t.indexOf(" ", s);
+        if (e1 < 0) continue;                      // 1.ª palavra continua noutro nó: ignora
+        var e2 = t.indexOf(" ", e1 + 1);
+        if (e2 < 0) e2 = t.length;
+        if (e2 <= e1 + 1) continue;
+        var r1 = caixa(no, s, e1), r2 = caixa(no, e1 + 1, e2);
+        if (!r1 || !r2) continue;
+        var a = r1[r1.length - 1], b = r2[0];
+        if (b.top - a.top > a.height * 0.5) {     // a 2.ª palavra caiu para a linha seguinte
+          var resto = no.splitText(esp);
+          resto.deleteData(0, 1);
+          var br = document.createElement("br");
+          br.className = "quebra-frase";
+          resto.parentNode.insertBefore(br, resto);
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  function corrige() {
+    document.querySelectorAll(SEL).forEach(function (el) {
+      if (!el.offsetParent && getComputedStyle(el).position !== "fixed") return;
+      limpa(el);
+      for (var i = 0; i < 20 && corrigeUma(el); i++) {}
+    });
+  }
+
+  var largura = window.innerWidth, t;
+  function agenda() { clearTimeout(t); t = setTimeout(corrige, 150); }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(corrige); else window.addEventListener("load", corrige);
+  window.addEventListener("resize", function () {
+    if (window.innerWidth === largura) return;
+    largura = window.innerWidth; agenda();
+  });
+  document.addEventListener("click", function () { clearTimeout(t); t = setTimeout(corrige, 450); });   // separadores, painéis e filtros mostram textos novos
+  window.vilalaraQuebrasFrase = corrige;   // para textos que aparecem depois (separadores, painéis)
+})();
+
+/* Pilha de fotos (Our Heritage): o progresso do scroll dentro da secção (0 → 1) abre a pilha.
+   Cada foto sai um pouco depois da anterior; o título aparece quando a pilha já se abriu. */
+(function () {
+  var secs = document.querySelectorAll("[data-pilha]");
+  if (!secs.length || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  function suave(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+  function limita(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+  function atualiza() {
+    secs.forEach(function (sec) {
+      var r = sec.getBoundingClientRect(), vh = window.innerHeight;
+      var total = r.height - vh;
+      var p = limita(-r.top / (total * 0.8));          // abre nos primeiros 80% e fica parado no fim
+      var fotos = sec.querySelectorAll(".pilha__foto"), n = fotos.length;
+      fotos.forEach(function (f, i) {
+        var atraso = (i / n) * 0.35;
+        f.style.setProperty("--p", suave(limita((p - atraso) / 0.65)).toFixed(4));
+      });
+      sec.style.setProperty("--titulo", limita((p - 0.55) / 0.3).toFixed(3));
+    });
+  }
+  var pedido = false;
+  function agenda() { if (!pedido) { pedido = true; requestAnimationFrame(function () { pedido = false; atualiza(); }); } }
+  window.addEventListener("scroll", agenda, { passive: true });
+  window.addEventListener("resize", agenda);
+  atualiza();
+})();

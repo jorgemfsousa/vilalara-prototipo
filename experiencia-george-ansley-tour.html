@@ -10,9 +10,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&family=Marcellus&family=Pinyon+Script&display=swap">
 <link rel="stylesheet" href="https://use.typekit.net/oav4umc.css"><!-- Adobe Fonts: Optima nova + Richmond Display (projeto "Vilalara site prototipo") -->
 <link rel="stylesheet" href="https://use.typekit.net/ozg0foo.css"><!-- Adobe Fonts: Fact VF (projeto "Vilalara site prototipo Fact") -->
-<link rel="stylesheet" href="assets/css/tokens.css?v=20261124q">
-<link rel="stylesheet" href="assets/css/base.css?v=20261124q">
-<link rel="stylesheet" href="assets/css/blocos.css?v=20261124q">
+<link rel="stylesheet" href="assets/css/tokens.css?v=20261126e">
+<link rel="stylesheet" href="assets/css/base.css?v=20261126e">
+<link rel="stylesheet" href="assets/css/blocos.css?v=20261126e">
 </head>
 <body>
 
@@ -75,7 +75,7 @@
 
   <!-- BLOCO: intro (só texto) -->
   <section class="intro intro--so-texto" id="sobre">
-    <p class="intro__texto">A&nbsp;experiência George Ansley Boat Tour com&nbsp;piquenique privado inspira-se na&nbsp;viagem que&nbsp;revelou pela&nbsp;primeira vez a&nbsp;costa algarvia a&nbsp;George Ansley, um&nbsp;lugar de&nbsp;beleza serena que&nbsp;viria a&nbsp;tornar-se o&nbsp;lar do&nbsp;Vilalara.</p>
+    <p class="intro__texto">A&nbsp;experiência George Ansley Boat Tour com&nbsp;piquenique privado <span class="sem-quebra">inspira-se</span> na&nbsp;viagem que&nbsp;revelou pela&nbsp;primeira vez a&nbsp;costa algarvia a&nbsp;George Ansley, um&nbsp;lugar de&nbsp;beleza serena que&nbsp;viria a&nbsp;<span class="sem-quebra">tornar-se</span> o&nbsp;lar do&nbsp;Vilalara.</p>
   </section>
   <!-- /BLOCO: intro -->
 
@@ -83,11 +83,11 @@
   <!-- BLOCO: colagem-experiencia (preço, 2 textos, 2 fotos e o que inclui) -->
   <section class="exp-colagem" aria-label="Sobre a experiência">
     <ul class="exp-precos">
-      <li>Desde 770€, para&nbsp;até 8&nbsp;pessoas</li>
+      <li>Desde&nbsp;770€, para&nbsp;até&nbsp;8&nbsp;pessoas</li>
       <li>Mínimo de&nbsp;2 pessoas</li>
     </ul>
-    <div class="exp-colagem__t1"><p>Enquanto desliza ao&nbsp;longo da&nbsp;costa, o&nbsp;mar, a&nbsp;luz e&nbsp;as&nbsp;falésias esculpidas unem-se num cenário marcado pela&nbsp;tranquilidade e&nbsp;elegância natural. A&nbsp;experiência decorre a&nbsp;um&nbsp;ritmo calmo, convidando-o a&nbsp;contemplar algumas das&nbsp;paisagens mais icónicas da&nbsp;região a&nbsp;partir do&nbsp;mar.</p></div>
-    <div class="exp-colagem__t2"><p>Um&nbsp;piquenique privado, cuidadosamente preparado numa praia isolada, completa a&nbsp;experiência, criando um&nbsp;momento de&nbsp;intimidade e&nbsp;descontração, marcado pela&nbsp;simplicidade, beleza e&nbsp;uma&nbsp;profunda ligação ao&nbsp;lugar.</p></div>
+    <div class="exp-colagem__t1"><p>Enquanto desliza ao&nbsp;longo da&nbsp;costa, o&nbsp;mar, a&nbsp;luz e&nbsp;as&nbsp;falésias esculpidas <span class="sem-quebra">unem-se</span> num&nbsp;cenário marcado pela&nbsp;tranquilidade e&nbsp;elegância natural. A&nbsp;experiência decorre a&nbsp;um&nbsp;ritmo calmo, <span class="sem-quebra">convidando-o</span> a&nbsp;contemplar algumas das&nbsp;paisagens mais icónicas da&nbsp;região a&nbsp;partir do&nbsp;mar.</p></div>
+    <div class="exp-colagem__t2"><p>Um&nbsp;piquenique privado, cuidadosamente preparado numa&nbsp;praia isolada, completa a&nbsp;experiência, criando um&nbsp;momento de&nbsp;intimidade e&nbsp;descontração, marcado pela&nbsp;simplicidade, beleza e&nbsp;uma&nbsp;profunda ligação ao&nbsp;lugar.</p></div>
     <figure class="exp-colagem__grande"><img src="assets/img/experiencias/george-ansley-tour/grande.jpg" alt="Gruta nas falésias aberta para o mar turquesa" loading="lazy"></figure>
     <figure class="exp-colagem__pequena"><img src="assets/img/experiencias/george-ansley-tour/pequena.jpg" alt="Piquenique na praia com almofadas e lanternas" loading="lazy"></figure>
     <div class="exp-colagem__lista">
@@ -95,7 +95,7 @@
       <ul>
         <li>Cruzeiro privado ao&nbsp;longo da&nbsp;costa&nbsp;algarvia</li>
         <li>Paisagens costeiras icónicas, águas cristalinas e&nbsp;praias&nbsp;isoladas</li>
-        <li>Piquenique privado numa praia&nbsp;isolada</li>
+        <li>Piquenique privado numa&nbsp;praia&nbsp;isolada</li>
         <li>Por&nbsp;favor, reserve com&nbsp;pelo&nbsp;menos 48 horas de&nbsp;antecedência</li>
       </ul>
     </div>
@@ -111,7 +111,7 @@
     </div>
     <form class="pedido__form" action="#" data-pedido-email="guestrelations@vilalara.com" data-pedido-assunto="Pedido de experiência">
       <label class="pedido__campo pedido__campo--largo"><span>Nome e&nbsp;apelido</span><input type="text" name="nome" autocomplete="name" required></label>
-      <label class="pedido__campo"><span>E-mail</span><input type="email" name="email" autocomplete="email" required></label>
+      <label class="pedido__campo"><span><span class="sem-quebra">E-mail</span></span><input type="email" name="email" autocomplete="email" required></label>
       <label class="pedido__campo"><span>Telefone</span><input type="tel" name="telefone" autocomplete="tel"></label>
       <label class="pedido__campo pedido__campo--largo"><span>Experiência</span>
         <select name="experiencia" required>
@@ -134,7 +134,7 @@
       <label class="pedido__aceito"><input type="checkbox" name="privacidade" required> Eu concordo com&nbsp;a <a href="politica-privacidade.html">Política de&nbsp;Privacidade</a></label>
       <div class="pedido__acoes">
         <button class="botao-contorno" type="submit">Pedir marcação</button>
-        <p class="pedido__ok" hidden>Obrigado. O&nbsp;seu programa de&nbsp;e-mail abre com&nbsp;o&nbsp;pedido para&nbsp;guestrelations@vilalara.com.</p>
+        <p class="pedido__ok" hidden>Obrigado. O&nbsp;seu programa de&nbsp;<span class="sem-quebra">e-mail</span> abre com&nbsp;o&nbsp;pedido para&nbsp;guestrelations@vilalara.com.</p>
       </div>
     </form>
   </section>
@@ -237,12 +237,15 @@
   <li class="painel__item tem-sub">
     <div class="painel__linha"><a href="suites-residencias.html" data-categoria="suites-residencias">Suítes &amp;&nbsp;Residências</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-suites-residencias"><span class="sr-only">Submenu Suítes &amp;&nbsp;Residências</span></button></div>
     <ul id="sub-suites-residencias" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item painel__favoritos"><a href="suites-residencias.html#favoritos">Os&nbsp;favoritos</a></li>
+    <li class="painel__grupo">Suítes</li>
     <li class="painel__item"><a href="elegant-suite.html">Elegant Suite</a></li>
     <li class="painel__item"><a href="master-suite.html">Master Suite</a></li>
     <li class="painel__item"><a href="ocean-suite.html">Ocean Suite</a></li>
     <li class="painel__item"><a href="grand-suite.html">Grand Suite</a></li>
     <li class="painel__item"><a href="george-ansley-suite.html">George Ansley Suite</a></li>
     <li class="painel__item"><a href="jose-de-harry-suite.html">José de&nbsp;Harry Suite</a></li>
+    <li class="painel__grupo">Residências</li>
     <li class="painel__item"><a href="private-residences.html">Private Residences</a></li>
     <li class="painel__item"><a href="casa-laranjo.html">Casa Laranjo</a></li>
     <li class="painel__item"><a href="casa-levy.html">Casa Levy</a></li>
@@ -255,7 +258,7 @@
     <li class="painel__item"><a href="coral.html">Coral</a></li>
     <li class="painel__item"><a href="raizes.html">Raízes</a></li>
     <li class="painel__item"><a href="trattoria.html">Trattoria</a></li>
-    <li class="painel__item"><a href="a-costa.html">A-costa</a></li>
+    <li class="painel__item"><a href="a-costa.html"><span class="sem-quebra">A-costa</span></a></li>
     <li class="painel__item"><a href="vento.html">Vento</a></li>
     <li class="painel__item"><a href="gaivotas.html">Gaivotas</a></li>
     </ul>
@@ -281,7 +284,7 @@
       <ul id="sub-programas" hidden class="painel__sub painel__sub--n3">
       <li class="painel__item"><a href="programa-thalassotherapy-healing.html">Thalassotherapy Healing</a></li>
       <li class="painel__item"><a href="programa-fitness-essence.html">Fitness Essence</a></li>
-      <li class="painel__item"><a href="programa-bespoke-anti-ageing-retreat.html">Bespoke Anti-ageing Retreat</a></li>
+      <li class="painel__item"><a href="programa-bespoke-anti-ageing-retreat.html">Bespoke <span class="sem-quebra">Anti-ageing</span> Retreat</a></li>
       <li class="painel__item"><a href="programa-stress-relief-recover.html">Stress Relief &amp;&nbsp;Recover</a></li>
       <li class="painel__item"><a href="programa-detox-weight-management.html">Detox &amp;&nbsp;Weight Management</a></li>
       </ul>
@@ -341,6 +344,6 @@
 </nav>
 <!-- /BLOCO: painel-menu -->
 
-<script src="assets/js/site.js?v=20261124q"></script>
+<script src="assets/js/site.js?v=20261126e"></script>
 </body>
 </html>

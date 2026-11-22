@@ -10,9 +10,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&family=Marcellus&family=Pinyon+Script&display=swap">
 <link rel="stylesheet" href="https://use.typekit.net/oav4umc.css"><!-- Adobe Fonts: Optima nova + Richmond Display (projeto "Vilalara site prototipo") -->
 <link rel="stylesheet" href="https://use.typekit.net/ozg0foo.css"><!-- Adobe Fonts: Fact VF (projeto "Vilalara site prototipo Fact") -->
-<link rel="stylesheet" href="assets/css/tokens.css?v=20261124q">
-<link rel="stylesheet" href="assets/css/base.css?v=20261124q">
-<link rel="stylesheet" href="assets/css/blocos.css?v=20261124q">
+<link rel="stylesheet" href="assets/css/tokens.css?v=20261126e">
+<link rel="stylesheet" href="assets/css/base.css?v=20261126e">
+<link rel="stylesheet" href="assets/css/blocos.css?v=20261126e">
 </head>
 <body>
 
@@ -58,7 +58,10 @@
     <figure class="slide__media" style="--foco: 50% 60%">
       <img src="assets/img/geral/vista-aerea.jpg" alt="Vista aérea do Vilalara entre os jardins e o mar" fetchpriority="high">
     </figure>
-    <h1 class="landing__titulo">Sustentabilidade</h1>
+    <div class="hero-quarto__texto">
+      <p class="hero-quarto__nome">Sustentabilidade</p>
+      <h1 class="hero-quarto__titulo">Compromisso com&nbsp;a <span class="intro__script">sustentabilidade</span></h1>
+    </div>
     <a class="seta-scroll" href="#apresentacao" aria-label="Descer para a apresentação">
       <svg viewBox="0 0 14 32" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M7 0v31M1 25l6 6 6-6"/></svg>
     </a>
@@ -68,11 +71,9 @@
   <div class="landing--fixo__conteudo"><!-- tudo o que sobe por cima do banner fixo (fundo contínuo, sem frestas) -->
 
   <!-- BLOCO: intro -->
-  <section class="intro" id="apresentacao">
-    <h2 class="intro__titulo">Compromisso com&nbsp;a<br><span class="intro__script" style="white-space: nowrap">sustentabilidade</span></h2>
+  <section class="intro intro--sem-titulo" id="apresentacao">
     <div class="intro__texto">
-      <p class="intro__sobre">Sustentabilidade</p>
-      <p>No&nbsp;Vilalara Grand Hotel Algarve acreditamos que&nbsp;a&nbsp;nossa missão é&nbsp;satisfazer todas as&nbsp;expectativas dos&nbsp;nossos hóspedes, oferecendo-lhes as&nbsp;melhores experiências. Para&nbsp;isso, estamos empenhados em&nbsp;melhorar cada detalhe da&nbsp;nossa infraestrutura, dos&nbsp;nossos serviços e&nbsp;das&nbsp;nossas atividades do&nbsp;dia-a-dia, mantendo o&nbsp;nosso ambiente intimista, os&nbsp;nossos serviços de&nbsp;standards elevados e&nbsp;a&nbsp;nossa vontade de&nbsp;proporcionar experiências memoráveis ​​a&nbsp;todos os&nbsp;que&nbsp;nos&nbsp;visitam.</p>
+      <p>No&nbsp;Vilalara Grand Hotel Algarve acreditamos que&nbsp;a&nbsp;nossa missão é&nbsp;satisfazer todas as&nbsp;expectativas dos&nbsp;nossos hóspedes, <span class="sem-quebra">oferecendo-lhes</span> as&nbsp;melhores experiências. Para&nbsp;isso, estamos empenhados em&nbsp;melhorar cada detalhe da&nbsp;nossa infraestrutura, dos&nbsp;nossos serviços e&nbsp;das&nbsp;nossas atividades do&nbsp;<span class="sem-quebra">dia-a-dia</span>, mantendo o&nbsp;nosso ambiente intimista, os&nbsp;nossos serviços de&nbsp;standards elevados e&nbsp;a&nbsp;nossa vontade de&nbsp;proporcionar experiências memoráveis ​​a&nbsp;todos os&nbsp;que&nbsp;nos&nbsp;visitam.</p>
     </div>
   </section>
   <!-- /BLOCO: intro -->
@@ -83,7 +84,7 @@
       <figure class="destaque__foto"><img src="assets/img/institucional/sust-agua.jpg" alt="Reflexos de luz na água de uma piscina" loading="lazy"></figure>
       <div class="destaque__texto">
         <h3>Eficiência da&nbsp;água</h3>
-        <p>Comprometidos com&nbsp;a&nbsp;responsabilidade ambiental, todos os&nbsp;quartos possuem um&nbsp;controlador de&nbsp;fluxo de&nbsp;água para&nbsp;conservação. Utilizamos água do&nbsp;mar em&nbsp;três piscinas e&nbsp;áreas de&nbsp;tratamento para&nbsp;reduzir o&nbsp;consumo de&nbsp;água doce. As&nbsp;metas de&nbsp;curto prazo incluem a&nbsp;expansão de&nbsp;um&nbsp;sistema de&nbsp;irrigação automatizado, utilizando água da&nbsp;chuva em&nbsp;todos os&nbsp;jardins. Para&nbsp;endereçar a&nbsp;pegada hídrica, a&nbsp;roupa de&nbsp;cama e&nbsp;as&nbsp;toalhas são trocadas a&nbsp;cada três dias. Os&nbsp;hóspedes são incentivados a&nbsp;usar toalhas de&nbsp;piscina de&nbsp;forma responsável, com&nbsp;trocas diárias mediante solicitação. Junte-se a&nbsp;nós na&nbsp;promoção do&nbsp;comportamento ecológico para&nbsp;reduzir o&nbsp;nosso impacto nos&nbsp;recursos hídricos&nbsp;locais.</p>
+        <p>Comprometidos com&nbsp;a&nbsp;responsabilidade ambiental, todos os&nbsp;quartos possuem um&nbsp;controlador de&nbsp;fluxo de&nbsp;água para&nbsp;conservação. Utilizamos água do&nbsp;mar em&nbsp;três piscinas e&nbsp;áreas de&nbsp;tratamento para&nbsp;reduzir o&nbsp;consumo de&nbsp;água doce. As&nbsp;metas de&nbsp;curto prazo incluem a&nbsp;expansão de&nbsp;um&nbsp;sistema de&nbsp;irrigação automatizado, utilizando água da&nbsp;chuva em&nbsp;todos os&nbsp;jardins. Para&nbsp;endereçar a&nbsp;pegada hídrica, a&nbsp;roupa de&nbsp;cama e&nbsp;as&nbsp;toalhas são trocadas a&nbsp;cada três dias. Os&nbsp;hóspedes são incentivados a&nbsp;usar toalhas de&nbsp;piscina de&nbsp;forma responsável, com&nbsp;trocas diárias mediante solicitação. <span class="sem-quebra">Junte-se</span> a&nbsp;nós na&nbsp;promoção do&nbsp;comportamento ecológico para&nbsp;reduzir o&nbsp;nosso impacto nos&nbsp;recursos hídricos&nbsp;locais.</p>
       </div>
     </article>
     <article class="destaque destaque--inverso" id="energia">
@@ -97,14 +98,14 @@
       <figure class="destaque__foto"><img src="assets/img/institucional/sust-consumo.jpg" alt="Flor de amendoeira num ramo, com fundo desfocado" loading="lazy"></figure>
       <div class="destaque__texto">
         <h3>Consumo e&nbsp;produção responsáveis</h3>
-        <p>Estamos comprometidos com&nbsp;a&nbsp;sustentabilidade, substituindo os&nbsp;objetos de&nbsp;plástico por&nbsp;materiais 100% recicláveis. As&nbsp;nossas práticas eco-friendly incluem um&nbsp;sistema de&nbsp;recarga de&nbsp;produtos de&nbsp;higiene pessoal, reduzindo o&nbsp;uso de&nbsp;plástico e&nbsp;aumentando a&nbsp;eficiência. Todos os&nbsp;consumíveis de&nbsp;plástico do&nbsp;hotel, desde os&nbsp;quartos aos&nbsp;estabelecimentos de&nbsp;alimentação, estão a&nbsp;ser substituídos por&nbsp;alternativas biodegradáveis. As&nbsp;chaves dos&nbsp;quartos, agora feitas de&nbsp;madeira, sinalizam o&nbsp;nosso afastamento do&nbsp;plástico, com&nbsp;planos futuros para&nbsp;a&nbsp;tecnologia NFC para&nbsp;acesso móvel aos&nbsp;quartos.</p>
+        <p>Estamos comprometidos com&nbsp;a&nbsp;sustentabilidade, substituindo os&nbsp;objetos de&nbsp;plástico por&nbsp;materiais 100% recicláveis. As&nbsp;nossas práticas <span class="sem-quebra">eco-friendly</span> incluem um&nbsp;sistema de&nbsp;recarga de&nbsp;produtos de&nbsp;higiene pessoal, reduzindo o&nbsp;uso de&nbsp;plástico e&nbsp;aumentando a&nbsp;eficiência. Todos os&nbsp;consumíveis de&nbsp;plástico do&nbsp;hotel, desde&nbsp;os&nbsp;quartos aos&nbsp;estabelecimentos de&nbsp;alimentação, estão a&nbsp;ser substituídos por&nbsp;alternativas biodegradáveis. As&nbsp;chaves dos&nbsp;quartos, agora feitas de&nbsp;madeira, sinalizam o&nbsp;nosso afastamento do&nbsp;plástico, com&nbsp;planos futuros para&nbsp;a&nbsp;tecnologia NFC para&nbsp;acesso móvel aos&nbsp;quartos.</p>
       </div>
     </article>
     <article class="destaque destaque--inverso" id="mobilidade">
       <figure class="destaque__foto"><img src="assets/img/institucional/sust-mobilidade.jpg" alt="Selim de uma bicicleta verde-água, ao sol" loading="lazy"></figure>
       <div class="destaque__texto">
         <h3>Mobilidade sustentável</h3>
-        <p>Atualmente, o&nbsp;Vilalara Grand Hotel Algarve dispõe de&nbsp;dois pontos de&nbsp;carregamento para&nbsp;carros elétricos e&nbsp;pretendemos aumentá-los para&nbsp;quatro. Estamos no&nbsp;processo de&nbsp;substituir veículos a&nbsp;gasolina e&nbsp;diesel utilizados para&nbsp;logística de&nbsp;serviços internos, por&nbsp;alternativas de&nbsp;transporte elétrico. A&nbsp;estratégia visa reduzir a&nbsp;poluição atmosférica e&nbsp;o&nbsp;consumo de&nbsp;combustível, uma&nbsp;vez que&nbsp;estes veículos circulam a&nbsp;maior parte do&nbsp;tempo dentro do&nbsp;hotel.</p>
+        <p>Atualmente, o&nbsp;Vilalara Grand Hotel Algarve dispõe de&nbsp;dois pontos de&nbsp;carregamento para&nbsp;carros elétricos e&nbsp;pretendemos <span class="sem-quebra">aumentá-los</span> para&nbsp;quatro. Estamos no&nbsp;processo de&nbsp;substituir veículos a&nbsp;gasolina e&nbsp;diesel utilizados para&nbsp;logística de&nbsp;serviços internos, por&nbsp;alternativas de&nbsp;transporte elétrico. A&nbsp;estratégia visa reduzir a&nbsp;poluição atmosférica e&nbsp;o&nbsp;consumo de&nbsp;combustível, uma&nbsp;vez que&nbsp;estes veículos circulam a&nbsp;maior parte do&nbsp;tempo dentro do&nbsp;hotel.</p>
       </div>
     </article>
     <article class="destaque" id="impacto">
@@ -118,7 +119,7 @@
       <figure class="destaque__foto"><img src="assets/img/institucional/sust-locais.jpg" alt="Peras e figos frescos num saco de pano, sobre linho" loading="lazy"></figure>
       <div class="destaque__texto">
         <h3>Produtos locais</h3>
-        <p>Utilizamos produtos de&nbsp;fornecedores locais nos&nbsp;nossos restaurantes. Desta forma, contribuímos para&nbsp;a&nbsp;economia local e&nbsp;reduzimos a&nbsp;pegada de&nbsp;carbono associada ao&nbsp;transporte de&nbsp;bens e&nbsp;serviços. Pretendemos expandir o ‘Chef’s Garden’ e&nbsp;transformá-lo numa quinta biológica para&nbsp;aumentar a&nbsp;produção de&nbsp;vegetais, ervas aromáticas e&nbsp;frutas. O&nbsp;nosso objetivo é&nbsp;proporcionar aos&nbsp;nossos hóspedes uma&nbsp;experiência gastronómica saudável com&nbsp;produtos&nbsp;locais.</p>
+        <p>Utilizamos produtos de&nbsp;fornecedores locais nos&nbsp;nossos restaurantes. Desta&nbsp;forma, contribuímos para&nbsp;a&nbsp;economia local e&nbsp;reduzimos a&nbsp;pegada de&nbsp;carbono associada ao&nbsp;transporte de&nbsp;bens e&nbsp;serviços. Pretendemos expandir o&nbsp;‘Chef’s Garden’ e&nbsp;<span class="sem-quebra">transformá-lo</span> numa&nbsp;quinta biológica para&nbsp;aumentar a&nbsp;produção de&nbsp;vegetais, ervas aromáticas e&nbsp;frutas. O&nbsp;nosso objetivo é&nbsp;proporcionar aos&nbsp;nossos hóspedes uma&nbsp;experiência gastronómica saudável com&nbsp;produtos&nbsp;locais.</p>
       </div>
     </article>
   </section>
@@ -223,12 +224,15 @@
   <li class="painel__item tem-sub">
     <div class="painel__linha"><a href="suites-residencias.html" data-categoria="suites-residencias">Suítes &amp;&nbsp;Residências</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-suites-residencias"><span class="sr-only">Submenu Suítes &amp;&nbsp;Residências</span></button></div>
     <ul id="sub-suites-residencias" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item painel__favoritos"><a href="suites-residencias.html#favoritos">Os&nbsp;favoritos</a></li>
+    <li class="painel__grupo">Suítes</li>
     <li class="painel__item"><a href="elegant-suite.html">Elegant Suite</a></li>
     <li class="painel__item"><a href="master-suite.html">Master Suite</a></li>
     <li class="painel__item"><a href="ocean-suite.html">Ocean Suite</a></li>
     <li class="painel__item"><a href="grand-suite.html">Grand Suite</a></li>
     <li class="painel__item"><a href="george-ansley-suite.html">George Ansley Suite</a></li>
     <li class="painel__item"><a href="jose-de-harry-suite.html">José de&nbsp;Harry Suite</a></li>
+    <li class="painel__grupo">Residências</li>
     <li class="painel__item"><a href="private-residences.html">Private Residences</a></li>
     <li class="painel__item"><a href="casa-laranjo.html">Casa Laranjo</a></li>
     <li class="painel__item"><a href="casa-levy.html">Casa Levy</a></li>
@@ -241,7 +245,7 @@
     <li class="painel__item"><a href="coral.html">Coral</a></li>
     <li class="painel__item"><a href="raizes.html">Raízes</a></li>
     <li class="painel__item"><a href="trattoria.html">Trattoria</a></li>
-    <li class="painel__item"><a href="a-costa.html">A-costa</a></li>
+    <li class="painel__item"><a href="a-costa.html"><span class="sem-quebra">A-costa</span></a></li>
     <li class="painel__item"><a href="vento.html">Vento</a></li>
     <li class="painel__item"><a href="gaivotas.html">Gaivotas</a></li>
     </ul>
@@ -267,7 +271,7 @@
       <ul id="sub-programas" hidden class="painel__sub painel__sub--n3">
       <li class="painel__item"><a href="programa-thalassotherapy-healing.html">Thalassotherapy Healing</a></li>
       <li class="painel__item"><a href="programa-fitness-essence.html">Fitness Essence</a></li>
-      <li class="painel__item"><a href="programa-bespoke-anti-ageing-retreat.html">Bespoke Anti-ageing Retreat</a></li>
+      <li class="painel__item"><a href="programa-bespoke-anti-ageing-retreat.html">Bespoke <span class="sem-quebra">Anti-ageing</span> Retreat</a></li>
       <li class="painel__item"><a href="programa-stress-relief-recover.html">Stress Relief &amp;&nbsp;Recover</a></li>
       <li class="painel__item"><a href="programa-detox-weight-management.html">Detox &amp;&nbsp;Weight Management</a></li>
       </ul>
@@ -327,6 +331,6 @@
 </nav>
 <!-- /BLOCO: painel-menu -->
 
-<script src="assets/js/site.js?v=20261124q"></script>
+<script src="assets/js/site.js?v=20261126e"></script>
 </body>
 </html>

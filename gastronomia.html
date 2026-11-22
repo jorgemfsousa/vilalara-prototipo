@@ -10,9 +10,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&family=Marcellus&family=Pinyon+Script&display=swap">
 <link rel="stylesheet" href="https://use.typekit.net/oav4umc.css"><!-- Adobe Fonts: Optima nova + Richmond Display (projeto "Vilalara site prototipo") -->
 <link rel="stylesheet" href="https://use.typekit.net/ozg0foo.css"><!-- Adobe Fonts: Fact VF (projeto "Vilalara site prototipo Fact") -->
-<link rel="stylesheet" href="assets/css/tokens.css?v=20261124q">
-<link rel="stylesheet" href="assets/css/base.css?v=20261124q">
-<link rel="stylesheet" href="assets/css/blocos.css?v=20261124q">
+<link rel="stylesheet" href="assets/css/tokens.css?v=20261126e">
+<link rel="stylesheet" href="assets/css/base.css?v=20261126e">
+<link rel="stylesheet" href="assets/css/blocos.css?v=20261126e">
 </head>
 <body>
 
@@ -74,7 +74,7 @@
 
   <!-- BLOCO: intro-categoria -->
   <section class="intro intro--sem-titulo" id="apresentacao">
-    <p class="intro__texto">Delicie-se com&nbsp;os&nbsp;sabores requintados e&nbsp;os&nbsp;aromas irresistíveis que&nbsp;o&nbsp;aguardam ao&nbsp;deixar-se envolver no&nbsp;nosso rico leque de&nbsp;delícias culinárias. Desde entradas sumptuosas a&nbsp;sobremesas decadentes, o&nbsp;nosso menu foi concebido para&nbsp;agradar até os&nbsp;paladares mais&nbsp;exigentes.</p>
+    <p class="intro__texto"><span class="sem-quebra">Delicie-se</span> com&nbsp;os&nbsp;sabores requintados e&nbsp;os&nbsp;aromas irresistíveis que&nbsp;o&nbsp;aguardam ao&nbsp;<span class="sem-quebra">deixar-se</span> envolver no&nbsp;nosso rico leque de&nbsp;delícias culinárias. Desde&nbsp;entradas sumptuosas a&nbsp;sobremesas decadentes, o&nbsp;nosso menu foi concebido para&nbsp;agradar até&nbsp;os&nbsp;paladares mais&nbsp;exigentes.</p>
   </section>
   <!-- /BLOCO: intro-categoria -->
 
@@ -82,7 +82,7 @@
   <!-- BLOCO: colagem-gastronomia — a mesma estrutura da colagem do Wellness (foto grande à esquerda,
        três fotos soltas à direita, com a lista dos restaurantes no canto). Fotos: assets/img/gastronomia/editorial/ -->
   <section class="galeria galeria--wellness galeria--gastronomia-w" aria-label="Os sabores do Vilalara">
-    <p class="horario"><span>Restaurantes e&nbsp;bares</span> Coral · Raízes · Trattoria · A-costa · Vento ·&nbsp;Gaivotas</p>
+    <p class="horario"><span>Restaurantes e&nbsp;bares</span> Coral · Raízes · Trattoria · <span class="sem-quebra">A-costa</span> · Vento ·&nbsp;Gaivotas</p>
     <figure class="w1"><div class="foto"><img src="assets/img/gastronomia/editorial/colagem-1.jpg?v=4" alt="Vinho branco servido a uma convidada num evento no jardim" loading="lazy"></div></figure>
     <figure class="w2"><div class="foto"><img src="assets/img/gastronomia/editorial/colagem-2.jpg?v=4" alt="Convidados num evento no anfiteatro do jardim, com o mar ao fundo" loading="lazy"></div></figure>
     <figure class="w3"><div class="foto"><img src="assets/img/gastronomia/editorial/colagem-3.jpg?v=4" alt="Copos de sangria numa noite de Santos Populares" loading="lazy"></div></figure>
@@ -154,10 +154,9 @@
         <article class="tipo" id="vento" aria-label="Vento">
           <figure class="tipo__foto"><img src="assets/img/gastronomia/vento.jpg" alt="Sala do Vento com candeeiros de palha e teto vermelho" loading="lazy"></figure>
           <div class="tipo__info">
-            <p>Inspirado pela&nbsp;natureza, guiado pela&nbsp;criatividade e&nbsp;pelo&nbsp;equilíbrio, o&nbsp;Vento reinventa as&nbsp;tradições mediterrânicas num espaço autêntico onde cada prato convida a&nbsp;uma&nbsp;viagem sensorial. O&nbsp;bem-estar é&nbsp;saboreado em&nbsp;cada textura, em&nbsp;cada cor, em&nbsp;cada&nbsp;momento.</p>
+            <p>Inspirado pela&nbsp;natureza, guiado pela&nbsp;criatividade e&nbsp;pelo&nbsp;equilíbrio, o&nbsp;Vento reinventa as&nbsp;tradições mediterrânicas num&nbsp;espaço autêntico onde cada prato convida a&nbsp;uma&nbsp;viagem sensorial. O&nbsp;<span class="sem-quebra">bem-estar</span> é&nbsp;saboreado em&nbsp;cada textura, em&nbsp;cada cor, em&nbsp;cada&nbsp;momento.</p>
             <div class="tipo__acoes">
               <a class="botao-contorno" href="vento.html" data-abre-quarto data-hero="assets/img/gastronomia/vento/hero.jpg" data-foco="50% 50%">Ver&nbsp;restaurante</a>
-              <a class="botao-contorno" href="reserva-restaurante.html?r=vento">Reservar</a>
             </div>
           </div>
         </article>
@@ -275,12 +274,15 @@
   <li class="painel__item tem-sub">
     <div class="painel__linha"><a href="suites-residencias.html" data-categoria="suites-residencias">Suítes &amp;&nbsp;Residências</a><button class="painel__abre" type="button" aria-expanded="false" aria-controls="sub-suites-residencias"><span class="sr-only">Submenu Suítes &amp;&nbsp;Residências</span></button></div>
     <ul id="sub-suites-residencias" hidden class="painel__sub painel__sub--n2">
+    <li class="painel__item painel__favoritos"><a href="suites-residencias.html#favoritos">Os&nbsp;favoritos</a></li>
+    <li class="painel__grupo">Suítes</li>
     <li class="painel__item"><a href="elegant-suite.html">Elegant Suite</a></li>
     <li class="painel__item"><a href="master-suite.html">Master Suite</a></li>
     <li class="painel__item"><a href="ocean-suite.html">Ocean Suite</a></li>
     <li class="painel__item"><a href="grand-suite.html">Grand Suite</a></li>
     <li class="painel__item"><a href="george-ansley-suite.html">George Ansley Suite</a></li>
     <li class="painel__item"><a href="jose-de-harry-suite.html">José de&nbsp;Harry Suite</a></li>
+    <li class="painel__grupo">Residências</li>
     <li class="painel__item"><a href="private-residences.html">Private Residences</a></li>
     <li class="painel__item"><a href="casa-laranjo.html">Casa Laranjo</a></li>
     <li class="painel__item"><a href="casa-levy.html">Casa Levy</a></li>
@@ -293,7 +295,7 @@
     <li class="painel__item"><a href="coral.html">Coral</a></li>
     <li class="painel__item"><a href="raizes.html">Raízes</a></li>
     <li class="painel__item"><a href="trattoria.html">Trattoria</a></li>
-    <li class="painel__item"><a href="a-costa.html">A-costa</a></li>
+    <li class="painel__item"><a href="a-costa.html"><span class="sem-quebra">A-costa</span></a></li>
     <li class="painel__item"><a href="vento.html">Vento</a></li>
     <li class="painel__item"><a href="gaivotas.html">Gaivotas</a></li>
     </ul>
@@ -319,7 +321,7 @@
       <ul id="sub-programas" hidden class="painel__sub painel__sub--n3">
       <li class="painel__item"><a href="programa-thalassotherapy-healing.html">Thalassotherapy Healing</a></li>
       <li class="painel__item"><a href="programa-fitness-essence.html">Fitness Essence</a></li>
-      <li class="painel__item"><a href="programa-bespoke-anti-ageing-retreat.html">Bespoke Anti-ageing Retreat</a></li>
+      <li class="painel__item"><a href="programa-bespoke-anti-ageing-retreat.html">Bespoke <span class="sem-quebra">Anti-ageing</span> Retreat</a></li>
       <li class="painel__item"><a href="programa-stress-relief-recover.html">Stress Relief &amp;&nbsp;Recover</a></li>
       <li class="painel__item"><a href="programa-detox-weight-management.html">Detox &amp;&nbsp;Weight Management</a></li>
       </ul>
@@ -379,6 +381,6 @@
 </nav>
 <!-- /BLOCO: painel-menu -->
 
-<script src="assets/js/site.js?v=20261124q"></script>
+<script src="assets/js/site.js?v=20261126e"></script>
 </body>
 </html>
