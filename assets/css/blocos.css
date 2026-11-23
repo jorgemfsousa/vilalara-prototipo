@@ -4278,3 +4278,56 @@ html .cab-interior .botao-link.parte--escuro { --b-cor: var(--cor-preto-90); --b
    para todas (as que têm seta ficavam 4px mais juntas) — 2026-11-22 */
 .painel .painel__menu > ul { gap: 0.875rem; }
 .painel__menu > ul > li > .painel__linha { min-height: 24px; }
+
+/* Privacidade / cookies (RGPD): bola discreta no canto inferior direito + popup ao centro (ref. aethos) */
+.privacidade-bola {
+  position: fixed; right: clamp(14px, 1.6vw, 28px); bottom: clamp(14px, 1.6vw, 28px); z-index: 9400;
+  display: grid; place-items: center; width: 44px; height: 44px; border: 0; border-radius: 50%;
+  background: #2b2b2b; color: #fff; cursor: pointer; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  transition: transform var(--duracao) var(--curva);
+}
+.privacidade-bola:hover, .privacidade-bola:focus-visible { transform: scale(1.06); }
+.privacidade-fundo {
+  position: fixed; inset: 0; z-index: 9600; display: grid; place-items: center; padding: 16px;
+  background: rgba(20, 16, 12, 0.55); animation: privacidade-entra 260ms var(--curva);
+}
+@keyframes privacidade-entra { from { opacity: 0; } to { opacity: 1; } }
+html.privacidade-aberta { overflow: hidden; }
+.privacidade {
+  position: relative; width: min(640px, 100%); max-height: calc(100svh - 32px); overflow-y: auto;
+  padding: clamp(24px, 3vw, 40px) clamp(20px, 3vw, 40px) clamp(20px, 2.4vw, 28px);
+  background: #fff; color: var(--cor-preto-90);
+}
+.privacidade__fechar { position: absolute; top: 18px; right: 18px; width: 32px; height: 32px; border: 0; background: none; cursor: pointer; }
+.privacidade__fechar::before, .privacidade__fechar::after { content: ""; position: absolute; top: 50%; left: 50%; width: 18px; height: 1.5px; background: var(--cor-preto-90); }
+.privacidade__fechar::before { transform: translate(-50%, -50%) rotate(45deg); }
+.privacidade__fechar::after { transform: translate(-50%, -50%) rotate(-45deg); }
+.privacidade__logo { display: block; width: auto; height: clamp(34px, 3.4vw, 44px); margin-bottom: 22px; }
+.privacidade__titulo { margin: 0 0 8px; font-family: var(--fonte-texto); font-size: 1.125rem; font-weight: 600; }
+.privacidade__texto { margin: 0; font-size: var(--tam-texto-pequeno); font-weight: 300; line-height: 1.5; }
+.privacidade__ligacoes { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 14px 0 22px; font-size: 0.8125rem; }
+.privacidade__ligacoes a { text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 3px; }
+.privacidade__ligacoes a:hover { text-decoration-color: currentColor; }
+.privacidade__lista { display: grid; gap: 12px; padding-top: 20px; border-top: 1px solid var(--cor-linha); }
+.privacidade__cat { border: 1px solid var(--cor-linha); padding: 14px 14px 14px 16px; }
+.privacidade__cab { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 14px; align-items: center; }
+.privacidade__nome { margin: 0 0 2px; font-weight: 600; font-size: 0.9375rem; }
+.privacidade__desc { margin: 0; font-size: 0.8125rem; font-weight: 300; line-height: 1.45; color: var(--cor-preto-70); }
+.privacidade__detalhe { margin: 10px 0 0; font-size: 0.8125rem; font-weight: 300; color: var(--cor-preto-70); }
+.privacidade__mais { position: relative; width: 24px; height: 24px; border: 0; background: none; cursor: pointer; }
+.privacidade__mais::before { content: ""; position: absolute; left: 50%; top: 45%; width: 8px; height: 8px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translate(-50%, -50%) rotate(45deg); transition: transform var(--duracao) var(--curva); }
+.privacidade__mais[aria-expanded="true"]::before { transform: translate(-50%, -20%) rotate(-135deg); }
+.interruptor { position: relative; display: inline-block; width: 40px; height: 22px; cursor: pointer; }
+.interruptor input { position: absolute; opacity: 0; width: 100%; height: 100%; margin: 0; cursor: inherit; }
+.interruptor span[aria-hidden] { position: absolute; inset: 0; border-radius: 11px; background: #cfccc6; transition: background var(--duracao) var(--curva); }
+.interruptor span[aria-hidden]::after { content: ""; position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; border-radius: 50%; background: #fff; transition: transform var(--duracao) var(--curva); }
+.interruptor input:checked + span { background: var(--cor-castanho-marca); }
+.interruptor input:checked + span::after { transform: translateX(18px); }
+.interruptor input:disabled + span { opacity: 0.45; }
+.interruptor input:focus-visible + span { outline: 2px solid var(--cor-castanho-marca); outline-offset: 2px; }
+.privacidade__botoes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 24px; }
+.privacidade__botoes button { padding: 13px 10px; border: 0; background: #2b2b2b; color: #fff; font: inherit; font-size: 0.875rem; font-weight: 600; cursor: pointer; transition: background var(--duracao) var(--curva); }
+.privacidade__botoes button:hover, .privacidade__botoes button:focus-visible { background: var(--cor-castanho-marca); }
+@media (max-width: 560px) { .privacidade__botoes { grid-template-columns: minmax(0, 1fr); } }
+.rodape__cookies { padding: 0; background: none; border: 0; color: inherit; font: inherit; cursor: pointer; text-align: left; }
+.rodape__cookies:hover { text-decoration: underline; text-underline-offset: 0.3em; }

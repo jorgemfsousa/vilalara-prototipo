@@ -969,7 +969,7 @@
     if (reduzMovimento) { v.removeAttribute("autoplay"); v.pause(); return; }
     if ("IntersectionObserver" in window) {
       new IntersectionObserver(function (e) {
-        if (e[0].isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause();
+        if (e[0].isIntersecting) { if (v.dataset.pausadoPeloUtilizador) return; var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause();
       }, { threshold: 0.1 }).observe(v);
     }
   });
@@ -1482,3 +1482,111 @@ document.querySelectorAll(".tratamentos .tratamento p").forEach(function (p) {
   window.addEventListener("resize", agenda);
   atualiza();
 })();
+
+/* Privacidade / cookies (RGPD, 2026-11-22). Maqueta do que a plataforma de consentimento real fará.
+   Uma bola discreta no canto inferior direito abre, ao centro, as "Definições de privacidade":
+   categorias com interruptor (Marketing, Funcionais, Essenciais sempre ativos) e três botões com
+   o mesmo peso (Guardar definições · Rejeitar · Aceitar todos). Na 1.ª visita abre sozinho (é preciso
+   perguntar antes de usar cookies não essenciais). A escolha fica em localStorage ("vl-cookies"). */
+(function () {
+  var CHAVE = "vl-cookies";
+  function lida() { try { return JSON.parse(localStorage.getItem(CHAVE) || "null"); } catch (e) { return null; } }
+  function grava(v) { v.data = Date.now(); try { localStorage.setItem(CHAVE, JSON.stringify(v)); } catch (e) {} }
+  var CATS = [
+    { id: "marketing", nome: "Marketing", texto: "Usadas por parceiros de publicidade para mostrar anúncios adequados aos seus interesses.", detalhe: "Ex.: Meta Pixel, Google Ads. Só são ativadas com a sua autorização." },
+    { id: "funcionais", nome: "Funcionais", texto: "Ajudam-nos a perceber como o site é usado, para medir e melhorar o desempenho.", detalhe: "Ex.: estatísticas de visitas (Google Analytics). Só são ativadas com a sua autorização." },
+    { id: "essenciais", nome: "Essenciais", texto: "Necessárias para o site funcionar, como guardar esta escolha ou o idioma.", detalhe: "Não podem ser desligadas." }
+  ];
+  var bola = document.createElement("button");
+  bola.type = "button";
+  bola.className = "privacidade-bola";
+  bola.setAttribute("aria-label", "Definições de privacidade");
+  bola.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z" fill="currentColor"/><path d="m8.5 12 2.4 2.4 4.6-4.8" fill="none" stroke="#2b2b2b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  document.body.appendChild(bola);
+
+  var fundo, ultimoFoco;
+  function fecha() { if (!fundo) return; fundo.remove(); fundo = null; document.documentElement.classList.remove("privacidade-aberta"); if (ultimoFoco) ultimoFoco.focus(); }
+  function abre() {
+    if (fundo) return;
+    ultimoFoco = document.activeElement;
+    var atual = lida() || { marketing: false, funcionais: false };
+    fundo = document.createElement("div");
+    fundo.className = "privacidade-fundo";
+    fundo.innerHTML =
+      '<section class="privacidade" role="dialog" aria-modal="true" aria-labelledby="privacidade-titulo">' +
+        '<button type="button" class="privacidade__fechar" data-p="fechar" aria-label="Fechar"></button>' +
+        '<img class="privacidade__logo" src="assets/img/marca/logo-escuro.png" alt="Vilalara Grand Hotel Algarve">' +
+        '<h2 class="privacidade__titulo" id="privacidade-titulo">Definições de&nbsp;privacidade</h2>' +
+        '<p class="privacidade__texto">Aqui pode escolher que tecnologias de&nbsp;terceiros podem recolher e&nbsp;tratar dados pessoais enquanto visita o&nbsp;site.</p>' +
+        '<p class="privacidade__ligacoes"><a href="politica-privacidade.html">Política de&nbsp;Privacidade</a><a href="politica-cookies.html">Política de&nbsp;Cookies</a><a href="termos-condicoes.html">Termos &amp;&nbsp;Condições</a></p>' +
+        '<div class="privacidade__lista">' + CATS.map(function (c) {
+          var fixo = c.id === "essenciais", on = fixo || !!atual[c.id];
+          return '<div class="privacidade__cat">' +
+            '<div class="privacidade__cab">' +
+              '<div><p class="privacidade__nome">' + c.nome + '</p><p class="privacidade__desc">' + c.texto + '</p></div>' +
+              '<label class="interruptor"><input type="checkbox" name="' + c.id + '"' + (on ? " checked" : "") + (fixo ? " disabled" : "") + '><span aria-hidden="true"></span><span class="sr-only">' + c.nome + '</span></label>' +
+              '<button type="button" class="privacidade__mais" data-p="mais" aria-expanded="false" aria-label="Mais sobre ' + c.nome + '"></button>' +
+            '</div>' +
+            '<p class="privacidade__detalhe" hidden>' + c.detalhe + '</p>' +
+          '</div>';
+        }).join("") + '</div>' +
+        '<div class="privacidade__botoes">' +
+          '<button type="button" data-p="guardar">Guardar definições</button>' +
+          '<button type="button" data-p="rejeitar">Rejeitar</button>' +
+          '<button type="button" data-p="aceitar">Aceitar todos</button>' +
+        '</div>' +
+      '</section>';
+    document.body.appendChild(fundo);
+    document.documentElement.classList.add("privacidade-aberta");
+    var caixa = fundo.querySelector(".privacidade");
+    fundo.querySelector("[data-p=fechar]").focus();
+    fundo.addEventListener("click", function (e) {
+      if (e.target === fundo) { if (lida()) fecha(); return; }
+      var b = e.target.closest("[data-p]"); if (!b) return;
+      var a = b.getAttribute("data-p");
+      if (a === "mais") {
+        var d = b.closest(".privacidade__cat").querySelector(".privacidade__detalhe");
+        d.hidden = !d.hidden; b.setAttribute("aria-expanded", d.hidden ? "false" : "true");
+      } else if (a === "guardar") {
+        grava({ marketing: caixa.querySelector("[name=marketing]").checked, funcionais: caixa.querySelector("[name=funcionais]").checked }); fecha();
+      } else if (a === "rejeitar") { grava({ marketing: false, funcionais: false }); fecha(); }
+      else if (a === "aceitar") { grava({ marketing: true, funcionais: true }); fecha(); }
+      else if (a === "fechar") { if (!lida()) grava({ marketing: false, funcionais: false }); fecha(); }   // fechar sem escolher = só essenciais
+    });
+    fundo.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") { if (!lida()) grava({ marketing: false, funcionais: false }); fecha(); }
+      if (e.key === "Tab") {   // o foco fica dentro do popup
+        var f = caixa.querySelectorAll("button, a, input:not([disabled])"), p = f[0], u = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === p) { e.preventDefault(); u.focus(); }
+        else if (!e.shiftKey && document.activeElement === u) { e.preventDefault(); p.focus(); }
+      }
+    });
+  }
+  bola.addEventListener("click", abre);
+  // ligação no rodapé para abrir as definições
+  document.querySelectorAll('.rodape a[href="politica-cookies.html"]').forEach(function (a) {
+    var li = a.closest("li"); if (!li) return;
+    var novo = document.createElement("li");
+    novo.innerHTML = '<button type="button" class="rodape__cookies">Definições de&nbsp;cookies</button>';
+    li.parentNode.insertBefore(novo, li.nextSibling);
+    novo.querySelector("button").addEventListener("click", abre);
+  });
+  if (!lida()) setTimeout(abre, 900);
+})();
+
+/* Vídeo da home: botão para pausar / retomar (acessibilidade: movimento que dura mais de 5 s tem de poder parar) */
+document.querySelectorAll("[data-video-pausa]").forEach(function (b) {
+  var v = b.closest("section").querySelector("video");
+  if (!v) { b.remove(); return; }
+  function mostra() {
+    var parado = v.paused;
+    b.classList.toggle("video-pausa--parado", parado);
+    b.setAttribute("aria-pressed", parado ? "true" : "false");
+    b.querySelector(".sr-only").textContent = parado ? "Retomar o vídeo" : "Pausar o vídeo";
+  }
+  b.addEventListener("click", function () {
+    if (v.paused) { delete v.dataset.pausadoPeloUtilizador; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+    else { v.dataset.pausadoPeloUtilizador = "1"; v.pause(); }
+  });
+  v.addEventListener("play", mostra); v.addEventListener("pause", mostra); mostra();
+});

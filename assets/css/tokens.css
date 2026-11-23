@@ -73,13 +73,13 @@
      Não é opacidade: é a cor sólida equivalente a essa percentagem de preto
      (convertida do perfil FOGRA39 do layout para o ecrã). */
   --cor-preto-90: #3c3c3b;   /* K 90%: títulos e textos */
-  --cor-preto-70: #706f6f;   /* K 70%: textos da linha do tempo */
-  --cor-preto-50: #9d9d9c;   /* K 50%: etiquetas secundárias ("De 1966", "Até hoje") */
+  --cor-preto-70: #6b6a6a;   /* K 70%: textos da linha do tempo */
+  --cor-preto-50: #6d6d6d;   /* etiquetas secundárias; era #9d9d9c (contraste 2,7) → 4,5 no creme (acessibilidade, 2026-11-22) */
 
   /* ---------- Cores de função (usar estas nos blocos) ---------- */
   --cor-fundo: #ffffff;
   --cor-texto: var(--cor-preto-90);
-  --cor-texto-suave: #8f8b85;          /* itens inativos: "a cinzento e mais pequenos" */
+  --cor-texto-suave: #706d69;          /* itens inativos; era #8f8b85 (contraste 3,4) → 4,6 no creme (acessibilidade, 2026-11-22) */
   --cor-linha: #bdb9b2;                /* linhas finas (barra do menu, painel) */
   --cor-sobre-foto: #ffffff;           /* texto por cima de fotografias */
   --cor-rodape-fundo: var(--cor-castanho-marca);   /* castanho Vilalara #42321a (pedido do utilizador, 2026-11-16) */

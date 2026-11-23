@@ -143,7 +143,7 @@
     var falta = [];
     if (!estado.data) falta.push("a data");
     if (!estado.hora) falta.push("a hora");
-    if (!form.querySelector('[name="tratamento"]:checked')) falta.push("o tratamento (Sr. / Sra.)");
+    // o tratamento (Sr. / Sra.) é opcional (RGPD: só os dados necessários)
     form.querySelectorAll(".rm-dados [required]").forEach(function (c) {
       if (!c.value.trim() || (c.type === "email" && !/^\S+@\S+\.\S+$/.test(c.value))) falta.push(c.closest("label").querySelector("span").textContent.toLowerCase());
     });

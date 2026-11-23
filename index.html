@@ -6,14 +6,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Protótipo Vilalara</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&family=Marcellus&display=swap">
+<link rel="stylesheet" href="assets/css/fontes-google.css?v=1">
 <link rel="stylesheet" href="https://use.typekit.net/oav4umc.css"><!-- Adobe Fonts: Optima nova + Richmond Display (projeto "Vilalara site prototipo") -->
 <link rel="stylesheet" href="https://use.typekit.net/ozg0foo.css"><!-- Adobe Fonts: Fact VF (projeto "Vilalara site prototipo Fact") -->
-<link rel="stylesheet" href="assets/css/tokens.css?v=20261126e">
-<link rel="stylesheet" href="assets/css/base.css?v=20261126e">
-<link rel="stylesheet" href="assets/css/blocos.css?v=20261126e">
+<link rel="stylesheet" href="assets/css/tokens.css?v=20261126i">
+<link rel="stylesheet" href="assets/css/base.css?v=20261126i">
+<link rel="stylesheet" href="assets/css/blocos.css?v=20261126i">
 </head>
 <body>
 
@@ -81,7 +79,7 @@
 
 
 
-<main class="home-slides">
+<main id="conteudo" class="home-slides">
 
   <!-- BLOCO: hero-categoria · Home -->
   <section class="slide" id="home" aria-label="Home">
@@ -90,6 +88,7 @@
     <figure class="slide__media" style="--foco: 50% 50%">
       <video class="slide__video" src="assets/video/home-leve.mp4" poster="assets/img/home/01-home-video.jpg" autoplay muted loop playsinline preload="auto" disablepictureinpicture aria-label="Vídeo do Vilalara: a praia, as falésias e o resort vistos do ar"></video>
     </figure>
+    <button class="video-pausa" type="button" data-video-pausa aria-pressed="false"><span class="sr-only">Pausar o vídeo</span></button>
     <div class="slide__texto">
       <h1 class="slide__titulo">Um&nbsp;paraíso à&nbsp;<span class="sem-quebra">beira-mar</span></h1>
       <p class="slide__subtitulo">Nas&nbsp;deslumbrantes falésias do&nbsp;Algarve</p>
@@ -235,8 +234,8 @@
       <div class="rodape__linha rodape__linha--legal">
         <div>
           <h2>Aviso ao&nbsp;consumidor</h2>
-          <p class="rodape__legal">Ao&nbsp;abrigo do&nbsp;artigo 18.º da&nbsp;Lei n.º 144/2015, de&nbsp;8 de&nbsp;setembro, em&nbsp;caso de&nbsp;litígio de&nbsp;consumo, o&nbsp;consumidor pode recorrer à&nbsp;Plataforma Europeia de&nbsp;Resolução de&nbsp;Litígios em&nbsp;Linha: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr</a>. Pode igualmente recorrer a&nbsp;uma&nbsp;entidade de&nbsp;resolução alternativa de&nbsp;litígios de&nbsp;consumo disponível em&nbsp;Portugal em&nbsp;<a href="https://www.consumidor.gov.pt/" target="_blank" rel="noopener">https://www.consumidor.gov.pt</a>. O&nbsp;recurso a&nbsp;estas entidades não prejudica o&nbsp;direito de&nbsp;o&nbsp;consumidor recorrer aos&nbsp;tribunais judiciais, nos&nbsp;termos da&nbsp;lei.</p>
-          <p class="rodape__copyright">2026 © Vilalara Grand Hotel Algarve. All rights reserved.</p>
+          <p class="rodape__legal">Em&nbsp;caso de&nbsp;litígio de&nbsp;consumo, o&nbsp;consumidor pode recorrer a&nbsp;uma&nbsp;entidade de&nbsp;resolução alternativa de&nbsp;litígios de&nbsp;consumo, nos&nbsp;termos da&nbsp;Lei n.º&nbsp;144/2015, de&nbsp;8 de&nbsp;setembro. A&nbsp;lista das&nbsp;entidades disponíveis está em&nbsp;<a href="https://www.consumidor.gov.pt/" target="_blank" rel="noopener">www.consumidor.gov.pt</a>. O&nbsp;recurso a&nbsp;estas entidades não&nbsp;prejudica o&nbsp;direito de&nbsp;o&nbsp;consumidor recorrer aos&nbsp;tribunais judiciais, nos&nbsp;termos da&nbsp;lei.</p>
+          <p class="rodape__copyright">2026 © Vilalara Grand Hotel Algarve. Todos os&nbsp;direitos reservados.</p>
         </div>
         <div>
           <h2>Entidade exploradora</h2>
@@ -371,6 +370,6 @@
 </nav>
 <!-- /BLOCO: painel-menu -->
 
-<script src="assets/js/site.js?v=20261126e"></script>
+<script src="assets/js/site.js?v=20261126i"></script>
 </body>
 </html>
