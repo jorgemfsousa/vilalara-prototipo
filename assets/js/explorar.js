@@ -52,7 +52,7 @@
     { n: 3, pos: [[48.93, 57.03]], cat: "resort", nome: "Praça das Rosas",
       texto: "O coração do resort, onde os caminhos se cruzam entre jardins e buganvílias, a meio caminho entre as residências e o mar.",
       foto: "assets/img/our-heritage/hoje-m4.jpg" },
-    { n: 4, pos: [[36.51, 65.04]], cat: "resort", nome: "Jardim Pinhal", sub: "Pine Tree Garden",
+    { n: 4, pos: [[36.51, 65.04]], cat: "resort", nome: "Jardim dos Pinheiros", sub: "Pine Tree Garden",
       texto: "Um pinhal de sombra e silêncio, para caminhar entre as residências e o mar ao som das cigarras.",
       foto: "assets/img/our-heritage/hoje-m6.jpg" },
     { n: 5, pos: [[54.77, 62.53]], cat: "gastronomia", nome: "Coral", sub: "Éden do Mar",
@@ -195,7 +195,54 @@
       o.el.style.setProperty("--k", k.toFixed(3));
       o.el.style.visibility = (y < -40 || y > H + 60 || x < -60 || x > base.width + 60) ? "hidden" : "";
     }
+    arrumaNomes();
     requestAnimationFrame(quadro);
+  }
+
+  /* nomes visíveis ao mesmo tempo (categoria escolhida) nunca se sobrepõem (2026-11-24):
+     cada nome tenta, por ordem, ficar por cima do ponto, à direita, à esquerda ou por baixo,
+     e fica no primeiro lugar que não toque nos nomes já colocados nem nos círculos */
+  function arrumaNomes() {
+    var lista = [];
+    for (var i = 0; i < elementos.length; i++) {
+      var o = elementos[i], nome = o.nomeEl || (o.nomeEl = o.el.querySelector(".explorar__nome"));
+      if (!o.el.classList.contains("destacado") || o.el.style.visibility === "hidden") {
+        if (nome.style.transform) nome.style.transform = "";
+        continue;
+      }
+      lista.push(o);
+    }
+    if (!lista.length) return;
+    var circulos = lista.map(function (o) {
+      var b = o.el.querySelector("button").getBoundingClientRect();
+      return { l: b.left - 4, t: b.top - 4, r: b.right + 4, b: b.bottom + 4 };
+    });
+    lista.sort(function (a, b) { return a.el.getBoundingClientRect().top - b.el.getBoundingClientRect().top; });
+    var colocados = circulos.slice();
+    lista.forEach(function (o) {
+      var nome = o.nomeEl, w = nome.offsetWidth, h = nome.offsetHeight;
+      var bt = o.el.querySelector("button").getBoundingClientRect();
+      var cx = (bt.left + bt.right) / 2, cy = (bt.top + bt.bottom) / 2, raio = bt.width / 2;
+      var pino = o.el.querySelector(".explorar__pino").getBoundingClientRect();
+      /* posição normal: centrado por cima do círculo, 8px acima */
+      var baseL = cx - w / 2, baseT = bt.top - 8 - h;
+      var opcoes = [
+        [0, 0],                                                     /* por cima */
+        [raio + 10 + w / 2, cy - h / 2 - baseT],                    /* à direita */
+        [-(raio + 10 + w / 2), cy - h / 2 - baseT],                 /* à esquerda */
+        [0, pino.bottom + 8 - baseT],                               /* por baixo */
+        [raio + 10 + w / 2, -h - 6], [-(raio + 10 + w / 2), -h - 6] /* em cima, desviado */
+      ];
+      var escolha = opcoes[0];
+      for (var k = 0; k < opcoes.length; k++) {
+        var r = { l: baseL + opcoes[k][0], t: baseT + opcoes[k][1] };
+        r.r = r.l + w; r.b = r.t + h;
+        var choca = colocados.some(function (c) { return !(r.r + 4 < c.l || r.l - 4 > c.r || r.b + 4 < c.t || r.t - 4 > c.b); });
+        if (!choca) { escolha = opcoes[k]; colocados.push(r); break; }
+        if (k === opcoes.length - 1) colocados.push({ l: baseL, t: baseT, r: baseL + w, b: baseT + h });
+      }
+      nome.style.transform = "translate(calc(-50% + " + escolha[0].toFixed(1) + "px), " + escolha[1].toFixed(1) + "px)";
+    });
   }
 
   /* ---------- pontos ---------- */
