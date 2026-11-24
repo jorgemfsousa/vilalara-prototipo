@@ -1559,7 +1559,7 @@ html:has(.home-slides) { scroll-snap-type: y mandatory; }
   z-index: 70;
   overflow: hidden;
   pointer-events: none;
-  background: var(--cor-castanho-escuro);
+  background: transparent;   /* sem mancha castanha enquanto a foto aparece (2026-11-24) */
 }
 .zoom-foto img {
   position: absolute;
@@ -4359,3 +4359,9 @@ html.privacidade-aberta { overflow: hidden; }
 @media (max-width: 900px) {
   .galeria--com-texto .hoje-t { position: static; width: auto; height: auto; grid-column: 1 / -1; padding: 0; margin: 20px 0; font-size: var(--tam-intro); }
 }
+
+/* Heróis das páginas de categoria (2026-11-24): sem a mancha castanha enquanto a foto carrega.
+   O fundo passa a ser o da página e a foto entra com um fade curto quando acaba de carregar. */
+.slide.landing { background: var(--cor-fundo); }
+.slide.landing .slide__media img.a-carregar { opacity: 0; }
+.slide.landing .slide__media img { transition: opacity 0.45s ease; }

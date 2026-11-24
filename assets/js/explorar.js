@@ -42,73 +42,82 @@
 
   /* posições em % da foto aérea (assets/img/explorar/foto.jpg), marcadas sobre os edifícios */
   var PONTOS = [
+    /* numeração seguida (2026-11-24), pela ordem da lista: resort, gastronomia, piscinas & praia, wellness & clubs, suítes & residências */
     { n: 1, pos: [[65.42, 43.27]], cat: "resort", nome: "Entrada principal",
       texto: "A chegada ao Vilalara faz-se por entre pinheiros e jardins. É aqui que começa a estadia, a poucos passos da receção.",
       foto: "assets/img/home/01-home.jpg" },
     { n: 2, pos: [[51.72, 49.78]], cat: "resort", nome: "Receção & Boutique",
       texto: "O primeiro olá e o último até já. Ao lado da receção, a boutique guarda peças e lembranças para levar um pouco do Vilalara para casa.",
       foto: "assets/img/our-heritage/hoje-m1.jpg" },
-    { n: 3, pos: [[54.77, 62.53]], cat: "gastronomia", nome: "Coral & A-Costa", sub: "Éden do Mar · Mar de Brasas",
-      texto: "Dois restaurantes junto à falésia: o Coral, onde a riqueza do Atlântico e a autenticidade do Algarve se expressam com precisão e elegância, e o A-Costa, com os clássicos portugueses a qualquer hora.",
-      foto: "assets/img/gastronomia/coral.jpg", link: "coral.html", linkTexto: "Descobrir o Coral" },
-    { n: 4, pos: [[54.77, 66.54]], cat: "piscinas", nome: "Pool Club A-Costa", sub: "Piscina",
-      texto: "Piscinas sobre a falésia, com o mar como horizonte e o A-Costa ao lado para um almoço descontraído ao sol.",
-      foto: "assets/img/our-heritage/hoje-m5.jpg", link: "a-costa.html", linkTexto: "Descobrir o A-Costa" },
-    { n: 5, pos: [[48.93, 57.03]], cat: "resort", nome: "A Praça",
+    { n: 3, pos: [[48.93, 57.03]], cat: "resort", nome: "Praça das Rosas",
       texto: "O coração do resort, onde os caminhos se cruzam entre jardins e buganvílias, a meio caminho entre as residências e o mar.",
       foto: "assets/img/our-heritage/hoje-m4.jpg" },
-    { n: 6, pos: [[50.2, 70.54]], cat: "piscinas", nome: "Acesso à praia",
-      texto: "Um caminho desce a falésia até à areia dourada da Praia das Gaivotas.",
-      foto: "assets/img/clubs/beach-club-rocha.jpg" },
-    { n: 7, pos: [[50.71, 74.04]], cat: "piscinas", nome: "Beach Club",
-      texto: "Para quem tem uma afinidade profunda com o oceano: uma meditação ao nascer do sol, um mergulho ao meio-dia, um passeio pela areia ao luar.",
-      foto: "assets/img/clubs/beach-club.jpg", link: "beach-club.html", linkTexto: "Descobrir o Beach Club" },
-    { n: 8, pos: [[36.51, 65.04]], cat: "resort", nome: "Jardim Pinhal", sub: "Pine Tree Garden",
+    { n: 4, pos: [[36.51, 65.04]], cat: "resort", nome: "Jardim Pinhal", sub: "Pine Tree Garden",
       texto: "Um pinhal de sombra e silêncio, para caminhar entre as residências e o mar ao som das cigarras.",
       foto: "assets/img/our-heritage/hoje-m6.jpg" },
-    { n: 9, pos: [[13.69, 57.53]], cat: "gastronomia", nome: "Trattoria Pantaleone",
+    { n: 5, pos: [[54.77, 62.53]], cat: "gastronomia", nome: "Coral", sub: "Éden do Mar",
+      texto: "A simplicidade do sublime. Junto à falésia, o Coral celebra a arte do luxo discreto: a riqueza do Atlântico e a autenticidade do Algarve, expressas com precisão e elegância.",
+      foto: "assets/img/gastronomia/coral.jpg", link: "coral.html", linkTexto: "Descobrir o Coral" },
+    /* A-Costa separado do Coral (2026-11-24), com número próprio */
+    { n: 6, pos: [[57.56, 64.29]], cat: "gastronomia", nome: "A-Costa", sub: "Mar de Brasas",
+      texto: "A quintessência dos clássicos portugueses, a qualquer hora, ao lado do Pool Club e com o mar à vista. As melhores coisas valem sempre a pena ser revisitadas.",
+      foto: "assets/img/gastronomia/a-costa.jpg", link: "a-costa.html", linkTexto: "Descobrir o A-Costa" },
+    { n: 7, pos: [[13.69, 57.53]], cat: "gastronomia", nome: "Trattoria Pantaleone",
       texto: "Tradição italiana aliada a ingredientes algarvios, em pratos que personificam o melhor do Mediterrâneo.",
       foto: "assets/img/gastronomia/trattoria.jpg", link: "trattoria.html", linkTexto: "Descobrir a Trattoria" },
-    { n: 10, pos: [[16.22, 60.28]], cat: "piscinas", nome: "Piscina “Loureiros”", sub: "Piscina",
-      texto: "Uma piscina tranquila, rodeada de jardim, junto às residências do lado poente do resort.",
-      foto: "assets/img/our-heritage/2009-piscina-arcos.jpg" },
-    { n: 11, pos: [[22.82, 18.0]], cat: "clubs", nome: "Wellness Club",
-      texto: "Thalasso, spa, wellness e soluções anti-envelhecimento: uma viagem entre o mar e os jardins do Vilalara, com uma equipa experiente e dedicada.",
-      foto: "assets/img/clubs/wellness-club.jpg", link: "wellness.html", linkTexto: "Descobrir o Wellness" },
-    { n: 12, pos: [[31.94, 24.26]], cat: "gastronomia", nome: "Vento & Piscina “Cascatas”", sub: "Restaurante · Family pool",
-      texto: "O Vento reinventa as tradições mediterrânicas num espaço inspirado pela natureza. Ao lado, a piscina Cascatas foi pensada para as famílias.",
+    { n: 8, pos: [[27.63, 22.76]], cat: "gastronomia", nome: "Vento", sub: "Restaurante",
+      texto: "O Vento reinventa as tradições mediterrânicas num espaço autêntico, inspirado pela natureza e guiado pela criatividade e pelo equilíbrio.",
       foto: "assets/img/gastronomia/vento.jpg", link: "vento.html", linkTexto: "Descobrir o Vento" },
-    { n: 13, pos: [[42.59, 26.76]], cat: "clubs", nome: "Kids Club", sub: "Multisport area",
-      texto: "Um paraíso para os pequenos heróis: um ambiente seguro e supervisionado para brincar, explorar e fazer novos amigos.",
-      foto: "assets/img/clubs/kids-club.jpg", link: "kids-club.html", linkTexto: "Descobrir o Kids Club" },
-    { n: 14, pos: [[50.71, 38.52]], cat: "clubs", nome: "Racket Club", sub: "Ténis, padel & pickleball",
-      texto: "Seja qual for o seu nível, uma experiência refinada de ténis e padel, organizada em parceria com a LUX Tennis.",
-      foto: "assets/img/clubs/racket-club.jpg", link: "racket-club.html", linkTexto: "Descobrir o Racket Club" },
-    { n: 15, pos: [[59.33, 45.52]], cat: "gastronomia", nome: "Raízes", sub: "Horta da Terra",
+    { n: 9, pos: [[59.33, 45.52]], cat: "gastronomia", nome: "Raízes", sub: "Horta da Terra",
       texto: "No centro da cozinha, a chama e as brasas dão vida a uma gastronomia simples e intensa, pensada para partilhar à mesa.",
       foto: "assets/img/gastronomia/raizes.jpg", link: "raizes.html", linkTexto: "Descobrir o Raízes" },
-    { n: 16, pos: [[38.54, 56.03]], cat: "suites", nome: "As Glicínias", sub: "Residências 1–12, 27",
+    { n: 10, pos: [[54.77, 66.54]], cat: "piscinas", nome: "Pool Club A-Costa", sub: "Piscina",
+      texto: "Piscinas sobre a falésia, com o mar como horizonte e o A-Costa ao lado para um almoço descontraído ao sol.",
+      foto: "assets/img/our-heritage/hoje-m5.jpg", link: "a-costa.html", linkTexto: "Descobrir o A-Costa" },
+    { n: 11, pos: [[49.83, 67.29]],   /* no início das escadas (2026-11-24) */ cat: "piscinas", nome: "Acesso à praia",
+      texto: "Um caminho desce a falésia até à areia dourada da Praia das Gaivotas.",
+      foto: "assets/img/clubs/beach-club-rocha.jpg" },
+    { n: 12, pos: [[50.71, 74.04]], cat: "piscinas", nome: "Beach Club",
+      texto: "Para quem tem uma afinidade profunda com o oceano: uma meditação ao nascer do sol, um mergulho ao meio-dia, um passeio pela areia ao luar.",
+      foto: "assets/img/clubs/beach-club.jpg", link: "beach-club.html", linkTexto: "Descobrir o Beach Club" },
+    { n: 13, pos: [[16.22, 60.28]], cat: "piscinas", nome: "Piscina “Loureiros”", sub: "Piscina",
+      texto: "Uma piscina tranquila, rodeada de jardim, junto às residências do lado poente do resort.",
+      foto: "assets/img/our-heritage/2009-piscina-arcos.jpg" },
+    /* ponto próprio para a piscina (2026-11-24); no mapa ilustrado partilhava o 12 com o Vento */
+    { n: 14, pos: [[32.45, 24.76]], cat: "piscinas", nome: "Piscina “Cascatas”", sub: "Family pool",
+      texto: "Uma piscina pensada para as famílias, entre o Vento e o Wellness Club, com espreguiçadeiras à volta e o pinhal por perto.",
+      foto: "assets/img/our-heritage/hoje-m5.jpg" },
+    { n: 15, pos: [[22.82, 18.0]], cat: "clubs", nome: "Wellness Club",
+      texto: "Thalasso, spa, wellness e soluções anti-envelhecimento: uma viagem entre o mar e os jardins do Vilalara, com uma equipa experiente e dedicada.",
+      foto: "assets/img/clubs/wellness-club.jpg", link: "wellness.html", linkTexto: "Descobrir o Wellness" },
+    { n: 16, pos: [[42.59, 26.76]], cat: "clubs", nome: "Kids Club", sub: "Multisport area",
+      texto: "Um paraíso para os pequenos heróis: um ambiente seguro e supervisionado para brincar, explorar e fazer novos amigos.",
+      foto: "assets/img/clubs/kids-club.jpg", link: "kids-club.html", linkTexto: "Descobrir o Kids Club" },
+    { n: 17, pos: [[50.71, 38.52]], cat: "clubs", nome: "Racket Club", sub: "Ténis, padel & pickleball",
+      texto: "Seja qual for o seu nível, uma experiência refinada de ténis e padel, organizada em parceria com a LUX Tennis.",
+      foto: "assets/img/clubs/racket-club.jpg", link: "racket-club.html", linkTexto: "Descobrir o Racket Club" },
+    { n: 18, pos: [[38.54, 56.03]], cat: "suites", nome: "As Glicínias", sub: "Residências 1–12, 27",
       texto: "Residências em socalcos sobre o pinhal, a poucos passos da praça e do caminho para a praia.",
       foto: "assets/img/suites/cartao-residencias.jpg", link: "suites-residencias.html", linkTexto: "Ver Suítes & Residências" },
-    { n: 17, pos: [[31.44, 53.53]], cat: "suites", nome: "As Buganvílias", sub: "Residências 14–22, 14A–21A",
+    { n: 19, pos: [[31.44, 53.53]], cat: "suites", nome: "As Buganvílias", sub: "Residências 14–22, 14A–21A",
       texto: "Uma ala curva, aberta para os jardins interiores do resort e para a luz do sul.",
       foto: "assets/img/suites/private-residences.jpg", link: "suites-residencias.html", linkTexto: "Ver Suítes & Residências" },
-    { n: 18, pos: [[36.0, 38.02]], cat: "suites", nome: "Os Hibíscus", sub: "3110–3434",
+    { n: 20, pos: [[36.0, 38.02]], cat: "suites", nome: "Os Hibíscus", sub: "3110–3434",
       texto: "Suítes no centro do resort, entre a piscina Cascatas e a praça.",
       foto: "assets/img/suites/elegant-suite.jpg", link: "suites-residencias.html", linkTexto: "Ver Suítes & Residências" },
-    { n: 19, pos: [[32.45, 10.75], [41.07, 19.51]], cat: "suites", nome: "Os Pinheiros", sub: "4201–4410",
-      texto: "Duas alas na parte alta do resort, junto ao Wellness Club e rodeadas de pinheiros.",
+    { n: 21, pos: [[41.07, 19.51]], cat: "suites", nome: "Os Pinheiros", sub: "4201–4410",
+      texto: "Uma ala curva na parte alta do resort, junto ao Wellness Club e rodeada de pinheiros.",
       foto: "assets/img/suites/master-suite.jpg", link: "suites-residencias.html", linkTexto: "Ver Suítes & Residências" },
-    { n: 20, pos: [[18.0, 64.53]], cat: "suites", nome: "As Oliveiras", sub: "5021–5302",
+    { n: 22, pos: [[18.0, 64.53]], cat: "suites", nome: "As Oliveiras", sub: "5021–5302",
       texto: "No lado poente, junto à piscina Loureiros e ao pinhal que desce até à falésia.",
       foto: "assets/img/suites/casa-laranjo.jpg", link: "suites-residencias.html", linkTexto: "Ver Suítes & Residências" },
-    { n: 21, pos: [[14.7, 52.03]], cat: "suites", nome: "As Amendoeiras", sub: "Residências 6401–6705",
+    { n: 23, pos: [[14.7, 52.03]], cat: "suites", nome: "As Amendoeiras", sub: "Residências 6401–6705",
       texto: "Residências no extremo poente, com jardins próprios e vistas sobre o pinhal.",
       foto: "assets/img/suites/casa-levy.jpg", link: "suites-residencias.html", linkTexto: "Ver Suítes & Residências" },
-    { n: 22, pos: [[23.32, 36.02]], cat: "suites", nome: "As Acácias", sub: "9001–9404",
+    { n: 24, pos: [[23.32, 36.02]], cat: "suites", nome: "As Acácias", sub: "9001–9404",
       texto: "Uma ala recolhida, entre o verde, no coração do resort.",
       foto: "assets/img/suites/grand-suite.jpg", link: "suites-residencias.html", linkTexto: "Ver Suítes & Residências" },
-    { n: 23, pos: [[61.87, 58.03]], cat: "suites", nome: "The Cliff Residences", sub: "Residências 7001–7103",
+    { n: 25, pos: [[61.87, 58.03]], cat: "suites", nome: "The Cliff Residences", sub: "Residências 7001–7103",
       texto: "Na beira da falésia, com o Atlântico como vista e a Praia das Gaivotas logo abaixo.",
       foto: "assets/img/suites/ocean-suite.jpg", link: "suites-residencias.html", linkTexto: "Ver Suítes & Residências" }
   ];
@@ -340,6 +349,7 @@
     elementos.forEach(function (o) {
       var fora = id !== "todos" && o.p.cat !== id;
       o.el.classList.toggle("esbatido", fora);
+      o.el.classList.toggle("destacado", id !== "todos" && !fora);   /* categoria escolhida: círculo branco e nome visível */
       o.el.querySelector("button").tabIndex = fora ? -1 : 0;
     });
     if (semCamara) return;
@@ -350,7 +360,10 @@
     var xs = ps.map(function (p) { return p.cx; }), ys = ps.map(function (p) { return p.cy; });
     var x0 = Math.min.apply(0, xs), x1 = Math.max.apply(0, xs), y0 = Math.min.apply(0, ys), y1 = Math.max.apply(0, ys);
     alvo.x = (x0 + x1) / 2; alvo.y = (y0 + y1) / 2;
-    alvo.z = Math.min(2.2, Math.max(g.z, 0.55 / Math.max(x1 - x0, (y1 - y0) * 1.3, 0.12)));
+    /* enquadra todos os pontos da categoria na área livre do mapa, com margem para os nomes */
+    var painelLargura = (!tel && painel.classList.contains("aberto")) ? Math.min(440, raiz.clientWidth) : 0;
+    var wl = raiz.clientWidth - painelLargura, hl = raiz.clientHeight - 200;
+    alvo.z = Math.max(g.z, Math.min(wl * 0.7 / (Math.max(x1 - x0, 0.06) * S), hl * 0.75 / (Math.max(y1 - y0, 0.06) * SH)));
     alvo.t = g.t;
     limita();
   }

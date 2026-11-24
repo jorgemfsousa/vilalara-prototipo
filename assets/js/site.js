@@ -1590,3 +1590,12 @@ document.querySelectorAll("[data-video-pausa]").forEach(function (b) {
   });
   v.addEventListener("play", mostra); v.addEventListener("pause", mostra); mostra();
 });
+
+/* Heróis das categorias: se a foto ainda não carregou, fica invisível e entra com fade (sem mancha castanha) */
+document.querySelectorAll(".slide.landing .slide__media img").forEach(function (img) {
+  if (img.complete && img.naturalWidth) return;
+  img.classList.add("a-carregar");
+  function pronta() { img.classList.remove("a-carregar"); }
+  img.addEventListener("load", pronta, { once: true });
+  img.addEventListener("error", pronta, { once: true });
+});

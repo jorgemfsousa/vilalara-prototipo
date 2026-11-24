@@ -409,8 +409,8 @@
 .explorar__lista--intro { padding: 0 clamp(24px, 2.6vw, 40px) 4px; }
 @media (min-width: 701px) { .explorar__painel { padding-top: calc(var(--altura-barra) - 20px); } }
 .explorar__lista--intro h3 { margin: 0 0 clamp(2px, 0.6vh, 8px); font-size: 0.6875rem; }
-.explorar__lista--intro ul + h3 { margin-top: clamp(4px, calc(2.6vh - 10px), 16px); padding-top: clamp(6px, calc(2.6vh - 8px), 18px); }
-.explorar__lista--intro li button { padding: clamp(1px, calc(0.9vh - 4px), 7px) 0; gap: 12px; font-size: clamp(0.8125rem, 1.6vh, 0.9375rem); }
+.explorar__lista--intro ul + h3 { margin-top: clamp(4px, calc(2.6vh - 12px), 16px); padding-top: clamp(6px, calc(2.6vh - 10px), 18px); }
+.explorar__lista--intro li button { padding: clamp(1px, calc(0.9vh - 5px), 7px) 0; gap: 12px; font-size: clamp(0.8125rem, 1.6vh, 0.9375rem); }
 .explorar__lista--intro li button span { width: clamp(17px, 2.45vh, 22px); height: clamp(17px, 2.45vh, 22px); font-size: 0.625rem; }
 .explorar__lista ul[data-cat="suites"] { display: grid; grid-template-columns: 1fr 1fr; column-gap: 16px; }
 
@@ -489,3 +489,11 @@ html.menu-fixo .veu-painel { display: none; }
 /* ficha: categoria e número a cinzento (2026-11-24) */
 .explorar__cat, .explorar__num { color: var(--cor-texto-suave); }
 .explorar__ponto.ativo .explorar__pino button { background: #fff; }   /* ponto ativo a branco (2026-11-24) */
+/* botão da ficha: mais afastado do texto e mais pequeno (2026-11-24) */
+.explorar__info .botao-contorno { margin-top: clamp(26px, 3.8vh, 44px); padding: 0.6em 1.7em; font-size: var(--tam-botao-pequeno); }
+/* ficha: mais espaço entre o título e o texto (2026-11-24) */
+.explorar__texto { margin-top: clamp(22px, 3.6vh, 36px); }
+
+/* categoria escolhida nos botões de baixo: pontos a branco, com o nome sempre visível (2026-11-24) */
+.explorar__ponto.destacado .explorar__pino button { background: #fff; color: var(--cor-castanho-marca); }
+.explorar__ponto.destacado .explorar__nome { opacity: 1; transform: translate(-50%, 0); }
