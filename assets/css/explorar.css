@@ -1,0 +1,491 @@
+/* =================================================================
+   EXPLORAR O VILALARA (2026-11-24)
+   Passeio interativo sobre o mapa ilustrado do hotel.
+   - .explorar__cena: o "céu" com perspetiva; .explorar__mapa é o chão inclinado em 3D
+     (a câmara é controlada em explorar.js através de --t, --r, --z e do transform do mapa);
+   - os pontos são pinos de pé sobre o mapa (contra-rodam para ficarem virados para nós);
+   - .explorar__abertura: vídeo de drone real que se dissolve no mapa ao começar;
+   - .explorar__painel: janela lateral com a descrição de cada espaço.
+   ================================================================= */
+
+.pagina-explorar { background: #f6f1e9; }
+
+.explorar {
+  --papel: #f6f1e9;              /* cor do papel do mapa, já aquecida pela luz de fim de tarde */
+  --tinta: var(--cor-castanho-escuro);
+  --dourado: #c9a46a;
+  position: relative;
+  height: 100svh;
+  min-height: 560px;
+  overflow: hidden;
+  background: var(--papel);
+  color: var(--tinta);
+  isolation: isolate;
+}
+
+/* ---------- cena 3D ---------- */
+.explorar__cena {
+  position: absolute; inset: 0;
+  perspective: 2600px;
+  perspective-origin: 50% 30%;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: none;
+  background-color: var(--papel);   /* fundo claro (pedido de 2026-11-24); cor lisa: o cabeçalho lê-a como fundo claro e fica escuro */
+}
+.explorar__cena.a-arrastar { cursor: grabbing; }
+.explorar--abertura .explorar__cena { pointer-events: none; }
+
+.explorar__mapa {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform-origin: 0 0;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.explorar__img {
+  display: block; width: 100%; height: 100%;
+  user-select: none; -webkit-user-drag: none;
+  pointer-events: none;                                      /* arrastar fica na cena; o cabeçalho não lê o mapa como foto */
+  /* bordas do papel esbatidas, para o mapa não ter rebordo */
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 16%, #000 84%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 8%, #000 90%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent 0, #000 16%, #000 84%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 8%, #000 90%, transparent 100%);
+  mask-composite: intersect;
+}
+
+/* sombras de nuvens a passar devagar sobre o chão */
+.explorar__nuvens {
+  position: absolute; inset: 0;   /* só sobre a foto: fora dela não há sombras no papel */
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(closest-side, #000 60%, transparent 100%);
+  mask-image: radial-gradient(closest-side, #000 60%, transparent 100%);
+  background:
+    radial-gradient(18% 12% at 20% 30%, rgba(40, 48, 40, 0.16), transparent 70%),
+    radial-gradient(22% 14% at 70% 20%, rgba(40, 48, 40, 0.12), transparent 70%),
+    radial-gradient(16% 10% at 55% 70%, rgba(40, 48, 40, 0.14), transparent 70%),
+    radial-gradient(20% 12% at 10% 85%, rgba(40, 48, 40, 0.10), transparent 70%);
+  filter: blur(18px);
+  animation: explorar-nuvens 90s linear infinite;
+}
+@keyframes explorar-nuvens {
+  from { transform: translate3d(-12%, -6%, 0); }
+  to   { transform: translate3d(12%, 6%, 0); }
+}
+/* luz dourada rasante, vinda de poente */
+.explorar__luz {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background: linear-gradient(115deg, rgba(255, 186, 110, 0.16) 0%, rgba(255, 196, 120, 0) 45%, rgba(40, 30, 60, 0.06) 100%);   /* sem modos de mistura: achatariam o 3D */
+  -webkit-mask-image: radial-gradient(closest-side, #000 70%, transparent 100%);
+  mask-image: radial-gradient(closest-side, #000 70%, transparent 100%);
+}
+
+/* neblina ao fundo (horizonte) e vinheta: dão profundidade de cinema */
+.explorar__neblina {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  /* vista de topo: véu claro no topo, para o cabeçalho escuro se ler sobre a foto */
+  background: linear-gradient(to bottom, rgba(246, 241, 233, 0.85) 0%, rgba(246, 241, 233, 0) 16%);
+}
+
+/* ---------- pontos (pinos) ---------- */
+.explorar__pontos { position: absolute; inset: 0; transform-style: preserve-3d; pointer-events: none; }
+.explorar__ancora { position: absolute; width: 0; height: 0; }
+/* camada plana com os círculos (posicionados em explorar.js) */
+.explorar__marcadores { position: absolute; inset: 0; z-index: 2; pointer-events: none; overflow: hidden; }
+.explorar__ponto {
+  position: absolute; left: 0; top: 0;
+  width: 0; height: 0;
+  will-change: transform;
+  pointer-events: none;
+}
+.explorar__pino {
+  position: absolute; left: 0; bottom: 0;
+  display: flex; flex-direction: column; align-items: center;
+  transform: translateX(-50%) scale(var(--k, 1));
+  transform-origin: 50% 100%;
+  pointer-events: none;
+}
+.explorar__pino button {
+  pointer-events: auto;
+  position: relative;
+  display: grid; place-items: center;
+  width: 32px; height: 32px;
+  margin: 0; padding: 0;
+  border: 0;   /* sem contorno (2026-11-24) */
+  border-radius: 50%;
+  background: var(--tinta);
+  color: #fff;
+  font-family: var(--fonte-titulos);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(30, 20, 10, 0.35);
+  transition: transform 0.35s cubic-bezier(.2,.8,.2,1), background 0.35s;
+}
+/* sem pulsar à volta dos pontos (retirado a pedido, 2026-11-24) */
+.explorar__pino button:hover,
+.explorar__pino button:focus-visible { transform: scale(1.15); background: var(--cor-castanho-marca); }
+.explorar__pino button:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.explorar__haste {                                     /* haste fina até ao chão */
+  width: 1px; height: 26px;
+  background: linear-gradient(to bottom, var(--tinta), rgba(46, 36, 33, 0.2));
+}
+.explorar__chao {
+  width: 6px; height: 6px; margin-top: -3px; border-radius: 50%;
+  background: rgba(46, 36, 33, 0.55);
+  box-shadow: 0 0 0 4px rgba(46, 36, 33, 0.12);
+}
+.explorar__nome {                                      /* nome ao passar o rato */
+  position: absolute; bottom: calc(100% + 8px); left: 50%;
+  transform: translate(-50%, 4px);
+  white-space: nowrap;
+  padding: 6px 12px;
+  background: rgba(255, 252, 246, 0.96);
+  color: var(--tinta);
+  font-family: var(--fonte-titulos);
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  box-shadow: 0 6px 18px rgba(30, 20, 10, 0.18);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s, transform 0.25s;
+}
+.explorar__pino:hover .explorar__nome,
+.explorar__pino:focus-within .explorar__nome,
+.explorar__ponto.ativo .explorar__nome { opacity: 1; transform: translate(-50%, 0); }
+.explorar__ponto.ativo .explorar__pino button { background: var(--dourado); transform: scale(1.2); }
+.explorar__ponto.esbatido .explorar__pino { opacity: 0.28; filter: grayscale(1); }
+
+/* entrada dos pontos depois da abertura */
+.explorar--abertura .explorar__pino,
+.explorar--a-descer .explorar__pino { opacity: 0; transform: translateX(-50%) translateY(-18px) scale(var(--k, 1)); }
+.explorar__pino { transition: opacity 0.5s, filter 0.5s; }   /* sem transição no transform: o tamanho acompanha a câmara sem atraso */
+.explorar--a-entrar .explorar__pino { transition: opacity 0.6s var(--atraso, 0s), transform 0.6s var(--atraso, 0s), filter 0.5s; }
+
+/* ---------- abertura (vídeo) ---------- */
+.explorar__abertura {
+  position: absolute; inset: 0; z-index: 5;
+  display: grid; place-items: center;
+  color: #fff;
+  transition: opacity 1.6s ease, transform 2.4s cubic-bezier(.3,.6,.2,1), visibility 0s 2.4s;
+}
+.explorar__abertura::before {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to bottom, rgba(15, 20, 18, 0.15), rgba(15, 20, 18, 0.45));
+}
+.explorar__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: #0f1f1c; }
+.explorar__video::-webkit-media-controls-start-playback-button { display: none !important; }
+.explorar__abertura-texto {
+  position: relative; z-index: 2;
+  display: grid; justify-items: center; gap: 0;
+  max-width: 640px; padding: 0 var(--margem-lateral);
+  text-align: center;
+}
+.explorar__titulo {
+  margin: 0;
+  display: grid; justify-items: center;
+  font-family: var(--fonte-titulos);
+  font-size: var(--tam-titulo-seccao);
+  font-weight: 600; line-height: 1; letter-spacing: 0.01em; text-transform: uppercase;
+  color: #fff;
+}
+.explorar__titulo .intro__script { color: #fff; margin: 0.08em 0 0; align-self: auto; }
+.explorar__lead {
+  margin: clamp(22px, 2.4vw, 34px) 0 clamp(26px, 3vw, 40px);
+  font-family: var(--fonte-intro); font-weight: 200;
+  font-size: clamp(1.05rem, 0.8rem + 0.6vw, 1.35rem); line-height: 1.45;
+}
+.explorar__comecar {
+  padding: 0.85em 2.2em;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-family: var(--fonte-titulos); font-size: var(--tam-botao); letter-spacing: 0.08em; text-transform: uppercase;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: background 0.3s, color 0.3s;
+}
+.explorar__comecar:hover, .explorar__comecar:focus-visible { background: #fff; color: var(--tinta); }
+
+.explorar:not(.explorar--abertura) .explorar__abertura {
+  opacity: 0; visibility: hidden; transform: scale(1.18);
+  pointer-events: none;
+}
+
+/* ---------- barra de controlos ---------- */
+.explorar__barra {
+  position: absolute; z-index: 4;
+  left: var(--margem-lateral); right: var(--margem-lateral); bottom: clamp(18px, 2.4vw, 32px);
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 16px;
+  pointer-events: none;
+  opacity: 1; transform: none;
+  transition: opacity 0.8s 1.2s, transform 0.8s 1.2s;
+}
+.explorar__barra[hidden] { display: flex; opacity: 0; transform: translateY(12px); }
+.explorar__barra > * { pointer-events: auto; }
+.explorar--com-painel .explorar__barra { right: calc(min(440px, 100%) + 24px); transition: right 0.7s cubic-bezier(.2,.8,.2,1); }
+.explorar--com-painel .explorar__dica { left: calc(50% - min(220px, 14vw)); }   /* dica ao centro do mapa, ao lado do painel */
+.explorar__filtros, .explorar__acoes { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.explorar__filtros button,
+.explorar__botao,
+.explorar__zoom button {
+  height: 38px; padding: 0 16px;
+  border: 1px solid rgba(46, 36, 33, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 252, 246, 0.86);
+  backdrop-filter: blur(8px);
+  color: var(--tinta);
+  font-family: var(--fonte-texto); font-size: 0.8125rem; letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+.explorar__filtros button:hover, .explorar__botao:hover, .explorar__zoom button:hover { border-color: rgba(46, 36, 33, 0.5); }
+.explorar__filtros button[aria-pressed="true"] { background: var(--tinta); color: #fff; border-color: var(--tinta); }
+.explorar__botao--visita { display: inline-flex; align-items: center; gap: 10px; }
+.explorar__play { width: 0; height: 0; border-left: 8px solid currentColor; border-top: 5px solid transparent; border-bottom: 5px solid transparent; }
+.explorar__botao--visita[aria-pressed="true"] { background: var(--tinta); color: #fff; }
+.explorar__botao--visita[aria-pressed="true"] .explorar__play { width: 8px; height: 10px; border: 0; border-left: 3px solid currentColor; border-right: 3px solid currentColor; }
+.explorar__zoom { display: inline-flex; gap: 4px; }
+.explorar__zoom button { width: 38px; padding: 0; display: grid; place-items: center; font-size: 1.05rem; }
+.explorar__zoom svg { width: 14px; height: 14px; }
+
+.explorar__dica {
+  position: absolute; z-index: 3; left: 50%; top: calc(var(--altura-barra) + 4px);
+  transform: translateX(-50%);
+  margin: 0; padding: 8px 16px;
+  background: rgba(255, 252, 246, 0.8); backdrop-filter: blur(6px);
+  font-size: 0.8125rem; color: var(--cor-castanho-medio);
+  white-space: nowrap;
+  transition: opacity 0.8s;
+}
+.explorar__dica[hidden] { display: block; opacity: 0; pointer-events: none; }
+
+/* ---------- painel lateral ---------- */
+.explorar__painel {
+  position: absolute; z-index: 6;
+  top: 0; right: 0; bottom: 0;   /* ocupa a altura toda do ecrã; o conteúdo começa por baixo do cabeçalho */
+  padding-top: var(--altura-barra);
+  box-sizing: border-box;
+  width: min(440px, 100%);
+  background: #fbf8f3;
+  box-shadow: -24px 0 60px rgba(30, 20, 10, 0.18);
+  transform: translateX(105%);
+  transition: transform 0.7s cubic-bezier(.2,.8,.2,1);
+  display: flex; flex-direction: column;
+  outline: none;
+}
+.explorar__painel.aberto { transform: none; }
+.explorar__painel-corpo { flex: 1; overflow-y: auto; overscroll-behavior: contain; }
+.explorar__fechar {
+  position: absolute; z-index: 2; top: calc(var(--altura-barra) + 8px); right: 16px;
+  width: 40px; height: 40px; display: grid; place-items: center;
+  border: 0; border-radius: 50%;
+  background: rgba(255, 252, 246, 0.92); color: var(--tinta);
+  cursor: pointer;
+}
+.explorar__fechar svg { width: 14px; height: 14px; }
+.explorar__foto { margin: 0; aspect-ratio: 16 / 10; overflow: hidden; background: var(--cor-creme); }
+.explorar__foto img { width: 100%; height: 100%; object-fit: cover; display: block; animation: explorar-foto 1.2s ease both; }
+@keyframes explorar-foto { from { transform: scale(1.06); opacity: 0; } to { transform: none; opacity: 1; } }
+.explorar__info { padding: clamp(16px, 2.6vh, 36px) clamp(24px, 2.6vw, 40px) clamp(16px, 2.6vh, 28px); }
+.explorar__cat {
+  margin: 0 0 14px;
+  font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cor-castanho-dourado);
+}
+.explorar__info h2 {
+  display: flex; align-items: baseline; gap: 14px;
+  margin: 0;
+  font-family: var(--fonte-titulos); font-size: clamp(1.375rem, 1rem + 0.8vw, 1.75rem);
+  font-weight: 600; line-height: 1.15; letter-spacing: 0.01em; text-transform: uppercase;
+  color: var(--cor-preto-90);
+}
+.explorar__num {
+  flex: none; display: grid; place-items: center;
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--tinta); color: #fff;
+  font-size: 0.75rem; font-weight: 500; transform: translateY(-3px);
+}
+.explorar__sub { margin: 8px 0 0 44px; font-size: 0.875rem; color: var(--cor-castanho-medio); }
+.explorar__texto {
+  margin: 20px 0 0;
+  font-family: var(--fonte-intro); font-weight: 200;
+  font-size: 1.125rem; line-height: 1.5; color: var(--cor-preto-90);
+}
+.explorar__info .botao-contorno { margin-top: clamp(14px, 2.4vh, 26px); display: inline-block; }
+.explorar__nav {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  border-top: 1px solid rgba(46, 36, 33, 0.1);
+  background: rgba(46, 36, 33, 0.1);
+}
+.explorar__nav button {
+  display: grid; gap: 4px; justify-items: start;
+  padding: 18px 24px; border: 0; background: #fbf8f3; color: var(--tinta);
+  text-align: left; cursor: pointer;
+  font-family: var(--fonte-texto); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cor-castanho-dourado);
+}
+.explorar__nav button + button { justify-items: end; text-align: right; padding-right: 76px; }   /* fora da bolha dos cookies */
+.explorar__nav button strong { font-family: var(--fonte-titulos); font-size: 0.875rem; font-weight: 600; letter-spacing: 0.02em; color: var(--tinta); }
+.explorar__nav button:hover strong { text-decoration: underline; text-underline-offset: 3px; }
+
+/* lista de todos os espaços (no mesmo painel) */
+.explorar__lista { padding: 72px clamp(24px, 2.6vw, 40px) 40px; }
+.explorar__lista h2 { margin: 0 0 8px; font-family: var(--fonte-titulos); font-size: 1.5rem; font-weight: 600; text-transform: uppercase; }
+.explorar__lista h3 { margin: 28px 0 10px; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cor-castanho-dourado); font-weight: 400; }
+.explorar__lista ul { list-style: none; margin: 0; padding: 0; }
+.explorar__lista li button {
+  display: flex; align-items: center; gap: 14px; width: 100%;
+  padding: 9px 0; border: 0;   /* sem traço entre espaços */
+  background: none; color: var(--tinta); text-align: left; cursor: pointer;
+  font-family: var(--fonte-titulos); font-size: 0.9375rem; font-weight: 500; letter-spacing: 0.01em;
+}
+.explorar__lista li button span {
+  flex: none; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%;
+  background: var(--tinta); color: #fff; font-size: 0.6875rem;
+}
+.explorar__lista li button:hover { color: var(--cor-castanho-dourado); }
+
+/* ---------- telemóvel ---------- */
+@media (max-width: 700px) {
+  .explorar__barra { flex-direction: column; align-items: stretch; gap: 10px; left: 0; right: 0; bottom: 14px; }
+  .explorar--com-painel .explorar__barra { right: 0; opacity: 0; pointer-events: none; }
+  .explorar__filtros { flex-wrap: nowrap; overflow-x: auto; padding: 0 var(--margem-lateral); scrollbar-width: none; }
+  .explorar__filtros::-webkit-scrollbar { display: none; }
+  .explorar__filtros button { flex: none; }
+  .explorar__acoes { padding: 0 var(--margem-lateral); justify-content: space-between; flex-wrap: nowrap; }
+  .explorar__acoes { padding-right: 72px; gap: 6px; }        /* fora da bolha dos cookies */
+  .explorar__acoes .explorar__botao { padding: 0 12px; white-space: nowrap; }
+  .explorar__zoom [data-zoom] { display: none; }               /* no telemóvel faz-se zoom com dois dedos */
+  .explorar__painel {
+    top: auto; left: 0; width: 100%; height: min(58svh, 560px);
+    padding-top: 0;
+    border-radius: 18px 18px 0 0;
+    transform: translateY(105%);
+    box-shadow: 0 -20px 50px rgba(30, 20, 10, 0.2);
+  }
+  .explorar__foto { aspect-ratio: 2 / 1; }
+  .explorar__dica { white-space: normal; width: calc(100% - 2 * var(--margem-lateral)); text-align: center; }
+  .explorar__pino button { width: 28px; height: 28px; font-size: 0.75rem; }
+  .explorar__haste { height: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .explorar__nuvens { animation: none; }
+  .explorar__abertura { transition: opacity 0.4s; }
+}
+
+/* painel de entrada (2026-11-24): título e lista de espaços, à direita do mapa */
+.explorar__lista--intro h2 { display: grid; justify-items: start; line-height: 1; }
+.explorar__lista--intro h2 .intro__script { margin: 0.08em 0 0 1.2em; font-size: 1.6rem; }
+.explorar__lead-painel {
+  margin: 18px 0 6px;
+  font-family: var(--fonte-intro); font-weight: 200;
+  font-size: 1.0625rem; line-height: 1.5; color: var(--cor-preto-90);
+}
+
+/* com o painel aberto há menos largura: botões mais compactos, numa só linha */
+.explorar--com-painel .explorar__barra { gap: 10px; }
+.explorar--com-painel .explorar__filtros,
+.explorar--com-painel .explorar__acoes { flex-wrap: nowrap; gap: 6px; }
+.explorar--com-painel .explorar__filtros button,
+.explorar--com-painel .explorar__botao { height: 34px; padding: 0 12px; font-size: 0.75rem; white-space: nowrap; }
+.explorar--com-painel .explorar__zoom button { width: 34px; height: 34px; }
+.explorar--com-painel [data-lista] { display: none; }   /* a lista já está no painel */
+
+/* enquanto a foto carrega, o mapa fica escondido (aparece já com a descida) */
+.explorar--abertura .explorar__mapa { opacity: 0; }
+.explorar__mapa { transition: opacity 0.8s ease; }
+
+@media (max-width: 700px) { .explorar__fechar { top: 16px; } }
+
+.explorar__lista--intro > h3:first-child { margin-top: 0; }
+
+/* um só traço, entre categorias (2026-11-24) */
+.explorar__lista ul + h3 { margin-top: 22px; padding-top: 24px; border-top: 1px solid rgba(46, 36, 33, 0.14); }
+
+.explorar__fechar[hidden] { display: none; }
+
+/* lista compacta (2026-11-24): cabe toda na janela, sem scroll; os tamanhos acompanham a altura do ecrã */
+.explorar__lista--intro { padding: 0 clamp(24px, 2.6vw, 40px) 4px; }
+@media (min-width: 701px) { .explorar__painel { padding-top: calc(var(--altura-barra) - 20px); } }
+.explorar__lista--intro h3 { margin: 0 0 clamp(2px, 0.6vh, 8px); font-size: 0.6875rem; }
+.explorar__lista--intro ul + h3 { margin-top: clamp(4px, calc(2.6vh - 10px), 16px); padding-top: clamp(6px, calc(2.6vh - 8px), 18px); }
+.explorar__lista--intro li button { padding: clamp(1px, calc(0.9vh - 4px), 7px) 0; gap: 12px; font-size: clamp(0.8125rem, 1.6vh, 0.9375rem); }
+.explorar__lista--intro li button span { width: clamp(17px, 2.45vh, 22px); height: clamp(17px, 2.45vh, 22px); font-size: 0.625rem; }
+.explorar__lista ul[data-cat="suites"] { display: grid; grid-template-columns: 1fr 1fr; column-gap: 16px; }
+
+/* bolha dos cookies: nesta página fica à esquerda, por cima dos filtros, para não tapar a janela lateral */
+@media (min-width: 701px) {
+  .pagina-explorar .privacidade-bola { right: auto; left: var(--margem-lateral); bottom: calc(clamp(18px, 2.4vw, 32px) + 50px); }
+}
+
+/* lista mais simples (2026-11-24): categorias em Optima, nomes em Fact, números sem círculo */
+.explorar__lista h3 {
+  font-family: var(--fonte-titulos); font-weight: 600;
+  font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--cor-preto-90);
+}
+.explorar__lista li button {
+  font-family: var(--fonte-texto); font-weight: 400; letter-spacing: 0;
+  gap: 10px; color: var(--cor-preto-90);
+}
+.explorar__lista li button span,
+.explorar__lista--intro li button span {
+  width: 1.6em; height: auto; flex: none;
+  display: inline-block; place-items: initial;
+  background: none; border-radius: 0;
+  color: var(--cor-castanho-dourado);
+  font-family: var(--fonte-texto); font-size: 0.75rem; font-variant-numeric: tabular-nums;
+  text-align: left;
+}
+.explorar__lista--intro li button { font-size: clamp(0.8125rem, 1.6vh, 0.9375rem); }
+
+/* texto da lista mais pequeno (2026-11-24) */
+.explorar__lista li button,
+.explorar__lista--intro li button { font-size: clamp(0.75rem, 1.4vh, 0.8125rem); }
+.explorar__lista h3 { font-size: 0.6875rem; }
+.explorar__lista li button span,
+.explorar__lista--intro li button span { font-size: 0.6875rem; }
+/* categorias um pouco maiores e mais cheias (2026-11-24) */
+.explorar__lista h3 { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.09em; }
+.explorar__lista h3 { font-size: 0.8125rem; }   /* 13px (2026-11-24) */
+/* nomes a cinzento; ficam a preto ao passar o rato (2026-11-24) */
+.explorar__lista li button { color: var(--cor-texto-suave); transition: color 0.2s; }
+.explorar__lista li button:hover,
+.explorar__lista li button:focus-visible { color: var(--cor-preto-90); }
+
+/* menu lateral sempre aberto nesta página (computador): sem ☰ nem ×, sem véu, sem animação de entrada */
+html.menu-fixo .veu-painel { display: none; }
+@media (min-width: 901px) {
+  html.menu-fixo.painel-aberto .pagina-explorar .privacidade-bola { left: calc(var(--largura-painel) - 44px - 24px); bottom: 24px; }   /* canto vazio da coluna do menu */
+}
+/* área do mapa estreita (menu fixo + janela): a barra parte em linhas em vez de passar por baixo da janela */
+.explorar--com-painel .explorar__barra { flex-wrap: wrap; align-items: flex-end; row-gap: 8px; }
+.explorar--com-painel .explorar__filtros { flex-wrap: wrap; }
+/* janela lateral com o mesmo fundo do menu (2026-11-24) */
+.explorar__painel,
+.explorar__nav button { background: var(--cor-fundo); }
+.explorar__fechar { background: var(--cor-fundo); }
+/* ponto ativo com o creme Vilalara; nome maior, em caixa de cantos arredondados (2026-11-24) */
+.explorar__ponto.ativo .explorar__pino button { background: var(--cor-creme-marca); color: var(--cor-castanho-marca); }
+.explorar__nome { font-size: 0.9375rem; padding: 8px 16px; border-radius: 10px; }
+/* sem "Anterior / Seguinte" na ficha (2026-11-24); continua a dar com as setas do teclado */
+.explorar__nav { display: none; }
+/* botão da ficha centrado (2026-11-24) */
+.explorar__info .botao-contorno { display: table; margin-left: auto; margin-right: auto; }
+/* ficha: número sem círculo, por cima do nome (2026-11-24) */
+.explorar__info h2 { display: block; }
+.explorar__num {
+  display: block; width: auto; height: auto; margin: 0 0 6px;
+  background: none; border-radius: 0; transform: none;
+  color: var(--cor-castanho-dourado);
+  font-size: 0.875rem; font-weight: 500; letter-spacing: 0.04em;
+}
+.explorar__sub { margin-left: 0; }
+/* ficha: número e nome na mesma linha, separados por "|" (2026-11-24) */
+.explorar__info h2 { display: flex; align-items: baseline; gap: 0; flex-wrap: wrap; }
+.explorar__num { display: inline; margin: 0; font-size: inherit; font-weight: 500; letter-spacing: 0.01em; }
+.explorar__num::after { content: "|"; margin: 0 0.45em; color: rgba(46, 36, 33, 0.3); font-weight: 300; }
+/* ficha: categoria e número a cinzento (2026-11-24) */
+.explorar__cat, .explorar__num { color: var(--cor-texto-suave); }
+.explorar__ponto.ativo .explorar__pino button { background: #fff; }   /* ponto ativo a branco (2026-11-24) */

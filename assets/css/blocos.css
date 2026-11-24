@@ -4182,12 +4182,12 @@ body { background: var(--cor-fundo); overscroll-behavior-y: none; }
    --x / --y: centro final em % do palco · --w: largura em vw · --r: rotação inicial.
    O movimento é calculado em site.js (variável --p de 0 a 1 em cada foto).
    ================================================================= */
-.pilha { position: relative; height: 340svh; }
+.pilha { position: relative; height: 340svh; margin-top: -20svh; margin-bottom: 4rem; }   /* 2026-11-24: menos espaço entre o texto e a pilha */
 .pilha__palco { position: sticky; top: 0; height: 100svh; overflow: hidden; }
 .pilha__foto {
   --p: 0; --cx: var(--x); --cy: var(--y);
   position: absolute; left: calc(var(--cx) * 1%); top: calc(var(--cy) * 1%);
-  width: calc(var(--w) * 1vw); margin: 0; z-index: calc(20 - var(--ordem));
+  width: calc(var(--w) * 1.22vw); margin: 0; z-index: calc(20 - var(--ordem));   /* 2026-11-24: fotos maiores, podem sobrepor-se */
   transform:
     translate(-50%, -50%)
     translate(calc((50 - var(--cx)) * (1 - var(--p)) * 1vw), calc((50 - var(--cy)) * (1 - var(--p)) * 1svh))
@@ -4200,20 +4200,30 @@ body { background: var(--cor-fundo); overscroll-behavior-y: none; }
   position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 30; margin: 0;
   display: grid; justify-items: center; text-align: center; white-space: nowrap;
   font-family: var(--fonte-titulos); font-weight: 500; text-transform: uppercase; letter-spacing: 0.02em;
-  font-size: clamp(2rem, 1rem + 2.6vw, 3.6rem); line-height: 1; color: var(--cor-titulos);
+  font-size: clamp(1.375rem, 0.9rem + 1.3vw, 1.75rem); line-height: 1.2; color: var(--cor-titulos);
   opacity: var(--titulo, 0);
 }
-.pilha__titulo .intro__script { text-transform: none; font-size: var(--tam-script); margin-top: -0.05em; }
+/* 2026-11-24: tudo em Optima, mais espaçado, com um traço vertical entre as datas (ideia de linha do tempo) */
+.pilha__titulo { letter-spacing: 0.01em; font-weight: 600; color: var(--cor-preto-90); }   /* igual ao título da linha do tempo */
+.pilha__titulo .intro__script {
+  font-family: var(--fonte-titulos); font-weight: 600; text-transform: uppercase;
+  font-size: 1em; letter-spacing: 0.01em; margin: 0;
+  display: grid; justify-items: center;
+}
+.pilha__titulo .intro__script::before {
+  content: ""; width: 1px; height: 1.1em; margin: 0.65em 0 0.65em -0.01em; background: currentColor; opacity: 0.6;
+}
+.pilha__titulo, .pilha__titulo .intro__script { padding-left: 0.01em; } /* compensa o espaçamento da última letra */
 
 /* telemóvel: as fotos ficam maiores e o palco mais alto, para cada uma se ver bem */
 @media (max-width: 700px) {
   .pilha { height: 300svh; }
   .pilha__foto { --cx: var(--xm); --cy: var(--ym); width: calc(var(--wm) * 1.08vw); }   /* posições próprias: 6 fotos por cima e 6 por baixo do título */
-  .pilha__titulo { font-size: 1.9rem; }
+  .pilha__titulo { font-size: 1.375rem; }
 }
 /* sem animação: as fotos já abertas e o título visível */
 @media (prefers-reduced-motion: reduce) {
-  .pilha { height: auto; }
+  .pilha { height: auto; margin-top: 0; margin-bottom: 0; }
   .pilha__palco { position: relative; }
   .pilha__foto { --p: 1 !important; }
   .pilha__titulo { opacity: 1; }
@@ -4331,3 +4341,21 @@ html.privacidade-aberta { overflow: hidden; }
 @media (max-width: 560px) { .privacidade__botoes { grid-template-columns: minmax(0, 1fr); } }
 .rodape__cookies { padding: 0; background: none; border: 0; color: inherit; font: inherit; cursor: pointer; text-align: left; }
 .rodape__cookies:hover { text-decoration: underline; text-underline-offset: 0.3em; }
+
+/* Our Heritage · "Agora é a sua vez" (2026-11-24): o texto encaixa nos espaços vazios do mosaico */
+.galeria--com-texto .hoje-t {
+  position: absolute; margin: 0; box-sizing: border-box;
+  display: flex; flex-direction: column; justify-content: center;
+  font-family: var(--fonte-intro); font-size: clamp(1rem, 0.55rem + 0.95vw, 1.5rem);
+  font-weight: 200; line-height: 1.45; color: var(--cor-preto-90);
+}
+/* título por cima das fotos, alinhado à primeira foto (2026-11-24) */
+.hoje-cabeca { margin-top: clamp(90px, 10vw, 170px); padding-inline: var(--margem-lateral); margin-bottom: clamp(56px, 6vw, 100px); }
+.hoje-cabeca .intro__titulo { padding-left: 0; justify-content: center; }   /* centrado à página (2026-11-24) */
+.galeria--com-texto .hoje-t2 { top: 25.49%; left: 6.18%;  width: 28.1%; height: 24.07%; padding-right: 2vw; }   /* à esquerda, ao lado da foto alta */
+.galeria--com-texto .hoje-t3 { top: 50.98%; left: 65.72%; width: 28.1%; height: 24.07%; padding-left: 2vw; }   /* à direita, por baixo do jardim */
+.galeria--com-texto .hoje-t4 { top: 76.47%; left: 65.72%; width: 28.1%; height: 23.53%; padding-left: 2vw; }   /* em baixo, à direita da foto larga */
+.galeria--com-texto .hoje-t2, .galeria--com-texto .hoje-t3, .galeria--com-texto .hoje-t4 { justify-content: flex-end; }   /* texto alinhado à base das fotografias */
+@media (max-width: 900px) {
+  .galeria--com-texto .hoje-t { position: static; width: auto; height: auto; grid-column: 1 / -1; padding: 0; margin: 20px 0; font-size: var(--tam-intro); }
+}

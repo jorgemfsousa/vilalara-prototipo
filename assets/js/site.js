@@ -127,7 +127,7 @@
       return "claro";
     }
     function corDaBarra() {
-      if (painel && painel.classList.contains("aberto")) return;
+      if (painel && painel.classList.contains("aberto") && !document.documentElement.classList.contains("menu-fixo")) return;   /* com o menu fixo (Descobrir hotel) a barra continua a ver a cor por baixo */
       var y = Math.max(4, Math.min(barra.offsetHeight / 2, window.innerHeight - 1));
       var w = document.documentElement.clientWidth, claros = 0, n = 0;
       [0.05, 0.25, 0.5, 0.75, 0.95].forEach(function (f) { n++; if (corPorBaixo(w * f, y) === "claro") claros++; });
